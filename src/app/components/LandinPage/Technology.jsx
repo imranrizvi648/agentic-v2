@@ -17,7 +17,6 @@ const rightFeatures = [
   { title: "Seamless Integrations", desc: "Plug into your stack with webhooks and APIs to turn insights into action.", icon: PlugZap },
 ];
 
-// GPU Optimized Line: Animates a gradient mask instead of a stroke-dash
 function AnimatedLine({ d, delay = 0 }) {
   return (
     <g className="line-group">
@@ -50,7 +49,6 @@ export default function Technology() {
   const sectionRef = useRef(null);
   const [render, setRender] = useState(false);
 
-  // Performance: Only render the complex SVGs once the section is near the viewport
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) setRender(true);
@@ -65,10 +63,10 @@ export default function Technology() {
         
         {/* Header */}
         <div className="flex flex-col items-center mb-20 text-center">
-          <span className="px-3 py-1 text-[10px] font-bold text-red-600 bg-red-50 border border-red-100 rounded-full mb-4 uppercase tracking-[0.2em]">
+          <span className="px-3 py-1 text-[10px] font-bold text-brand-primary bg-red-50 border border-red-100 rounded-full mb-4 uppercase tracking-[0.2em]">
             System Architecture
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-[#1a194d] tracking-tight">
+          <h2 className="text-4xl font-black text-brand-primary tracking-tight">
             Tools We <span className="text-black">Use</span>
           </h2>
         </div>
@@ -92,16 +90,17 @@ export default function Technology() {
             )}
           </div>
 
-          {/* Center Node */}
-          <div className="relative z-20 shrink-0 mx-[-15px]">
-            <div className="relative w-32 h-32 bg-[#1a194d] rounded-[32px] shadow-2xl border border-white/10 flex flex-col items-center justify-center text-white ring-8 ring-white/50">
-              <div className="flex -space-x-2 mb-2">
-                <div className="w-8 h-8 rounded-full border-[3px] border-red-500 bg-white" />
-                <div className="w-8 h-8 rounded-full border-[3px] border-white bg-red-500 animate-pulse" />
-              </div>
-              <span className="font-black text-lg tracking-widest uppercase">Aigocy</span>
-            </div>
-          </div>
+          {/* Updated Center Node with ONLY Logo */}
+<div className="relative z-20 shrink-0 mx-[-15px]">
+  <div className="relative w-22 h-22 flex items-center justify-center overflow-hidden">
+    {/* Aapka Logo Image - Background aur borders hata diye gaye hain */}
+    <img 
+      src="/iconeee.png" 
+      alt="Aigocy Logo" 
+      className="w-full h-full object-contain" 
+    />
+  </div>
+</div>
 
           {/* Right Connectors */}
           <div className="w-32 h-[480px] relative z-0">
@@ -134,7 +133,7 @@ export default function Technology() {
 function FeatureCard({ title, desc, icon: Icon }) {
   return (
     <div className="bg-white rounded-[20px] p-6 min-h-[140px] border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-center group">
-      <div className="w-10 h-10 rounded-xl bg-[#1a194d] group-hover:bg-red-500 flex items-center justify-center text-white mb-4 transition-colors duration-300">
+      <div className="w-10 h-10 rounded-xl bg-[#1a194d]  flex items-center justify-center text-white mb-4 transition-colors duration-300">
         <Icon size={18} strokeWidth={2.5} />
       </div>
       <h3 className="font-bold text-[15px] text-gray-900 mb-1.5">{title}</h3>

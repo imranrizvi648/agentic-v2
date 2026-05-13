@@ -76,7 +76,7 @@ export default function PodcastSection() {
             <article 
               key={podcast.id}
               onClick={() => setActiveVideo(podcast.videoId)}
-              className="group relative bg-[#0b4ddb] rounded-none overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl flex flex-col aspect-square w-full mx-auto"
+              className="group relative bg-[#1a194d] rounded-none overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl flex flex-col aspect-square w-full mx-auto"
             >
               {/* Top Header (Logos & Pill) */}
               <div className="p-2 flex justify-between items-center z-20 flex-shrink-0 w-full">
@@ -89,7 +89,7 @@ export default function PodcastSection() {
                    Agentic
                   </span>
                 </div>
-                <div className="bg-[#2b65f6] text-white text-[9px] md:text-[10px] font-bold px-2.5 py-1 md:py-1.5 rounded-full uppercase tracking-wider hover:bg-[#3b75ff] transition-colors">
+                <div className="bg-[#1a194d] text-white text-[9px] md:text-[10px] font-bold px-2.5 py-1 md:py-1.5 rounded-full uppercase tracking-wider hover:bg-[#3b75ff] transition-colors">
                   Podcast
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function PodcastSection() {
 
               {/* Bottom Text Area - FIXED HEIGHT */}
               {/* Changed to fixed height (h-[90px] md:h-[105px]) so all cards align perfectly */}
-              <div className="relative z-30 bg-[#0b4ddb] px-4 md:px-5 flex gap-3 md:gap-4 items-center flex-shrink-0 w-full h-[80px] md:h-[70px]">
+              <div className="relative z-30 bg-[#1a194d] px-4 md:px-5 flex gap-3 md:gap-4 items-center flex-shrink-0 w-full h-[80px] md:h-[70px]">
                 {/* Play Button */}
                 <div className="w-10 h-10 md:w-[42px] md:h-[42px] min-w-[40px] md:min-w-[42px] rounded-full bg-[#ccff00] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                   <div className="w-0 h-0 border-t-[5px] md:border-t-[6px] border-t-transparent border-l-[8px] md:border-l-[10px] border-l-[#0b4ddb] border-b-[5px] md:border-b-[6px] border-b-transparent ml-1"></div>

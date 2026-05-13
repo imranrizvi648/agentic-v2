@@ -8,6 +8,7 @@ import Partnerships from './components/LandinPage/Partnerships'
 import PodcastSection from './components/LandinPage/PodcastSection'
 import InsightsSection from './components/LandinPage/InsightsSection'
 import Technology from './components/LandinPage/Technology'
+import AboutSection from './components/LandinPage/AboutSection'
 
 
 const page = () => {
@@ -15,6 +16,8 @@ const page = () => {
     <div>
       <HeroSlider/>
       <ServicesSection/>
+      <AboutSection/>
+      
       <CommitmentSection/>
       <SuccessStories/>
        <Technology/>
