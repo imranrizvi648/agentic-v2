@@ -99,7 +99,7 @@ export default function SuccessStories() {
           {cases.map((item) => (
             <article 
               key={item.id} 
-              className="group relative flex-shrink-0 w-[90vw] sm:w-[540px] hover:w-[720px] transition-[width] duration-500 ease-in-out border border-slate-100 rounded-sm p-8 md:p-5 bg-white hover:shadow-2xl overflow-hidden snap-start flex flex-col min-h-[500px]"
+              className="group relative flex-shrink-0 w-[90vw] sm:w-[540px] hover:w-[720px] transition-[width] duration-500 ease-in-out border border-slate-300 rounded-none p-8 md:p-5 bg-white hover:shadow  overflow-hidden snap-start flex flex-col min-h-[500px]"
             >
               <div className="w-[380px] flex-shrink-0 flex flex-col h-full relative z-10">
                 <div className="mb-10">
