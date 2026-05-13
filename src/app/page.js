@@ -7,6 +7,7 @@ import Recognitions from './components/LandinPage/Recognitions'
 import Partnerships from './components/LandinPage/Partnerships'
 import PodcastSection from './components/LandinPage/PodcastSection'
 import InsightsSection from './components/LandinPage/InsightsSection'
+import Technology from './components/LandinPage/Technology'
 
 
 const page = () => {
@@ -16,7 +17,7 @@ const page = () => {
       <ServicesSection/>
       <CommitmentSection/>
       <SuccessStories/>
-      <Recognitions/>
+       <Technology/>
       <Partnerships/>
       <PodcastSection/>
       <InsightsSection/>

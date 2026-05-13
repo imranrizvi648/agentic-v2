@@ -8,18 +8,7 @@ const stats = [
   { value: "2", label: "GLOBAL\nOFFICES" },
 ];
 
-const logos = [
-  "Sterne Kessler",
-  "ABB",
-  "pendulum",
-  "Crowdbotics",
-  "Adventist Risk",
-  "Sterne Kessler",
-  "ABB",
-  "pendulum",
-  "Crowdbotics",
-  "Adventist Risk",
-];
+
 
 export default function CommitmentSection() {
   return (
@@ -84,24 +73,7 @@ export default function CommitmentSection() {
           ))}
         </div>
 
-        {/* Logo Scroll Section */}
-        <div className="mt-7 overflow-hidden group">
-          <p className="text-center text-[10px] tracking-[0.3em] uppercase text-white/30 mb-12">
-            Trusted by Industry Leaders
-          </p>
-          <div className="animate-logo-scroll">
-            {logos.map((logo, index) => (
-              <div 
-                key={index} 
-                className="flex items-center justify-center px-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 ease-in-out"
-              >
-                <span className="text-2xl font-black tracking-tighter whitespace-nowrap text-white/80">
-                  {logo}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </div>
 
       {/* Subtle Top "Glass" Edge */}
