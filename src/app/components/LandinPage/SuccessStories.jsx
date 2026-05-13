@@ -61,7 +61,7 @@ export default function SuccessStories() {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden font-sans">
+    <section className="pt-24 bg-white overflow-hidden font-sans">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8">
         
         {/* Header Section */}

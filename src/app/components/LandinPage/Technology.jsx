@@ -60,7 +60,7 @@ export default function Technology() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-[#fafafa] overflow-hidden font-sans">
+    <section ref={sectionRef} className="py-18 bg-[#fafafa] overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Header */}

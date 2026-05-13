@@ -5,24 +5,24 @@ const partners = [
     id: 1,
     name: "Microsoft Solutions Partner",
     // Yahan apne actual logo ka path dijiye ga
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Microsoft_Solutions_Partner_badge.svg/512px-Microsoft_Solutions_Partner_badge.svg.png", 
+    logo: "/microsoft-solutions-partner.svg", 
   },
   {
     id: 2,
     name: "Google Cloud Partner",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/512px-Google_Cloud_logo.svg.png",
+    logo: "/google-cloud-partner-1.svg",
   },
   {
     id: 3,
     name: "Salesforce Partner",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/512px-Salesforce.com_logo.svg.png",
+    logo: "/salesforce-partner-1.svg",
     // Image mein Salesforce aur AWS white hain, isliye ek flag rakh letay hain
     isWhite: true, 
   },
   {
     id: 4,
     name: "AWS Partner Network",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png",
+    logo: "/aws-partner-network-1.svg",
     isWhite: true,
   }
 ];
