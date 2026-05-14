@@ -29,6 +29,11 @@ export default function RootLayout({ children }) {
          <Navbar/>
         {children}
          <Footer/>
+
+            <Script 
+  src="https://staging.cse.agenticsense.co/cse/widget/wid_a586b50180a54276.js"
+  strategy="lazyOnload"
+/>
         
         </body>
       

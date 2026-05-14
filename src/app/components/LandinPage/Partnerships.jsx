@@ -3,27 +3,32 @@ import React from "react";
 const partners = [
   {
     id: 1,
-    name: "Microsoft Solutions Partner",
-    // Yahan apne actual logo ka path dijiye ga
-    logo: "/microsoft-solutions-partner.svg", 
+    name: "Xpace Technologies",
+    logo: "/xpace white logo.png", 
+    // Taller/Square logo gets a larger height
+    sizeClass: "max-h-12 md:max-h-16", 
   },
   {
     id: 2,
-    name: "Google Cloud Partner",
-    logo: "/google-cloud-partner-1.svg",
+    name: "Funuun",
+    logo: "/Gemini_Generated_Image_563xrm563xrm563x-removebg-preview.png",
+    // Very wide logo gets a smaller height so its width doesn't over-expand
+    sizeClass: "max-h-8 md:max-h-20",
   },
   {
     id: 3,
-    name: "Salesforce Partner",
-    logo: "/salesforce-partner-1.svg",
-    // Image mein Salesforce aur AWS white hain, isliye ek flag rakh letay hain
+    name: "AITHENTIC",
+    logo: "/Gemini_Generated_Image_qa7eg1qa7eg1qa7e-removebg-preview.png",
     isWhite: true, 
+    // Medium-wide logo
+    sizeClass: "max-h-10 md:max-h-12",
   },
   {
     id: 4,
-    name: "AWS Partner Network",
-    logo: "/aws-partner-network-1.svg",
-    isWhite: true,
+    name: "BRB Group",
+    logo: "/BRB-LOGO.png",
+    // Medium logo
+    sizeClass: "max-h-12 md:max-h-18",
   }
 ];
 
@@ -31,45 +36,33 @@ export default function Partnerships() {
   return (
     <section 
       aria-labelledby="partnerships-heading"
-      // Rich blue gradient aur radial glow mix
-      className="relative overflow-hidden bg-gradient-to-r from-[#1a194d] via-[#25248b] to-[#0041C2] py-24 text-white"
+      className="relative overflow-hidden bg-gradient-to-r from-[#0d133b] via-[#152374] to-[#0047d4] py-20 text-white font-sans"
     >
-      {/* Background radial glow exactly like the image */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle at 75% 20%, rgba(255,255,255,0.12) 0%, transparent 50%)'
-        }}
-      ></div>
-
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         
-        {/* SEO Friendly Heading */}
         <h2 
           id="partnerships-heading"
-          className="text-3xl md:text-[44px] font-bold text-center mb-20 tracking-tight leading-tight"
+          className="text-4xl md:text-[44px] font-bold text-center mb-16 tracking-tight leading-tight"
         >
           Our partnerships with <br className="hidden md:block" /> industry leaders
         </h2>
 
-        {/* Semantic List for Screen Readers & Search Engines */}
-        <ul className="flex flex-col md:flex-row items-center justify-center max-w-[1200px] mx-auto">
+        <ul className="flex flex-col md:flex-row items-center justify-between w-full">
           {partners.map((partner, index) => (
             <li 
               key={partner.id} 
-              // md:border-r border-white/20 is se same waisi hi vertical lines aayengi
-              className={`flex w-full md:w-1/4 justify-center items-center py-8 md:py-2 h-[100px] ${
-                index !== partners.length - 1 ? 'md:border-r md:border-white/20' : ''
+              className={`flex flex-1 w-full justify-center items-center h-28 md:h-32 py-6 md:py-0 ${
+                index !== partners.length - 1 ? 'md:border-r border-white/20' : ''
               } ${
                 index !== 0 ? 'border-t border-white/20 md:border-t-0' : ''
               }`}
             >
               <img 
                 src={partner.logo} 
-                alt={`${partner.name} Certification Logo`} 
+                alt={`${partner.name} logo`} 
                 loading="lazy"
-                // Agar aapke paas colored logos hain aur white chahiye toh isWhite flag use hoga (ya direct white SVG use kar lena)
-                className={`max-h-12 w-auto object-contain transition-transform hover:scale-105 duration-300 ${
+                // Replaced strict height with dynamic sizeClass and safety max-widths
+                className={`w-auto object-contain px-4 lg:px- transition-transform hover:scale-105 duration-300 max-w-[160px] md:max-w-[220px] ${partner.sizeClass} ${
                   partner.isWhite ? 'brightness-0 invert' : ''
                 }`}
               />
