@@ -6,18 +6,7 @@ import { ArrowRight, FileText, Mic, Layers, Leaf, ChevronRight } from "lucide-re
 const slides = [
   {
     id: 1,
-    title: "AI Agents That\nPower Smarter Business Automation.",
-    description: "AgenticSense helps businesses automate workflows, improve decision-making and scale operations with intelligent AI agent solutions.",
-    bg: "bg-[radial-gradient(circle_at_center,_#ffffff_0%,#d1dbff_45%,#b8c4f5_100%)]",
-    textColor: "text-[#0A0D38]",
-    buttonStyle: "bg-[#716bff] hover:bg-[#5a52e0] text-white shadow-lg shadow-[#716bff]/20 rounded-none",
-    hasWebinarCard: true,
-    hasPrimarySVG: true,
-    buttonText: "Book a Free Consultation",
-  },
-  {
-    id: 2,
-    title: "Reimagine your\nbusiness with AI.",
+        title: "Reimagine your\nbusiness with AI.",
     description: "tixel helps businesses connect AI to real workflows and develop intelligent solutions that learn, adapt, and scale.",
     bg: "bg-[linear-gradient(135deg,#1a194d_0%,#121139_50%,#25236e_100%)]",
     textColor: "text-white",
@@ -25,6 +14,19 @@ const slides = [
     hasGuideCard: true,
     hasSVGShade: true,
     buttonText: "Explore AI Services",
+   
+  },
+  {
+    id: 2,
+     title: "AI Agents That\nPower Smarter Business Automation.",
+    description: "AgenticSense helps businesses automate workflows, improve decision-making and scale operations with intelligent AI agent solutions.",
+    bg: "bg-[radial-gradient(circle_at_center,_#ffffff_0%,#d1dbff_45%,#b8c4f5_100%)]",
+    textColor: "text-[#0A0D38]",
+    buttonStyle: "bg-[#716bff] hover:bg-[#5a52e0] text-white shadow-lg shadow-[#716bff]/20 rounded-none",
+    hasWebinarCard: true,
+    hasPrimarySVG: true,
+    buttonText: "Book a Free Consultation",
+
   },
   {
     id: 3,
@@ -189,7 +191,7 @@ export default function HeroSlider() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                className={`text-[46px] md:text-[45px] font-bold leading-[1.08] tracking-[-1.5px] whitespace-pre-line mb-6 ${slides[current].textColor}`}
+                className={`text-[46px] md:text-[50px] font-black leading-[1.08] tracking-[-1.5px] whitespace-pre-line mb-6 ${slides[current].textColor}`}
               >
                 {slides[current].title}
               </motion.h1>
