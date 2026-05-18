@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { icons } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Your Website",
-  description: "Modern SaaS Website",
+  title: "AgenticSense",
+  description: "AgenticSense is a leading design studio specializing in crafting innovative digital experiences. With a focus on user-centric design and cutting-edge technology, we create impactful solutions that drive business growth and enhance user engagement. Our team of talented designers and developers work collaboratively to deliver exceptional results for our clients across various industries.",
+icons: "/iconeee.png",
 };
 
 export default function RootLayout({ children }) {
