@@ -1,326 +1,462 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, FileText, Mic, Layers, Leaf, ChevronRight } from "lucide-react";
+import { ArrowRight, FileText, Mic, Layers, Leaf, ChevronRight, Calendar, Users } from "lucide-react";
 
 const slides = [
   {
     id: 1,
-        title: "Reimagine your\nbusiness with AI.",
-    description: "tixel helps businesses connect AI to real workflows and develop intelligent solutions that learn, adapt, and scale.",
-    bg: "bg-[linear-gradient(135deg,#1a194d_0%,#121139_50%,#25236e_100%)]",
+    title: "Reimagine your\nbusiness with AI.",
+    description:
+      "AgenticSense helps businesses connect AI to real workflows and develop intelligent solutions that learn, adapt, and scale.",
+    image: "/bg-1.webp",
     textColor: "text-white",
-    buttonStyle: "bg-white text-[#1a194d] hover:bg-gray-100 shadow-lg shadow-white/10 rounded-none",
+    buttonStyle:
+      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGuideCard: true,
-    hasSVGShade: true,
     buttonText: "Explore AI Services",
-   
   },
   {
     id: 2,
-     title: "AI Agents That\nPower Smarter Business Automation.",
-    description: "AgenticSense helps businesses automate workflows, improve decision-making and scale operations with intelligent AI agent solutions.",
-    bg: "bg-[radial-gradient(circle_at_center,_#ffffff_0%,#d1dbff_45%,#b8c4f5_100%)]",
-    textColor: "text-[#0A0D38]",
-    buttonStyle: "bg-[#716bff] hover:bg-[#5a52e0] text-white shadow-lg shadow-[#716bff]/20 rounded-none",
+    title: "AI Agents That\nPower Smarter Business Automation.",
+    description:
+      "AgenticSense helps businesses automate workflows, improve decision-making and scale operations with intelligent AI agent solutions.",
+    image: "/bg2.webp",
+    textColor: "text-white",
+    buttonStyle:
+      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasWebinarCard: true,
-    hasPrimarySVG: true,
     buttonText: "Book a Free Consultation",
-
   },
   {
     id: 3,
-    title: "Reimagine your\nbusiness with AI.",
-    description: "tixel partnered with Canvs AI to achieve tenfold scalability, faster insights, and $120K in savings through an optimized AI and cloud architecture.",
-    // Dark, deep background for the neon glows to pop against
-    bg: "bg-[#060814]",
+    title: "Proven Results\nWith Real AI Impact.",
+    description:
+      "AgenticSense partnered with leading enterprises to achieve tenfold scalability, faster insights, and $120K in savings through optimized AI architecture.",
+    image: "/bg-3.webp",
     textColor: "text-white",
-    // Pill-shaped, gradient glass button
-    buttonStyle: "bg-gradient-to-r from-[#21265c]/60 to-[#31296b]/60 backdrop-blur-xl border border-white/20 text-white rounded-[2rem] shadow-[0_0_25px_rgba(100,120,255,0.15)] hover:bg-white/10 hover:shadow-[0_0_30px_rgba(100,120,255,0.3)] hover:border-white/40",
+    buttonStyle:
+      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGlassCards: true,
-    hasFuturisticFlowSVG: true,
-    buttonText: "See our work in AI",
+    buttonText: "See Our Work in AI",
   },
 ];
 
 const AUTO_PLAY_DURATION = 6000;
+const EASE_EXPO_OUT = [0.19, 1, 0.22, 1];
+const EASE_IN_SOFT  = [0.4, 0, 0.6, 0];
+
+const bgVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 1.4, ease: "easeOut" } },
+  exit:    { opacity: 0, transition: { duration: 1.0, ease: "easeIn"  } },
+};
+
+const leftVariants = {
+  initial: { opacity: 0, x: -60 },
+  animate: {
+    opacity: 1, x: 0,
+    transition: {
+      x:       { duration: 1.35, ease: EASE_EXPO_OUT, delay: 0.2 },
+      opacity: { duration: 1.0,  ease: "easeOut",     delay: 0.2 },
+    },
+  },
+  exit: {
+    opacity: 0, x: 30,
+    transition: {
+      x:       { duration: 0.5, ease: EASE_IN_SOFT },
+      opacity: { duration: 0.4, ease: "easeIn"     },
+    },
+  },
+};
+
+const rightVariants = {
+  initial: { opacity: 0, x: 60 },
+  animate: {
+    opacity: 1, x: 0,
+    transition: {
+      x:       { duration: 1.35, ease: EASE_EXPO_OUT, delay: 0.35 },
+      opacity: { duration: 1.0,  ease: "easeOut",     delay: 0.35 },
+    },
+  },
+  exit: {
+    opacity: 0, x: -30,
+    transition: {
+      x:       { duration: 0.5, ease: EASE_IN_SOFT },
+      opacity: { duration: 0.4, ease: "easeIn"     },
+    },
+  },
+};
+
+function useImagePreload(images) {
+  useEffect(() => {
+    images.forEach((src) => { const img = new Image(); img.src = src; });
+  }, []); // eslint-disable-line
+}
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  const timerRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+  useImagePreload(slides.map((s) => s.image));
+
+  const startTimer = useCallback(() => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, AUTO_PLAY_DURATION);
-    return () => clearTimeout(timer);
-  }, [current]);
+  }, []);
+
+  useEffect(() => { startTimer(); return () => clearInterval(timerRef.current); }, [startTimer]);
+
+  const goTo = useCallback((index) => { setCurrent(index); startTimer(); }, [startTimer]);
 
   const isDarkSlide = slides[current].textColor === "text-white";
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#0A0D38]">
-      {/* Background - Crossfade */}
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="relative h-screen w-full overflow-hidden bg-[#080714] select-none">
+
+      {/* ── Background crossfade ── */}
+      <div className="absolute inset-0 z-0">
         <AnimatePresence mode="sync">
           <motion.div
-            key={current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.1, ease: "easeInOut" }}
-            className={`absolute inset-0 ${slides[current].bg}`}
+            key={`bg-${current}`}
+            variants={bgVariants}
+            initial="initial" animate="animate" exit="exit"
+            className="absolute inset-0"
+            style={{ willChange: "opacity" }}
           >
-            {/* Slide 1 SVG */}
-            {slides[current].hasPrimarySVG && (
-              <div className="absolute inset-0 overflow-hidden opacity-5">
-                <svg className="absolute -left-20 -top-20 w-[600px] h-[600px]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#1a194d" d="M44.7,-76.4C58.3,-69.2,70.2,-57.4,78.6,-43.8C87,-30.1,91.9,-15.1,91.5,-0.2C91.1,14.6,85.4,29.2,76.5,41.9C67.7,54.7,55.7,65.5,41.9,73.1C28.1,80.7,14,85.1,-0.5,86C-15,86.9,-30.1,84.3,-43.5,76.5C-56.9,68.7,-68.6,55.7,-76.3,41C-84.1,26.3,-87.8,9.9,-86,-6C-84.2,-21.9,-76.9,-37.3,-66.2,-49.4C-55.5,-61.5,-41.4,-70.3,-27.3,-77.2C-13.2,-84.1,0.9,-89.1,14.7,-88.4C28.5,-87.7,42.4,-81.3,44.7,-76.4Z" transform="translate(100 100)" />
-                </svg>
-              </div>
-            )}
-
-            {/* Slide 2 SVG */}
-            {slides[current].hasSVGShade && (
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-1/4 -right-1/4 w-[70%] h-[80%] bg-white/10 blur-[140px] rounded-full" />
-                <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1440 800" fill="none">
-                  <path d="M-100 600C200 500 400 800 800 400C1200 0 1500 200 1600 100" stroke="white" strokeWidth="0.5" strokeDasharray="10 10" />
-                  <path d="M-100 650C300 550 500 850 900 450C1300 50 1600 250 1700 150" stroke="white" strokeWidth="1" opacity="0.5" />
-                </svg>
-              </div>
-            )}
-
-            {/* NEW Slide 3 SVG - Futuristic Fiber Optic/Data Flow */}
-            {slides[current].hasFuturisticFlowSVG && (
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Deep background ambient glows */}
-                <div className="absolute top-[20%] left-[30%] w-[40%] h-[40%] bg-[#4f46e5]/20 blur-[150px] rounded-full" />
-                <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[50%] bg-[#8b5cf6]/10 blur-[130px] rounded-full" />
-
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <filter id="glow-heavy" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="15" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                    <filter id="glow-light" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="4" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                    <linearGradient id="flowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#4338ca" stopOpacity="0.1" />
-                      <stop offset="40%" stopColor="#818cf8" stopOpacity="0.8" />
-                      <stop offset="60%" stopColor="#c7d2fe" stopOpacity="1" />
-                      <stop offset="80%" stopColor="#818cf8" stopOpacity="0.6" />
-                      <stop offset="100%" stopColor="#4338ca" stopOpacity="0.1" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* Main energetic core swooshes */}
-                  <g filter="url(#glow-heavy)">
-                    <path d="M -200 1100 Q 500 700 750 450 T 1600 -100" stroke="url(#flowGrad)" strokeWidth="8" opacity="0.4" />
-                    <path d="M -150 1050 Q 550 750 700 450 T 1500 -50" stroke="url(#flowGrad)" strokeWidth="4" opacity="0.6" />
-                  </g>
-
-                  {/* Multiple intricate web lines (Fiber optics) */}
-                  <g filter="url(#glow-light)">
-                    {Array.from({ length: 15 }).map((_, i) => (
-                      <path 
-                        key={`line-${i}`}
-                        d={`M ${-200 + (i * 30)} ${1200 - (i * 40)} Q ${400 + (i * 40)} ${800 - (i * 30)} ${700 + (Math.sin(i) * 50)} 450 T ${1600 - (i * 50)} ${-200 + (i * 20)}`}
-                        stroke="#a5b4fc"
-                        strokeWidth={0.5 + (Math.random() * 1.5)}
-                        opacity={0.15 + (Math.random() * 0.3)}
-                      />
-                    ))}
-                    
-                    {/* Dotted particle streams */}
-                    {Array.from({ length: 8 }).map((_, i) => (
-                      <path 
-                        key={`particles-${i}`}
-                        d={`M ${-100 + (i * 50)} ${1100 - (i * 20)} Q ${450 + (i * 30)} ${750 - (i * 40)} ${720 + (Math.cos(i) * 40)} 450 T ${1550 - (i * 40)} ${-100 + (i * 30)}`}
-                        stroke="#ffffff"
-                        strokeWidth={1.5 + (Math.random() * 2)}
-                        strokeDasharray={`${1 + Math.random() * 4} ${15 + Math.random() * 30}`}
-                        opacity={0.4 + (Math.random() * 0.5)}
-                      />
-                    ))}
-                  </g>
-
-                  {/* Connection lines to the cards on the right */}
-                  <g filter="url(#glow-light)" stroke="#818cf8" strokeWidth="1.5" opacity="0.6" fill="none">
-                    {/* Card 1 Connection */}
-                    <path d="M 750 380 Q 900 350 1060 320" />
-                    <circle cx="1060" cy="320" r="3" fill="#ffffff" />
-                    
-                    {/* Card 2 Connection */}
-                    <path d="M 720 450 Q 880 470 1060 480" />
-                    <circle cx="1060" cy="480" r="3" fill="#ffffff" />
-                    
-                    {/* Card 3 Connection */}
-                    <path d="M 680 520 Q 850 620 1060 640" />
-                    <circle cx="1060" cy="640" r="3" fill="#ffffff" />
-                  </g>
-                </svg>
-              </div>
-            )}
+            <img
+              src={slides[current].image} alt="" aria-hidden="true"
+              className="w-full h-full object-cover"
+              loading="eager" fetchPriority="high" decoding="async"
+            />
+            {/* Dark overlay — stronger for text clarity */}
+            <div className="absolute inset-0 bg-black/60" />
+            {/* Subtle brand vignette */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0914]/50 via-transparent to-[#1a194d]/40" />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Main Content */}
+      {/* ── Main Content ── */}
       <div className="container mx-auto px-6 h-full flex flex-col justify-center relative z-10 pt-8 pb-20">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-16 w-full"
-          >
-            {/* Left Side */}
-            <div className="max-w-[620px] pt-4 mt-10">
-              <motion.h1
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-                className={`text-[46px] md:text-[50px] font-black leading-[1.08] tracking-[-1.5px] whitespace-pre-line mb-6 ${slides[current].textColor}`}
-              >
-                {slides[current].title}
-              </motion.h1>
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 lg:gap-16 w-full">
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.15 }}
-                className={`text-[18px] leading-relaxed max-w-xl mb-8 ${isDarkSlide ? 'text-white/80' : 'text-slate-600'}`}
-              >
-                {slides[current].description}
-              </motion.p>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                // Notice we removed rounded-none here and put it in the individual slide styles instead
-                className={`flex items-center gap-3 px-8 py-4 font-semibold text-lg transition-all duration-300 rounded-none ${slides[current].buttonStyle}`}
-              >
-                {slides[current].buttonText}
-                <ArrowRight size={22} />
-              </motion.button>
-            </div>
-
-            {/* Right Side Cards */}
-            <div className="hidden lg:block w-full max-w-[400px] mt-12 lg:mt-16">
-              <AnimatePresence mode="wait">
-                {/* Original Slide 1 Card */}
-                {slides[current].hasWebinarCard && (
-                  <motion.div
-                    key="webinar"
-                    initial={{ opacity: 0, x: 60, scale: 0.95 }}
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: 40 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="bg-white shadow-2xl rounded-none border-t-4 border-[#625eff] overflow-hidden"
+          {/* Left: Text */}
+          <div className="max-w-[620px] w-full pt-4 mt-10" style={{ minHeight: 380 }}>
+            <div className="relative w-full" style={{ minHeight: 380 }}>
+              <AnimatePresence mode="sync">
+                <motion.div
+                  key={`left-${current}`}
+                  variants={leftVariants}
+                  initial="initial" animate="animate" exit="exit"
+                  className="absolute inset-0 flex flex-col justify-center"
+                  style={{ willChange: "opacity, transform" }}
+                >
+                  <h1 className={`text-[46px] md:text-[50px] font-black leading-[1.08] tracking-[-1.5px] whitespace-pre-line mb-6 ${slides[current].textColor}`}>
+                    {slides[current].title}
+                  </h1>
+                  <p className={`text-[18px] leading-relaxed max-w-xl mb-8 ${isDarkSlide ? "text-white/75" : "text-slate-600"}`}>
+                    {slides[current].description}
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-3.5 font-semibold text-base transition-all duration-300 ${slides[current].buttonStyle}`}
                   >
-                    <div className="h-48 bg-[#1a194d] flex items-center justify-center relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#625eff]/20 to-transparent" />
-                      <span className="text-white/20 text-xs tracking-widest uppercase font-bold">Preview Area</span>
-                    </div>
-                    <div className="p-8">
-                      <div className="text-[#625eff] text-xs font-bold tracking-widest mb-2 uppercase">Upcoming Session</div>
-                      <h3 className="text-xl font-bold text-[#1a194d] mb-4 leading-tight">How Agentic AI is Changing Business Workflows</h3>
-                      <button className="text-[#1a194d] font-bold flex items-center gap-2 border-b-2 border-[#625eff] pb-1 hover:gap-3 transition-all">
-                        Register Free <ArrowRight size={18} />
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Original Slide 2 Card */}
-                {slides[current].hasGuideCard && (
-                  <motion.div
-                    key="guide"
-                    initial={{ opacity: 0, x: 60, scale: 0.95 }}
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: 40 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-none p-8 shadow-2xl text-white"
-                  >
-                    <FileText size={32} className="text-white mb-6" />
-                    <h3 className="text-2xl font-bold mb-4">C-Suite Guide to AI in 2026</h3>
-                    <p className="text-white/70 mb-6 text-sm leading-relaxed">Strategic insights for leaders implementing AI at enterprise scale.</p>
-                    <a href="#" className="flex items-center gap-2 font-bold hover:gap-3 transition-all">
-                      Download Whitepaper <ArrowRight size={20} />
-                    </a>
-                  </motion.div>
-                )}
-
-                {/* NEW Slide 3 Cards - Glassmorphism Pills */}
-                {slides[current].hasGlassCards && (
-                  <motion.div
-                    key="glass-cards"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    className="space-y-6"
-                  >
-                    {[
-                      { name: "CCOF", icon: <Leaf size={22} className="text-white/90" />, delay: 0 },
-                      { name: "vocable.", icon: <Mic size={22} className="text-white/90" />, delay: 0.15 },
-                      { name: "BBJ La Tavola", icon: <Layers size={22} className="text-white/90" />, delay: 0.3 }
-                    ].map((client, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: client.delay, duration: 0.6, ease: "easeOut" }}
-                        whileHover={{ scale: 1.02, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
-                        className="bg-white/[0.04] backdrop-blur-2xl border border-white/20 px-3 py-2 pr-5 rounded-md flex items-center justify-between shadow-[inset_0_1px_15px_rgba(255,255,255,0.05),_0_10px_40px_rgba(0,0,0,0.5)] cursor-pointer group"
-                      >
-                        <div className="flex items-center gap-5">
-                          {/* Inner Icon Box */}
-                          <div className="bg-white/[0.08] p-2 rounded-md  border border-white/10 shadow-[inset_0_1px_5px_rgba(255,255,255,0.1)]">
-                            {client.icon}
-                          </div>
-                          <span className="font-semibold text-white text-[22px] tracking-wide">{client.name}</span>
-                        </div>
-                        {/* Right Arrow Button */}
-                        <div className="bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/15 transition-colors">
-                          <ChevronRight size={20} className="text-white/70 group-hover:text-white transition-colors" />
-                        </div>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
+                    <span className="truncate">{slides[current].buttonText}</span>
+                    <ArrowRight size={18} className="flex-shrink-0" />
+                  </motion.button>
+                </motion.div>
               </AnimatePresence>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+
+          {/* Right: Cards */}
+          <div className="hidden lg:block w-full max-w-[400px] mt-12 lg:mt-16" style={{ minHeight: 380 }}>
+            <div className="relative w-full" style={{ minHeight: 380 }}>
+              <AnimatePresence mode="sync">
+                <motion.div
+                  key={`right-${current}`}
+                  variants={rightVariants}
+                  initial="initial" animate="animate" exit="exit"
+                  className="absolute inset-0 flex flex-col justify-center"
+                  style={{ willChange: "opacity, transform" }}
+                >
+
+                  {/* ══════════════════════════════════════
+                      SLIDE 1 — Guide Card (compact glass)
+                     ══════════════════════════════════════ */}
+                  {slides[current].hasGuideCard && (
+                    <div className="relative overflow-hidden rounded-2xl
+                      backdrop-blur-3xl bg-[#0c0a1c]/65
+                      border border-white/[0.15]
+                      shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.6),0_4px_20px_rgba(98,94,255,0.15)]">
+
+                      {/* Top shine */}
+                      <div className="absolute top-0 left-6 right-6 h-[1px]
+                        bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+
+                      {/* Brand accent bar */}
+                      <div className="h-[3px] bg-gradient-to-r from-[#625eff] via-[#a095ff] to-transparent" />
+
+                      {/* ── Compact header row */}
+                      <div className="relative flex items-center gap-4 px-5 pt-5 pb-4
+                        border-b border-white/[0.08]">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#625eff]/10 via-transparent to-[#1a194d]/20 pointer-events-none" />
+                        <div className="absolute inset-0 opacity-[0.04]"
+                          style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
+                        {/* Icon box */}
+                        <div className="relative z-10 w-12 h-12 rounded-xl flex-shrink-0
+                          bg-[#625eff]/20 border border-[#625eff]/40
+                          flex items-center justify-center
+                          shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_0_20px_rgba(98,94,255,0.3)]">
+                          <FileText size={22} className="text-[#b4abff]" />
+                        </div>
+                        <div className="relative z-10">
+                          <div className="text-[#b4abff] text-[10px] font-bold tracking-[0.18em] uppercase mb-0.5">Whitepaper</div>
+                          <div className="text-white/80 text-[11px]">Free for AI leaders</div>
+                        </div>
+                        {/* Glowing pip */}
+                        <div className="relative z-10 ml-auto w-2 h-2 rounded-full bg-[#625eff]
+                          shadow-[0_0_8px_3px_rgba(98,94,255,0.6)]" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-5">
+                        <div className="inline-flex items-center gap-1.5 mb-3
+                          px-2.5 py-1 rounded-full
+                          bg-[#625eff]/20 border border-[#625eff]/30
+                          text-[#b4abff] text-[9px] font-bold tracking-widest uppercase">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#625eff] shadow-[0_0_5px_rgba(98,94,255,0.9)]" />
+                          Free Resource
+                        </div>
+
+                        <h3 className="text-[18px] font-bold text-white mb-2 leading-snug
+                          drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                          C-Suite Guide to AI in 2026
+                        </h3>
+                        <p className="text-white/70 text-[12px] leading-relaxed mb-4">
+                          Strategic insights for leaders implementing AI at enterprise scale.
+                        </p>
+
+                        <div className="h-[1px] bg-gradient-to-r from-[#625eff]/40 via-white/10 to-transparent mb-4" />
+
+                        <a href="#" className="group/btn inline-flex items-center gap-2
+                          text-white font-semibold text-[13px]
+                          hover:text-[#a095ff] transition-colors duration-200">
+                          Download Whitepaper
+                          <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ══════════════════════════════════════
+                      SLIDE 2 — Webinar Card (compact glass)
+                     ══════════════════════════════════════ */}
+                  {slides[current].hasWebinarCard && (
+                    <div className="relative overflow-hidden rounded-2xl
+                      backdrop-blur-3xl bg-[#0c0a1c]/65
+                      border border-white/[0.15]
+                      shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.6),0_4px_20px_rgba(98,94,255,0.15)]">
+
+                      {/* Top shine */}
+                      <div className="absolute top-0 left-6 right-6 h-[1px]
+                        bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+
+                      {/* Brand accent bar */}
+                      <div className="h-[3px] bg-gradient-to-r from-[#625eff] via-[#a095ff] to-transparent" />
+
+                      {/* ── Compact header row */}
+                      <div className="relative flex items-center gap-4 px-5 pt-5 pb-4
+                        border-b border-white/[0.08]">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#625eff]/10 via-transparent to-[#1a194d]/20 pointer-events-none" />
+                        <div className="absolute inset-0 opacity-[0.04]"
+                          style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
+                        {/* Icon box */}
+                        <div className="relative z-10 w-12 h-12 rounded-xl flex-shrink-0
+                          bg-[#625eff]/20 border border-[#625eff]/40
+                          flex items-center justify-center
+                          shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_0_20px_rgba(98,94,255,0.3)]">
+                          <Users size={22} className="text-[#b4abff]" />
+                        </div>
+                        <div className="relative z-10">
+                          <div className="text-[#b4abff] text-[10px] font-bold tracking-[0.18em] uppercase mb-0.5">Live Webinar</div>
+                          <div className="text-white/80 text-[11px]">June 2026 · Free</div>
+                        </div>
+                        {/* Live badge */}
+                        <div className="relative z-10 ml-auto flex items-center gap-1.5
+                          px-2 py-1 rounded-full bg-red-500/20 border border-red-400/30 flex-shrink-0">
+                          <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+                          <span className="text-red-300 text-[9px] font-bold tracking-widest uppercase">Live Soon</span>
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-5">
+                        <div className="inline-flex items-center gap-1.5 mb-3
+                          px-2.5 py-1 rounded-full
+                          bg-[#625eff]/20 border border-[#625eff]/30
+                          text-[#b4abff] text-[9px] font-bold tracking-widest uppercase">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#625eff] shadow-[0_0_5px_rgba(98,94,255,0.9)]" />
+                          Upcoming Session
+                        </div>
+
+                        <h3 className="text-[18px] font-bold text-white mb-2 leading-snug
+                          drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                          How Agentic AI is Changing Business Workflows
+                        </h3>
+
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="flex items-center gap-1.5 text-white/60 text-[11px]">
+                            <Calendar size={11} />
+                            <span>June 2026</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-white/60 text-[11px]">
+                            <Users size={11} />
+                            <span>Free to attend</span>
+                          </div>
+                        </div>
+
+                        <div className="h-[1px] bg-gradient-to-r from-[#625eff]/40 via-white/10 to-transparent mb-4" />
+
+                        <button className="group/btn inline-flex items-center gap-2
+                          text-white font-semibold text-[13px]
+                          hover:text-[#a095ff] transition-colors duration-200">
+                          Register Free
+                          <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ══════════════════════════════════════
+                      SLIDE 3 — Glass Client Cards
+                     ══════════════════════════════════════ */}
+                  {slides[current].hasGlassCards && (
+                    <div className="space-y-3">
+
+                      {/* Section label */}
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="h-[1px] flex-1 bg-gradient-to-r from-[#625eff]/50 to-transparent" />
+                        <span className="text-white/50 text-[10px] font-bold tracking-[0.2em] uppercase">Featured Clients</span>
+                        <div className="h-[1px] flex-1 bg-gradient-to-l from-[#625eff]/50 to-transparent" />
+                      </div>
+
+                      {[
+                        { name: "CCOF",         sub: "Organic Certification",   icon: <Leaf    size={20} className="text-[#b4abff]" /> },
+                        { name: "vocable.",      sub: "AI Language Platform",   icon: <Mic     size={20} className="text-[#b4abff]" /> },
+                        { name: "BBJ La Tavola", sub: "Luxury Table Linens",    icon: <Layers  size={20} className="text-[#b4abff]" /> },
+                      ].map((client, i) => (
+                        <motion.div
+                          key={i}
+                          whileHover={{ scale: 1.015 }}
+                          className="relative group/card cursor-pointer overflow-hidden rounded-xl
+                            backdrop-blur-2xl
+                            bg-[#0c0a1c]/60
+                            border border-white/[0.14]
+                            shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_8px_24px_rgba(0,0,0,0.5)]
+                            transition-all duration-300
+                            hover:bg-[#110e29]/75
+                            hover:border-[#625eff]/40
+                            hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_8px_32px_rgba(98,94,255,0.15)]"
+                        >
+                          {/* Hover shimmer overlay */}
+                          <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300
+                            bg-gradient-to-r from-[#625eff]/[0.05] to-transparent pointer-events-none" />
+
+                          {/* Top shine */}
+                          <div className="absolute top-0 left-4 right-4 h-[1px]
+                            bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+
+                          <div className="flex items-center justify-between px-4 py-3.5 relative z-10">
+                            <div className="flex items-center gap-3.5">
+                              {/* Icon glass pill */}
+                              <div className="w-10 h-10 rounded-xl
+                                bg-white/[0.05] border border-white/[0.15]
+                                shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]
+                                flex items-center justify-center flex-shrink-0">
+                                {client.icon}
+                              </div>
+                              <div>
+                                <span className="font-bold text-white text-[16px] tracking-wide block leading-tight">
+                                  {client.name}
+                                </span>
+                                <span className="text-white/60 text-[11px] font-medium">
+                                  {client.sub}
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Arrow pill */}
+                            <div className="w-8 h-8 rounded-full
+                              bg-white/[0.1] border border-white/[0.08]
+                              flex items-center justify-center flex-shrink-0
+                              group-hover/card:bg-[#625eff]/20
+                              group-hover/card:border-[#625eff]/40
+                              transition-all duration-300">
+                              <ChevronRight size={15}
+                                className="text-white/60 group-hover/card:text-[#a095ff] transition-colors duration-300" />
+                            </div>
+                          </div>
+
+                          {/* Glowing pip bottom-right */}
+                          <div className="absolute bottom-3 right-14 w-1 h-1 rounded-full
+                            bg-[#625eff] shadow-[0_0_6px_2px_rgba(98,94,255,0.6)]
+                            opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
+                        </motion.div>
+                      ))}
+
+                      {/* Bottom stats strip */}
+                      <div className="relative overflow-hidden rounded-xl mt-1
+                        backdrop-blur-xl bg-[#0c0a1c]/60 border border-white/[0.14]
+                        shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_16px_rgba(0,0,0,0.4)]">
+                        <div className="absolute top-0 left-4 right-4 h-[1px]
+                          bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+                        <div className="grid grid-cols-3 divide-x divide-white/[0.08] px-1 py-3">
+                          {[["$120K", "Cost Saved"], ["10×", "Scalability"], ["3", "Clients"]].map(([val, label]) => (
+                            <div key={label} className="flex flex-col items-center gap-0.5 px-2">
+                              <span className="text-[#b4abff] font-bold text-[15px] leading-none">{val}</span>
+                              <span className="text-white/50 text-[9px] font-medium uppercase tracking-wide">{label}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                    </div>
+                  )}
+
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      {/* Progress Dots */}
+      {/* ── Progress Dots ── */}
       <div className="absolute bottom-8 left-0 right-0 px-6 z-20">
         <div className="max-w-6xl mx-auto flex justify-end">
           <div className="flex gap-4">
             {slides.map((_, index) => (
-              <button key={index} onClick={() => setCurrent(index)} className="group py-4">
-                <div className={`h-[6px] w-12 rounded-full transition-all ${isDarkSlide ? 'bg-white/20' : 'bg-[#1a194d]/10'}`}>
+              <button
+                key={index}
+                onClick={() => goTo(index)}
+                className="group py-4 focus:outline-none"
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                <div className={`h-[5px] w-12 rounded-full overflow-hidden transition-colors duration-300
+                  ${isDarkSlide ? "bg-white/15" : "bg-[#1a194d]/10"}`}>
                   {index === current && (
                     <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: "100%" }}
+                      key={`dot-${current}`}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
                       transition={{ duration: AUTO_PLAY_DURATION / 1000, ease: "linear" }}
-                      className={`h-full rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)] ${isDarkSlide ? 'bg-white' : 'bg-[#625eff]'}`}
+                      style={{ originX: 0 }}
+                      className="h-full w-full bg-gradient-to-r from-[#625eff] to-[#a095ff]"
                     />
                   )}
                 </div>
@@ -329,6 +465,7 @@ export default function HeroSlider() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

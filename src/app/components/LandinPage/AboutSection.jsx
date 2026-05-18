@@ -32,7 +32,7 @@ export default function AboutSection() {
   return (
     <section className=" py-24  flex flex-col lg:flex-row w-full min-h-[600px] px-20 overflow-hidden bg-white">
       {/* LEFT COLUMN: About Intro (Dark Blue) */}
-      <div className="bg-[#003B6D] p-10 lg:w-1/3 flex flex-col justify-center text-white">
+      <div className="bg-[#1a194d]  p-10 lg:w-1/3 flex flex-col justify-center text-white">
         <h2 className="text-4xl font-light tracking-widest mb-6">
           ABOUT AGENTICSENSE
         </h2>
@@ -48,16 +48,16 @@ export default function AboutSection() {
       </div>
 
       {/* MIDDLE COLUMN: Image */}
-      <div className="relative lg:w-1/3 min-h-[400px]">
+      <div className="relative bg-black/50 lg:w-1/3 min-h-[400px]">
         <img
-          src="https://images.unsplash.com/photo-1599110906885-b024c90c2773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI2fHx8ZW58MHx8fHx8" // Replace with your actual team/professional image
+          src="/about.webp" // Replace with your actual team/professional image
           alt="Professional Team"
           className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
 
       {/* RIGHT COLUMN: Keys to Success */}
-      <div className="bg-[#F7F7F7] p-10 lg:w-1/3 flex flex-col justify-center">
+      <div className="bg-[#EFF2F9] p-10 lg:w-1/3 flex flex-col justify-center">
         <h3 className="text-3xl font-light text-gray-800 mb-10 tracking-wider">
           OUR 5 KEY TO SUCCESS
         </h3>

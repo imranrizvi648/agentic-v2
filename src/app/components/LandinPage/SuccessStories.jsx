@@ -90,81 +90,83 @@ export default function SuccessStories() {
           </div>
         </div>
 
-        {/* Cards Container */}
-        <div 
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} 
-        >
-          {cases.map((item) => (
-            <article 
-              key={item.id} 
-              className="group relative flex-shrink-0 w-[90vw] sm:w-[540px] hover:w-[720px] transition-[width] duration-500 ease-in-out border border-slate-300 rounded-none p-8 md:p-5 bg-white hover:shadow  overflow-hidden snap-start flex flex-col min-h-[500px]"
-            >
-              <div className="w-[380px] flex-shrink-0 flex flex-col h-full relative z-10">
-                <div className="mb-10">
-                  <h3 className="text-2xl md:text-[28px] font-semibold text-[#1a194d] leading-[1.3] mb-6">
-                    {item.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {item.tags.map((tag, idx) => (
-                      <span 
-                        key={idx} 
-                        className={`px-4 py-1 rounded-full text-[11px] font-bold border uppercase tracking-wider ${getTagStyle(tag)}`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-auto">
-                   <span className="text-3xl font-black text-[#625eff] tracking-tighter opacity-80 group-hover:opacity-100 transition-opacity uppercase">
-                     {item.logo}
-                   </span>
-                </div>
-
-                <div className="border-t border-slate-100 pt-6 h-[140px] flex-shrink-0">
-                  <div className="flex gap-5 items-start">
-                    <div className="w-14 h-14 flex-shrink-0 relative">
-                      <img src={item.image} alt={item.author} className="rounded-full object-cover w-full h-full border border-slate-50" />
-                      {item.isVideo && (
-                        <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-sm">
-                          <div className="w-5 h-5 bg-[#625eff] rounded-full flex items-center justify-center pl-0.5 text-white text-[10px]">▶</div>
-                        </div>
-                      )}
-                    </div>
-                    <div>
-                      {item.isVideo ? (
-                        <p className="text-[11px] font-bold text-[#625eff] mb-2 tracking-widest uppercase">{item.quote}</p>
-                      ) : (
-                        <p className="text-[14px] text-slate-600 leading-relaxed mb-3 line-clamp-3 italic">"{item.quote}"</p>
-                      )}
-                      <div className="flex flex-col">
-                        <span className="text-[15px] font-bold text-[#1a194d]">{item.author}</span>
-                        <span className="text-[13px] text-slate-400 mt-0.5">{item.role}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hover Image Box */}
-              <div className="absolute top-10 right-10 w-[240px] h-[160px] opacity-0 translate-x-8 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 z-20">
-                <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
-                  <img src={item.caseImage} alt="Case Detail" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-[#1a194d]/10 group-hover:backdrop-blur-[1px] transition-all" />
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-max">
-                    <button className="bg-white px-4 py-2 rounded-full text-[11px] font-bold text-[#1a194d] flex items-center gap-1.5 shadow-md hover:text-[#625eff] transition-colors uppercase">
-                      View case study 
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
+       
+       {/* Cards Container */}
+<div 
+  ref={scrollRef}
+  className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-12"
+  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} 
+>
+  {cases.map((item) => (
+    <article 
+      key={item.id} 
+      className="group relative flex-shrink-0 w-[90vw] sm:w-[540px] hover:w-[720px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] border border-slate-300 rounded-none p-8 md:p-5 bg-white hover:shadow overflow-hidden snap-start flex flex-col min-h-[500px]"
+    >
+      <div className="w-[380px] flex-shrink-0 flex flex-col h-full relative z-10">
+        <div className="mb-10">
+          <h3 className="text-2xl md:text-[28px] font-semibold text-[#1a194d] leading-[1.3] mb-6">
+            {item.title}
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            {item.tags.map((tag, idx) => (
+              <span 
+                key={idx} 
+                className={`px-4 py-1 rounded-full text-[11px] font-bold border uppercase tracking-wider ${getTagStyle(tag)}`}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
+
+        <div className="mb-auto">
+           <span className="text-3xl font-black text-[#625eff] tracking-tighter opacity-80 group-hover:opacity-100 transition-opacity uppercase">
+             {item.logo}
+           </span>
+        </div>
+
+        <div className="border-t border-slate-100 pt-6 h-[140px] flex-shrink-0">
+          <div className="flex gap-5 items-start">
+            <div className="w-14 h-14 flex-shrink-0 relative">
+              <img src={item.image} alt={item.author} className="rounded-full object-cover w-full h-full border border-slate-50" />
+              {item.isVideo && (
+                <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-sm">
+                  <div className="w-5 h-5 bg-[#625eff] rounded-full flex items-center justify-center pl-0.5 text-white text-[10px]">▶</div>
+                </div>
+              )}
+            </div>
+            <div>
+              {item.isVideo ? (
+                <p className="text-[11px] font-bold text-[#625eff] mb-2 tracking-widest uppercase">{item.quote}</p>
+              ) : (
+                <p className="text-[14px] text-slate-600 leading-relaxed mb-3 line-clamp-3 italic">"{item.quote}"</p>
+              )}
+              <div className="flex flex-col">
+                <span className="text-[15px] font-bold text-[#1a194d]">{item.author}</span>
+                <span className="text-[13px] text-slate-400 mt-0.5">{item.role}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      {/* Iski duration ko bhi 500ms se 700ms kiya hai taaki card ke expand hone ke saath balance ho jaye */}
+      <div className="absolute top-10 right-10 w-[240px] h-[160px] opacity-0 translate-x-8 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:opacity-100 group-hover:translate-x-0 z-20">
+        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
+          <img src={item.caseImage} alt="Case Detail" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#1a194d]/10 group-hover:backdrop-blur-[1px] transition-all" />
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-max">
+            <button className="bg-white px-4 py-2 rounded-full text-[11px] font-bold text-[#1a194d] flex items-center gap-1.5 shadow-md hover:text-[#625eff] transition-colors uppercase">
+              View case study 
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
       </div>
     </section>
   );
