@@ -35,6 +35,12 @@ export default function RootLayout({ children }) {
         </main>
 
         <Footer />
+<Script 
+  src="http://192.168.0.30:8100/widget/wid_db08e0f9c9df4b3d.js"
+
+  strategy="lazyOnload"
+/>
+        
       </body>
     </html>
   );
