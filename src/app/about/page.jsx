@@ -6,21 +6,22 @@ import TkxelSection from './components/TkxelSection'
 import FolioTabsSection from './components/FolioTabsSection'
 import AIFirstBanner from './components/AIFirstBanner'
 
-// Ab hum direct bina kisi hack ke component import karenge
-import PdfViewerSection from './components/PdfViewerSection'
+// ✅ Use the wrapper — NOT PdfViewerSection directly
+// This prevents the DOMMatrix SSR crash during `npm run build`
+import PdfViewerWrapper from './components/PdfViewerWrapper'
 
 const page = () => {
   return (
     <div>
-      <AboutSection/>
-      <WhoWeAre/>
-      <AboutDetailedSection/>
-      <TkxelSection/>
-      <AIFirstBanner/>
-      <FolioTabsSection/>
-      
-      {/* Safe and clean call */}
-      <PdfViewerSection pdfUrl="/AGENTICSENSE PROFILE.pdf" />
+      <AboutSection />
+      <WhoWeAre />
+      <AboutDetailedSection />
+      <TkxelSection />
+      <AIFirstBanner />
+      <FolioTabsSection />
+
+      {/* ✅ PDF file name with space must be URL-encoded in the path */}
+      <PdfViewerWrapper pdfUrl="/AGENTICSENSE%20PROFILE.pdf" />
     </div>
   )
 }

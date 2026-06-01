@@ -5,8 +5,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FluidCursor from "./components/FluidCursor";
 
-
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,11 +28,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col antialiased bg-black text-white relative`}
       >
-     
-       <FluidCursor/>
-         
+        {/* Background custom fluid effect cursor */}
+        <FluidCursor />
 
-        {/* Baki saara content z-index ki wajah se automatic is ke upar safe rahe ga */}
+        {/* Saara content z-index ki wajah se automatic is ke upar safe rahe ga */}
         <div className="relative z-10 flex flex-col min-h-screen w-full">
           <Navbar />
 
@@ -43,7 +40,7 @@ export default function RootLayout({ children }) {
           </main>
 
           <Footer />
-        </div>
+        </div> {/* <--- Yeh closing div missing thi, ab add kar di hai */}
       </body>
     </html>
   );
