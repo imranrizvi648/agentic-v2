@@ -3,13 +3,148 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Services Mega Menu Data
+const servicesMegaMenu = [
+  {
+    id: "AI and Data Innovation",
+    label: "AI & Data Innovation",
+    subServices: [
+      { title: "AI Agents", isNew: true, desc: "Use AI agents to streamline workflows, decisions, and cut costs." },
+      { title: "Intelligent Automation", desc: "Streamline operations with intelligent automation that boosts efficiency." },
+      { title: "Genai Models", desc: "Connect silos, modernize pipelines, and deliver reliable data for AI." },
+    ],
+    spotlight: {
+      title: "Generative AI in Business Operations: C-Suite AI Adoption Strategies",
+      cta: "Get the white paper",
+      img: "/spotlight-ai.png", 
+    }
+  },
+  {
+    id: "Automation Excellence",
+    label: "Automation Excellence",
+    subServices: [
+      { title: "Process Automation", desc: "Design user experiences that cut friction and improve performance." },
+      { title: "Enterprise AI", desc: "Build web, mobile, and enterprise products with strong architecture." },
+      { title: "Workflow Sync", desc: "Build AI software with scalable models, clean data, and security." },
+    ],
+    spotlight: {
+      title: "Modernizing Legacy Apps for the AI Era",
+      cta: "Watch Now",
+      img: "/spotlight-eng.png",
+    }
+  },
+  {
+    id: "Strategic AI Solution",
+    label: "Strategic AI Solution",
+    subServices: [
+      { title: "AI Consulting", desc: "Align teams, validate assumptions, and uncover risks through discovery." },
+      { title: "Digital Strategy", desc: "Align teams with a shared vision, user insights, and a roadmap for growth." },
+      { title: "Roi Analysis", desc: "Evaluate new tech and evolve your architecture, data, and workflows." },
+    ],
+    spotlight: {
+      title: "How Businesses Can Move Past the AI Pilot Phase",
+      cta: "Watch Now",
+      img: "/spotlight-advisory.png",
+    }
+  },
+  {
+    id: "Conversational AI",
+    label: "Conversational AI",
+    subServices: [
+      { title: "Chatbots Dev", desc: "Audit your systems and pipelines to uncover bottlenecks and risks." },
+      { title: "Multi-Lingual", desc: "Optimize cycle times by fixing and automating inefficient workflows." },
+      { title: "Support & Maintenance", desc: "Stabilize and secure your apps with ongoing maintenance and support." },
+    ],
+    spotlight: {
+      title: "The Ultimate Guide to Boost Application Performance",
+      cta: "Read More",
+      img: "/spotlight-opt.png",
+    }
+  },
+];
+
+// Industries Mega Menu Data (Updated exactly per your list)
+const industriesMegaMenu = [
+
+  {
+    id: "Finance And Banking",
+    label: "Finance And Banking",
+    subServices: [
+      { title: "Algorithmic Insights", desc: "Analyze heavy market structures and optimize data ingestion routines." },
+      { title: "Risk Mitigation", desc: "Automate custom fraud detection pipelines and structure balance audits." },
+      { title: "Financial Bots", desc: "Secure multi-lingual customer support frameworks for immediate account assistance." },
+    ],
+    spotlight: {
+      title: "The Future of Smart Data Management in Capital Markets",
+      cta: "Download Playbook",
+      img: "/spotlight-finance.png",
+    }
+  },
+  {
+    id: "Healthcare",
+    label: "Healthcare",
+    subServices: [
+      { title: "Medical Analytics", isNew: true, desc: "Enhance patient care with predictive modeling and structured data paths." },
+      { title: "Clinical Automation", desc: "Streamline patient scheduling, data integration, and compliance checks." },
+      { title: "Patient Care Agents", desc: "Deploy intelligent chatbots for immediate non-clinical frontline support." },
+    ],
+    spotlight: {
+      title: "Transforming Modern Healthcare with Agentic Frameworks",
+      cta: "Read Industry Report",
+      img: "/spotlight-health.png",
+    }
+  },
+  
+  {
+    id: "Real Estate",
+    label: "Real Estate",
+    subServices: [
+      { title: "Property Valuation", desc: "Automate data matching trends across historical geo-location points." },
+      { title: "Lead Ingestion", desc: "Qualify high-value real estate leads through conversational AI workflows." },
+      { title: "Portfolio Sync", desc: "Synchronize multiple e-commerce asset entries into central internal ERPs." },
+    ],
+    spotlight: {
+      title: "Maximizing Digital Assets and Property Returns via Advanced AI",
+      cta: "Watch Webinar",
+      img: "/spotlight-estate.png",
+    }
+  },
+  {
+    id: "E-commerce",
+    label: "E-commerce",
+    subServices: [
+      { title: "Dynamic Pricing", desc: "Utilize predictive models to adjust product store values automatically." },
+      { title: "Checkout Workflows", desc: "Identify conversion bottlenecks and structure flawless UX patterns." },
+      { title: "Inventory Sync", desc: "Connect modern warehouses and clear system silos instantly with AI middleware." },
+    ],
+    spotlight: {
+      title: "Scaling Modern Enterprise Stores to New Peaks",
+      cta: "View Case Study",
+      img: "/spotlight-ecommerce.png",
+    }
+  },
+  {
+    id: "Education",
+    label: "Education",
+    subServices: [
+      { title: "Adaptive Learning", desc: "Structure customized progress matrices for personalized student tracking." },
+      { title: "Workflow Management", desc: "Automate grading checks, syllabus structures, and resource distributions." },
+      { title: "Virtual Advisors", desc: "Provide around-the-clock structural campus guidance via natural language engines." },
+    ],
+    spotlight: {
+      title: "Reimagining Digital Education Ecosystems globally",
+      cta: "Get White Paper",
+      img: "/spotlight-edu.png",
+    }
+  }
+];
+
 const navItems = [
-  { name: "Home",       href: "/",          dropdown: false, subItems: ["Home 1", "Home 2"] },
-  { name: "Services",   href: "/services",  dropdown: false, subItems: ["Services", "Single Service"] },
-  { name: "Solutions",  href: "/solutions", dropdown: false, subItems: ["Solutions", "Single Solution"] },
-  { name: "Industries", href: "/industries",dropdown: false, subItems: ["About Us", "Team"] },
-  { name: "Blog",       href: "/blog",      dropdown: false, subItems: ["Pricing", "FAQ", "404 Error"] },
-  { name: "About",      href: "/about",     dropdown: false, subItems: ["Careers", "Single Career"] },
+  { name: "Home",       href: "/",          dropdown: false },
+  { name: "Services",   href: "/services",  dropdown: true }, 
+  { name: "Industries", href: "/industries", dropdown: true }, // Set dropdown true for Industries
+  { name: "Blog",       href: "/blog",      dropdown: false },
+  { name: "About",      href: "/about",     dropdown: false },
   { name: "Contact Us", href: "/contact",   dropdown: false },
 ];
 
@@ -19,6 +154,10 @@ export default function Navbar() {
   const [isScrolled,       setIsScrolled]       = useState(false);
   const [isButtonHovered,  setIsButtonHovered]  = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Separate inner state for both mega menus
+  const [activeServicesTab, setActiveServicesTab] = useState(servicesMegaMenu[0].id);
+  const [activeIndustriesTab, setActiveIndustriesTab] = useState(industriesMegaMenu[0].id);
 
   useEffect(() => {
     const sentinel = document.createElement("div");
@@ -33,29 +172,25 @@ export default function Navbar() {
     return () => { observer.disconnect(); sentinel.remove(); };
   }, []);
 
+  const currentServicesData = servicesMegaMenu.find(item => item.id === activeServicesTab) || servicesMegaMenu[0];
+  const currentIndustriesData = industriesMegaMenu.find(item => item.id === activeIndustriesTab) || industriesMegaMenu[0];
+
   return (
     <nav
       className={`fixed left-0 right-0 z-50 flex justify-center
         transition-[padding,top] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
         ${isScrolled ? "top-0 px-0" : "top-4 md:top-6 px-4 md:px-8"}`}
     >
-      {/* ─────────────────────────────────────────────────────
-          MAIN CONTAINER
-          Floating (dark hero) → full glassmorphism panel
-          Scrolled (white page) → frosted white glass bar
-      ───────────────────────────────────────────────────── */}
       <div
         className={`
-          w-full flex flex-col items-center justify-between
+          w-full flex flex-col items-center justify-between relative
           transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
           ${isScrolled
-            /* ── Scrolled: frosted white glass ── */
             ? `max-w-[100%] px-6 md:px-10 py-3
                rounded-none
                bg-white/70 backdrop-blur-2xl
                border-b border-black/[0.03]
                shadow-[0_4px_24px_rgba(26,25,77,0.07),inset_0_-1px_0_rgba(0,0,0,0.04)]`
-            /* ── Floating: dark glass panel ── */
             : `max-w-[1240px] px-5 md:px-8 py-2.5
                rounded-none
                bg-white/[0.02] backdrop-blur-xl
@@ -64,7 +199,6 @@ export default function Navbar() {
           }
         `}
       >
-        {/* Top shine streak — only when floating */}
         {!isScrolled && (
           <div className="absolute top-0 left-6 right-6 h-[1px]
                           bg-gradient-to-r from-transparent via-white/40 to-transparent
@@ -72,8 +206,7 @@ export default function Navbar() {
         )}
 
         <div className="w-full flex items-center justify-between relative">
-
-          {/* ── Logo ── */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 cursor-pointer group z-50">
             <div className="relative w-9 h-9 md:w-10 md:h-10 overflow-hidden">
               <img
@@ -88,7 +221,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* ── Desktop Nav Links ── */}
+          {/* Desktop Nav Links */}
           <ul
             className="hidden lg:flex items-center gap-0.5"
             onMouseLeave={() => setHoveredTab(null)}
@@ -96,7 +229,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li
                 key={item.name}
-                className="relative cursor-pointer"
+                className={`${item.dropdown ? "static" : "relative"} cursor-pointer`}
                 onMouseEnter={() => setHoveredTab(item.name)}
                 onClick={() => setActiveTab(item.name)}
               >
@@ -107,16 +240,13 @@ export default function Navbar() {
                       transition-all duration-300
                       ${activeTab === item.name || hoveredTab === item.name
                         ? isScrolled
-                          /* scrolled active/hover bg */
                           ? "bg-[#1a194d]/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),inset_0_0_0_1px_rgba(26,25,77,0.08)]"
-                          /* floating active/hover bg — mini glass pill */
                           : "bg-white/[0.10] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),inset_0_0_0_1px_rgba(255,255,255,0.08)]"
                         : ""
                       }
                       ${isScrolled ? "text-slate-700 hover:text-[#1a194d]" : "text-white/80 hover:text-white"}
                     `}
                   >
-                    {/* Active: corner accent marks */}
                     {activeTab === item.name && (
                       <>
                         <div className={`absolute top-1.5 left-1.5 w-2 h-2
@@ -128,17 +258,12 @@ export default function Navbar() {
                       </>
                     )}
 
-                    {/* Hover: animated border draw */}
                     {hoveredTab === item.name && activeTab !== item.name && (
                       <div className="absolute inset-1 pointer-events-none">
-                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }}
-                          className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
-                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }}
-                          className={`absolute top-0 left-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
-                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }}
-                          className={`absolute bottom-0 right-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
-                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }}
-                          className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
                       </div>
                     )}
 
@@ -153,43 +278,182 @@ export default function Navbar() {
                   </div>
                 </Link>
 
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {item.dropdown && hoveredTab === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.2 }}
-                      className={`absolute top-full left-0 mt-2 min-w-[200px]
-                        backdrop-blur-2xl border rounded-xl py-2 shadow-2xl overflow-hidden z-50
-                        ${isScrolled
-                          ? "bg-white/80 border-[#1a194d]/10 shadow-[0_8px_32px_rgba(26,25,77,0.12),inset_0_1px_0_rgba(255,255,255,0.9)]"
-                          : "bg-[#1a1625]/70 border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.08)]"
-                        }`}
-                    >
-                      {/* Dropdown top shine */}
-                      <div className="absolute top-0 left-4 right-4 h-[1px]
-                        bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
-                      {item.subItems?.map((sub) => (
-                        <Link href={`${item.href}#${sub.toLowerCase().replace(" ", "-")}`} key={sub}>
-                          <div className={`px-5 py-2.5 font-medium text-[14px] transition-colors
-                            ${isScrolled
-                              ? "text-slate-700 hover:bg-[#1a194d]/[0.05] hover:text-[#1a194d]"
-                              : "text-white/80 hover:bg-white/[0.08] hover:text-white"
-                            }`}>
-                            {sub}
+                {/* MEGA MENU: SERVICES DROPDOWN */}
+                {item.name === "Services" && item.dropdown && (
+                  <AnimatePresence>
+                    {hoveredTab === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.22, ease: "easeInOut" }}
+                        className={`absolute top-full left-0 right-0 mx-auto mt-4 w-[90vw] max-w-[1200px] min-h-[410px] flex rounded-xl overflow-hidden border shadow-2xl z-50 backdrop-blur-2xl
+                          ${isScrolled
+                            ? "bg-white border-slate-200 text-slate-800"
+                            : "bg-[#0b0a14]/95 border-white/10 text-white"
+                          }`}
+                      >
+                        {/* LEFT COLUMN: Main Categories */}
+                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
+                          {servicesMegaMenu.map((menuItem) => (
+                            <button
+                              key={menuItem.id}
+                              onMouseEnter={() => setActiveServicesTab(menuItem.id)}
+                              onClick={() => setActiveServicesTab(menuItem.id)}
+                              className={`flex items-center justify-between px-4 py-3 text-left font-semibold text-[13.5px] rounded-lg transition-all duration-200
+                                ${activeServicesTab === menuItem.id
+                                  ? isScrolled
+                                    ? "bg-[#625eff]/10 text-[#625eff]"
+                                    : "bg-white/10 text-white"
+                                  : "hover:bg-slate-100/50 dark:hover:bg-white/5 opacity-80"
+                                }`}
+                            >
+                              <span>{menuItem.label}</span>
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" 
+                                className={`transition-transform duration-200 ${activeServicesTab === menuItem.id ? "translate-x-1" : ""}`}>
+                                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* CENTER COLUMN: Sub-services Grid */}
+                        <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
+                          {currentServicesData.subServices.map((sub, idx) => (
+                            <div key={idx} className="group/item flex flex-col gap-1.5 cursor-pointer">
+                              <h4 className="font-bold text-[14.5px] flex items-center gap-2 group-hover/item:text-[#625eff] transition-colors">
+                                {sub.title}
+                                {sub.isNew && (
+                                  <span className="bg-blue-500 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">
+                                    New
+                                  </span>
+                                )}
+                              </h4>
+                              <p className={`text-[12.5px] leading-relaxed ${isScrolled ? "text-slate-500" : "text-slate-400"}`}>
+                                {sub.desc}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* RIGHT COLUMN: Spotlight Banner */}
+                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
+                          <div className="flex flex-col justify-start">
+                            <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
+                            <div className="mt-3 relative rounded-lg overflow-hidden border border-white/5 aspect-[16/10] bg-gradient-to-br from-[#625eff]/20 to-purple-600/20 flex items-center justify-center shadow-sm max-h-[140px]">
+                              {currentServicesData.spotlight.img ? (
+                                <img src={currentServicesData.spotlight.img} alt="Spotlight" className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xs text-slate-500">Banner Asset</span>
+                              )}
+                            </div>
+                            <h5 className="mt-4 font-bold text-[13px] leading-snug tracking-normal">
+                              {currentServicesData.spotlight.title}
+                            </h5>
                           </div>
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                          <Link href="#" className="mt-4 flex items-center gap-1 text-[12px] font-semibold text-[#625eff] hover:underline pt-1">
+                            {currentServicesData.spotlight.cta}
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                              <line x1="5" y1="12" x2="19" y2="12" />
+                              <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+
+                {/* MEGA MENU: INDUSTRIES DROPDOWN */}
+                {item.name === "Industries" && item.dropdown && (
+                  <AnimatePresence>
+                    {hoveredTab === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.22, ease: "easeInOut" }}
+                        className={`absolute top-full left-0 right-0 mx-auto mt-4 w-[90vw] max-w-[1200px] min-h-[410px] flex rounded-xl overflow-hidden border shadow-2xl z-50 backdrop-blur-2xl
+                          ${isScrolled
+                            ? "bg-white border-slate-200 text-slate-800"
+                            : "bg-[#0b0a14]/95 border-white/10 text-white"
+                          }`}
+                      >
+                        {/* LEFT COLUMN: Main Industries */}
+                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
+                          {industriesMegaMenu.map((menuItem) => (
+                            <button
+                              key={menuItem.id}
+                              onMouseEnter={() => setActiveIndustriesTab(menuItem.id)}
+                              onClick={() => setActiveIndustriesTab(menuItem.id)}
+                              className={`flex items-center justify-between px-4 py-3 text-left font-semibold text-[13.5px] rounded-lg transition-all duration-200
+                                ${activeIndustriesTab === menuItem.id
+                                  ? isScrolled
+                                    ? "bg-[#625eff]/10 text-[#625eff]"
+                                    : "bg-white/10 text-white"
+                                  : "hover:bg-slate-100/50 dark:hover:bg-white/5 opacity-80"
+                                }`}
+                            >
+                              <span>{menuItem.label}</span>
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" 
+                                className={`transition-transform duration-200 ${activeIndustriesTab === menuItem.id ? "translate-x-1" : ""}`}>
+                                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* CENTER COLUMN: Industry Verticals Grid */}
+                        <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
+                          {currentIndustriesData.subServices.map((sub, idx) => (
+                            <div key={idx} className="group/item flex flex-col gap-1.5 cursor-pointer">
+                              <h4 className="font-bold text-[14.5px] flex items-center gap-2 group-hover/item:text-[#625eff] transition-colors">
+                                {sub.title}
+                                {sub.isNew && (
+                                  <span className="bg-blue-500 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">
+                                    New
+                                  </span>
+                                )}
+                              </h4>
+                              <p className={`text-[12.5px] leading-relaxed ${isScrolled ? "text-slate-500" : "text-slate-400"}`}>
+                                {sub.desc}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* RIGHT COLUMN: Industry Spotlight Banner */}
+                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
+                          <div className="flex flex-col justify-start">
+                            <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
+                            <div className="mt-3 relative rounded-lg overflow-hidden border border-white/5 aspect-[16/10] bg-gradient-to-br from-[#625eff]/20 to-purple-600/20 flex items-center justify-center shadow-sm max-h-[140px]">
+                              {currentIndustriesData.spotlight.img ? (
+                                <img src={currentIndustriesData.spotlight.img} alt="Spotlight" className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xs text-slate-500">Banner Asset</span>
+                              )}
+                            </div>
+                            <h5 className="mt-4 font-bold text-[13px] leading-snug tracking-normal">
+                              {currentIndustriesData.spotlight.title}
+                            </h5>
+                          </div>
+                          <Link href="#" className="mt-4 flex items-center gap-1 text-[12px] font-semibold text-[#625eff] hover:underline pt-1">
+                            {currentIndustriesData.spotlight.cta}
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                              <line x1="5" y1="12" x2="19" y2="12" />
+                              <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
               </li>
             ))}
           </ul>
 
-          {/* ── Desktop CTA Button ── */}
+          {/* Desktop CTA Button */}
           <Link href="/contact" className="hidden lg:block">
             <button
               onMouseEnter={() => setIsButtonHovered(true)}
@@ -203,27 +467,20 @@ export default function Navbar() {
                   : "bg-[#625eff] text-white "
                 }`}
             >
-              {/* Resting: corner marks */}
               {!isButtonHovered && (
                 <>
                   <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
                   <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
-                  {/* Shine streak on button */}
                   <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                 </>
               )}
 
-              {/* Hover: animated border draw */}
               {isButtonHovered && (
                 <div className="absolute inset-1 pointer-events-none">
-                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }}
-                    className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }}
-                    className={`absolute top-0 left-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }}
-                    className={`absolute bottom-0 right-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }}
-                    className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
                 </div>
               )}
 
@@ -237,7 +494,7 @@ export default function Navbar() {
             </button>
           </Link>
 
-          {/* ── Mobile Hamburger ── */}
+          {/* Mobile Hamburger */}
           <button
             className={`lg:hidden p-2 z-50 focus:outline-none transition-colors duration-300
               ${isScrolled ? "text-[#1a194d]" : "text-white"}`}
@@ -252,7 +509,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ── Mobile Dropdown ── */}
+        {/* Mobile Dropdown */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -277,17 +534,36 @@ export default function Navbar() {
                     >
                       {item.name}
                     </Link>
-                    {item.dropdown && (
-                      <div className="flex flex-col pl-8 pr-4">
-                        {item.subItems?.map((sub) => (
+                    
+                    {/* Services Subitems Mobile */}
+                    {item.name === "Services" && item.dropdown && (
+                      <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
+                        {servicesMegaMenu.map((sub) => (
                           <Link
-                            key={sub}
-                            href={`${item.href}#${sub.toLowerCase().replace(" ", "-")}`}
+                            key={sub.id}
+                            href={`/services#${sub.id}`}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className={`py-1.5 text-[14px] transition-colors
-                              ${isScrolled ? "text-slate-500 hover:text-[#1a194d]" : "text-white/55 hover:text-white"}`}
+                            className={`py-1 text-[14px] font-semibold transition-colors
+                              ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
                           >
-                            {sub}
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Industries Subitems Mobile */}
+                    {item.name === "Industries" && item.dropdown && (
+                      <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
+                        {industriesMegaMenu.map((sub) => (
+                          <Link
+                            key={sub.id}
+                            href={`/industries#${sub.id}`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`py-1 text-[14px] font-semibold transition-colors
+                              ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
+                          >
+                            {sub.label}
                           </Link>
                         ))}
                       </div>
@@ -302,9 +578,7 @@ export default function Navbar() {
                       bg-[#625eff] text-white px-7 py-3 rounded-xl
                       font-semibold text-[15px] overflow-hidden
                       shadow-[0_4px_20px_rgba(98,94,255,0.4),inset_0_1px_0_rgba(255,255,255,0.2)]">
-                      {/* Shine */}
-                      <div className="absolute top-0 left-6 right-6 h-[1px]
-                        bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                      <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                       Get In Touch
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"/>
@@ -317,7 +591,6 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-
       </div>
     </nav>
   );
