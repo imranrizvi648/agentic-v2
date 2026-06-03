@@ -148,7 +148,7 @@ export default function ServicesCategorySection() {
               </span>
             </div>
             <h2 className="text-4xl md:text-[44px] font-extrabold text-[#1B212D]  tracking-tight mx-auto max-w-4xl leading-[1.2]">
-              Nine Services, One Operating Principle.
+              Our Services.
             </h2>
           </div>
          
