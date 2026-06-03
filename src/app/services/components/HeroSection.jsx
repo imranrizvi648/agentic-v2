@@ -22,7 +22,7 @@ export default function HeroSection() {
       <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full grid grid-cols-1 gap-8">
         
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.1] text-white max-w-4xl">
+        <h1 className="text-4xl text-[50px]  font-black tracking-tight leading-[1.1] text-white max-w-4xl">
           AI Agents That Run Inside the Systems{" "}
           <span className="text-[#1a194d]">
             You Already Use.
@@ -49,13 +49,13 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
           <Link
             href="#"
-            className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold text-sm px-7 py-4 rounded-lg shadow-lg hover:bg-indigo-500 active:scale-[0.98] transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold text-sm px-7 py-4 rounded-none shadow-lg hover:bg-indigo-500 active:scale-[0.98] transition-all duration-200"
           >
             Book a Free Consultation →
           </Link>
           <Link
             href="#"
-            className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-lg border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-none border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
           >
             See How We Work
           </Link>

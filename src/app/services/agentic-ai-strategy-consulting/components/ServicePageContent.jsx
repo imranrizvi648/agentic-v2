@@ -127,11 +127,7 @@ export default function AgenticAiStrategyConsultingContent() {
         />
         <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-indigo-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-black text-indigo-400 tracking-widest uppercase">08</span>
-            <span className="w-4 h-px bg-indigo-300" />
-            <span className="text-xs font-bold text-slate-500 tracking-wide uppercase">AI Strategy · Readiness Assessment</span>
-          </div>
+        
           <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.1] tracking-tight max-w-4xl mb-6">
             {before}<span className="text-indigo-600">{hero.highlight}</span>{after}
           </h1>

@@ -51,19 +51,14 @@ export default function CaseStudiesSection() {
         {/* Editorial Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start border-b border-slate-200 pb-12">
           <div className="lg:col-span-7 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 bg-[#625eff]" />
-              <span className="text-xs font-mono tracking-[0.18em] uppercase text-slate-400">
-                Performance Diagnostics // Case Studies
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-[1.08] text-[#1a194d] uppercase">
+           
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.08] text-[#1a194d] uppercase">
               The Difference <br />
-              An <span className="text-[#625eff]">Agent Makes.</span>
+              An Agent Makes.
             </h2>
           </div>
           
-          <div className="lg:col-span-5 lg:pt-10 space-y-4">
+          <div className="lg:col-span-5 lg:pt-2 space-y-4">
             <p className="text-xs font-mono text-[#625eff] uppercase tracking-wider">
               // VERIFIABLE OPERATIONAL OUTCOMES
             </p>

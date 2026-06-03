@@ -134,16 +134,10 @@ export default function PainPointsSection() {
         {}
         <div className="border-b border-slate-200 pb-12 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2">
-              {/* Sharp custom accent marker to replace standard rounded status indicator */}
-              <span className="w-2.5 h-2.5 bg-[#1a194d]" />
-              <span className="text-xs font-mono tracking-[0.18em] uppercase text-slate-400">
-                Operational Realities // Vol. 04
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08] text-[#1a194d]">
+           
+            <h2 className="text-4xl md:text-[44px] font-extrabold text-[#1B212D]  tracking-tight mx-auto max-w-4xl leading-[1.2]">
               You Don&apos;t Have an AI Problem. <br />
-              You Have <span className="text-[#1a194d] underline decoration-1 underline-offset-8">Expensive, Repetitive Work.</span>
+              You HaveExpensive, Repetitive Work.
             </h2>
           </div>
 

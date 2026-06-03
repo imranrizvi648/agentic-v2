@@ -629,7 +629,7 @@ export default function Navbar() {
                       bg-[#625eff] text-white px-7 py-3 rounded-xl
                       font-semibold text-[15px] overflow-hidden
                       shadow-[0_4px_20px_rgba(98,94,255,0.4),inset_0_1px_0_rgba(255,255,255,0.2)]">
-                      <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                      <div className="absolute top-0 left-6 right-6 h-[1px] bg-[#1a194d] " />
                       Get In Touch
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"/>

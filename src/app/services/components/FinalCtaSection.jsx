@@ -29,14 +29,14 @@ export default function FinalCtaSection() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
           <Link
             href="#"
-            className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold text-sm px-7 py-4 rounded-md hover:bg-indigo-700 transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-[#1a194d] text-white font-bold text-sm px-7 py-4 rounded-none hover:bg-indigo-700 transition-colors"
           >
             Book Your Free Assessment →
           </Link>
 
           <Link
             href="#"
-            className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 font-bold text-sm px-7 py-4 rounded-md border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 transition-all"
+            className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-none border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
           >
             Request a Demo
           </Link>
