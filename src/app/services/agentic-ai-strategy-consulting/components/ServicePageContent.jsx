@@ -1,100 +1,104 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const hero = {
-  headline: "A Roadmap Built on What Is Actually Buildable in Your Environment.",
-  highlight: "Actually Buildable in Your Environment.",
-  sub: "Before a line of code, we help you decide where agentic AI creates the most value. We assess readiness, score opportunities by impact and feasibility, and deliver a sequenced roadmap with measurable outcomes \u2014 grounded in your data and systems, not theoretical best practice.",
-  cta1: "Book an AI Readiness Session",
-  cta2: "See How We Assess Readiness",
-  trustLabel: "Delivered across",
-  badges: ["GCC", "South Asia", "Europe"],
+  headline: "Your Finance Team Shouldn't Be Keying the Same Invoice Twice.",
+  highlight: "Keying the Same Invoice Twice.",
+  sub: "We deploy AI agents that own Accounts Payable, Accounts Receivable, General Ledger and month-end close \u2014 end to end, natively inside your ERP. The agent finishes the job. No manual steps in the middle. No exceptions batch that sits for days.",
+  cta1: "Book a Free Finance Assessment",
+  cta2: "See How Agents Work",
+  trustLabel: "Built for enterprise on",
+  badges: ["SAP Business One", "Oracle Fusion Cloud", "Microsoft Fabric"],
 };
 
 const overview = {
-  heading: "Most AI Strategies Look Great on a Slide. Ours Work in Your Environment.",
-  lead: "The gap between an AI strategy and working AI is almost always a readiness problem \u2014 not a technology problem. The data is incomplete. The ERP doesn't expose the right APIs. The controls aren't in place.",
-  body: "Our strategy and readiness practice delivers an honest, actionable assessment of where agentic AI creates real value in your organisation \u2014 and a sequenced delivery roadmap that separates what is deployable today from what needs to be built first.",
+  heading: "Autonomous Finance \u2014 Built at the Level of the Posting Logic",
+  lead: "Finance automation fails when it stops at extraction. Our agents go all the way \u2014 they capture, validate, match, post and reconcile inside your ERP \u2014 so your team reviews exceptions, not data.",
+  body: "This is our flagship practice. We understand AP, AR, GL and the month-end close at the level of the posting logic, matching rules and intercompany controls \u2014 not the slide. Every agent ships with full audit logging, configurable approval gates and human-in-the-loop review on the exceptions that genuinely need judgement.",
   stats: [
-  { val: "Written", label: "Success metrics agreed before build" },
-  { val: "ROI", label: "Use cases scored by impact and feasibility" },
-  { val: "Now vs.", label: "Deployable today vs. future state" },
-  { val: "One", label: "Team from strategy through to production" },
-],
+    { val: "100%", label: "Actions audit-logged" },
+    { val: "3-Way", label: "PO/GRN match standard" },
+    { val: "0", label: "Manual ERP steps mid-workflow" },
+    { val: "Weeks", label: "Pilot to production" },
+  ],
   cards: [
-  { title: "AI Readiness Assessment", body: "Systematic review of your data quality, ERP API access, controls infrastructure and process maturity \u2014 honest about gaps." },
-  { title: "Use-Case Prioritisation", body: "Opportunities scored by ROI, automation feasibility, data readiness and risk \u2014 so you invest where impact is highest." },
-  { title: "Target Architecture", body: "Platform selection, integration model and governance framework \u2014 the architecture that supports a five-year AI programme." },
-  { title: "Sequenced Delivery Roadmap", body: "A phased execution plan with milestones, success metrics and clear ownership \u2014 ready to move into delivery without a separate planning phase." },
-],
+    { title: "AP \u2014 Accounts Payable", body: "Invoice capture, 2- and 3-way PO/GRN matching, exception handling and straight-through posting to your ERP." },
+    { title: "AR \u2014 Accounts Receivable", body: "Invoice generation, collections follow-up, cash application and dispute triage \u2014 all agent-driven." },
+    { title: "GL & Reconciliations", body: "Journal preparation, intercompany matching and balance-sheet reconciliation with variance flagging." },
+    { title: "Month-End Close", body: "Task orchestration, accruals, variance analysis and close-status reporting \u2014 the close your team has been waiting for." },
+  ],
 };
 
 const benefits = [
-  { icon: "\ud83d\uddfa", title: "Investment goes where it creates value", body: "Use cases prioritised by ROI and feasibility \u2014 not vendor recommendations or executive enthusiasm. The highest-value opportunities get resourced first." },
-  { icon: "\ud83d\udeab", title: "Failed pilots stopped before they start", body: "We identify the blockers \u2014 data quality, API gaps, control weaknesses \u2014 before they surface as expensive problems mid-build." },
-  { icon: "\ud83d\udcd0", title: "Architecture that supports the full programme", body: "Platform and integration decisions made once, correctly \u2014 not retrofitted at each new use case as the programme expands." },
-  { icon: "\u2705", title: "Success metrics agreed before spend commits", body: "Every use case in the roadmap has clear, measurable outcomes agreed in writing \u2014 so ROI validation is built in, not argued about after delivery." },
-  { icon: "\ud83d\udd17", title: "One team from strategy to production", body: "The same team that assesses your readiness builds your agents. No translation loss between strategy and engineering. No handoff risk." },
-  { icon: "\ud83c\udfe6", title: "Board-ready output", body: "The readiness assessment and roadmap are structured to support executive decision-making and board-level investment approval." },
+  { icon: "\u26a1", title: "Processing time cut \u2014 not trimmed", body: "Invoices that moved in days move in minutes. Not because someone works faster, but because the agent never stops between steps." },
+  { icon: "\ud83d\udd12", title: "Every action is auditable", body: "Every decision, match, post and exception flag is logged. You have a complete audit trail that survives the next compliance review." },
+  { icon: "\ud83c\udfaf", title: "Human attention goes where it matters", body: "Your team reviews the exceptions that genuinely need judgement. The rest \u2014 the 80\u201390% that follows the rules \u2014 the agent handles without interruption." },
+  { icon: "\ud83d\udcca", title: "Month-end closes faster", body: "Close-orchestration agents prepare journals, reconcile and surface variances while the period is still open \u2014 not after it's too late." },
+  { icon: "\ud83d\udee1", title: "No brittle middleware", body: "Built natively on SAP Service Layer and Oracle Fusion REST APIs. Your automation survives the next ERP upgrade without a rebuild." },
+  { icon: "\ud83c\udf10", title: "Multi-entity ready", body: "One deployment can span multiple business units, currencies and entity structures \u2014 with consolidated reporting built in." },
 ];
 
 const features = [
-  { num: "D", title: "Data readiness", body: "Quality, completeness, accessibility and governance of your data. We assess whether your data can support the models and pipelines the use cases require." },
-  { num: "S", title: "Systems readiness", body: "ERP API coverage, integration architecture, authentication infrastructure and the technical feasibility of connecting AI to your systems of record." },
-  { num: "C", title: "Controls readiness", body: "Audit trail requirements, segregation of duties, approval structures and compliance constraints \u2014 the governance foundations your agents must respect." },
-  { num: "P", title: "Process readiness", body: "Documentation quality, exception rate, volume and standardisation of target processes \u2014 determining what can be automated immediately." },
-  { num: "01", title: "Use-case discovery", body: "Structured workshops to identify and capture automation opportunities across finance and operations \u2014 from your team's lived experience." },
-  { num: "02", title: "ROI and feasibility scoring", body: "Each use case scored on volume, manual effort cost, automation complexity, data readiness and risk \u2014 producing a prioritised shortlist." },
-  { num: "03", title: "Platform and architecture recommendation", body: "Target ERP integration model, AI infrastructure, data layer and governance framework \u2014 aligned to your existing landscape." },
-  { num: "04", title: "Delivery roadmap and success metrics", body: "Phased execution plan with milestones, resource requirements, dependencies and measurable success criteria \u2014 ready to present to the board." },
+  { num: "01", title: "Multi-channel invoice intake", body: "Email webhook, web upload and API ingestion \u2014 the agent captures from wherever invoices arrive." },
+  { num: "02", title: "Vision-AI data extraction", body: "High-accuracy extraction from PDFs, scanned documents and structured forms \u2014 no templates required." },
+  { num: "03", title: "2-way and 3-way matching", body: "Automated PO and GRN matching with configurable tolerances and vendor-specific rules." },
+  { num: "04", title: "Straight-through ERP posting", body: "Clean transactions post directly to SAP Business One or Oracle Fusion \u2014 no intermediary staging." },
+  { num: "05", title: "Exception queues with context", body: "Exceptions surface with the matching evidence, not just a flag \u2014 so reviewers decide faster." },
+  { num: "06", title: "Collections and cash application", body: "AR agents follow up on outstanding invoices, apply cash receipts and triage disputes without a human touchpoint." },
+  { num: "07", title: "Journal and accruals automation", body: "GL agents draft recurring journals, calculate accruals and flag variance against budget or prior period." },
+  { num: "08", title: "Close-status dashboard", body: "Real-time visibility of close progress, open items and outstanding reconciliations \u2014 for finance leadership." },
 ];
 
 const process = [
-  { num: "01", title: "Landscape Review", body: "We review your ERP, data infrastructure, existing automation and control environment \u2014 without requiring extensive internal preparation." },
-  { num: "02", title: "Discovery Workshops", body: "Structured sessions with finance, operations and IT leaders to surface automation opportunities from lived experience." },
-  { num: "03", title: "Readiness Scoring", body: "Each opportunity assessed across data, systems, controls and process dimensions \u2014 producing an honest, evidence-based readiness score." },
-  { num: "04", title: "Roadmap Design", body: "Prioritised use cases sequenced into a delivery programme with milestones, success metrics and investment stages." },
-  { num: "05", title: "Handover to Delivery", body: "The same team moves into the build phase \u2014 strategy and delivery are continuous, not handed off between teams." },
+  { num: "01", title: "Discover", body: "We map your AP/AR/GL workflows, volumes and pain points, and separate what is deployable immediately from what needs to be built." },
+  { num: "02", title: "Design", body: "Target architecture, matching rules, approval gates, exception handling logic and success metrics \u2014 agreed in writing before build." },
+  { num: "03", title: "Build", body: "Agent development against your real ERP data and integration constraints. We prove it works in your environment, not a sandbox." },
+  { num: "04", title: "Deploy", body: "Production go-live with monitoring, audit logging, human-in-the-loop checkpoints and safeguards active from day one." },
+  { num: "05", title: "Scale", body: "Expand coverage across AP, AR, GL, close and into adjacent processes \u2014 with continuous tuning and performance reporting." },
 ];
 
 const whyUs = {
-  heading: "Strategy Built by the Team That Will Execute It",
+  heading: "Finance-First, ERP-Native \u2014 and Accountable for Results",
   points: [
-  { title: "Grounded in what is actually buildable", body: "We assess what your ERP APIs, data quality and controls infrastructure can support \u2014 including the parts where the answer is 'not yet'." },
-  { title: "One team from assessment to production", body: "The people who assess your environment are the people who build in it. No translation loss. No handoff. No strategy that ignores implementation reality." },
-  { title: "Honest about the blockers", body: "If your data quality is poor or your API access is limited, we tell you \u2014 before you commit budget to a build that will fail for the same reasons." },
-  { title: "Board-ready deliverables", body: "The readiness assessment and roadmap are structured for executive consumption \u2014 investment stages, success metrics and risk disclosure included." },
-],
+    { title: "We understand the posting logic, not just the language", body: "We have built production agents that post invoices, apply cash and prepare journals inside SAP and Oracle. That depth is not available from a general AI consultancy." },
+    { title: "No manual steps \u2014 by design, not by aspiration", body: "Full end-to-end automation is a contractual standard on every finance engagement. The agent finishes the workflow." },
+    { title: "Official APIs \u2014 no fragile middleware", body: "We build on SAP Service Layer and Oracle Fusion REST APIs. Your automation survives upgrades because it uses the same interfaces SAP and Oracle maintain." },
+    { title: "One team from roadmap to production", body: "No handoffs between strategy and build teams. The people who design your agent build it, deploy it and support it post-launch." },
+  ],
   box: {
-    heading: "Honest Before the Build Starts",
-    body: "We will tell you what is deployable today and what needs to be addressed first \u2014 including the difficult parts.",
+    heading: "Built for Your Compliance Environment",
+    body: "Enterprise finance has non-negotiable requirements: segregation of duties, audit trails, access controls and regulatory reporting. We build these in from day one \u2014 not retrofitted before the audit.",
     stats: [
-  { val: "4D", label: "Data, Systems, Controls, Process assessed" },
-  { val: "ROI", label: "Every use case scored by impact" },
-  { val: "Board", label: "Ready output for investment approval" },
-],
+      { val: "100%", label: "Agent actions logged and traceable" },
+      { val: "0", label: "Third-party connectors in our builds" },
+      { val: "HITL", label: "Human-in-loop on every exception" },
+    ],
   },
 };
 
 const faqs = [
-  { q: "We already have an AI strategy from a consultancy. Why do we need yours?", a: "Most AI strategies are produced by firms that do not build the systems. They are optimised for the strategy presentation, not for what happens when someone tries to build it. Our assessment is grounded in what your actual ERP APIs, data quality and controls infrastructure can support." },
-  { q: "How long does a readiness assessment take?", a: "A focused assessment covering your core finance and operations landscape typically takes two to four weeks, depending on your organisation's complexity and availability. We are explicit about scope and timeline before starting." },
-  { q: "What if the assessment shows we are not ready for AI yet?", a: "That is a valid and valuable outcome. We will tell you what needs to be addressed first \u2014 data gaps, API access, process documentation \u2014 and give you a clear path to readiness. An honest assessment that saves you an expensive failed pilot is worth far more than a roadmap that ignores the blockers." },
-  { q: "Is the assessment separate from the build, or does the same team continue?", a: "The same team continues. This is a deliberate design choice \u2014 no translation loss between the people who assessed your environment and the people building in it. Strategy and delivery are a continuous engagement, not two separate contracts." },
+  { q: "Do your AP agents need our team to manually approve every invoice?", a: "No. Invoices that meet your matching rules and tolerance thresholds post straight through without any human action. Only genuine exceptions \u2014 mismatches, missing POs, tolerance overruns \u2014 are routed for review, with the evidence attached so decisions take seconds, not minutes." },
+  { q: "Which ERPs do you integrate with for finance automation?", a: "Our primary finance platforms are SAP Business One (via Service Layer REST API and SAP HANA), Oracle Fusion Cloud (via REST APIs and OCI GenAI Agents) and Microsoft Fabric. We also support NetSuite, Odoo and Zoho Books for AP/AR workflows." },
+  { q: "How do you handle multi-entity or multi-currency environments?", a: "We build for your entity structure from the start \u2014 including intercompany transactions, currency revaluation and consolidated reporting requirements. Multi-entity setups are a standard delivery pattern, not a custom add-on." },
+  { q: "What happens if the agent encounters a document it can't process?", a: "The agent routes it to your exception queue with context \u2014 what it extracted, what it couldn't verify, and which rule it failed against. Your team makes the call with full information. The agent never discards a document silently." },
+  { q: "Can we start with just AP before expanding to AR and close?", a: "Yes. Most engagements start with one high-volume, well-defined workflow \u2014 typically AP \u2014 prove value in production, then expand. You are never committed to a full rollout before seeing results." },
 ];
 
 const cta = {
-  heading: "Before You Commit Budget to an AI Build, Know Exactly What You Are Committing to.",
-  body: "A free readiness session gives you an honest view of where agentic AI creates value in your environment, what the blockers are and what a realistic first step looks like \u2014 at no cost and no obligation to proceed.",
-  cta1: "Book a Free Readiness Session",
-  cta2: "Download Our Readiness Framework",
+  heading: "Tell Us the Workflow That Costs Your Finance Team the Most Time.",
+  body: "In a free Finance Automation Assessment, we will map your single highest-value opportunity, sketch how an agent handles it inside your ERP, and give you an honest view of effort, impact and what is deployable today \u2014 at no cost and no obligation.",
+  cta1: "Book Your Free Assessment",
+  cta2: "Request a Demo",
 };
 
 const relatedServices = [
-  { title: "Agentic AI for the Office of Finance", slug: "/services/agentic-ai-finance", number: "01" },
+  { title: "Enterprise ERP & CRM-Native AI Integration", slug: "/services/erp-crm-ai-integration", number: "02" },
+  { title: "Intelligent Document Processing & Invoice Automation", slug: "/services/intelligent-document-processing", number: "03" },
   { title: "AI Governance, Security & MLOps", slug: "/services/ai-governance-security-mlops", number: "09" },
-  { title: "Custom AI Agent Development", slug: "/services/custom-ai-agent-development", number: "04" },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -110,43 +114,306 @@ function SectionLabel({ text }) {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-export default function AgenticAiStrategyConsultingContent() {
+export default function AgenticAiFinanceContent() {
   const [before, after] = hero.headline.split(hero.highlight);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let raf, W, H;
+    let mouse = { x: -999, y: -999 };
+
+    const resize = () => {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    };
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(canvas);
+
+    const onMouse = (e) => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    };
+    const onLeave = () => { mouse.x = -999; mouse.y = -999; };
+    canvas.addEventListener("mousemove", onMouse);
+    canvas.addEventListener("mouseleave", onLeave);
+
+    /* ── Bezier lines ── */
+    const COUNT = 24;
+    const buildLines = () =>
+      Array.from({ length: COUNT }, (_, i) => {
+        const t = i / (COUNT - 1);
+        return {
+          sx:   W * (0.42 + t * 0.62), sy: 0,
+          ex:   W * (-0.08 + t * 0.55), ey: H * (0.82 + t * 0.22),
+          cp1x: W * (0.52 + t * 0.32), cp1y: H * (0.06 + t * 0.04),
+          cp2x: W * (0.28 + t * 0.28), cp2y: H * (0.52 + t * 0.18),
+          alpha: 0.04 + t * 0.07,
+          width: 0.4 + t * 0.25,
+        };
+      });
+    let lines = buildLines();
+    const roLines = new ResizeObserver(() => { lines = buildLines(); });
+    roLines.observe(canvas);
+
+    /* ── Palette ── */
+    const PALETTE = [
+      [148, 130, 255],
+      [98,  94,  255],
+      [180, 170, 255],
+      [80,  120, 255],
+      [200, 190, 255],
+      [255, 255, 255],
+      [120, 200, 255],
+    ];
+
+    /* ── Particle class ── */
+    class P {
+      constructor(init) { this.spawn(init); }
+      spawn(init = false) {
+        this.x    = Math.random() * W;
+        this.y    = init ? Math.random() * H : H + 8;
+        const speed = Math.random() * 1.8 + 0.6;
+        const angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.9;
+        this.vx   = Math.cos(angle) * speed;
+        this.vy   = Math.sin(angle) * speed;
+        this.col  = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+        this.life  = 1;
+        this.decay = Math.random() * 0.006 + 0.003;
+        const rnd = Math.random();
+        if (rnd < 0.08) {
+          this.type = "orb";
+          this.r    = Math.random() * 5 + 3;
+          this.decay *= 0.4;
+          this.pulse = Math.random() * Math.PI * 2;
+          this.pulseSpeed = Math.random() * 0.06 + 0.03;
+        } else if (rnd < 0.22) {
+          this.type = "star";
+          this.r    = Math.random() * 2 + 1.2;
+          this.rot  = Math.random() * Math.PI;
+          this.rotSpeed = (Math.random() - 0.5) * 0.08;
+        } else {
+          this.type = "dot";
+          this.r    = Math.random() * 1.4 + 0.3;
+          this.vx   *= 1.4;
+          this.vy   *= 1.4;
+        }
+      }
+      update() {
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 160 * 160) {
+          const d = Math.sqrt(d2);
+          const f = (160 - d) / 160;
+          this.vx += (dx / d) * f * 1.2;
+          this.vy += (dy / d) * f * 1.2;
+        }
+        const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        if (spd > 4) { this.vx = (this.vx / spd) * 4; this.vy = (this.vy / spd) * 4; }
+        this.x  += this.vx;
+        this.y  += this.vy;
+        this.vx *= 0.97;
+        this.vy *= 0.97;
+        this.life -= this.decay;
+        if (this.type === "orb")  this.pulse += this.pulseSpeed;
+        if (this.type === "star") this.rot   += this.rotSpeed;
+        if (this.life <= 0 || this.y < -12 || this.x < -20 || this.x > W + 20) this.spawn();
+      }
+      draw() {
+        const [r, g, b] = this.col;
+        const a = this.life;
+        ctx.save();
+        if (this.type === "orb") {
+          const pr = this.r * (1 + 0.3 * Math.sin(this.pulse));
+          ctx.globalAlpha = a * 0.6;
+          ctx.shadowBlur  = 20;
+          ctx.shadowColor = `rgb(${r},${g},${b})`;
+          const grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, pr * 3);
+          grd.addColorStop(0,   `rgba(${r},${g},${b},1)`);
+          grd.addColorStop(0.4, `rgba(${r},${g},${b},0.5)`);
+          grd.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+          ctx.fillStyle = grd;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, pr * 3, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (this.type === "star") {
+          ctx.globalAlpha = a * 0.85;
+          ctx.shadowBlur  = 8;
+          ctx.shadowColor = `rgb(${r},${g},${b})`;
+          ctx.fillStyle   = `rgba(${r},${g},${b},1)`;
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rot);
+          ctx.beginPath();
+          const s = this.r;
+          for (let k = 0; k < 8; k++) {
+            const ang = (k * Math.PI) / 4;
+            const rad = k % 2 === 0 ? s : s * 0.4;
+            k === 0
+              ? ctx.moveTo(Math.cos(ang) * rad, Math.sin(ang) * rad)
+              : ctx.lineTo(Math.cos(ang) * rad, Math.sin(ang) * rad);
+          }
+          ctx.closePath();
+          ctx.fill();
+        } else {
+          ctx.globalAlpha = a * 0.9;
+          ctx.shadowBlur  = 6;
+          ctx.shadowColor = `rgb(${r},${g},${b})`;
+          ctx.fillStyle   = `rgba(${r},${g},${b},1)`;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
+    const particles = Array.from({ length: 130 }, () => new P(true));
+
+    /* ── Connection lines ── */
+    const drawLinks = () => {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < 75 * 75) {
+            const d = Math.sqrt(d2);
+            const alpha = (1 - d / 75) * 0.18 * Math.min(particles[i].life, particles[j].life);
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            const [r1,g1,b1] = particles[i].col;
+            const [r2,g2,b2] = particles[j].col;
+            const lg = ctx.createLinearGradient(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
+            lg.addColorStop(0, `rgb(${r1},${g1},${b1})`);
+            lg.addColorStop(1, `rgb(${r2},${g2},${b2})`);
+            ctx.strokeStyle = lg;
+            ctx.lineWidth   = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      }
+    };
+
+    let tick = 0;
+    const draw = () => {
+      tick++;
+      ctx.globalCompositeOperation = "source-over";
+      ctx.fillStyle = "rgba(26,25,77,0.55)";
+      ctx.fillRect(0, 0, W, H);
+
+      const depth = ctx.createLinearGradient(0, 0, W, H);
+      depth.addColorStop(0,   "rgba(6,5,28,0.3)");
+      depth.addColorStop(0.5, "rgba(26,25,77,0)");
+      depth.addColorStop(1,   "rgba(10,8,38,0.25)");
+      ctx.fillStyle = depth;
+      ctx.fillRect(0, 0, W, H);
+
+      const glow = ctx.createRadialGradient(W * 0.9, 0, 0, W * 0.9, 0, W * 0.52);
+      glow.addColorStop(0,   "rgba(98,94,255,0.14)");
+      glow.addColorStop(0.5, "rgba(98,94,255,0.05)");
+      glow.addColorStop(1,   "rgba(98,94,255,0)");
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, W, H);
+
+      drawLinks();
+      particles.forEach(p => { p.update(); p.draw(); });
+
+      lines.forEach((l, i) => {
+        const drift = Math.sin(tick * 0.004 + i * 0.38) * (H * 0.006);
+        ctx.save();
+        ctx.globalAlpha = l.alpha;
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth   = l.width;
+        ctx.lineCap     = "round";
+        ctx.beginPath();
+        ctx.moveTo(l.sx, l.sy);
+        ctx.bezierCurveTo(l.cp1x, l.cp1y + drift, l.cp2x, l.cp2y + drift * 0.5, l.ex, l.ey);
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      raf = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      roLines.disconnect();
+      canvas.removeEventListener("mousemove", onMouse);
+      canvas.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
 
   return (
     <main>
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-indigo-50/40 pt-32 pb-20 overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.025]"
-          style={{
-            backgroundImage: `linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)`,
-            backgroundSize: "48px 48px",
-          }}
+      {/* ── Hero (Now with Canvas and Premium Theme) ─────────────────────────── */}
+      <section className="relative w-full min-h-[85vh] bg-[#1a194d] overflow-hidden flex items-center font-sans pt-32 pb-20">
+        <canvas
+          ref={canvasRef}
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full block"
         />
-        <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-indigo-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6">
-        
-          <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.1] tracking-tight max-w-4xl mb-6">
-            {before}<span className="text-indigo-600">{hero.highlight}</span>{after}
+
+        {/* Left vignette */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[rgba(18,16,60,0.85)] via-[rgba(18,16,60,0.55)] to-transparent"
+        />
+
+        {/* Bottom fade */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[rgba(26,25,77,0.85)] to-transparent pointer-events-none"
+        />
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+            {before}<span className="text-[#9482ff]">{hero.highlight}</span>{after}
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-10">{hero.sub}</p>
+          <p className="text-base sm:text-lg leading-relaxed text-white/70 max-w-2xl mb-10">
+            {hero.sub}
+          </p>
+          
+          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
-            <Link href="#" className="inline-flex items-center gap-2 bg-indigo-600 text-white font-bold text-sm px-6 py-3.5 rounded-md hover:bg-indigo-700 transition-colors">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-[#625eff] text-white font-bold text-sm px-6 py-3.5 rounded-md hover:bg-[#4b47e6] transition-colors shadow-lg shadow-indigo-950/50">
               {hero.cta1} →
             </Link>
-            <Link href="#" className="inline-flex items-center gap-2 bg-white text-slate-700 font-bold text-sm px-6 py-3.5 rounded-md border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 transition-all">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-sm px-6 py-3.5 rounded-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all">
               {hero.cta2}
             </Link>
           </div>
+
+          {/* Badges */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{hero.trustLabel}</span>
+            <span className="text-xs font-semibold text-white/40 uppercase tracking-wide">
+              {hero.trustLabel}
+            </span>
             {hero.badges.map((b) => (
-              <span key={b} className="text-xs font-semibold text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-full shadow-sm">{b}</span>
+              <span key={b} className="text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                {b}
+              </span>
             ))}
           </div>
         </div>
+
+        {/* Bottom accent line */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(98,94,255,0.45)] to-transparent z-10 pointer-events-none"
+        />
       </section>
 
       {/* ── Overview ─────────────────────────────────────────── */}
