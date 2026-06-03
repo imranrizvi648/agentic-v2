@@ -1,71 +1,109 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Services Mega Menu Data
+// Services Mega Menu Data — with slug for routing
 const servicesMegaMenu = [
   {
     id: "AI and Data Innovation",
     label: "AI & Data Innovation",
+    href: "/services/agentic-ai-finance",
     subServices: [
-      { title: "AI Agents", isNew: true, desc: "Use AI agents to streamline workflows, decisions, and cut costs." },
-      { title: "Intelligent Automation", desc: "Streamline operations with intelligent automation that boosts efficiency." },
-      { title: "Genai Models", desc: "Connect silos, modernize pipelines, and deliver reliable data for AI." },
+      {
+        title: "Agentic AI for the Office of Finance",
+        href: "/services/agentic-ai-finance",
+        isNew: true,
+        desc: "AI agents that own AP, AR, GL and month-end close — end to end, natively inside your ERP.",
+      },
+      {
+        title: "Enterprise ERP & CRM-Native AI Integration",
+        href: "/services/erp-crm-ai-integration",
+        desc: "Connect AI agents directly to SAP B1, Oracle Fusion, NetSuite and Salesforce via official APIs.",
+      },
+      {
+        title: "Intelligent Document Processing",
+        href: "/services/intelligent-document-processing",
+        desc: "Turn unstructured invoices and vendor documents into posted, reconciled ERP transactions.",
+      },
     ],
     spotlight: {
       title: "Generative AI in Business Operations: C-Suite AI Adoption Strategies",
       cta: "Get the white paper",
-      img: "/spotlight-ai.png", 
-    }
+      img: "/spotlight-ai.png",
+    },
   },
   {
     id: "Automation Excellence",
     label: "Automation Excellence",
+    href: "/services/business-process-automation",
     subServices: [
-      { title: "Process Automation", desc: "Design user experiences that cut friction and improve performance." },
-      { title: "Enterprise AI", desc: "Build web, mobile, and enterprise products with strong architecture." },
-      { title: "Workflow Sync", desc: "Build AI software with scalable models, clean data, and security." },
+      {
+        title: "Business Process Automation Beyond Finance",
+        href: "/services/business-process-automation",
+        desc: "Extend agentic AI into procurement, HR, supply chain and IT operations.",
+      },
+      {
+        title: "Custom AI Agent Development",
+        href: "/services/custom-ai-agent-development",
+        desc: "Bespoke multi-agent systems built with LangGraph, FastAPI and enterprise-grade LLMs.",
+      },
+      {
+        title: "Conversational AI & Enterprise Copilots",
+        href: "/services/conversational-ai-enterprise-copilots",
+        desc: "Let your teams query ERP data in plain language — permission-aware, grounded in live records.",
+      },
     ],
     spotlight: {
       title: "Modernizing Legacy Apps for the AI Era",
       cta: "Watch Now",
       img: "/spotlight-eng.png",
-    }
+    },
   },
   {
     id: "Strategic AI Solution",
     label: "Strategic AI Solution",
+    href: "/services/agentic-ai-strategy-consulting",
     subServices: [
-      { title: "AI Consulting", desc: "Align teams, validate assumptions, and uncover risks through discovery." },
-      { title: "Digital Strategy", desc: "Align teams with a shared vision, user insights, and a roadmap for growth." },
-      { title: "Roi Analysis", desc: "Evaluate new tech and evolve your architecture, data, and workflows." },
+      {
+        title: "Agentic AI Strategy & Readiness Consulting",
+        href: "/services/agentic-ai-strategy-consulting",
+        desc: "A prioritised roadmap built on what is actually buildable in your environment.",
+      },
+      {
+        title: "Data Intelligence & Decision Analytics",
+        href: "/services/data-intelligence-decision-analytics",
+        desc: "Predictive analytics, anomaly detection and decision-support agents on Microsoft Fabric and Oracle.",
+      },
     ],
     spotlight: {
       title: "How Businesses Can Move Past the AI Pilot Phase",
       cta: "Watch Now",
       img: "/spotlight-advisory.png",
-    }
+    },
   },
   {
     id: "Conversational AI",
-    label: "Conversational AI",
+    label: "AI Governance & Security",
+    href: "/services/ai-governance-security-mlops",
     subServices: [
-      { title: "Chatbots Dev", desc: "Audit your systems and pipelines to uncover bottlenecks and risks." },
-      { title: "Multi-Lingual", desc: "Optimize cycle times by fixing and automating inefficient workflows." },
-      { title: "Support & Maintenance", desc: "Stabilize and secure your apps with ongoing maintenance and support." },
+      {
+        title: "AI Governance, Security & MLOps",
+        href: "/services/ai-governance-security-mlops",
+        desc: "Audit-ready agents — monitored, controlled and accountable from day one.",
+      },
     ],
     spotlight: {
       title: "The Ultimate Guide to Boost Application Performance",
       cta: "Read More",
       img: "/spotlight-opt.png",
-    }
+    },
   },
 ];
 
-// Industries Mega Menu Data (Updated exactly per your list)
+// Industries Mega Menu Data (unchanged)
 const industriesMegaMenu = [
-
   {
     id: "Finance And Banking",
     label: "Finance And Banking",
@@ -78,7 +116,7 @@ const industriesMegaMenu = [
       title: "The Future of Smart Data Management in Capital Markets",
       cta: "Download Playbook",
       img: "/spotlight-finance.png",
-    }
+    },
   },
   {
     id: "Healthcare",
@@ -92,9 +130,8 @@ const industriesMegaMenu = [
       title: "Transforming Modern Healthcare with Agentic Frameworks",
       cta: "Read Industry Report",
       img: "/spotlight-health.png",
-    }
+    },
   },
-  
   {
     id: "Real Estate",
     label: "Real Estate",
@@ -107,7 +144,7 @@ const industriesMegaMenu = [
       title: "Maximizing Digital Assets and Property Returns via Advanced AI",
       cta: "Watch Webinar",
       img: "/spotlight-estate.png",
-    }
+    },
   },
   {
     id: "E-commerce",
@@ -121,7 +158,7 @@ const industriesMegaMenu = [
       title: "Scaling Modern Enterprise Stores to New Peaks",
       cta: "View Case Study",
       img: "/spotlight-ecommerce.png",
-    }
+    },
   },
   {
     id: "Education",
@@ -135,29 +172,39 @@ const industriesMegaMenu = [
       title: "Reimagining Digital Education Ecosystems globally",
       cta: "Get White Paper",
       img: "/spotlight-edu.png",
-    }
-  }
+    },
+  },
 ];
 
 const navItems = [
-  { name: "Home",       href: "/",          dropdown: false },
-  { name: "Services",   href: "/services",  dropdown: true }, 
-  { name: "Industries", href: "/industries", dropdown: true }, // Set dropdown true for Industries
-  { name: "Blog",       href: "/blog",      dropdown: false },
-  { name: "About",      href: "/about",     dropdown: false },
-  { name: "Contact Us", href: "/contact",   dropdown: false },
+  { name: "Home",       href: "/",           dropdown: false },
+  { name: "Services",   href: "/services",   dropdown: true  },
+  { name: "Industries", href: "/industries", dropdown: true  },
+  { name: "Blog",       href: "/blog",       dropdown: false },
+  { name: "About",      href: "/about",      dropdown: false },
+  { name: "Contact Us", href: "/contact",    dropdown: false },
 ];
 
 export default function Navbar() {
-  const [activeTab,        setActiveTab]        = useState("Home");
+  const pathname = usePathname();
+
   const [hoveredTab,       setHoveredTab]       = useState(null);
   const [isScrolled,       setIsScrolled]       = useState(false);
   const [isButtonHovered,  setIsButtonHovered]  = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Separate inner state for both mega menus
-  const [activeServicesTab, setActiveServicesTab] = useState(servicesMegaMenu[0].id);
+  const [activeServicesTab,   setActiveServicesTab]   = useState(servicesMegaMenu[0].id);
   const [activeIndustriesTab, setActiveIndustriesTab] = useState(industriesMegaMenu[0].id);
+
+  // Derive active nav item from the current URL — no more useState for activeTab
+  const getActiveTab = () => {
+    if (pathname === "/") return "Home";
+    const match = navItems.find(
+      (item) => item.href !== "/" && pathname.startsWith(item.href)
+    );
+    return match ? match.name : null;
+  };
+  const activeTab = getActiveTab();
 
   useEffect(() => {
     const sentinel = document.createElement("div");
@@ -172,8 +219,8 @@ export default function Navbar() {
     return () => { observer.disconnect(); sentinel.remove(); };
   }, []);
 
-  const currentServicesData = servicesMegaMenu.find(item => item.id === activeServicesTab) || servicesMegaMenu[0];
-  const currentIndustriesData = industriesMegaMenu.find(item => item.id === activeIndustriesTab) || industriesMegaMenu[0];
+  const currentServicesData   = servicesMegaMenu.find((i) => i.id === activeServicesTab)   || servicesMegaMenu[0];
+  const currentIndustriesData = industriesMegaMenu.find((i) => i.id === activeIndustriesTab) || industriesMegaMenu[0];
 
   return (
     <nav
@@ -231,7 +278,6 @@ export default function Navbar() {
                 key={item.name}
                 className={`${item.dropdown ? "static" : "relative"} cursor-pointer`}
                 onMouseEnter={() => setHoveredTab(item.name)}
-                onClick={() => setActiveTab(item.name)}
               >
                 <Link href={item.href}>
                   <div
@@ -278,7 +324,7 @@ export default function Navbar() {
                   </div>
                 </Link>
 
-                {/* MEGA MENU: SERVICES DROPDOWN */}
+                {/* ── MEGA MENU: SERVICES ───────────────────────────────────── */}
                 {item.name === "Services" && item.dropdown && (
                   <AnimatePresence>
                     {hoveredTab === item.name && (
@@ -293,7 +339,7 @@ export default function Navbar() {
                             : "bg-[#0b0a14]/95 border-white/10 text-white"
                           }`}
                       >
-                        {/* LEFT COLUMN: Main Categories */}
+                        {/* LEFT: Categories */}
                         <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
                           {servicesMegaMenu.map((menuItem) => (
                             <button
@@ -309,7 +355,7 @@ export default function Navbar() {
                                 }`}
                             >
                               <span>{menuItem.label}</span>
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" 
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
                                 className={`transition-transform duration-200 ${activeServicesTab === menuItem.id ? "translate-x-1" : ""}`}>
                                 <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
@@ -317,10 +363,15 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* CENTER COLUMN: Sub-services Grid */}
+                        {/* CENTER: Sub-services — each item is a real Link */}
                         <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
                           {currentServicesData.subServices.map((sub, idx) => (
-                            <div key={idx} className="group/item flex flex-col gap-1.5 cursor-pointer">
+                            <Link
+                              key={idx}
+                              href={sub.href}
+                              onClick={() => setHoveredTab(null)}
+                              className="group/item flex flex-col gap-1.5 cursor-pointer"
+                            >
                               <h4 className="font-bold text-[14.5px] flex items-center gap-2 group-hover/item:text-[#625eff] transition-colors">
                                 {sub.title}
                                 {sub.isNew && (
@@ -332,11 +383,11 @@ export default function Navbar() {
                               <p className={`text-[12.5px] leading-relaxed ${isScrolled ? "text-slate-500" : "text-slate-400"}`}>
                                 {sub.desc}
                               </p>
-                            </div>
+                            </Link>
                           ))}
                         </div>
 
-                        {/* RIGHT COLUMN: Spotlight Banner */}
+                        {/* RIGHT: Spotlight */}
                         <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
                           <div className="flex flex-col justify-start">
                             <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
@@ -364,7 +415,7 @@ export default function Navbar() {
                   </AnimatePresence>
                 )}
 
-                {/* MEGA MENU: INDUSTRIES DROPDOWN */}
+                {/* ── MEGA MENU: INDUSTRIES ─────────────────────────────────── */}
                 {item.name === "Industries" && item.dropdown && (
                   <AnimatePresence>
                     {hoveredTab === item.name && (
@@ -379,7 +430,7 @@ export default function Navbar() {
                             : "bg-[#0b0a14]/95 border-white/10 text-white"
                           }`}
                       >
-                        {/* LEFT COLUMN: Main Industries */}
+                        {/* LEFT: Industries */}
                         <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
                           {industriesMegaMenu.map((menuItem) => (
                             <button
@@ -395,7 +446,7 @@ export default function Navbar() {
                                 }`}
                             >
                               <span>{menuItem.label}</span>
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" 
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
                                 className={`transition-transform duration-200 ${activeIndustriesTab === menuItem.id ? "translate-x-1" : ""}`}>
                                 <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
@@ -403,7 +454,7 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* CENTER COLUMN: Industry Verticals Grid */}
+                        {/* CENTER: Verticals */}
                         <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
                           {currentIndustriesData.subServices.map((sub, idx) => (
                             <div key={idx} className="group/item flex flex-col gap-1.5 cursor-pointer">
@@ -422,7 +473,7 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* RIGHT COLUMN: Industry Spotlight Banner */}
+                        {/* RIGHT: Spotlight */}
                         <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
                           <div className="flex flex-col justify-start">
                             <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
@@ -453,7 +504,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop CTA Button */}
+          {/* Desktop CTA */}
           <Link href="/contact" className="hidden lg:block">
             <button
               onMouseEnter={() => setIsButtonHovered(true)}
@@ -464,7 +515,7 @@ export default function Navbar() {
                   ? isScrolled
                     ? "bg-[#1a194d]/[0.08] text-[#1a194d] shadow-[inset_0_0_0_1px_rgba(26,25,77,0.15)]"
                     : "bg-white/[0.12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.12)]"
-                  : "bg-[#625eff] text-white "
+                  : "bg-[#625eff] text-white"
                 }`}
             >
               {!isButtonHovered && (
@@ -474,7 +525,6 @@ export default function Navbar() {
                   <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                 </>
               )}
-
               {isButtonHovered && (
                 <div className="absolute inset-1 pointer-events-none">
                   <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
@@ -483,7 +533,6 @@ export default function Navbar() {
                   <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
                 </div>
               )}
-
               <span className="relative z-10 flex items-center gap-2">
                 Get In Touch
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -534,25 +583,27 @@ export default function Navbar() {
                     >
                       {item.name}
                     </Link>
-                    
-                    {/* Services Subitems Mobile */}
+
+                    {/* Mobile Services sub-items — real hrefs */}
                     {item.name === "Services" && item.dropdown && (
                       <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
-                        {servicesMegaMenu.map((sub) => (
-                          <Link
-                            key={sub.id}
-                            href={`/services#${sub.id}`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className={`py-1 text-[14px] font-semibold transition-colors
-                              ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                        {servicesMegaMenu.flatMap((cat) =>
+                          cat.subServices.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className={`py-1 text-[14px] font-semibold transition-colors
+                                ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
+                            >
+                              {sub.title}
+                            </Link>
+                          ))
+                        )}
                       </div>
                     )}
 
-                    {/* Industries Subitems Mobile */}
+                    {/* Mobile Industries sub-items */}
                     {item.name === "Industries" && item.dropdown && (
                       <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
                         {industriesMegaMenu.map((sub) => (
