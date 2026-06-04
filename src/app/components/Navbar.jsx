@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Services Mega Menu Data — with slug for routing
+// ── Services Mega Menu ────────────────────────────────────────────────────────
 const servicesMegaMenu = [
   {
     id: "AI and Data Innovation",
@@ -102,15 +102,28 @@ const servicesMegaMenu = [
   },
 ];
 
-// Industries Mega Menu Data (unchanged)
+// ── Industries Mega Menu — with real hrefs for all subpages ──────────────────
 const industriesMegaMenu = [
   {
     id: "Finance And Banking",
-    label: "Finance And Banking",
+    label: "Finance & Banking",
+    href: "/industries/finance-and-banking",
     subServices: [
-      { title: "Algorithmic Insights", desc: "Analyze heavy market structures and optimize data ingestion routines." },
-      { title: "Risk Mitigation", desc: "Automate custom fraud detection pipelines and structure balance audits." },
-      { title: "Financial Bots", desc: "Secure multi-lingual customer support frameworks for immediate account assistance." },
+      {
+        title: "Algorithmic Insights",
+        href: "/industries/finance-and-banking",
+        desc: "Analyze heavy market structures and optimize data ingestion routines.",
+      },
+      {
+        title: "Risk Mitigation",
+        href: "/industries/finance-and-banking",
+        desc: "Automate custom fraud detection pipelines and structure balance audits.",
+      },
+      {
+        title: "Financial Bots",
+        href: "/industries/finance-and-banking",
+        desc: "Secure multi-lingual customer support frameworks for immediate account assistance.",
+      },
     ],
     spotlight: {
       title: "The Future of Smart Data Management in Capital Markets",
@@ -121,10 +134,24 @@ const industriesMegaMenu = [
   {
     id: "Healthcare",
     label: "Healthcare",
+    href: "/industries/healthcare",
     subServices: [
-      { title: "Medical Analytics", isNew: true, desc: "Enhance patient care with predictive modeling and structured data paths." },
-      { title: "Clinical Automation", desc: "Streamline patient scheduling, data integration, and compliance checks." },
-      { title: "Patient Care Agents", desc: "Deploy intelligent chatbots for immediate non-clinical frontline support." },
+      {
+        title: "Medical Analytics",
+        href: "/industries/healthcare",
+        isNew: true,
+        desc: "Enhance patient care with predictive modeling and structured data paths.",
+      },
+      {
+        title: "Clinical Automation",
+        href: "/industries/healthcare",
+        desc: "Streamline patient scheduling, data integration, and compliance checks.",
+      },
+      {
+        title: "Patient Care Agents",
+        href: "/industries/healthcare",
+        desc: "Deploy intelligent chatbots for immediate non-clinical frontline support.",
+      },
     ],
     spotlight: {
       title: "Transforming Modern Healthcare with Agentic Frameworks",
@@ -135,10 +162,23 @@ const industriesMegaMenu = [
   {
     id: "Real Estate",
     label: "Real Estate",
+    href: "/industries/real-estate",
     subServices: [
-      { title: "Property Valuation", desc: "Automate data matching trends across historical geo-location points." },
-      { title: "Lead Ingestion", desc: "Qualify high-value real estate leads through conversational AI workflows." },
-      { title: "Portfolio Sync", desc: "Synchronize multiple e-commerce asset entries into central internal ERPs." },
+      {
+        title: "Property Valuation",
+        href: "/industries/real-estate",
+        desc: "Automate data matching trends across historical geo-location points.",
+      },
+      {
+        title: "Lead Ingestion",
+        href: "/industries/real-estate",
+        desc: "Qualify high-value real estate leads through conversational AI workflows.",
+      },
+      {
+        title: "Portfolio Sync",
+        href: "/industries/real-estate",
+        desc: "Synchronize multiple asset entries into central internal ERPs.",
+      },
     ],
     spotlight: {
       title: "Maximizing Digital Assets and Property Returns via Advanced AI",
@@ -149,10 +189,23 @@ const industriesMegaMenu = [
   {
     id: "E-commerce",
     label: "E-commerce",
+    href: "/industries/e-commerce",
     subServices: [
-      { title: "Dynamic Pricing", desc: "Utilize predictive models to adjust product store values automatically." },
-      { title: "Checkout Workflows", desc: "Identify conversion bottlenecks and structure flawless UX patterns." },
-      { title: "Inventory Sync", desc: "Connect modern warehouses and clear system silos instantly with AI middleware." },
+      {
+        title: "Dynamic Pricing",
+        href: "/industries/e-commerce",
+        desc: "Utilize predictive models to adjust product store values automatically.",
+      },
+      {
+        title: "Checkout Workflows",
+        href: "/industries/e-commerce",
+        desc: "Identify conversion bottlenecks and structure flawless UX patterns.",
+      },
+      {
+        title: "Inventory Sync",
+        href: "/industries/e-commerce",
+        desc: "Connect modern warehouses and clear system silos instantly with AI middleware.",
+      },
     ],
     spotlight: {
       title: "Scaling Modern Enterprise Stores to New Peaks",
@@ -163,10 +216,23 @@ const industriesMegaMenu = [
   {
     id: "Education",
     label: "Education",
+    href: "/industries/education",
     subServices: [
-      { title: "Adaptive Learning", desc: "Structure customized progress matrices for personalized student tracking." },
-      { title: "Workflow Management", desc: "Automate grading checks, syllabus structures, and resource distributions." },
-      { title: "Virtual Advisors", desc: "Provide around-the-clock structural campus guidance via natural language engines." },
+      {
+        title: "Adaptive Learning",
+        href: "/industries/education",
+        desc: "Structure customized progress matrices for personalized student tracking.",
+      },
+      {
+        title: "Workflow Management",
+        href: "/industries/education",
+        desc: "Automate grading checks, syllabus structures, and resource distributions.",
+      },
+      {
+        title: "Virtual Advisors",
+        href: "/industries/education",
+        desc: "Provide around-the-clock structural campus guidance via natural language engines.",
+      },
     ],
     spotlight: {
       title: "Reimagining Digital Education Ecosystems globally",
@@ -196,7 +262,7 @@ export default function Navbar() {
   const [activeServicesTab,   setActiveServicesTab]   = useState(servicesMegaMenu[0].id);
   const [activeIndustriesTab, setActiveIndustriesTab] = useState(industriesMegaMenu[0].id);
 
-  // Derive active nav item from the current URL — no more useState for activeTab
+  // Derive active nav item from URL — no useState needed
   const getActiveTab = () => {
     if (pathname === "/") return "Home";
     const match = navItems.find(
@@ -253,7 +319,8 @@ export default function Navbar() {
         )}
 
         <div className="w-full flex items-center justify-between relative">
-          {/* Logo */}
+
+          {/* ── Logo ──────────────────────────────────────────────────────── */}
           <Link href="/" className="flex items-center gap-3 cursor-pointer group z-50">
             <div className="relative w-9 h-9 md:w-10 md:h-10 overflow-hidden">
               <img
@@ -268,7 +335,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav Links */}
+          {/* ── Desktop Nav ───────────────────────────────────────────────── */}
           <ul
             className="hidden lg:flex items-center gap-0.5"
             onMouseLeave={() => setHoveredTab(null)}
@@ -282,7 +349,7 @@ export default function Navbar() {
                 <Link href={item.href}>
                   <div
                     className={`
-                      relative flex items-center gap-1.5 px-4 py-2.5 
+                      relative flex items-center gap-1.5 px-4 py-2.5
                       transition-all duration-300
                       ${activeTab === item.name || hoveredTab === item.name
                         ? isScrolled
@@ -324,7 +391,7 @@ export default function Navbar() {
                   </div>
                 </Link>
 
-                {/* ── MEGA MENU: SERVICES ───────────────────────────────────── */}
+                {/* ── MEGA MENU: SERVICES ──────────────────────────────────── */}
                 {item.name === "Services" && item.dropdown && (
                   <AnimatePresence>
                     {hoveredTab === item.name && (
@@ -363,7 +430,7 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* CENTER: Sub-services — each item is a real Link */}
+                        {/* CENTER: Sub-services — real Links */}
                         <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
                           {currentServicesData.subServices.map((sub, idx) => (
                             <Link
@@ -415,7 +482,7 @@ export default function Navbar() {
                   </AnimatePresence>
                 )}
 
-                {/* ── MEGA MENU: INDUSTRIES ─────────────────────────────────── */}
+                {/* ── MEGA MENU: INDUSTRIES ────────────────────────────────── */}
                 {item.name === "Industries" && item.dropdown && (
                   <AnimatePresence>
                     {hoveredTab === item.name && (
@@ -430,7 +497,7 @@ export default function Navbar() {
                             : "bg-[#0b0a14]/95 border-white/10 text-white"
                           }`}
                       >
-                        {/* LEFT: Industries */}
+                        {/* LEFT: Industry categories */}
                         <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
                           {industriesMegaMenu.map((menuItem) => (
                             <button
@@ -454,10 +521,15 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* CENTER: Verticals */}
+                        {/* CENTER: Industry sub-items — real Links that navigate */}
                         <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
                           {currentIndustriesData.subServices.map((sub, idx) => (
-                            <div key={idx} className="group/item flex flex-col gap-1.5 cursor-pointer">
+                            <Link
+                              key={idx}
+                              href={sub.href}
+                              onClick={() => setHoveredTab(null)}
+                              className="group/item flex flex-col gap-1.5 cursor-pointer"
+                            >
                               <h4 className="font-bold text-[14.5px] flex items-center gap-2 group-hover/item:text-[#625eff] transition-colors">
                                 {sub.title}
                                 {sub.isNew && (
@@ -469,11 +541,11 @@ export default function Navbar() {
                               <p className={`text-[12.5px] leading-relaxed ${isScrolled ? "text-slate-500" : "text-slate-400"}`}>
                                 {sub.desc}
                               </p>
-                            </div>
+                            </Link>
                           ))}
                         </div>
 
-                        {/* RIGHT: Spotlight */}
+                        {/* RIGHT: Industry spotlight */}
                         <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
                           <div className="flex flex-col justify-start">
                             <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
@@ -488,7 +560,11 @@ export default function Navbar() {
                               {currentIndustriesData.spotlight.title}
                             </h5>
                           </div>
-                          <Link href="#" className="mt-4 flex items-center gap-1 text-[12px] font-semibold text-[#625eff] hover:underline pt-1">
+                          <Link
+                            href={currentIndustriesData.href}
+                            onClick={() => setHoveredTab(null)}
+                            className="mt-4 flex items-center gap-1 text-[12px] font-semibold text-[#625eff] hover:underline pt-1"
+                          >
                             {currentIndustriesData.spotlight.cta}
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                               <line x1="5" y1="12" x2="19" y2="12" />
@@ -504,7 +580,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop CTA */}
+          {/* ── Desktop CTA ───────────────────────────────────────────────── */}
           <Link href="/contact" className="hidden lg:block">
             <button
               onMouseEnter={() => setIsButtonHovered(true)}
@@ -543,7 +619,7 @@ export default function Navbar() {
             </button>
           </Link>
 
-          {/* Mobile Hamburger */}
+          {/* ── Mobile Hamburger ──────────────────────────────────────────── */}
           <button
             className={`lg:hidden p-2 z-50 focus:outline-none transition-colors duration-300
               ${isScrolled ? "text-[#1a194d]" : "text-white"}`}
@@ -558,7 +634,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* ── Mobile Dropdown ───────────────────────────────────────────────── */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -584,7 +660,7 @@ export default function Navbar() {
                       {item.name}
                     </Link>
 
-                    {/* Mobile Services sub-items — real hrefs */}
+                    {/* Mobile Services — all 9 subpages as real Links */}
                     {item.name === "Services" && item.dropdown && (
                       <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
                         {servicesMegaMenu.flatMap((cat) =>
@@ -603,18 +679,18 @@ export default function Navbar() {
                       </div>
                     )}
 
-                    {/* Mobile Industries sub-items */}
+                    {/* Mobile Industries — all 5 subpages as real Links */}
                     {item.name === "Industries" && item.dropdown && (
                       <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
-                        {industriesMegaMenu.map((sub) => (
+                        {industriesMegaMenu.map((ind) => (
                           <Link
-                            key={sub.id}
-                            href={`/industries#${sub.id}`}
+                            key={ind.id}
+                            href={ind.href}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className={`py-1 text-[14px] font-semibold transition-colors
                               ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
                           >
-                            {sub.label}
+                            {ind.label}
                           </Link>
                         ))}
                       </div>
@@ -629,7 +705,7 @@ export default function Navbar() {
                       bg-[#625eff] text-white px-7 py-3 rounded-xl
                       font-semibold text-[15px] overflow-hidden
                       shadow-[0_4px_20px_rgba(98,94,255,0.4),inset_0_1px_0_rgba(255,255,255,0.2)]">
-                      <div className="absolute top-0 left-6 right-6 h-[1px] bg-[#1a194d] " />
+                      <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                       Get In Touch
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"/>
@@ -642,6 +718,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
+
       </div>
     </nav>
   );
