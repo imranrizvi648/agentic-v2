@@ -248,6 +248,7 @@ const navItems = [
   { name: "Industries", href: "/industries", dropdown: true  },
   { name: "Blog",       href: "/blog",       dropdown: false },
   { name: "About",      href: "/about",      dropdown: false },
+    { name: "Our Team",      href: "/our-team",      dropdown: false },
   { name: "Contact Us", href: "/contact",    dropdown: false },
 ];
 
