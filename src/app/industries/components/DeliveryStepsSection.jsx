@@ -30,15 +30,15 @@ const steps = [
 
 export default function DeliveryStepsSection() {
   return (
-    <section className="bg-white py-24 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-white py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Header Section */}
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-3 mb-4">
            
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-4">
             A Process Built Around Your Sector's Reality.
           </h2>
           <p className="text-slate-500 text-sm max-w-lg mx-auto leading-relaxed">

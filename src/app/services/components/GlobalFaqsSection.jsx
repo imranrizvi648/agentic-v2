@@ -14,13 +14,13 @@ export default function GlobalFaqsSection() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 border-b border-slate-100">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="bg-slate-50 py-14 sm:py-14 sm:py-12 sm:py-10 sm:py-14 md:py-16 md:py-20 border-b border-slate-100">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-6 h-0.5 bg-indigo-500" />
           <span className="text-xs font-black uppercase tracking-widest text-indigo-600">Frequently Asked Questions</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 leading-tight">
           Everything You Need to Know Before Starting
         </h2>
         <div className="divide-y divide-slate-200">

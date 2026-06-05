@@ -42,7 +42,7 @@ export default function Partnerships() {
         
         <h2 
           id="partnerships-heading"
-          className="text-4xl md:text-[44px] font-bold text-center mb-16 tracking-tight leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white text-center mb-10 sm:mb-16 tracking-tight leading-tight"
         >
           Our partnerships with <br className="hidden md:block" /> industry leaders
         </h2>

@@ -117,28 +117,28 @@ export default function FinanceAndBankingContent() {
     <main className="bg-background text-foreground min-h-screen selection:bg-brand-secondary/20">
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 overflow-hidden border-b border-brand-primary/10 dark:border-white/10">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 overflow-hidden border-b border-brand-primary/10 dark:border-white/10">
         {/* Subtle mesh background element matching brand variables */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-brand-secondary/5 blur-[120px] pointer-events-none" />
         
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-black opacity-30 tracking-widest">01</span>
             <div className="h-px w-4 bg-brand-secondary" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-secondary">Finance & Banking · Capital Markets AI</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-black text-brand-primary dark:text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
             {before}<span className="text-brand-secondary">{hero.highlight}</span>{after}
           </h1>
           
           <p className="text-lg opacity-70 leading-relaxed max-w-2xl mb-10">{hero.sub}</p>
           
           <div className="flex flex-col sm:flex-row gap-3 mb-10">
-            <Link href="#" className="inline-flex items-center justify-center gap-2 font-bold text-sm px-6 py-3.5 rounded-md transition-all bg-brand-secondary text-white hover:opacity-90 shadow-md shadow-brand-secondary/20">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md transition-all bg-brand-secondary text-white hover:opacity-90 shadow-md shadow-brand-secondary/20">
               {hero.cta1} →
             </Link>
-            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-brand-primary/5 dark:bg-white/5 font-bold text-sm px-6 py-3.5 rounded-md border border-brand-primary/10 dark:border-white/10 hover:bg-brand-primary/10 dark:hover:bg-white/10 transition-all">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-brand-primary/5 dark:bg-white/5 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md border border-brand-primary/10 dark:border-white/10 hover:bg-brand-primary/10 dark:hover:bg-white/10 transition-all">
               {hero.cta2}
             </Link>
           </div>
@@ -155,11 +155,11 @@ export default function FinanceAndBankingContent() {
 
       {/* ── Overview ─────────────────────────────────────────── */}
       <section className="bg-brand-primary/[0.02] dark:bg-white/[0.01] py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             <div className="lg:col-span-7">
               <Label text="Sector Overview" />
-              <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white leading-tight mb-5">{overview.heading}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary leading-tight mb-5">{overview.heading}</h2>
               <p className="text-base font-semibold leading-relaxed mb-4 text-brand-secondary">{overview.lead}</p>
               <p className="text-sm opacity-70 leading-relaxed mb-8">{overview.body}</p>
               
@@ -187,16 +187,16 @@ export default function FinanceAndBankingContent() {
 
       {/* ── Benefits ─────────────────────────────────────────── */}
       <section className="py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Benefits" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white tracking-tight mb-12 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
             What Changes When AI Agents Handle This Work
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
               <div key={b.title} className="bg-brand-primary/[0.01] dark:bg-white/[0.02] border border-brand-primary/5 dark:border-white/5 rounded-2xl p-7 hover:border-brand-secondary/30 transition-colors group">
                 <span className="text-2xl mb-4 block">{b.icon}</span>
-                <h3 className="text-base font-bold text-brand-primary dark:text-white mb-2 leading-snug group-hover:text-brand-secondary transition-colors">{b.title}</h3>
+                <h3 className="text-sm font-bold text-brand-primary mb-2 leading-snug group-hover:text-brand-secondary transition-colors">{b.title}</h3>
                 <p className="text-sm opacity-60 leading-relaxed">{b.body}</p>
               </div>
             ))}
@@ -206,9 +206,9 @@ export default function FinanceAndBankingContent() {
 
       {/* ── Features ─────────────────────────────────────────── */}
       <section className="bg-brand-primary/[0.02] dark:bg-white/[0.01] py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Capabilities" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white tracking-tight mb-12 max-w-2xl leading-tight">What We Deliver</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">What We Deliver</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.map((f) => (
               <div key={f.title} className="rounded-2xl border border-brand-primary/10 dark:border-white/5 bg-background p-6 flex gap-4 hover:border-brand-secondary/20 transition-colors shadow-sm">
@@ -227,10 +227,10 @@ export default function FinanceAndBankingContent() {
 
       {/* ── Process ──────────────────────────────────────────── */}
       <section className="py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Methodology" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white tracking-tight mb-14 max-w-2xl leading-tight">How We Deliver</h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-14 max-w-2xl leading-tight">How We Deliver</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
             {processData.map((step) => (
               <div key={step.num} className="rounded-2xl border border-brand-primary/5 dark:border-white/5 bg-brand-primary/[0.01] dark:bg-white/[0.01] p-6 hover:border-brand-secondary/30 transition-colors">
                 <div className="text-xs font-black tracking-widest mb-4 text-brand-secondary">{step.num}</div>
@@ -244,11 +244,11 @@ export default function FinanceAndBankingContent() {
 
       {/* ── Why Us ───────────────────────────────────────────── */}
       <section className="bg-brand-primary/[0.02] dark:bg-white/[0.01] py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Why AgenticSense" />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             <div className="lg:col-span-7">
-              <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white tracking-tight mb-8 leading-tight">{whyUs.heading}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-8 leading-tight">{whyUs.heading}</h2>
               <div className="divide-y divide-brand-primary/10 dark:divide-white/10">
                 {whyUs.points.map((p) => (
                   <div key={p.title} className="flex gap-4 py-5">
@@ -263,7 +263,7 @@ export default function FinanceAndBankingContent() {
             </div>
             <div className="lg:col-span-5">
               <div className="rounded-2xl border border-brand-secondary/20 bg-brand-secondary/5 p-8">
-                <h3 className="text-lg font-black mb-3 text-brand-primary dark:text-brand-secondary">{whyUs.box.heading}</h3>
+                <h3 className="text-lg font-bold text-brand-primary mb-3">{whyUs.box.heading}</h3>
                 <p className="text-sm opacity-80 leading-relaxed mb-6">{whyUs.box.body}</p>
                 <div className="space-y-3">
                   {whyUs.box.stats.map((s) => (
@@ -281,9 +281,9 @@ export default function FinanceAndBankingContent() {
 
       {/* ── FAQs ─────────────────────────────────────────────── */}
       <section className="py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Label text="Frequently Asked Questions" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white tracking-tight mb-12 leading-tight">Questions We Hear Every Time</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 leading-tight">Questions We Hear Every Time</h2>
           <div className="divide-y divide-brand-primary/10 dark:divide-white/10">
             {faqs.map((f) => (
               <details key={f.q} className="group py-5">
@@ -303,13 +303,13 @@ export default function FinanceAndBankingContent() {
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="bg-brand-primary/[0.02] dark:bg-white/[0.01] py-20 border-b border-brand-primary/10 dark:border-white/10">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-8 bg-brand-secondary" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-secondary">Get Started</span>
             <div className="h-px w-8 bg-brand-secondary" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary dark:text-white tracking-tight leading-tight mb-5">{cta.heading}</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-5">{cta.heading}</h2>
           <p className="text-base opacity-60 leading-relaxed mb-10">{cta.body}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Link href="#" className="inline-flex items-center justify-center gap-2 font-bold text-sm px-7 py-4 rounded-md bg-brand-secondary text-white hover:opacity-90 transition-opacity shadow-md shadow-brand-secondary/10">
@@ -325,9 +325,9 @@ export default function FinanceAndBankingContent() {
 
       {/* ── Related Industries ────────────────────────────────── */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-xs font-black uppercase tracking-[0.2em] opacity-40 mb-8">Related Industries</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {relatedIndustries.map((r) => (
               <Link key={r.slug} href={r.slug} className="group bg-brand-primary/[0.01] dark:bg-white/[0.01] rounded-xl p-6 border border-brand-primary/5 dark:border-white/10 hover:border-brand-secondary/40 hover:bg-background transition-all shadow-sm">
                 <div className="flex items-center justify-between mb-3">

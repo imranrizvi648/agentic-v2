@@ -50,14 +50,14 @@ export default function DeepSectorPage() {
     
 
       {/* SECTION 3: SECTOR CHALLENGES (STACKING + HOVER OVERLAY) */}
-      <section className="bg-white py-24 border-b border-slate-100 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+      <section className="bg-white py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             
             {/* Left Column: Sticky Heading */}
             <div className="lg:col-span-4 lg:sticky lg:top-40 self-start">
              
-              <h2 className="text-4xl font-black text-brand-primary tracking-tight leading-tight mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-6">
                 The Problems That Generic AI Cannot Solve.
               </h2>
               <p className="text-slate-500 text-sm leading-relaxed">

@@ -117,7 +117,7 @@ export default function EcommerceContent() {
     <main className="bg-white text-brand-primary selection:bg-brand-secondary/20">
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative bg-white pt-32 pb-20 overflow-hidden border-b border-brand-primary/10">
+      <section className="relative bg-white pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 overflow-hidden border-b border-brand-primary/10">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[120px] pointer-events-none bg-brand-secondary/5"
         />
@@ -125,24 +125,24 @@ export default function EcommerceContent() {
           className="absolute inset-0 opacity-[0.015] pointer-events-none"
           style={{ backgroundImage: "repeating-linear-gradient(45deg,#1a194d 0,#1a194d 1px,transparent 0,transparent 50%)", backgroundSize: "24px 24px" }}
         />
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-black text-brand-primary/30 tracking-widest">04</span>
             <div className="h-px w-4 bg-brand-secondary" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-secondary">E-commerce · Retail Operations AI</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
             {before}<span className="text-brand-secondary">{hero.highlight}</span>{after}
           </h1>
           <p className="text-lg text-brand-primary/70 leading-relaxed max-w-2xl mb-10">{hero.sub}</p>
           <div className="flex flex-col sm:flex-row gap-3 mb-10">
             <Link href="#"
-              className="inline-flex items-center gap-2 font-bold text-sm px-6 py-3.5 rounded-md transition-all hover:opacity-90 bg-brand-secondary text-white shadow-sm shadow-brand-secondary/20"
+              className="inline-flex items-center gap-2 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md transition-all hover:opacity-90 bg-brand-secondary text-white shadow-sm shadow-brand-secondary/20"
             >
               {hero.cta1} →
             </Link>
             <Link href="#"
-              className="inline-flex items-center gap-2 bg-brand-primary/[0.03] text-brand-primary/80 font-bold text-sm px-6 py-3.5 rounded-md border border-brand-primary/10 hover:bg-brand-primary/[0.06] hover:text-brand-primary transition-all"
+              className="inline-flex items-center gap-2 bg-brand-primary/[0.03] text-brand-primary/80 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md border border-brand-primary/10 hover:bg-brand-primary/[0.06] hover:text-brand-primary transition-all"
             >
               {hero.cta2}
             </Link>
@@ -159,11 +159,11 @@ export default function EcommerceContent() {
 
       {/* ── Overview ─────────────────────────────────────────── */}
       <section className="bg-slate-50/50 py-20 border-b border-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             <div className="lg:col-span-7">
               <Label text="Sector Overview" />
-              <h2 className="text-3xl md:text-4xl font-black text-brand-primary leading-tight mb-5">{overview.heading}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary leading-tight mb-5">{overview.heading}</h2>
               <p className="text-base font-semibold leading-relaxed mb-4 text-brand-secondary">{overview.lead}</p>
               <p className="text-sm text-brand-primary/70 leading-relaxed mb-8">{overview.body}</p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -189,16 +189,16 @@ export default function EcommerceContent() {
 
       {/* ── Benefits ─────────────────────────────────────────── */}
       <section className="bg-white py-20 border-b border-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Benefits" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
             What Changes When AI Agents Handle This Work
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-primary/10 rounded-2xl overflow-hidden shadow-sm">
             {benefits.map((b) => (
               <div key={b.title} className="bg-white p-7 hover:bg-slate-50/80 transition-colors group">
                 <span className="text-2xl mb-4 block">{b.icon}</span>
-                <h3 className="text-sm font-black text-brand-primary mb-2 leading-snug group-hover:text-brand-secondary transition-colors">{b.title}</h3>
+                <h3 className="text-sm font-bold text-brand-primary mb-2 leading-snug group-hover:text-brand-secondary transition-colors">{b.title}</h3>
                 <p className="text-xs text-brand-primary/60 leading-relaxed">{b.body}</p>
               </div>
             ))}
@@ -208,10 +208,10 @@ export default function EcommerceContent() {
 
       {/* ── Features ─────────────────────────────────────────── */}
       <section className="bg-slate-50/50 py-20 border-b border-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Capabilities" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">What We Deliver</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">What We Deliver</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {features.map((f) => (
               <div key={f.title} className="rounded-2xl border border-brand-primary/10 bg-white p-6 flex gap-4 hover:bg-slate-50 transition-colors shadow-sm shadow-brand-primary/5">
                 <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-secondary/5 border border-brand-secondary/10 flex items-center justify-center">
@@ -229,10 +229,10 @@ export default function EcommerceContent() {
 
       {/* ── Process ──────────────────────────────────────────── */}
       <section className="bg-white py-20 border-b border-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Methodology" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary tracking-tight mb-14 max-w-2xl leading-tight">How We Deliver</h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-14 max-w-2xl leading-tight">How We Deliver</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
             {process.map((step) => (
               <div key={step.num} className="rounded-2xl border border-brand-primary/10 bg-white p-6 hover:bg-slate-50 transition-colors shadow-sm shadow-brand-primary/5">
                 <div className="text-xs font-black tracking-widest mb-4 text-brand-secondary">{step.num}</div>
@@ -246,11 +246,11 @@ export default function EcommerceContent() {
 
       {/* ── Why Us ───────────────────────────────────────────── */}
       <section className="bg-slate-50/50 py-20 border-b border-brand-primary/10">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <Label text="Why AgenticSense" />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             <div className="lg:col-span-7">
-              <h2 className="text-3xl md:text-4xl font-black text-brand-primary tracking-tight mb-8 leading-tight">{whyUs.heading}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-8 leading-tight">{whyUs.heading}</h2>
               <div className="divide-y divide-brand-primary/10">
                 {whyUs.points.map((p) => (
                   <div key={p.title} className="flex gap-4 py-5">
@@ -265,7 +265,7 @@ export default function EcommerceContent() {
             </div>
             <div className="lg:col-span-5">
               <div className="rounded-2xl border border-brand-secondary/20 bg-brand-secondary/5 p-8 shadow-sm">
-                <h3 className="text-lg font-black mb-3 text-brand-secondary">{whyUs.box.heading}</h3>
+                <h3 className="text-lg font-bold text-brand-primary mb-3">{whyUs.box.heading}</h3>
                 <p className="text-sm text-brand-primary/70 leading-relaxed mb-6">{whyUs.box.body}</p>
                 <div className="space-y-3">
                   {whyUs.box.stats.map((s) => (
@@ -283,9 +283,9 @@ export default function EcommerceContent() {
 
       {/* ── FAQs ─────────────────────────────────────────────── */}
       <section className="bg-white py-20 border-b border-brand-primary/10">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Label text="Frequently Asked Questions" />
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary tracking-tight mb-12 leading-tight">Questions We Hear Every Time</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 leading-tight">Questions We Hear Every Time</h2>
           <div className="divide-y divide-brand-primary/10">
             {faqs.map((f) => (
               <details key={f.q} className="group py-5">
@@ -305,13 +305,13 @@ export default function EcommerceContent() {
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="bg-slate-50/50 py-20 border-b border-brand-primary/10">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-8 bg-brand-secondary" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-secondary">Get Started</span>
             <div className="h-px w-8 bg-brand-secondary" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-brand-primary tracking-tight leading-tight mb-5">{cta.heading}</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-5">{cta.heading}</h2>
           <p className="text-base text-brand-primary/60 leading-relaxed mb-10">{cta.body}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Link href="#"
@@ -331,9 +331,9 @@ export default function EcommerceContent() {
 
       {/* ── Related Industries ────────────────────────────────── */}
       <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-xs font-black uppercase tracking-[0.2em] text-brand-primary/30 mb-8">Related Industries</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {relatedIndustries.map((r) => (
               <Link key={r.slug} href={r.slug}
                 className="group bg-white rounded-xl p-6 border border-brand-primary/10 hover:bg-slate-50 hover:border-brand-primary/20 transition-all shadow-sm shadow-brand-primary/5"

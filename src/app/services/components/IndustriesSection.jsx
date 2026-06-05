@@ -8,13 +8,13 @@ export default function IndustriesSection() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-50 py-14 sm:py-14 sm:py-12 sm:py-10 sm:py-14 md:py-16 md:py-20 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-6 h-0.5 bg-indigo-500" />
           <span className="text-xs font-black uppercase tracking-widest text-indigo-600">Industries We Serve</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3 max-w-2xl leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-3 max-w-2xl leading-tight">
           Deep in Finance, Broad Across Sectors
         </h2>
         <p className="text-sm text-slate-500 mb-12 max-w-xl leading-relaxed">
@@ -31,7 +31,7 @@ export default function IndustriesSection() {
               <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center mb-4">
                 <span className="text-indigo-500 font-black text-sm">{String(i + 1).padStart(2, "0")}</span>
               </div>
-              <h3 className="text-sm font-extrabold text-slate-900 mb-2">{ind.title}</h3>
+              <h3 className="text-sm font-bold text-brand-primary mb-2">{ind.title}</h3>
               <p className="text-xs text-slate-500 leading-relaxed">{ind.body}</p>
             </div>
           ))}

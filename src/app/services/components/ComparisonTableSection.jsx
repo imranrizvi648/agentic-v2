@@ -13,19 +13,19 @@ export default function ComparisonTableSection() {
   ];
 
   return (
-    <section className="bg-white py-24 border-b border-slate-100 font-sans relative overflow-hidden select-none">
+    <section className="bg-white py-14 sm:py-20 md:py-24 border-b border-slate-100 font-sans relative overflow-hidden select-none">
       
       {/* Background Grid Accent Lines */}
       <div className="absolute inset-y-0 left-[6%] w-px bg-slate-50 pointer-events-none hidden xl:block" />
       <div className="absolute inset-y-0 right-[6%] w-px bg-slate-50 pointer-events-none hidden xl:block" />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header Section */}
         <div className="border-b border-slate-200 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
            
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#1a194d] uppercase leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-brand-primary uppercase leading-tight">
               Most AI Firms Advise, Then Hand Off. We Strategise, Build, Integrate and Run.
             </h2>
           </div>
@@ -39,13 +39,13 @@ export default function ComparisonTableSection() {
           <table className="w-full text-sm min-w-[640px] border-collapse">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50/70">
-                <th className="text-left py-5 px-6 text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 w-1/5">
+                <th className="text-left py-5 px-4 sm:px-6 text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 w-1/5">
                   Dimension
                 </th>
-                <th className="text-left py-5 px-6 text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 w-2/5">
+                <th className="text-left py-5 px-4 sm:px-6 text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 w-2/5">
                   Typical AI Vendor
                 </th>
-                <th className="text-left py-5 px-6 text-[11px] font-mono font-black uppercase tracking-widest text-[#625eff] bg-slate-50 w-2/5 border-l border-slate-200 relative">
+                <th className="text-left py-5 px-4 sm:px-6 text-[11px] font-mono font-black uppercase tracking-widest text-[#625eff] bg-slate-50 w-2/5 border-l border-slate-200 relative">
                   <div className="absolute top-0 left-0 w-full h-[3px] bg-[#625eff]" />
                    AgenticSense
                 </th>
@@ -59,17 +59,17 @@ export default function ComparisonTableSection() {
                   className="group hover:bg-slate-50/40 transition-all duration-200"
                 >
                   {/* Dimension Name */}
-                  <td className="py-5 px-6 font-bold text-[#1a194d] text-[13px] uppercase tracking-tight transition-colors group-hover:text-[#625eff]">
+                  <td className="py-5 px-4 sm:px-6 font-bold text-[#1a194d] text-[13px] uppercase tracking-tight transition-colors group-hover:text-[#625eff]">
                     {row.dim}
                   </td>
                   
                   {/* Typical Vendor (Them) */}
-                  <td className="py-5 px-6 text-slate-400 text-[13px] font-medium pr-10 line-clamp-2 md:line-clamp-none">
+                  <td className="py-5 px-4 sm:px-6 text-slate-400 text-[13px] font-medium pr-10 line-clamp-2 md:line-clamp-none">
                     {row.them}
                   </td>
                   
                   {/* AgenticSense (Us) - Highlighted Column */}
-                  <td className="py-5 px-6 text-[13.5px] font-semibold text-slate-800 bg-slate-50/20 group-hover:bg-[#625eff]/[0.02] border-l border-slate-200 relative transition-all duration-300 pl-8">
+                  <td className="py-5 px-4 sm:px-6 text-[13.5px] font-semibold text-slate-800 bg-slate-50/20 group-hover:bg-[#625eff]/[0.02] border-l border-slate-200 relative transition-all duration-300 pl-8">
                     
                     {/* Tiny Left Indicator Stripe on Hover */}
                     <div className="absolute inset-y-0 left-0 w-0 bg-[#625eff] group-hover:w-1 transition-all duration-200" />

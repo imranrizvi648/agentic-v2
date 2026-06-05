@@ -244,7 +244,7 @@ export default function ContactHero() {
   return (
     <section
       aria-label="Contact page header"
-      className="relative w-full h-[79vh] bg-[#1a194d] overflow-hidden flex items-center font-sans"
+      className="relative w-full h-[55vh] sm:h-[65vh] md:h-[79vh] bg-[#1a194d] overflow-hidden flex items-center font-sans"
     >
       <canvas
         ref={canvasRef}
@@ -266,7 +266,7 @@ export default function ContactHero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-6 py-16 sm:px-16 sm:py-20 lg:px-24 lg:py-24">
-        <h1 className="text-5xl sm:text-6xl lg:text-6xl font-black tracking-tight leading-none text-white mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-4">
           Contact us
         </h1>
         

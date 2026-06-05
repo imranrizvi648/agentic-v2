@@ -35,13 +35,13 @@ export default function EngagementModelsSection() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-50 py-14 sm:py-14 sm:py-12 sm:py-10 sm:py-14 md:py-16 md:py-20 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-6 h-0.5 bg-indigo-500" />
           <span className="text-xs font-black uppercase tracking-widest text-indigo-600">Engagement Models</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3 max-w-2xl leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-3 max-w-2xl leading-tight">
           Start Small. Prove It on Your Own Data. Then Scale.
         </h2>
         <p className="text-sm text-slate-500 mb-12 max-w-xl leading-relaxed">
@@ -68,7 +68,7 @@ export default function EngagementModelsSection() {
                   {m.tag}
                 </span>
               </div>
-              <h3 className={`text-sm font-extrabold mb-3 leading-snug ${m.highlight ? "text-white" : "text-slate-900"}`}>
+              <h3 className={`text-sm font-bold mb-3 leading-snug ${m.highlight ? "text-white" : "text-brand-primary"}`}>
                 {m.title}
               </h3>
               <p className={`text-xs leading-relaxed ${m.highlight ? "text-indigo-100" : "text-slate-500"}`}>
@@ -85,7 +85,7 @@ export default function EngagementModelsSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               <span className="text-xs font-bold text-emerald-700 uppercase tracking-wide">Free · No obligation</span>
             </div>
-            <h3 className="text-base font-extrabold text-slate-900 mb-2">Free Finance Automation Assessment</h3>
+            <h3 className="text-base font-bold text-brand-primary mb-2">Free Finance Automation Assessment</h3>
             <p className="text-sm text-slate-500 leading-relaxed mb-5">
               In a focused session, we map your single highest-value automation opportunity, sketch how an agent would handle it inside your ERP, and give you an honest view of effort, impact and what is deployable today.
             </p>
@@ -98,7 +98,7 @@ export default function EngagementModelsSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
               <span className="text-xs font-bold text-indigo-700 uppercase tracking-wide">Fixed scope · Clear criteria</span>
             </div>
-            <h3 className="text-base font-extrabold text-slate-900 mb-2">Fixed-Scope Pilot</h3>
+            <h3 className="text-base font-bold text-brand-primary mb-2">Fixed-Scope Pilot</h3>
             <p className="text-sm text-slate-500 leading-relaxed mb-5">
               If it makes sense to go further, we run a scoped pilot on your real data with success criteria agreed in writing up front. You see a working agent before deciding on a full rollout.
             </p>
@@ -110,7 +110,7 @@ export default function EngagementModelsSection() {
 
         {/* Right fit checklist */}
         <div className="mt-8 bg-white rounded-2xl border border-slate-200 p-7">
-          <h3 className="text-sm font-extrabold text-slate-900 mb-5">This is the right fit if…</h3>
+          <h3 className="text-sm font-bold text-brand-primary mb-5">This is the right fit if…</h3>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               "You run SAP Business One, Oracle Fusion, NetSuite, Odoo, Zoho, Salesforce or Microsoft Fabric — or a mix.",

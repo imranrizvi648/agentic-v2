@@ -122,20 +122,20 @@ export default function PainPointsSection() {
   const annualSavings = Math.round(annualLoss * standardAgentEfficiency);
 
   return (
-    <section className="bg-white py-24 text-[#1a194d] relative overflow-hidden font-sans select-none">
+    <section className="bg-white py-14 sm:py-20 md:py-24 text-[#1a194d] relative overflow-hidden font-sans select-none">
       <style dangerouslySetInnerHTML={{ __html: styleVariables }} />
 
       {/* Modern thin structured grid guidelines to frame the section elegantly */}
       <div className="absolute inset-y-0 left-[8%] w-px bg-slate-100 pointer-events-none hidden xl:block" />
       <div className="absolute inset-y-0 right-[8%] w-px bg-slate-100 pointer-events-none hidden xl:block" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 sm:px-12 lg:px-16 relative z-10">
 
         {}
         <div className="border-b border-slate-200 pb-12 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-3xl space-y-4">
            
-            <h2 className="text-4xl md:text-[44px] font-extrabold text-[#1B212D]  tracking-tight mx-auto max-w-4xl leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mx-auto max-w-4xl leading-tight">
               You Don&apos;t Have an AI Problem. <br />
               You HaveExpensive, Repetitive Work.
             </h2>
@@ -253,7 +253,7 @@ export default function PainPointsSection() {
               <span className="font-mono text-[11px] tracking-[0.2em] text-[#625eff] font-bold uppercase block">
                 ANALYSIS & MODELING
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[#1a194d] leading-tight uppercase">
+              <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-brand-primary leading-tight uppercase">
                 Active ERP Waste <br />Calculator
               </h3>
               <p className="text-xs text-slate-500 leading-relaxed max-w-sm">
@@ -326,7 +326,7 @@ export default function PainPointsSection() {
           <p className="text-[11px] font-mono text-slate-400 leading-relaxed uppercase">
             // Models are calibrated on standard AP pipelines, active syncing thresholds, and continuous ledger processes.
           </p>
-          <button className="bg-[#1a194d] hover:bg-[#625eff] text-white font-mono text-xs font-bold uppercase py-4 px-6 rounded-none transition-all duration-150 tracking-wider active:translate-y-px shrink-0">
+          <button className="bg-[#1a194d] hover:bg-[#625eff] text-white font-mono text-xs font-bold uppercase py-4 px-4 sm:px-6 rounded-none transition-all duration-150 tracking-wider active:translate-y-px shrink-0">
             Audit ERP Workflows
           </button>
         </div>

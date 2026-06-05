@@ -357,7 +357,7 @@ export default function CustomAiAgentDevelopmentContent() {
     <main>
 
       {/* ── Hero (Canvas Animated + Premium Dark Theme) ───────────────────────── */}
-      <section className="relative w-full min-h-[85vh] bg-[#1a194d] overflow-hidden flex items-center font-sans pt-32 pb-20">
+      <section className="relative w-full min-h-[85vh] bg-[#1a194d] overflow-hidden flex items-center font-sans pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20">
         <canvas
           ref={canvasRef}
           aria-hidden="true"
@@ -377,8 +377,8 @@ export default function CustomAiAgentDevelopmentContent() {
         />
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
             {before}<span className="text-[#9482ff]">{hero.highlight}</span>{after}
           </h1>
           <p className="text-base sm:text-lg leading-relaxed text-white/70 max-w-2xl mb-10">
@@ -387,10 +387,10 @@ export default function CustomAiAgentDevelopmentContent() {
           
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
-            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-[#625eff] text-white font-bold text-sm px-6 py-3.5 rounded-md hover:bg-[#4b47e6] transition-colors shadow-lg shadow-indigo-950/50">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-[#625eff] text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md hover:bg-[#4b47e6] transition-colors shadow-lg shadow-indigo-950/50">
               {hero.cta1} →
             </Link>
-            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-sm px-6 py-3.5 rounded-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all">
               {hero.cta2}
             </Link>
           </div>
@@ -416,12 +416,12 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── Overview ─────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+      <section className="bg-white py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             <div className="lg:col-span-7">
               <SectionLabel text="Service Overview" />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary leading-tight tracking-tight mb-5">
                 {overview.heading}
               </h2>
               <p className="text-base text-indigo-700 font-semibold leading-relaxed mb-4">{overview.lead}</p>
@@ -448,10 +448,10 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── Benefits ─────────────────────────────────────────── */}
-      <section className="bg-slate-50 py-20 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-slate-50 py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionLabel text="Benefits" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
             What Changes When Agents Handle This Work
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-slate-200 rounded-2xl overflow-hidden">
@@ -461,7 +461,7 @@ export default function CustomAiAgentDevelopmentContent() {
                 className={`bg-white p-7 hover:bg-indigo-50/30 transition-colors ${i % 3 !== 2 ? "lg:border-r border-slate-100" : ""} ${i < 3 ? "border-b border-slate-100" : ""}`}
               >
                 <span className="text-2xl mb-4 block">{b.icon}</span>
-                <h3 className="text-sm font-black text-slate-900 mb-2 leading-snug">{b.title}</h3>
+                <h3 className="text-sm font-bold text-brand-primary mb-2 leading-snug">{b.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{b.body}</p>
               </div>
             ))}
@@ -470,13 +470,13 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── Features ─────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-white py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionLabel text="Capabilities" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
             What We Deliver
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
             {features.map((f) => (
               <div key={f.title} className="bg-white p-6 flex gap-4 hover:bg-slate-50 transition-colors">
                 <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center">
@@ -493,15 +493,15 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── Process ──────────────────────────────────────────── */}
-      <section className="bg-slate-50 py-20 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-slate-50 py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionLabel text="Methodology" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-14 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-14 max-w-2xl leading-tight">
             How We Deliver
           </h2>
           <div className="relative">
             <div className="hidden md:block absolute top-5 left-5 right-5 h-px bg-gradient-to-r from-indigo-100 via-indigo-400 to-indigo-100" />
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
               {process.map((step) => (
                 <div key={step.num} className="relative flex flex-col items-start md:items-center md:text-center">
                   <div className="relative z-10 w-10 h-10 rounded-full bg-white border-2 border-indigo-500 flex items-center justify-center mb-4 shadow-sm">
@@ -517,12 +517,12 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── Why Us ───────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-white py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionLabel text="Why AgenticSense" />
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-start">
             <div className="lg:col-span-7">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-8 leading-tight">
                 {whyUs.heading}
               </h2>
               <div className="divide-y divide-slate-100">
@@ -539,7 +539,7 @@ export default function CustomAiAgentDevelopmentContent() {
             </div>
             <div className="lg:col-span-5">
               <div className="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-8 text-white">
-                <h3 className="text-lg font-extrabold mb-3">{whyUs.box.heading}</h3>
+                <h3 className="text-lg font-bold text-brand-primary mb-3">{whyUs.box.heading}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed mb-6">{whyUs.box.body}</p>
                 <div className="space-y-3">
                   {whyUs.box.stats.map((s) => (
@@ -556,10 +556,10 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── FAQs ─────────────────────────────────────────────── */}
-      <section className="bg-slate-50 py-20 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="bg-slate-50 py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <SectionLabel text="Frequently Asked Questions" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 leading-tight">
             Questions We Hear Every Time
           </h2>
           <div className="divide-y divide-slate-200">
@@ -580,13 +580,13 @@ export default function CustomAiAgentDevelopmentContent() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="bg-white py-20 border-b border-slate-100">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="bg-white py-14 sm:py-20 border-b border-slate-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 rounded-full px-4 py-1.5 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
             <span className="text-xs font-bold text-indigo-700 uppercase tracking-wide">Get Started</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-5">
             {cta.heading}
           </h2>
           <p className="text-base text-slate-500 leading-relaxed mb-10">{cta.body}</p>
@@ -604,9 +604,9 @@ export default function CustomAiAgentDevelopmentContent() {
 
       {/* ── Related Services ─────────────────────────────────── */}
       <section className="bg-slate-50 py-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-8">Related Services</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {relatedServices.map((r) => (
               <Link key={r.slug} href={r.slug} className="group bg-white rounded-xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all">
                 <div className="flex items-center justify-between mb-3">

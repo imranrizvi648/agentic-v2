@@ -19,10 +19,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-10 bg-black/60 pointer-events-none" />
 
       {/* ── Content Container ── */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full grid grid-cols-1 gap-8">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 sm:px-12 lg:px-16 w-full grid grid-cols-1 gap-8">
         
         {/* Headline */}
-        <h1 className="text-4xl text-[50px]  font-black tracking-tight leading-[1.1] text-white max-w-4xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-white max-w-4xl">
           AI Agents That Run Inside the Systems{" "}
           <span className="text-[#1a194d]">
             You Already Use.

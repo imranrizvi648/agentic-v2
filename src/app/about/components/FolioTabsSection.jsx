@@ -66,7 +66,7 @@ export default function FolioTabsSection() {
   const currentData = TAB_DATA.find(tab => tab.id === activeTab);
 
   return (
-    <section className="w-full bg-white text-gray-900 font-sans py-24 px-6 lg:px-24">
+    <section className="w-full bg-white text-gray-900 font-sans py-14 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-24">
       <div className="max-w-6xl mx-auto">
         
         {/* TAB HEADERS NAVIGATION */}
@@ -98,7 +98,7 @@ export default function FolioTabsSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start"
           >
             
             {/* LEFT SIDE: Image Block Layering */}
@@ -120,7 +120,7 @@ export default function FolioTabsSection() {
 
             {/* RIGHT SIDE: Typography & Lists */}
             <div className="lg:col-span-7 space-y-5">
-              <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight">
                 {currentData.title}
               </h2>
               
@@ -171,7 +171,7 @@ export default function FolioTabsSection() {
             {currentData.footerText}
           </p>
           
-          <button className="border border-slate-900 rounded-xl px-6 py-2 text-xs font-bold transition hover:bg-slate-950 hover:text-white shadow-sm">
+          <button className="border border-slate-900 rounded-xl px-4 sm:px-6 py-2 text-xs font-bold transition hover:bg-slate-950 hover:text-white shadow-sm">
             Let's Connect
           </button>
         </div>

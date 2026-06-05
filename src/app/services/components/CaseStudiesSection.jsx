@@ -40,19 +40,19 @@ export default function CaseStudiesSection() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="bg-white py-24 border-b border-slate-100 relative overflow-hidden font-sans select-none">
+    <section className="bg-white py-14 sm:py-20 md:py-24 border-b border-slate-100 relative overflow-hidden font-sans select-none">
       
       {/* Structural architectural alignment vertical guidelines */}
       <div className="absolute inset-y-0 left-[8%] w-px bg-slate-100 pointer-events-none hidden xl:block" />
       <div className="absolute inset-y-0 right-[8%] w-px bg-slate-100 pointer-events-none hidden xl:block" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 sm:px-12 lg:px-16 relative z-10 space-y-16">
         
         {/* Editorial Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start border-b border-slate-200 pb-12">
           <div className="lg:col-span-7 space-y-4">
            
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-[1.08] text-[#1a194d] uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-brand-primary uppercase">
               The Difference <br />
               An Agent Makes.
             </h2>

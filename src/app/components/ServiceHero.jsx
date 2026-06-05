@@ -24,7 +24,7 @@ export default function ServiceHero({ number, tagline, headline, highlight, sub,
           <span className="text-xs font-bold text-slate-500 tracking-wide uppercase">{tagline}</span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.1] tracking-tight max-w-4xl mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
           {parts[0]}
           <span className="text-indigo-600">{highlight}</span>
           {parts[1]}

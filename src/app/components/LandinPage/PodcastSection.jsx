@@ -58,7 +58,7 @@ export default function PodcastSection() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
           <h2 
             id="podcast-heading" 
-            className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight"
           >
             Conversations that go beyond the code
           </h2>

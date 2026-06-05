@@ -33,14 +33,14 @@ const caseStudies = [
 
 export default function CaseStudiesSection() {
   return (
-    <section className="bg-[#111118] py-24 border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-[#111118] py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div className="flex items-center gap-3 mb-5">
           <div className="h-px w-8 bg-amber-400" />
           <span className="text-xs font-bold text-amber-400 uppercase tracking-[0.2em]">Real Impact</span>
         </div>
-        <h2 className="text-4xl font-black text-white tracking-tight leading-tight mb-4 max-w-2xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4 max-w-2xl">
           What Sector-Specific AI Actually Delivers.
         </h2>
         <p className="text-white/35 text-sm max-w-xl mb-14 leading-relaxed">
@@ -54,7 +54,7 @@ export default function CaseStudiesSection() {
               className={`rounded-2xl border ${c.accentBorder} bg-white/[0.02] overflow-hidden hover:bg-white/[0.04] transition-colors flex flex-col`}
             >
               {/* Sector header */}
-              <div className={`${c.accentBg} border-b ${c.accentBorder} px-6 py-3 flex items-center justify-between`}>
+              <div className={`${c.accentBg} border-b ${c.accentBorder} px-4 sm:px-6 py-3 flex items-center justify-between`}>
                 <span className={`text-xs font-black uppercase tracking-widest ${c.accentColor}`}>{c.sector}</span>
                 <span className="text-xs text-white/30 font-medium">{c.org}</span>
               </div>

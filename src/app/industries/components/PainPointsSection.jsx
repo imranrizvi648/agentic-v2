@@ -28,12 +28,12 @@ export default function PainPointsSection() {
 
   return (
     <section className="bg-white border-b border-slate-100 py-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-6 h-0.5 bg-indigo-500" />
           <span className="text-xs font-black uppercase tracking-widest text-indigo-600">If Any of This Sounds Familiar</span>
         </div>
-        <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight mb-10 max-w-xl leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-10 max-w-xl leading-tight">
           Industry AI Fails When It Ignores How Your Sector Actually Operates.
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

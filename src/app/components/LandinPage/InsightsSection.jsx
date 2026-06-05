@@ -76,7 +76,7 @@ export default function InsightsSection() {
         
         {/* Header Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-          <h2 className="text-3xl md:text-[40px] font-bold text-gray-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight">
             Latest insights & resources
           </h2>
           
@@ -141,7 +141,7 @@ export default function InsightsSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-gray-900 font-medium text-lg leading-snug group-hover:text-[#0b4ddb] transition-colors line-clamp-3">
+              <h3 className="text-brand-primary font-semibold text-base leading-snug group-hover:text-brand-secondary transition-colors line-clamp-3">
                 {item.title}
               </h3>
             </article>

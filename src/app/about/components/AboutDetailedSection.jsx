@@ -97,13 +97,13 @@ export default function AboutSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+        /* Font loaded via layout.js — Geist Sans */
 
         .about-section *{ box-sizing: border-box; }
 
         .about-section {
           position: relative;
-          font-family: 'Manrope', sans-serif;
+          font-family: inherit;
           background: #07080f;
           overflow: hidden;
           padding: 72px 5vw;
@@ -152,13 +152,12 @@ export default function AboutSection() {
         }
 
         .about-heading {
-          font-size: clamp(1.75rem, 3.2vw, 2.6rem);
-          font-weight: 800;
-          line-height: 1.12;
-          color: #fff;
-          letter-spacing: -0.02em;
-          margin: 0;
-        }
+  font-size: clamp(1.375rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1a194d;
+}
 
         .about-body {
           font-size: 0.88rem;
@@ -270,7 +269,13 @@ export default function AboutSection() {
 
         @media (max-width: 600px) {
           .about-section { padding: 48px 6vw; }
-          .about-heading  { font-size: 1.55rem; }
+          .about-heading {
+  font-size: clamp(1.375rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1a194d;
+}
         }
       `}</style>
 

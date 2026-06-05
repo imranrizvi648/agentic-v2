@@ -26,7 +26,7 @@ export default function ServicePage({ service }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
             <div className="lg:col-span-7">
               <SectionLabel text="Service Overview" />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-5">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary leading-tight tracking-tight mb-5">
                 {overview.heading}
               </h2>
               <p className="text-base text-indigo-700 font-semibold leading-relaxed mb-4">{overview.lead}</p>
@@ -59,7 +59,7 @@ export default function ServicePage({ service }) {
       <section className="bg-slate-50 py-20 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <SectionLabel text="Benefits" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
             What Changes When Agents Handle This Work
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-slate-200 rounded-2xl overflow-hidden">
@@ -73,7 +73,7 @@ export default function ServicePage({ service }) {
                 } hover:bg-indigo-50/30 transition-colors`}
               >
                 <span className="text-2xl mb-4 block">{b.icon}</span>
-                <h3 className="text-sm font-black text-slate-900 mb-2 leading-snug">{b.title}</h3>
+                <h3 className="text-sm font-bold text-brand-primary mb-2 leading-snug">{b.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{b.body}</p>
               </div>
             ))}
@@ -85,7 +85,7 @@ export default function ServicePage({ service }) {
       <section className="bg-white py-20 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <SectionLabel text="Capabilities" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 max-w-2xl leading-tight">
             What We Deliver
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
@@ -108,7 +108,7 @@ export default function ServicePage({ service }) {
       <section className="bg-slate-50 py-20 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <SectionLabel text="Methodology" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-14 max-w-2xl leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-14 max-w-2xl leading-tight">
             How We Deliver
           </h2>
           <div className="relative">
@@ -135,7 +135,7 @@ export default function ServicePage({ service }) {
           <SectionLabel text="Why AgenticSense" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
             <div className="lg:col-span-7">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-8 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-8 leading-tight">
                 {whyUs.heading}
               </h2>
               <div className="divide-y divide-slate-100">
@@ -153,7 +153,7 @@ export default function ServicePage({ service }) {
 
             <div className="lg:col-span-5">
               <div className="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-8 text-white">
-                <h3 className="text-lg font-extrabold mb-3">{whyUs.box.heading}</h3>
+                <h3 className="text-lg font-bold text-brand-primary mb-3">{whyUs.box.heading}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed mb-6">{whyUs.box.body}</p>
                 <div className="space-y-3">
                   {whyUs.box.stats.map((s) => (
@@ -173,7 +173,7 @@ export default function ServicePage({ service }) {
       <section className="bg-slate-50 py-20 border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <SectionLabel text="Frequently Asked Questions" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-12 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-12 leading-tight">
             Questions We Hear Every Time
           </h2>
           <div className="space-y-0 divide-y divide-slate-200">
@@ -200,7 +200,7 @@ export default function ServicePage({ service }) {
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
             <span className="text-xs font-bold text-indigo-700 uppercase tracking-wide">Get Started</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-5">
             {cta.heading}
           </h2>
           <p className="text-base text-slate-500 leading-relaxed mb-10">{cta.body}</p>

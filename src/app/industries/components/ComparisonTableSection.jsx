@@ -9,14 +9,14 @@ const rows = [
 
 export default function ComparisonTableSection() {
   return (
-    <section className="bg-[#111118] py-24 border-b border-white/[0.06]">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="bg-[#111118] py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-white/[0.06]">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
         <div className="flex items-center gap-3 mb-5">
           <div className="h-px w-8 bg-amber-400" />
           <span className="text-xs font-bold text-amber-400 uppercase tracking-[0.2em]">How We Differ</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-12 max-w-2xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-12 max-w-2xl">
           Sector AI Requires Depth, Not Breadth.
         </h2>
 
@@ -24,17 +24,17 @@ export default function ComparisonTableSection() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/[0.08] bg-white/[0.03]">
-                <th className="text-left py-4 px-6 text-xs font-black uppercase tracking-widest text-white/25 w-1/4"> </th>
-                <th className="text-left py-4 px-6 text-xs font-black uppercase tracking-widest text-white/35">Generic AI Vendor</th>
-                <th className="text-left py-4 px-6 text-xs font-black uppercase tracking-widest text-amber-400">AgenticSense</th>
+                <th className="text-left py-4 px-4 sm:px-6 text-xs font-black uppercase tracking-widest text-white/25 w-1/4"> </th>
+                <th className="text-left py-4 px-4 sm:px-6 text-xs font-black uppercase tracking-widest text-white/35">Generic AI Vendor</th>
+                <th className="text-left py-4 px-4 sm:px-6 text-xs font-black uppercase tracking-widest text-amber-400">AgenticSense</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/[0.05]">
               {rows.map((row) => (
                 <tr key={row.dim} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="py-4 px-6 text-xs font-bold text-white/50">{row.dim}</td>
-                  <td className="py-4 px-6 text-xs text-white/25">{row.them}</td>
-                  <td className="py-4 px-6 text-xs text-white/80 font-semibold">{row.us}</td>
+                  <td className="py-4 px-4 sm:px-6 text-xs font-bold text-white/50">{row.dim}</td>
+                  <td className="py-4 px-4 sm:px-6 text-xs text-white/25">{row.them}</td>
+                  <td className="py-4 px-4 sm:px-6 text-xs text-white/80 font-semibold">{row.us}</td>
                 </tr>
               ))}
             </tbody>

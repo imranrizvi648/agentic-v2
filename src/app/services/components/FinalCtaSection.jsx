@@ -12,10 +12,10 @@ export default function FinalCtaSection() {
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70" /> 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
        
 
-        <h2 className="text-4xl font-extrabold text-white tracking-tight mb-5 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5 leading-tight">
           Put an AI Agent to Work in Your Business.
         </h2>
 

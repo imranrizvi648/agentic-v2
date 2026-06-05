@@ -31,7 +31,7 @@ const servicesMegaMenu = [
     spotlight: {
       title: "Generative AI in Business Operations: C-Suite AI Adoption Strategies",
       cta: "Get the white paper",
-      img: "/spotlight-ai.png",
+      img: "/ai-and-data-innovation.png",
     },
   },
   {
@@ -58,7 +58,7 @@ const servicesMegaMenu = [
     spotlight: {
       title: "Modernizing Legacy Apps for the AI Era",
       cta: "Watch Now",
-      img: "/spotlight-eng.png",
+      img: "/automation-excellence.png",
     },
   },
   {
@@ -80,7 +80,7 @@ const servicesMegaMenu = [
     spotlight: {
       title: "How Businesses Can Move Past the AI Pilot Phase",
       cta: "Watch Now",
-      img: "/spotlight-advisory.png",
+      img: "/strategic.png",
     },
   },
   {
@@ -97,12 +97,12 @@ const servicesMegaMenu = [
     spotlight: {
       title: "The Ultimate Guide to Boost Application Performance",
       cta: "Read More",
-      img: "/spotlight-opt.png",
+      img: "/ai-governance-security.png",
     },
   },
 ];
 
-// ── Industries Mega Menu — with real hrefs for all subpages ──────────────────
+// ── Industries Mega Menu ──────────────────────────────────────────────────────
 const industriesMegaMenu = [
   {
     id: "Finance And Banking",
@@ -128,7 +128,7 @@ const industriesMegaMenu = [
     spotlight: {
       title: "The Future of Smart Data Management in Capital Markets",
       cta: "Download Playbook",
-      img: "/spotlight-finance.png",
+      img: "/finance-and-banking.jpg",
     },
   },
   {
@@ -156,7 +156,7 @@ const industriesMegaMenu = [
     spotlight: {
       title: "Transforming Modern Healthcare with Agentic Frameworks",
       cta: "Read Industry Report",
-      img: "/spotlight-health.png",
+      img: "/healthcare.png",
     },
   },
   {
@@ -183,7 +183,7 @@ const industriesMegaMenu = [
     spotlight: {
       title: "Maximizing Digital Assets and Property Returns via Advanced AI",
       cta: "Watch Webinar",
-      img: "/spotlight-estate.png",
+      img: "/Real-estate.png",
     },
   },
   {
@@ -210,7 +210,7 @@ const industriesMegaMenu = [
     spotlight: {
       title: "Scaling Modern Enterprise Stores to New Peaks",
       cta: "View Case Study",
-      img: "/spotlight-ecommerce.png",
+      img: "/ecommerce.png",
     },
   },
   {
@@ -237,13 +237,13 @@ const industriesMegaMenu = [
     spotlight: {
       title: "Reimagining Digital Education Ecosystems globally",
       cta: "Get White Paper",
-      img: "/spotlight-edu.png",
+      img: "/education.png",
     },
   },
 ];
 
 const navItems = [
-  { name: "Home",       href: "/",           dropdown: false },
+  { name: "Home",       href: "/",          dropdown: false },
   { name: "Services",   href: "/services",   dropdown: true  },
   { name: "Industries", href: "/industries", dropdown: true  },
   { name: "Blog",       href: "/blog",       dropdown: false },
@@ -259,10 +259,17 @@ export default function Navbar() {
   const [isButtonHovered,  setIsButtonHovered]  = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Mobile Dropdowns states
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+
   const [activeServicesTab,   setActiveServicesTab]   = useState(servicesMegaMenu[0].id);
   const [activeIndustriesTab, setActiveIndustriesTab] = useState(industriesMegaMenu[0].id);
 
-  // Derive active nav item from URL — no useState needed
+  // Pages where navbar text should ALWAYS be dark from start (e.g. light background layout)
+  const isLightPage = pathname === "/proposal" || pathname === "/contact";
+  const useDarkTheme = isScrolled || isLightPage;
+
   const getActiveTab = () => {
     if (pathname === "/") return "Home";
     const match = navItems.find(
@@ -292,13 +299,13 @@ export default function Navbar() {
     <nav
       className={`fixed left-0 right-0 z-50 flex justify-center
         transition-[padding,top] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-        ${isScrolled ? "top-0 px-0" : "top-4 md:top-6 px-4 md:px-8"}`}
+        ${useDarkTheme ? "top-0 px-0" : "top-4 md:top-6 px-4 md:px-8"}`}
     >
       <div
         className={`
           w-full flex flex-col items-center justify-between relative
           transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-          ${isScrolled
+          ${useDarkTheme
             ? `max-w-[100%] px-6 md:px-10 py-3
                rounded-none
                bg-white/70 backdrop-blur-2xl
@@ -312,7 +319,7 @@ export default function Navbar() {
           }
         `}
       >
-        {!isScrolled && (
+        {!useDarkTheme && (
           <div className="absolute top-0 left-6 right-6 h-[1px]
                           bg-gradient-to-r from-transparent via-white/40 to-transparent
                           rounded-full pointer-events-none" />
@@ -330,8 +337,8 @@ export default function Navbar() {
               />
             </div>
             <span className={`font-bold text-lg md:text-xl tracking-wide transition-colors duration-300
-              ${isScrolled ? "text-[#1a194d]" : "text-white"}`}>
-              Agenticsense
+              ${useDarkTheme ? "text-[#1a194d]" : "text-white"}`}>
+              AgenticSense
             </span>
           </Link>
 
@@ -352,31 +359,31 @@ export default function Navbar() {
                       relative flex items-center gap-1.5 px-4 py-2.5
                       transition-all duration-300
                       ${activeTab === item.name || hoveredTab === item.name
-                        ? isScrolled
+                        ? useDarkTheme
                           ? "bg-[#1a194d]/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.8),inset_0_0_0_1px_rgba(26,25,77,0.08)]"
                           : "bg-white/[0.10] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),inset_0_0_0_1px_rgba(255,255,255,0.08)]"
                         : ""
                       }
-                      ${isScrolled ? "text-slate-700 hover:text-[#1a194d]" : "text-white/80 hover:text-white"}
+                      ${useDarkTheme ? "text-slate-700 hover:text-[#1a194d]" : "text-white/80 hover:text-white"}
                     `}
                   >
                     {activeTab === item.name && (
                       <>
                         <div className={`absolute top-1.5 left-1.5 w-2 h-2
                           border-t-[1.5px] border-l-[1.5px] rounded-tl-[2px]
-                          ${isScrolled ? "border-[#1a194d]" : "border-white"}`} />
+                          ${useDarkTheme ? "border-[#1a194d]" : "border-white"}`} />
                         <div className={`absolute bottom-1.5 right-1.5 w-2 h-2
                           border-b-[1.5px] border-r-[1.5px] rounded-br-[2px]
-                          ${isScrolled ? "border-[#1a194d]" : "border-white"}`} />
+                          ${useDarkTheme ? "border-[#1a194d]" : "border-white"}`} />
                       </>
                     )}
 
                     {hoveredTab === item.name && activeTab !== item.name && (
                       <div className="absolute inset-1 pointer-events-none">
-                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
-                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
-                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
-                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
+                        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/40" : "bg-white/70"}`} />
                       </div>
                     )}
 
@@ -401,13 +408,13 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.22, ease: "easeInOut" }}
                         className={`absolute top-full left-0 right-0 mx-auto mt-4 w-[90vw] max-w-[1200px] min-h-[410px] flex rounded overflow-hidden border shadow-2xl z-50 backdrop-blur-2xl
-                          ${isScrolled
+                          ${useDarkTheme
                             ? "bg-white border-slate-200 text-slate-800"
                             : "bg-[#0b0a14]/95 border-white/10 text-white"
                           }`}
                       >
                         {/* LEFT: Categories */}
-                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
+                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${useDarkTheme ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
                           {servicesMegaMenu.map((menuItem) => (
                             <button
                               key={menuItem.id}
@@ -415,7 +422,7 @@ export default function Navbar() {
                               onClick={() => setActiveServicesTab(menuItem.id)}
                               className={`flex items-center justify-between px-4 py-3 text-left font-semibold text-[13.5px] rounded-lg transition-all duration-200
                                 ${activeServicesTab === menuItem.id
-                                  ? isScrolled
+                                  ? useDarkTheme
                                     ? "bg-[#625eff]/10 text-[#625eff]"
                                     : "bg-white/10 text-white"
                                   : "hover:bg-slate-100/50 dark:hover:bg-white/5 opacity-80"
@@ -430,7 +437,7 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* CENTER: Sub-services — real Links */}
+                        {/* CENTER: Sub-services */}
                         <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
                           {currentServicesData.subServices.map((sub, idx) => (
                             <Link
@@ -447,7 +454,7 @@ export default function Navbar() {
                                   </span>
                                 )}
                               </h4>
-                              <p className={`text-[12.5px] leading-relaxed ${isScrolled ? "text-slate-500" : "text-slate-400"}`}>
+                              <p className={`text-[12.5px] leading-relaxed ${useDarkTheme ? "text-slate-500" : "text-slate-400"}`}>
                                 {sub.desc}
                               </p>
                             </Link>
@@ -455,7 +462,7 @@ export default function Navbar() {
                         </div>
 
                         {/* RIGHT: Spotlight */}
-                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
+                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${useDarkTheme ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
                           <div className="flex flex-col justify-start">
                             <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
                             <div className="mt-3 relative rounded-lg overflow-hidden border border-white/5 aspect-[16/10] bg-gradient-to-br from-[#625eff]/20 to-purple-600/20 flex items-center justify-center shadow-sm max-h-[140px]">
@@ -492,13 +499,13 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.22, ease: "easeInOut" }}
                         className={`absolute top-full left-0 right-0 mx-auto mt-4 w-[90vw] max-w-[1200px] min-h-[410px] flex rounded overflow-hidden border shadow-2xl z-50 backdrop-blur-2xl
-                          ${isScrolled
+                          ${useDarkTheme
                             ? "bg-white border-slate-200 text-slate-800"
                             : "bg-[#0b0a14]/95 border-white/10 text-white"
                           }`}
                       >
                         {/* LEFT: Industry categories */}
-                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${isScrolled ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
+                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${useDarkTheme ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
                           {industriesMegaMenu.map((menuItem) => (
                             <button
                               key={menuItem.id}
@@ -506,7 +513,7 @@ export default function Navbar() {
                               onClick={() => setActiveIndustriesTab(menuItem.id)}
                               className={`flex items-center justify-between px-4 py-3 text-left font-semibold text-[13.5px] rounded-lg transition-all duration-200
                                 ${activeIndustriesTab === menuItem.id
-                                  ? isScrolled
+                                  ? useDarkTheme
                                     ? "bg-[#625eff]/10 text-[#625eff]"
                                     : "bg-white/10 text-white"
                                   : "hover:bg-slate-100/50 dark:hover:bg-white/5 opacity-80"
@@ -521,7 +528,7 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* CENTER: Industry sub-items — real Links that navigate */}
+                        {/* CENTER: Industry sub-items */}
                         <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
                           {currentIndustriesData.subServices.map((sub, idx) => (
                             <Link
@@ -532,13 +539,8 @@ export default function Navbar() {
                             >
                               <h4 className="font-bold text-[14.5px] flex items-center gap-2 group-hover/item:text-[#625eff] transition-colors">
                                 {sub.title}
-                                {sub.isNew && (
-                                  <span className="bg-blue-500 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">
-                                    New
-                                  </span>
-                                )}
                               </h4>
-                              <p className={`text-[12.5px] leading-relaxed ${isScrolled ? "text-slate-500" : "text-slate-400"}`}>
+                              <p className={`text-[12.5px] leading-relaxed ${useDarkTheme ? "text-slate-500" : "text-slate-400"}`}>
                                 {sub.desc}
                               </p>
                             </Link>
@@ -546,7 +548,7 @@ export default function Navbar() {
                         </div>
 
                         {/* RIGHT: Industry spotlight */}
-                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${isScrolled ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
+                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${useDarkTheme ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
                           <div className="flex flex-col justify-start">
                             <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
                             <div className="mt-3 relative rounded-lg overflow-hidden border border-white/5 aspect-[16/10] bg-gradient-to-br from-[#625eff]/20 to-purple-600/20 flex items-center justify-center shadow-sm max-h-[140px]">
@@ -581,14 +583,14 @@ export default function Navbar() {
           </ul>
 
           {/* ── Desktop CTA ───────────────────────────────────────────────── */}
-          <Link href="/contact" className="hidden lg:block">
+          <Link href="/proposal" className="hidden lg:block">
             <button
               onMouseEnter={() => setIsButtonHovered(true)}
               onMouseLeave={() => setIsButtonHovered(false)}
               className={`relative flex items-center gap-2 px-6 py-2.5 rounded-lg
                 font-semibold text-[14px] transition-all duration-300 overflow-hidden
                 ${isButtonHovered
-                  ? isScrolled
+                  ? useDarkTheme
                     ? "bg-[#1a194d]/[0.08] text-[#1a194d] shadow-[inset_0_0_0_1px_rgba(26,25,77,0.15)]"
                     : "bg-white/[0.12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.12)]"
                   : "bg-[#625eff] text-white"
@@ -603,14 +605,14 @@ export default function Navbar() {
               )}
               {isButtonHovered && (
                 <div className="absolute inset-1 pointer-events-none">
-                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${isScrolled ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
                 </div>
               )}
               <span className="relative z-10 flex items-center gap-2">
-                Get In Touch
+                Request Proposal
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/>
                   <polyline points="12 5 19 12 12 19"/>
@@ -622,7 +624,7 @@ export default function Navbar() {
           {/* ── Mobile Hamburger ──────────────────────────────────────────── */}
           <button
             className={`lg:hidden p-2 z-50 focus:outline-none transition-colors duration-300
-              ${isScrolled ? "text-[#1a194d]" : "text-white"}`}
+              ${useDarkTheme ? "text-[#1a194d]" : "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -634,7 +636,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ── Mobile Dropdown ───────────────────────────────────────────────── */}
+        {/* ── Mobile Dropdown Wrapper ───────────────────────────────────────── */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -643,57 +645,97 @@ export default function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
               className={`w-full lg:hidden overflow-hidden mt-3 pt-3 border-t
-                ${isScrolled ? "border-black/[0.06]" : "border-white/[0.10]"}`}
+                ${useDarkTheme ? "border-black/[0.06]" : "border-white/[0.10]"}`}
             >
               <ul className="flex flex-col py-2 gap-1">
                 {navItems.map((item) => (
                   <li key={item.name} className="flex flex-col">
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`px-4 py-2.5 rounded-lg font-medium text-[15px] transition-colors
-                        ${isScrolled
-                          ? "text-slate-700 hover:bg-[#1a194d]/[0.06] hover:text-[#1a194d]"
-                          : "text-white/85 hover:bg-white/[0.08] hover:text-white"
-                        }`}
-                    >
-                      {item.name}
-                    </Link>
+                    
+                    {/* Item Main Block */}
+                    <div className="flex items-center justify-between w-full rounded-lg">
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`flex-1 px-4 py-2.5 font-medium text-[15px] transition-colors
+                          ${useDarkTheme
+                            ? "text-slate-700 hover:bg-[#1a194d]/[0.06] hover:text-[#1a194d]"
+                            : "text-white/85 hover:bg-white/[0.08] hover:text-white"
+                          }`}
+                      >
+                        {item.name}
+                      </Link>
 
-                    {/* Mobile Services — all 9 subpages as real Links */}
+                      {/* Dropdown Arrow Toggles for Mobile explicitly */}
+                      {item.dropdown && (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (item.name === "Services") setMobileServicesOpen(!mobileServicesOpen);
+                            if (item.name === "Industries") setMobileIndustriesOpen(!mobileIndustriesOpen);
+                          }}
+                          className={`p-3 mr-2 transition-transform duration-300
+                            ${useDarkTheme ? "text-slate-600" : "text-white/70"}
+                            ${(item.name === "Services" && mobileServicesOpen) || (item.name === "Industries" && mobileIndustriesOpen) ? "rotate-180" : ""}`}
+                        >
+                          <svg width="12" height="8" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Mobile Services Submenu Inner Logic */}
                     {item.name === "Services" && item.dropdown && (
-                      <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
-                        {servicesMegaMenu.flatMap((cat) =>
-                          cat.subServices.map((sub) => (
-                            <Link
-                              key={sub.href}
-                              href={sub.href}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className={`py-1 text-[14px] font-semibold transition-colors
-                                ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
-                            >
-                              {sub.title}
-                            </Link>
-                          ))
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div 
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1 overflow-hidden"
+                          >
+                            {servicesMegaMenu.flatMap((cat) =>
+                              cat.subServices.map((sub) => (
+                                <Link
+                                  key={sub.href}
+                                  href={sub.href}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className={`py-1.5 text-[14px] font-semibold transition-colors
+                                    ${useDarkTheme ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
+                                security="">
+                                  {sub.title}
+                                </Link>
+                              ))
+                            )}
+                          </motion.div>
                         )}
-                      </div>
+                      </AnimatePresence>
                     )}
 
-                    {/* Mobile Industries — all 5 subpages as real Links */}
+                    {/* Mobile Industries Submenu Inner Logic */}
                     {item.name === "Industries" && item.dropdown && (
-                      <div className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1">
-                        {industriesMegaMenu.map((ind) => (
-                          <Link
-                            key={ind.id}
-                            href={ind.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className={`py-1 text-[14px] font-semibold transition-colors
-                              ${isScrolled ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
+                      <AnimatePresence>
+                        {mobileIndustriesOpen && (
+                          <motion.div 
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1 overflow-hidden"
                           >
-                            {ind.label}
-                          </Link>
-                        ))}
-                      </div>
+                            {industriesMegaMenu.map((ind) => (
+                              <Link
+                                key={ind.id}
+                                href={ind.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={`py-1.5 text-[14px] font-semibold transition-colors
+                                  ${useDarkTheme ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
+                              >
+                                {ind.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     )}
                   </li>
                 ))}

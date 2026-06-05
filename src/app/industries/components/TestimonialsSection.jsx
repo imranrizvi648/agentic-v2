@@ -17,14 +17,14 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#0d0d14] py-24 border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-[#0d0d14] py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div className="flex items-center gap-3 mb-5">
           <div className="h-px w-8 bg-amber-400" />
           <span className="text-xs font-bold text-amber-400 uppercase tracking-[0.2em]">Client Voice</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-14 max-w-2xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-14 max-w-2xl">
           From the Teams Running Our Agents in Production.
         </h2>
 

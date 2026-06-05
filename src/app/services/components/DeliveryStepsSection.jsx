@@ -12,19 +12,19 @@ export default function DeliveryStepsSection() {
   ];
 
   return (
-    <section className="bg-white py-24 border-b border-slate-100 font-sans relative overflow-hidden select-none">
+    <section className="bg-white py-14 sm:py-20 md:py-24 border-b border-slate-100 font-sans relative overflow-hidden select-none">
       
       {/* Structural technical grid lines */}
       <div className="absolute inset-y-0 left-[6%] w-px bg-slate-50 pointer-events-none hidden xl:block" />
       <div className="absolute inset-y-0 right-[6%] w-px bg-slate-50 pointer-events-none hidden xl:block" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header Block */}
         <div className="border-b border-slate-200 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-xl">
            
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#1a194d] uppercase leading-none">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-brand-primary uppercase leading-tight">
               A Disciplined Path from Idea to a System Your Teams Trust
             </h2>
           </div>

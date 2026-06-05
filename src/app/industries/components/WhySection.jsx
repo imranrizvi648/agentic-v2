@@ -38,14 +38,14 @@ const pillars = [
 
 export default function WhySection() {
   return (
-    <section className="bg-slate-50 py-24 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-slate-50 py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight max-w-xl leading-[1.15]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-primary tracking-tight max-w-xl leading-tight">
               Sector AI Requires More Than Sector Awareness.
             </h2>
           </div>
@@ -55,7 +55,7 @@ export default function WhySection() {
         </div>
 
         {/* Modern White Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {pillars.map((p) => (
             <div 
               key={p.num} 
@@ -66,7 +66,7 @@ export default function WhySection() {
                   
                 </div>
                 
-                <h3 className="text-base font-bold text-slate-900 mb-3 group-hover:text-slate-800 transition-colors">
+                <h3 className="text-base font-bold text-brand-primary mb-3 group-hover:text-brand-secondary transition-colors">
                   {p.title}
                 </h3>
                 

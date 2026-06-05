@@ -28,14 +28,14 @@ return ( <section className="relative h-screen flex items-center overflow-hidden
   </div>
 
   {/* Content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
       {/* Left Content */}
       <div>
         
 
-        <h1 className="text-5xl mt-15 md:text-6xl  font-black text-white leading-tight mb-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-2 mt-15">
           AI Built for the{" "}
       
             Realities
@@ -58,14 +58,14 @@ return ( <section className="relative h-screen flex items-center overflow-hidden
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             href="#"
-            className="inline-flex items-center gap-2 bg-[#1a194d] text-white font-bold text-sm px-6 py-3.5 rounded-none  transition-colors"
+            className="inline-flex items-center gap-2 bg-[#1a194d] text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-none  transition-colors"
           >
             Book a Sector Assessment →
           </Link>
 
           <Link
             href="#industries"
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-sm px-6 py-3.5 rounded-none border border-white/20 hover:bg-white/20 transition-all"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-none border border-white/20 hover:bg-white/20 transition-all"
           >
             Explore Industries
           </Link>
@@ -77,7 +77,7 @@ return ( <section className="relative h-screen flex items-center overflow-hidden
         {sectors.map((sector) => (
           <div
             key={sector.label}
-            className="flex items-center gap-5 bg-white/10 backdrop-blur-md border border-white/20 rounded px-6 py-3 hover:bg-white/15 transition-all"
+            className="flex items-center gap-5 bg-white/10 backdrop-blur-md border border-white/20 rounded px-4 sm:px-6 py-3 hover:bg-white/15 transition-all"
           >
             <span className={`text-2xl w-10 text-center ${sector.color}`}>
               {sector.icon}

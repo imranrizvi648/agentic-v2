@@ -130,13 +130,13 @@ export default function ServicesCategorySection() {
     : categories.filter(cat => cat.code === selectedTab);
 
   return (
-    <section className="bg-gradient-to-b from-slate-50 via-white to-slate-50 py-20 border-b border-slate-100 relative overflow-hidden font-sans select-none">
+    <section className="bg-gradient-to-b from-slate-50 via-white to-slate-50 py-14 sm:py-14 sm:py-12 sm:py-10 sm:py-14 md:py-16 md:py-20 border-b border-slate-100 relative overflow-hidden font-sans select-none">
       
       {/* Background Glows for Depth */}
       <div className="absolute top-1/4 left-1/12 w-96 h-96 bg-blue-50/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/12 w-96 h-96 bg-indigo-50/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 sm:px-12 relative z-10 space-y-16">
         
         {/* Header */}
         <div className="border-b border-slate-200 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -147,7 +147,7 @@ export default function ServicesCategorySection() {
                 CAPABILITIES CATALOGUE // VOL. 02
               </span>
             </div>
-            <h2 className="text-4xl md:text-[44px] font-extrabold text-[#1B212D]  tracking-tight mx-auto max-w-4xl leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mx-auto max-w-4xl leading-tight">
               Our Services.
             </h2>
           </div>
@@ -191,7 +191,7 @@ export default function ServicesCategorySection() {
               <div className="flex items-center justify-between border-b border-slate-200 pb-3">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-[#1a194d]" />
-                  <h3 className="text-[11px] font-mono font-black uppercase tracking-[0.15em] text-[#1a194d]">
+                  <h3 className="text-[11px] font-mono font-black uppercase tracking-[0.15em] text-brand-primary">
                     {cat.label}
                   </h3>
                 </div>
@@ -269,7 +269,7 @@ export default function ServicesCategorySection() {
           </p>
           <Link 
             href="/contact" 
-            className="bg-[#1a194d] hover:bg-[#625eff] text-white font-mono text-[10px] font-bold uppercase py-3.5 px-6 rounded-none transition-all duration-300 tracking-widest shadow-sm hover:shadow-[0_10px_20px_-5px_rgba(98,94,255,0.4)] hover:-translate-y-0.5"
+            className="bg-[#1a194d] hover:bg-[#625eff] text-white font-mono text-[10px] font-bold uppercase py-3.5 px-4 sm:px-6 rounded-none transition-all duration-300 tracking-widest shadow-sm hover:shadow-[0_10px_20px_-5px_rgba(98,94,255,0.4)] hover:-translate-y-0.5"
           >
             Request Architecture Audit
           </Link>

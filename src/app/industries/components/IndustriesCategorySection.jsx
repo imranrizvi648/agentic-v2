@@ -58,7 +58,7 @@ const industries = [
 export default function IndustriesCategorySection() {
   return (
     <section id="industries" className="bg-white text-brand-primary py-28 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -67,7 +67,7 @@ export default function IndustriesCategorySection() {
               <div className="h-px w-8 bg-brand-secondary" />
               <span className="text-xs font-bold text-brand-secondary uppercase tracking-[0.2em]">Five Sectors</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-brand-primary tracking-tight leading-none">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-primary tracking-tight leading-tight">
               Deep in Every Sector.
             </h2>
           </div>
@@ -91,7 +91,7 @@ export default function IndustriesCategorySection() {
                   
 
                   {/* Card Title & Tagline */}
-                  <h3 className="text-xl font-bold text-brand-primary  transition-colors mb-3">
+                  <h3 className="text-base font-bold text-brand-primary transition-colors mb-3">
                     {ind.title}
                   </h3>
                   

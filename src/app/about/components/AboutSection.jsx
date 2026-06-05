@@ -235,7 +235,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-[79vh] bg-[#1a194d] overflow-hidden flex items-center font-sans">
+    <section className="relative w-full h-[55vh] sm:h-[65vh] md:h-[79vh] bg-[#1a194d] overflow-hidden flex items-center font-sans">
 
       {/* Canvas */}
       <canvas
@@ -247,7 +247,7 @@ export default function AboutSection() {
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-6 py-16 sm:px-16 sm:py-20 lg:px-24 lg:py-24">
 
-        <h2 className="text-5xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight leading-none text-white mb-3 mt-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-3 mt-6">
           About us
         </h2>
 

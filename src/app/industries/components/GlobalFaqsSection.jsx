@@ -35,14 +35,14 @@ const faqs = [
 
 export default function GlobalFaqsSection() {
   return (
-    <section className="bg-[#111118] py-24 border-b border-white/[0.06]">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="bg-[#111118] py-14 sm:py-20 md:py-14 sm:py-20 md:py-24 border-b border-white/[0.06]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
         <div className="flex items-center gap-3 mb-5">
           <div className="h-px w-8 bg-amber-400" />
           <span className="text-xs font-bold text-amber-400 uppercase tracking-[0.2em]">Common Questions</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-12 max-w-xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-12 max-w-xl">
           What Organisations Ask Before Starting.
         </h2>
 
