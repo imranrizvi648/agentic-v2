@@ -6,7 +6,7 @@ const leftFeatures = [
   { title: "NetSuite", image: "/Gemini_Generated_Image_aq8ak2aq8ak2aq8a-removebg-preview.webp", subtitle: "Enterprise Integration" },
   { title: "Microsoft Fabric", image: "/microsoft-fusion.png", subtitle: "Enterprise Integration" },
   { title: "Oracle Fusion", image: "/image-removebg-preview.png", subtitle: "Enterprise Integration" },
-  { title: "J.P.Morgan", redundantTitle: "JP Morgan", image: "/logo-jpm-brown.png", subtitle: "Enterprise Integration" },
+  { title: "", redundantTitle: "Salesforce", image: "/salessforce.png", subtitle: "Enterprise Integration" },
 ];
 
 const rightFeatures = [
