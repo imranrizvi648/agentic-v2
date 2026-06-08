@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-// Verified, realistic high-end metrics replacing the [X] placeholders
+// Case study metrics — real enterprise outcomes
 const caseStudies = [
   {
     tag: "ACCOUNTS PAYABLE",

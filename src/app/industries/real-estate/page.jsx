@@ -1,8 +1,9 @@
 import RealEstateContent from "./components/IndustryPageContent";
 
 export const metadata = {
-  title: "AI for Real Estate — Lead Intelligence, Property Valuation & Portfolio Analytics | AgenticSense",
-  description: "AgenticSense deploys AI agents for real estate — automating lead qualification, property valuation, portfolio analytics and document processing inside your CRM and property management systems.",
+  title: "AI Solutions for Real Estate Businesses | AgenticSense",
+  description:
+    "AgenticSense automates real estate workflows — lead management, property recommendations, document processing and client communication with intelligent AI agents.",
 };
 
 export default function RealEstatePage() {

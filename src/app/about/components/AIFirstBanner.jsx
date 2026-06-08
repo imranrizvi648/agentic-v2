@@ -18,16 +18,16 @@ export default function AIFirstBanner() {
           </h2>
           <div>
             <button className="inline-flex items-center gap-3 bg-white text-slate-900 font-semibold px-5 sm:px-6 py-3 sm:py-3.5 rounded-sm transition-all hover:bg-slate-100 group text-sm shadow-sm">
-              Our AI–first approach
+              Our Agentic AI Approach
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </div>
 
         <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-white/90 text-[15px] lg:text-base leading-relaxed max-w-2xl lg:pl-6">
-          <p>Being AI–first at tkxel does not mean adding AI everywhere. It means applying intelligence where it improves decisions, reduces friction, and strengthens systems over time.</p>
-          <p>We embed AI into products, platforms, and operations in ways that are governed, secure, and aligned to business readiness, from early strategy and validation to production–grade.</p>
-          <p className="font-medium text-white">Our role is to help organisations get the balance right.</p>
+          <p>Being agentic AI–first at AgenticSense means we deploy agents that complete workflows end to end — not tools that assist a step, then hand it back. If an official API exists for your ERP, we use it. Full automation is a hard standard.</p>
+          <p>We build directly on SAP Business One, Oracle Fusion Cloud and Microsoft Fabric APIs — not on fragile middleware. Every agent we deploy includes audit logging, access control and human-in-the-loop checkpoints from day one.</p>
+          <p className="font-medium text-white">Governance is not added at the end. Security, reliability and compliance are engineered in from the start — so your agents stay accurate, controlled and accountable long after go-live.</p>
         </div>
       </div>
 

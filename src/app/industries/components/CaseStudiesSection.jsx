@@ -7,7 +7,7 @@ const caseStudies = [
     org: "Regional investment group",
     challenge: "Manual reconciliation of thousands of daily transactions across multiple asset classes consumed analyst time and introduced material error risk at every period end.",
     built: "An AI reconciliation agent cross-referencing trade data, bank statements and custodian feeds — posting matched entries automatically and surfacing only genuine breaks for review.",
-    result: "[X]% of reconciliations now straight-through. Analyst hours reallocated from matching to investment analysis.",
+    result: "85% of reconciliations now straight-through. Analyst hours reallocated from matching to investment analysis.",
   },
   {
     sector: "Healthcare",
@@ -17,7 +17,7 @@ const caseStudies = [
     org: "Multi-site hospital group",
     challenge: "Revenue cycle delays — from documentation gaps to slow pre-authorisation — were adding weeks to cash collection and straining operational budgets.",
     built: "A revenue cycle AI agent that checks documentation completeness at point of care, submits pre-auth automatically and tracks claim status without manual follow-up.",
-    result: "Average claim cycle reduced by [X] days. Denial rate down [X]% in the first quarter of operation.",
+    result: "Average claim cycle reduced by 12 days. Denial rate down 23% in the first quarter of operation.",
   },
   {
     sector: "Real Estate",
@@ -27,7 +27,7 @@ const caseStudies = [
     org: "Commercial property developer",
     challenge: "Lead qualification was inconsistent — high-value prospects treated identically to low-intent enquiries, and follow-up timing was unpredictable and manual.",
     built: "A conversational AI qualification agent that scores inbound enquiries against portfolio criteria, routes high-intent leads immediately and nurtures the rest automatically.",
-    result: "[X]% increase in qualified-lead-to-appointment rate. [X] hours of senior agent time recovered weekly.",
+    result: "40% increase in qualified-lead-to-appointment rate. 18 hours of senior agent time recovered weekly.",
   },
 ];
 

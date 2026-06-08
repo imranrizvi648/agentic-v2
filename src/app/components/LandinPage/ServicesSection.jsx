@@ -11,10 +11,10 @@ const BgStrategic = () => (<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2
 const BgConversational = () => (<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 w-full h-full"><rect width="300" height="400" fill="#080714"/><circle cx="150" cy="220" r="180" fill="#1a194d" opacity="0.55"/><path d="M108,200 Q129,168 150,200 Q171,232 192,200" fill="none" stroke="#625eff" strokeWidth="1.6" opacity="0.75"/><path d="M122,200 Q136,180 150,200 Q164,220 178,200" fill="none" stroke="#a095ff" strokeWidth="2.2" opacity="0.9"/><rect x="136" y="174" width="28" height="40" rx="14" fill="#1a194d" stroke="#625eff" strokeWidth="1.5"/><rect x="140" y="178" width="20" height="32" rx="10" fill="#3d2fb0" opacity="0.9"/><rect x="22" y="82" width="118" height="36" rx="10" fill="#1a194d" opacity="0.75"/><circle cx="50" cy="100" r="4" fill="#a095ff" opacity="0.75"/><circle cx="65" cy="100" r="4" fill="#a095ff" opacity="0.75"/><circle cx="80" cy="100" r="4" fill="#a095ff" opacity="0.75"/></svg>);
 
 const servicesData = [
-  { id: "ai", title: "AI & Data\nInnovation", description: "Specialized in Generative AI consulting, custom AI agents, and data science solutions.", tags: ["AI Agent Development", "Data Intelligence", "GenAI Models"], Bg: BgAIData },
-  { id: "engineering", title: "Automation\nExcellence", description: "Custom software development, cloud architecture, and robust API system integrations.", tags: ["Process Automation", "Enterprise AI", "Workflow Sync"], Bg: BgAutomation },
-  { id: "cloud", title: "Strategic\nAI Solutions", description: "Secure cloud migration services, data protection, and compliance audits.", tags: ["AI Consulting", "Digital Strategy", "ROI Analysis"], Bg: BgStrategic },
-  { id: "strategy", title: "Conversational\nAI", description: "Strategic digital transformation and agile coaching for business growth.", tags: ["Chatbot Dev", "Multi-lingual", "24/7 Support"], Bg: BgConversational },
+  { id: "ai", title: "Agentic AI\nfor Finance", description: "AI agents that capture, validate, match and post transactions natively inside SAP and Oracle — end to end, with full audit trail.", tags: ["AP Automation", "GL & Reconciliations", "Month-End Close"], Bg: BgAIData },
+  { id: "engineering", title: "ERP & CRM\nAI Integration", description: "We connect intelligent agents directly to your enterprise platforms via official APIs — no fragile middleware, no workarounds.", tags: ["SAP Business One", "Oracle Fusion", "NetSuite / Zoho"], Bg: BgAutomation },
+  { id: "cloud", title: "Custom AI\nAgent Development", description: "Multi-agent systems engineered for your workflows, your tools and your guardrails — model-flexible and production-ready.", tags: ["LangGraph", "FastAPI", "Claude / GPT"], Bg: BgStrategic },
+  { id: "strategy", title: "Conversational\nAI & Copilots", description: "Ask your ERP a question in plain language and get an answer backed by real records — grounded, permission-aware and secure.", tags: ["MS Teams / Outlook", "Finance Copilots", "NL Reporting"], Bg: BgConversational },
 ];
 
 export default function ServicesSection() {
@@ -26,7 +26,7 @@ export default function ServicesSection() {
             Our AI & Automation Services
           </h2>
           <p className="mt-4 sm:mt-6 text-slate-500 text-base sm:text-lg max-w-2xl leading-relaxed">
-            Bridging the gap between complex technology and business growth through bespoke AI solutions.
+            Nine production-grade services. One operating principle: agentic AI that ships to production and runs where the work happens. Finance-first. Enterprise-ready.
           </p>
         </div>
 

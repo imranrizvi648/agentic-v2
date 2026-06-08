@@ -402,9 +402,9 @@
 //           </div>
 
 //           <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
-//             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-black uppercase">QUINN LINK</h1>
+//             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-black uppercase">AGENTICSENSE</h1>
 //             <p className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed max-w-xs">
-//               Crafting digital experiences with clarity and purpose. Designing visuals that reflect identity and innovation.
+//               Building intelligent AI agents that help businesses automate work, make smarter decisions and scale faster — natively inside your ERP.
 //             </p>
 //           </div>
 
@@ -414,9 +414,9 @@
 //               <h3 className="text-lg font-bold text-gray-800 uppercase tracking-tight">Contact</h3>
 //             </div>
 //             <div className="space-y-2 text-gray-700 text-sm font-semibold">
-//               <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: agntics@studio.com</p>
-//               <p>Phone: +(92) 555-0107</p>
-//               <p className="text-gray-500 font-medium text-[13px]">4517 Washington Ave. Kentucky 39495</p>
+//               <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: info@agenticsense.ai</p>
+//               <p>Phone: +(971) 4 000 0000</p>
+//               <p className="text-gray-500 font-medium text-[13px]">Dubai, UAE · Karachi, Pakistan</p>
 //             </div>
 //             <button className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-5 py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-all group">
 //               <span className="text-xs font-black text-gray-800 uppercase tracking-widest">Contact Us</span>
@@ -545,9 +545,9 @@ const Footer = React.memo(function Footer() {
           </div>
 
           <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-black uppercase">QUINN LINK</h1>
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-black uppercase">AGENTICSENSE</h1>
             <p className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed max-w-xs">
-              Crafting digital experiences with clarity and purpose. Designing visuals that reflect identity and innovation.
+              Building intelligent AI agents that help businesses automate work, make smarter decisions and scale faster — natively inside your ERP.
             </p>
           </div>
 
@@ -557,9 +557,9 @@ const Footer = React.memo(function Footer() {
               <h3 className="text-lg font-bold text-gray-800 uppercase tracking-tight">Contact</h3>
             </div>
             <div className="space-y-2 text-gray-700 text-sm font-semibold">
-              <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: agntics@studio.com</p>
-              <p>Phone: +(92) 555-0107</p>
-              <p className="text-gray-500 font-medium text-[13px]">4517 Washington Ave. Kentucky 39495</p>
+              <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: info@agenticsense.ai</p>
+              <p>Phone: +(971) 4 000 0000</p>
+              <p className="text-gray-500 font-medium text-[13px]">Dubai, UAE · Karachi, Pakistan</p>
             </div>
             <button className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-5 py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-all group">
               <span className="text-xs font-black text-gray-800 uppercase tracking-widest">Contact Us</span>

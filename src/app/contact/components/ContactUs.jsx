@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { CheckCircle2, MapPin, Mail, Phone, ArrowRight, Sparkles } from "lucide-react";
 
 const FEATURES = [
-  "Improve usability of your product",
-  "Engage users at a higher level and outperform competition",
-  "Reduce onboarding time and improve sales",
-  "Balance user needs with your business goals",
+  "Map your highest-value automation opportunity in one session",
+  "See exactly what an AI agent inside your ERP could do",
+  "Honest assessment of effort, impact and what is deployable today",
+  "No cost, no obligation — just clear, actionable intelligence",
 ];
 
 export default function ContactUs() {
@@ -36,8 +36,8 @@ export default function ContactUs() {
           <span style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(98,94,255,0.08)", border: "1px solid rgba(98,94,255,0.18)", borderRadius: 9999, padding: "5px 14px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#625eff", marginBottom: 20 }}>
             <Sparkles size={11} />Contact Us
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-primary tracking-tight leading-[1.1] mb-4">Get in touch with us</h1>
-          <p style={{ fontSize: "clamp(0.9rem,2vw,1rem)", color: "#6b7280", maxWidth: 420, margin: "0 auto", lineHeight: 1.65 }}>Fill out the form below or schedule a meeting with us at your convenience.</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-primary tracking-tight leading-[1.1] mb-4">Let's Build Something Intelligent Together</h1>
+          <p style={{ fontSize: "clamp(0.9rem,2vw,1rem)", color: "#6b7280", maxWidth: 420, margin: "0 auto", lineHeight: 1.65 }}>Have an idea, project or business challenge? Tell us about it. We'll show you exactly what an AI agent running inside your own systems could do with it.</p>
         </div>
 
         {/* Two-column */}
@@ -45,7 +45,7 @@ export default function ContactUs() {
 
           {/* LEFT: Form */}
           <div style={{ background: "#fff", border: "1px solid #eeecfc", borderRadius: 20, padding: "clamp(24px,4vw,40px) clamp(20px,3vw,36px)", boxShadow: "0 4px 32px rgba(26,25,77,0.07), 0 1px 4px rgba(26,25,77,0.04)" }}>
-            <h2 className="text-base font-bold text-brand-primary mb-6">Send us a message</h2>
+            <h2 className="text-base font-bold text-brand-primary mb-6">Book Your Free Assessment</h2>
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 18 }}>
               {[{ label: "Full Name", field: "name", type: "text", placeholder: "John Smith" },
                 { label: "Email Address", field: "email", type: "email", placeholder: "you@company.com" }].map(({ label, field, type, placeholder }) => (

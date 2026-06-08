@@ -1,3 +1,16 @@
+export const metadata = {
+  title: "About AgenticSense | Intelligent AI Automation Company",
+  description:
+    "Learn about AgenticSense — an AI technology company building intelligent AI agents, ERP-native automation systems and digital transformation solutions for businesses worldwide.",
+  keywords: "about AgenticSense, AI automation company, enterprise AI agents, ERP automation, agentic AI company Dubai",
+  alternates: { canonical: "https://www.agenticsense.ai/about" },
+  openGraph: {
+    title: "About AgenticSense | Intelligent AI Automation Company",
+    description: "AgenticSense builds production-grade AI agents that automate finance, operations and decision-making natively inside your ERP.",
+    url: "https://www.agenticsense.ai/about",
+  },
+};
+
 import React from 'react'
 import AboutSection from './components/AboutSection'
 import AboutDetailedSection from './components/AboutDetailedSection'

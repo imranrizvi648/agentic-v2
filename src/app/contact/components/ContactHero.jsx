@@ -267,13 +267,11 @@ export default function ContactHero() {
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-6 py-16 sm:px-16 sm:py-20 lg:px-24 lg:py-24">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-4">
-          Contact us
+          Contact AgenticSense
         </h1>
         
         <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-xl">
-          Have a project in mind or want to explore how AI can transform your
-          business? We&apos;d love to hear from you — let&apos;s build
-          something remarkable together.
+          Have a project, business challenge or automation opportunity? Let AgenticSense help you build intelligent AI-powered solutions. We work with enterprises across the GCC, South Asia and Europe.
         </p>
       </div>
 

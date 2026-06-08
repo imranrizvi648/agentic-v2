@@ -2,10 +2,10 @@
 import React from "react";
 
 const stats = [
-  { value: "10+", label: "YEARS ON\nMARKET" },
-  { value: "700+", label: "PROFESSIONALS\nON BOARD" },
-  { value: "75%", label: "OF CLIENTS RETURN FOR\nLONG-TERM PARTNERSHIPS" },
-  { value: "2", label: "GLOBAL\nOFFICES" },
+  { value: "9+", label: "ENTERPRISE AI\nSERVICES" },
+  { value: "3", label: "GLOBAL\nOFFICES" },
+  { value: "100%", label: "PRODUCTION-GRADE\nDEPLOYMENTS" },
+  { value: "24/7", label: "AGENT\nMONITORING" },
 ];
 
 export default function CommitmentSection() {
@@ -20,13 +20,13 @@ export default function CommitmentSection() {
           <div className="max-w-2xl">
             <div className="w-12 h-1 bg-[#625eff] mb-6 sm:mb-8" />
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-[1.1] tracking-tight">
-              We're empowering <br /> the future <br />
-              <span className="text-white">with intelligent AI solutions.</span>
+              We build intelligent AI agents <br /> that automate work, <br />
+              <span className="text-white">improve decisions and scale faster.</span>
             </h2>
           </div>
           <p className="text-base sm:text-lg text-white/60 max-w-sm pt-0 sm:pt-4 border-l border-[#625eff]/40 pl-5 sm:pl-6">
-            We deliver cutting-edge artificial intelligence{" "}
-            <span className="text-white">and automation strategies that scale</span> your operations and redefine digital excellence for global enterprises.
+            We deploy AI agents natively inside your ERP — automating finance, operations and{" "}
+            <span className="text-white">decision-making from end to end</span> across the GCC, South Asia and Europe.
           </p>
         </div>
 

@@ -6,57 +6,60 @@ import { Flag } from 'lucide-react';
 const TAB_DATA = [
   {
     id: "why-folio3",
-    label: "Why did we Start AgenticSense?",
+    label: "Why AgenticSense?",
     title: "We started AgenticSense",
-    subtitle: "To Bring Innovation, Integrity, and Agility to Enterprise Software",
-    description: "The founding team came from Silicon Valley; entrepreneurs and engineers who had built products at the intersection of enterprise technology and emerging innovation. They knew what a great technology partner should look like: responsive, technically deep, strategically invested in the client's success.",
-    extraInfo: "Today, that founding mindset drives our work to implement intelligent systems that help organizations:",
+    subtitle: "To Close the Gap Between AI Potential and Enterprise Reality",
+    description: "Most AI projects dazzle in a demo, then quietly never reach production. AgenticSense was founded to solve exactly that problem. We are an agentic AI services company headquartered in Dubai with a delivery centre in Karachi, focused on one thing: production-grade AI agents that integrate directly with enterprise platforms and deliver measurable results.",
+    extraInfo: "Our founding conviction is simple:",
     points: [
-      "Automate operations using AI, machine learning, and agentic workflows.",
-      "Unify disconnected ERP, CRM, and eCommerce systems into a single ecosystem.",
-      "Transform raw data into predictive insights that drive decisions.",
-      "Modernize legacy infrastructure on NetSuite, Salesforce, Dynamics 365, and AWS.",
-      "Scale confidently, whether that means launching in one market or operating across 50."
+      "Build AI agents that complete workflows end to end — not tools that assist a step and hand it back.",
+      "Integrate natively with ERP and CRM through official APIs — not fragile middleware.",
+      "Go finance-first: AP, AR, GL, reconciliations and the month-end close at posting level.",
+      "Govern every agent from day one: audit logging, access control, human-in-the-loop checkpoints.",
+      "Deliver production systems, not slide decks — measured against outcomes agreed before we start."
     ],
-    footerText: "Today, that founding mindset drives our work to implement intelligent systems that help organizations.",
-    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800", // Rocket/Innovation abstract placeholder
+    footerText: "We become your AI execution partner — embedded intelligence operating continuously on your behalf across the workflows that matter most.",
+    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800",
     isGridPoints: false
   },
   {
     id: "what-we-do",
     label: "What We Do",
-    title: "We Help Organizations Build, Scale, and Transform Using AI-driven Technology and Deep Platform Expertise",
+    title: "We Build Agentic AI That Runs Where Your Business Actually Runs",
     subtitle: "",
-    description: "Whether you are a billion-dollar enterprise looking to modernize operations or a high-growth startup building your first product, our rapid prototyping methodology, proprietary frameworks, and deep platform expertise are at your service.",
-    extraInfo: "Our specialized divisions cover:",
+    description: "AgenticSense specializes in developing AI agents, ERP-native automation platforms, data intelligence solutions and digital transformation strategies. We serve enterprises across the GCC, South Asia and Europe — from distribution groups and investment firms to healthcare networks and manufacturing operations.",
+    extraInfo: "Our nine core services:",
     points: [
-      "AI & Machine Learning", "AgTech",
-      "NetSuite ERP", "FoodTech",
-      "Salesforce CRM", "Digital Health",
-      "Microsoft Dynamics", "Cloud & Data Engineering",
-      "eCommerce (Shopify, Magento, BigCommerce)", "App Development",
-      "eLearning"
+      "Agentic AI for the Office of Finance",
+      "Enterprise ERP & CRM AI Integration",
+      "Intelligent Document Processing & Invoice Automation",
+      "Custom AI Agent Development",
+      "Conversational AI & Enterprise Copilots",
+      "Business Process Automation",
+      "Data Intelligence & Decision Analytics",
+      "Agentic AI Strategy & Readiness Consulting",
+      "AI Governance, Security & MLOps"
     ],
-    footerText: "Each division operates with domain specialists who understand not just the technology, but the industry it serves. That's the difference between implementing a system and transforming a business.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800", // Growth/Blocks abstract placeholder
+    footerText: "Each service is built to the same hard standard: full end-to-end automation, no manual steps in the middle, and governance built in from the start.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
     isGridPoints: true
   },
   {
     id: "our-strength",
     label: "Our Strength",
     title: "Our Strength",
-    subtitle: "Award-Winning Expertise Across AI, Enterprise Platforms, and Industry Verticals",
-    description: "Our strength lies in combining deep AI capability with certified platform expertise, and the industry recognizes it:",
+    subtitle: "ERP-Native Expertise, Finance-First Depth, Enterprise Security",
+    description: "AgenticSense combines deep agentic AI capability with certified ERP integration expertise:",
     extraInfo: "",
     points: [
-      "Oracle NetSuite: Alliance Partner of the Year (2025, 2021, 2017). Multiple Spotlight Awards across Automotive, Financial Services, Hospitality, Education, IT, and Building Materials verticals.",
-      "Salesforce: Agentforce Partner, ISV Partner, Managed Services Provider, and Consulting/Implementation Partner. Deep expertise across Sales Cloud, Health Cloud, Marketing Cloud, and Commerce Cloud.",
-      "Microsoft: Gold Partner for Dynamics 365 implementation, customization, and integration across manufacturing, retail, and agriculture.",
-      "AWS: Cloud partner with Lambda Service Delivery designation and Pre-Launch Partner for the KSA Region.",
-      "Healthcare: Official Epic Vendor Services Partner. HIPAA compliant solutions across telemedicine, EHR integration, and medical imaging."
+      "SAP Business One: native Service Layer REST API and SAP HANA integration — posting-level finance automation.",
+      "Oracle Fusion Cloud: REST APIs, OCI GenAI Agents and AI Agent Studio — finance copilots and operations agents.",
+      "Microsoft Fabric & Azure AI Foundry: data engineering, predictive analytics and model services.",
+      "NetSuite, Odoo, Zoho, Salesforce: official REST APIs — no third-party connectors, no middleware.",
+      "Security by design: Microsoft Entra ID / Azure AD, OCI access control, full audit logging on every agent action."
     ],
-    footerText: "From precision AI and computer vision to enterprise ERP implementations for global manufacturers, we don't just implement technology. We transform how organizations operate.",
-    image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=800", // Tech Network/Hand abstract placeholder
+    footerText: "From AP automation that posts straight to your ERP, to finance copilots that answer in plain language — we don't just implement AI. We transform how your operations run.",
+    image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=800",
     isGridPoints: false
   }
 ];

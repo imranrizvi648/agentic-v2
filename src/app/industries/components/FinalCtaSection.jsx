@@ -39,14 +39,14 @@ export default function FinalCtaSection() {
         {/* Buttons (Exact Pehle code ka layout aur rounded-none styling) */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
           <Link
-            href="#"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-[#1a194d] text-white font-bold text-sm px-7 py-4 rounded-none hover:bg-indigo-700 transition-colors"
           >
             Book Your Free Sector Assessment →
           </Link>
 
           <Link
-            href="#"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-none border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
           >
             Request a Demo

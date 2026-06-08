@@ -1,8 +1,9 @@
 import EcommerceContent from "./components/IndustryPageContent";
 
 export const metadata = {
-  title: "AI for E-commerce — Dynamic Pricing, Inventory Intelligence & Checkout Optimisation | AgenticSense",
-  description: "AgenticSense deploys production AI agents for enterprise e-commerce — automating dynamic pricing, inventory optimisation, checkout intelligence and customer service at the speed and margin requirements of modern retail.",
+  title: "AI Automation for E-Commerce & Retail | AgenticSense",
+  description:
+    "AgenticSense builds AI agents for e-commerce — automating customer support, inventory insights, sales automation and personalized recommendations.",
 };
 
 export default function EcommercePage() {

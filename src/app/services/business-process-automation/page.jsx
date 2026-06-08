@@ -1,8 +1,9 @@
 import BusinessProcessAutomationContent from "./components/ServicePageContent";
 
 export const metadata = {
-  title: "Agentic Business Process Automation — HR, Procurement & Supply Chain | AgenticSense",
-  description: "AgenticSense extends agentic AI into procurement, HR, supply chain and IT operations — end-to-end workflow automation integrated with your systems of record.",
+  title: "Business Process Automation Beyond Finance | AgenticSense",
+  description:
+    "AgenticSense extends agentic automation into procurement, HR, supply chain and IT operations — always end to end, always integrated with systems of record.",
 };
 
 export default function BusinessProcessAutomationPage() {

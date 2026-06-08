@@ -284,9 +284,9 @@ export default function AboutSection() {
         <canvas ref={canvasRef} className="about-canvas" aria-hidden="true" />
 
         <span className="about-diamond" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          {/* <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
             <path d="M13 0L16.5 9.5L26 13L16.5 16.5L13 26L9.5 16.5L0 13L9.5 9.5Z" fill="white"/>
-          </svg>
+          </svg> */}
         </span>
 
         <div className="about-grid">

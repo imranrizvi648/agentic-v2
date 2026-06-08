@@ -4,28 +4,28 @@ import React from "react";
 const topRecognitions = [
   {
     id: 1,
-    title: "America's Fastest Growing Company",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Inc._5000_logo.svg/512px-Inc._5000_logo.svg.png",
+    title: "SAP Business One Partner",
+    logo: "https://placehold.co/150x150/0a5dab/ffffff.png?text=SAP+B1",
   },
   {
     id: 2,
-    title: "Top 100 Inspiring Workplaces 2025",
-    logo: "https://placehold.co/150x150/ffffff/000000.png?text=Top+100\nWorkplaces",
+    title: "Oracle Fusion Cloud",
+    logo: "https://placehold.co/150x150/c74634/ffffff.png?text=Oracle+Fusion",
   },
   {
     id: 3,
-    title: "Forbes Coaches Council",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Forbes_logo.svg/512px-Forbes_logo.svg.png",
+    title: "Microsoft Fabric Partner",
+    logo: "https://placehold.co/150x150/00adef/ffffff.png?text=Microsoft+Fabric",
   },
   {
     id: 4,
-    title: "Financial Times",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Financial_Times_corporate_logo.svg/512px-Financial_Times_corporate_logo.svg.png",
+    title: "LangGraph Certified",
+    logo: "https://placehold.co/150x150/1c1c1c/ffffff.png?text=LangGraph",
   },
   {
     id: 5,
-    title: "Mogul People Leader",
-    logo: "https://placehold.co/150x150/ffffff/000000.png?text=Mogul+100",
+    title: "Azure AI Foundry",
+    logo: "https://placehold.co/150x150/0078d4/ffffff.png?text=Azure+AI",
   },
 ];
 
@@ -33,23 +33,23 @@ const topRecognitions = [
 const bottomRecognitions = [
   {
     id: 6,
-    title: "ISO 27001 Certified",
-    logo: "https://placehold.co/150x150/ffffff/00529B.png?text=ISO\n27001",
+    title: "NetSuite Integration",
+    logo: "https://placehold.co/150x150/009fdf/ffffff.png?text=NetSuite",
   },
   {
     id: 7,
-    title: "ISO 20000 Certified",
-    logo: "https://placehold.co/150x150/ffffff/00529B.png?text=ISO\n20000",
+    title: "Salesforce Partner",
+    logo: "https://placehold.co/150x150/00a1e0/ffffff.png?text=Salesforce",
   },
   {
     id: 8,
-    title: "ISO 9001 Certified",
-    logo: "https://placehold.co/150x150/ffffff/00529B.png?text=ISO\n9001",
+    title: "Odoo Integration",
+    logo: "https://placehold.co/150x150/714b67/ffffff.png?text=Odoo",
   },
   {
     id: 9,
-    title: "CMMI DEV 3 Certified",
-    logo: "https://placehold.co/150x150/ffffff/00529B.png?text=CMMI\nDEV+3",
+    title: "OCI GenAI Agents",
+    logo: "https://placehold.co/150x150/c74634/ffffff.png?text=OCI+GenAI",
   },
 ];
 

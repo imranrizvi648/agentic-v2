@@ -584,7 +584,7 @@ export default function Navbar() {
           </ul>
 
           {/* ── Desktop CTA ───────────────────────────────────────────────── */}
-          <Link href="/proposal" className="hidden lg:block">
+          <Link href="/contact" className="hidden lg:block">
             <button
               onMouseEnter={() => setIsButtonHovered(true)}
               onMouseLeave={() => setIsButtonHovered(false)}

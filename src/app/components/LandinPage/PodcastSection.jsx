@@ -6,7 +6,7 @@ const podcasts = [
   {
     id: 1,
     partner: "aws",
-    title: "AI in Customer Experience",
+    title: "AI Agents That Run Inside Your ERP: How It Actually Works",
     speakers: "Chomchana Trevai | Umair Javed",
     // Make sure to use transparent PNG cutouts of speakers here
     image: "/podcast-img4.png.bv.webp", 
@@ -15,7 +15,7 @@ const podcasts = [
   {
     id: 2,
     partner: "intel",
-    title: "The AI Agent Empowered Workforce",
+    title: "Why Finance AI Pilots Fail Before Production",
     speakers: "Ezequiel Lanza | Haseeb Khan",
     image: "/podcast-img4.png.bv.webp",
     videoId: "dQw4w9WgXc",
@@ -23,7 +23,7 @@ const podcasts = [
   {
     id: 3,
     partner: "vmware",
-    title: "Adapting to Evolving Tech – Human-Machine Dynamics",
+    title: "ERP-Native AI: The Difference Between a Demo and a System",
     speakers: "Joe Baguley | Umair Javed | Yasir Rizwan",
     image: "/podcast-img4.png.bv.webp",
     videoId: "dQw4w9WgXc",
@@ -31,7 +31,7 @@ const podcasts = [
   {
     id: 4,
     partner: "servicenow",
-    title: "Future Proofing the Workforce with AI",
+    title: "Agentic AI vs Traditional Automation: What Every CTO Should Know",
     speakers: "Chris Traylor | Haseeb Khan",
     image: "/podcast-img4.png.bv.webp",
     videoId: "dQw4w9WgXc",

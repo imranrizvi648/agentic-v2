@@ -1,8 +1,9 @@
 import AiGovernanceSecurityMlopsContent from "./components/ServicePageContent";
 
 export const metadata = {
-  title: "Enterprise AI Governance, Security & MLOps — Auditable AI Systems | AgenticSense",
-  description: "AgenticSense builds AI governance, security controls and MLOps into every enterprise agent from day one — audit-ready, monitored, and controlled from production launch through ongoing operations.",
+  title: "AI Governance, Security & MLOps for Enterprise | AgenticSense",
+  description:
+    "AgenticSense builds governance, security and operational reliability into every AI engagement — audit logging, human-in-the-loop controls and continuous monitoring.",
 };
 
 export default function AiGovernanceSecurityMlopsPage() {

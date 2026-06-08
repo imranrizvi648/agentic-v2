@@ -20,7 +20,7 @@ export default function FinalCtaSection() {
         </h2>
 
         <p className="text-base text-white/80 leading-relaxed mb-10">
-          Tell us the workflow that costs your team the most time. In a free
+          Tell us the workflow that costs your team the most time. In a free Finance Automation Assessment, we'll show you exactly what an agent that runs inside your own systems could do with it. In a free
           Finance Automation Assessment, we will show you exactly what an agent
           that runs inside your own systems could do with it — no cost, no
           obligation.
@@ -28,14 +28,14 @@ export default function FinalCtaSection() {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
           <Link
-            href="#"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-[#1a194d] text-white font-bold text-sm px-7 py-4 rounded-none hover:bg-indigo-700 transition-colors"
           >
             Book Your Free Assessment →
           </Link>
 
           <Link
-            href="#"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-none border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
           >
             Request a Demo

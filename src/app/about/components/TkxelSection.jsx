@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const SERVICES_DATA = [
-  { id: 1, title: "We embed AI into real business systems and workflows", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See AI Services", graphicType: "star" },
-  { id: 2, title: "We scale your digital products and platforms", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Engineering Services", graphicType: "ring" },
-  { id: 3, title: "We modernize your architectures to support growth and change", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Application Modernization", graphicType: "sphere" },
-  { id: 4, title: "We ensure secure and compliant solutions across cloud environments", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Cloud Services", graphicType: "star" }
+  { id: 1, title: "We deploy AI agents natively inside your ERP and CRM", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Our Services", graphicType: "star" },
+  { id: 2, title: "We automate finance, procurement, HR and supply chain workflows", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Automation Services", graphicType: "ring" },
+  { id: 3, title: "We build custom AI agents for workflows your existing tools cannot handle", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Custom AI Development", graphicType: "sphere" },
+  { id: 4, title: "We govern every agent with audit logging, access control and monitoring from day one", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Governance & Security", graphicType: "star" }
 ];
 
 export default function TkxelSection() {
@@ -45,10 +45,10 @@ export default function TkxelSection() {
         <div className="lg:sticky lg:top-24 lg:h-[calc(100vh-12rem)] flex flex-col justify-between py-4">
           <div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-brand-primary mb-4">
-              Engineering, AI, and <br className="hidden sm:block" /> delivery, working as one
+              Agentic AI, Finance Expertise <br className="hidden sm:block" /> and Enterprise Delivery
             </h1>
             <p className="text-sm sm:text-base text-slate-600 max-w-sm mb-5 sm:mb-6">
-              Every engagement starts with clarity: on the problem, the constraints, and the outcomes that matter.
+              Every engagement starts with your data, your ERP and measurable outcomes — agreed in writing before a line of code.
             </p>
             <button className="flex items-center gap-2 border border-slate-900 rounded-full px-5 py-2.5 text-sm font-medium transition hover:bg-slate-950 hover:text-white group">
               Explore all services <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -58,8 +58,8 @@ export default function TkxelSection() {
             <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block mb-3">Enabled by our partnerships</span>
             <div className="flex flex-wrap gap-4 sm:gap-5 items-center opacity-60 text-sm">
               <span className="font-bold">AWS</span>
-              <span className="font-bold">Google Cloud</span>
-              <span className="font-bold">Salesforce</span>
+              <span className="font-bold">Oracle Fusion</span>
+              <span className="font-bold">SAP B1</span>
             </div>
           </div>
         </div>

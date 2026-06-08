@@ -16,31 +16,93 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AgenticSense",
-  description: "AgenticSense is a leading design studio specializing in crafting innovative digital experiences. With a focus on user-centric design and cutting-edge technology, we create impactful solutions that drive business growth and enhance user engagement. Our team of talented designers and developers work collaboratively to deliver exceptional results for our clients across various industries.",
+  title: "AgenticSense | AI Agents, Intelligent Automation & Business AI Solutions",
+  description:
+    "AgenticSense builds intelligent AI agents, automation systems and AI-powered business solutions to help companies improve productivity, reduce manual work and scale faster.",
+  keywords:
+    "AgenticSense, AI agents, agentic AI, intelligent automation, business automation, AI automation company, custom AI agents, AI consulting, enterprise AI solutions, workflow automation, SAP Business One AI, Oracle Fusion AI, ERP AI integration",
+  authors: [{ name: "AgenticSense" }],
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    siteName: "AgenticSense",
+    title: "AgenticSense | AI Agents & Intelligent Automation Solutions",
+    description:
+      "AgenticSense helps businesses automate workflows, improve decision-making and scale faster with intelligent AI agent solutions.",
+    url: "https://www.agenticsense.ai/",
+    images: [
+      {
+        url: "https://www.agenticsense.ai/assets/images/agenticsense-og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AgenticSense AI Agents and Automation Solutions",
+      },
+    ],
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AgenticSense | AI Agents & Intelligent Automation",
+    description:
+      "Build smarter workflows with AI agents, automation systems and intelligent business solutions from AgenticSense.",
+    images: ["https://www.agenticsense.ai/assets/images/agenticsense-og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.agenticsense.ai/",
+  },
   icons: "/iconeee.png",
 };
 
 export default function RootLayout({ children }) {
   return (
-    // suppressHydrationWarning prevents browser extensions from breaking hydration
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="alternate" hrefLang="en" href="https://www.agenticsense.ai/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "AgenticSense",
+              url: "https://www.agenticsense.ai/",
+              logo: "https://www.agenticsense.ai/assets/images/logo.png",
+              description:
+                "AgenticSense builds intelligent AI agents, automation systems and AI-powered business solutions for modern businesses.",
+              sameAs: [
+                "https://www.linkedin.com/company/agenticsense",
+                "https://twitter.com/agenticsense",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Customer Support",
+                email: "info@agenticsense.ai",
+                availableLanguage: ["English"],
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "AgenticSense",
+              url: "https://www.agenticsense.ai/",
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col antialiased bg-black text-white relative`}
       >
-        {/* Background custom fluid effect cursor */}
         <FluidCursor />
-
-        {/* Saara content z-index ki wajah se automatic is ke upar safe rahe ga */}
         <div className="relative z-10 flex flex-col min-h-screen w-full">
           <Navbar />
-
-          <main className="flex-1">
-            {children}
-          </main>
-
+          <main className="flex-1">{children}</main>
           <Footer />
-        </div> {/* <--- Yeh closing div missing thi, ab add kar di hai */}
+        </div>
       </body>
     </html>
   );

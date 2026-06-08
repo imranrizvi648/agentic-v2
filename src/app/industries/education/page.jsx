@@ -1,8 +1,9 @@
 import EducationContent from "./components/IndustryPageContent";
 
 export const metadata = {
-  title: "AI for Education — Adaptive Learning, Administrative Automation & Student Analytics | AgenticSense",
-  description: "AgenticSense deploys production AI agents for education organisations — building adaptive learning systems, automating administrative workflows, delivering virtual advisors and providing student outcome analytics.",
+  title: "AI Solutions for Education Institutions | AgenticSense",
+  description:
+    "AgenticSense builds AI agents for education — learning assistants, student support bots, administrative automation and institutional workflow optimization.",
 };
 
 export default function EducationPage() {

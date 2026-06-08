@@ -36,17 +36,11 @@ return ( <section className="relative h-screen flex items-center overflow-hidden
         
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-2 mt-15">
-          AI Built for the{" "}
-      
-            Realities
-       {" "}
-          of Your Sector.
+          AI Built for the Realities of Your Industry.
         </h1>
 
         <p className="text-lg text-white/80 leading-relaxed max-w-lg mb-4">
-          Not AI awareness of your industry. Actual operational depth —
-          built to the workflows, compliance requirements and data
-          structures that define how your sector runs.
+          Not generic AI awareness. Production-grade agentic AI built to the workflows, compliance requirements and data structures that define how your sector operates — integrated natively with your systems of record.
         </p>
 
         <p className="text-sm text-white/60 leading-relaxed max-w-lg mb-10">

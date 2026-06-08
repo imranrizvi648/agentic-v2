@@ -1,8 +1,9 @@
 import ConversationalAiEnterpriseCopilotsContent from "./components/ServicePageContent";
 
 export const metadata = {
-  title: "Enterprise AI Copilots & Conversational AI for ERP Data | AgenticSense",
-  description: "AgenticSense builds enterprise copilots that let your finance, operations and support teams query ERP data in plain language — grounded in real records, permission-aware, deployable in Teams, Outlook and your own apps.",
+  title: "Conversational AI & Enterprise Copilots | AgenticSense",
+  description:
+    "AgenticSense builds enterprise copilots that let teams query ERP data, report and act through natural conversation — grounded in real records, permission-aware.",
 };
 
 export default function ConversationalAiEnterpriseCopilotsPage() {

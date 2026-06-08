@@ -1,12 +1,12 @@
-import { ClipboardList, PenTool, Code, CheckCircle, Headphones } from "lucide-react";
+import { Search, Cpu, Rocket, ShieldCheck, BarChart3 } from "lucide-react";
 
 export default function AboutSection() {
   const steps = [
-    { title: "PLANNING", desc: "Project Analysis, Consultation & Research, ERP and much more.", icon: <ClipboardList className="w-5 h-5 text-blue-900" /> },
-    { title: "DESIGN", desc: "Wireframes, Design Concepts, Revisions & Finalization & Creativity.", icon: <PenTool className="w-5 h-5 text-blue-900" /> },
-    { title: "DEVELOPMENT", desc: "Content Integration, Programming code for custom requirements.", icon: <Code className="w-5 h-5 text-blue-900" /> },
-    { title: "TESTING", desc: "Testing, Testing & Testing we test your product then we deliver.", icon: <CheckCircle className="w-5 h-5 text-blue-900" /> },
-    { title: "DELIVERY & SUPPORT", desc: "We are delivering your project on time with full support to client.", icon: <Headphones className="w-5 h-5 text-blue-900" /> },
+    { title: "DISCOVER", desc: "We align on business goals, map high-value use cases and assess your data, systems and controls.", icon: <Search className="w-5 h-5 text-blue-900" /> },
+    { title: "DESIGN", desc: "We define the target architecture, integration approach, governance model and success metrics.", icon: <Cpu className="w-5 h-5 text-blue-900" /> },
+    { title: "BUILD", desc: "We develop agents against your real data and integration constraints — proven beyond a demo.", icon: <Rocket className="w-5 h-5 text-blue-900" /> },
+    { title: "DEPLOY", desc: "We integrate, test and ship to your production environment with monitoring and audit logging.", icon: <ShieldCheck className="w-5 h-5 text-blue-900" /> },
+    { title: "SCALE", desc: "We expand coverage, tune performance and provide ongoing support, retraining and optimisation.", icon: <BarChart3 className="w-5 h-5 text-blue-900" /> },
   ];
 
   return (
@@ -15,24 +15,24 @@ export default function AboutSection() {
       <div className="bg-[#1a194d] p-8 sm:p-10 lg:w-1/3 flex flex-col justify-center text-white">
         <h2 className="text-3xl sm:text-4xl font-light tracking-widest mb-4 sm:mb-6">ABOUT AGENTICSENSE</h2>
         <p className="text-sm sm:text-md leading-relaxed opacity-90 mb-6 sm:mb-8">
-          AgenticSense focuses on helping small to medium, medium to big size company owners
-          develop integrate and maintain AI Automation systems that will prove beneficial
-          and effective for their operational needs. Our company has acquired exceptional
-          talent over the years that range from system experts to professional developers.
+          AgenticSense builds intelligent AI agents that help businesses automate work, make smarter decisions and scale faster. We specialize in ERP-native AI integration, finance automation and business process automation — delivering production-grade systems, not pilots that never ship.
         </p>
-        <button className="self-start px-6 py-2 bg-white text-[#003B6D] text-[10px] font-bold rounded-full hover:bg-gray-100 transition-colors uppercase tracking-wider">
+        <p className="text-sm leading-relaxed opacity-70 mb-6 sm:mb-8">
+          Headquartered in Dubai with a delivery centre in Karachi, we serve enterprises across the GCC, South Asia and Europe.
+        </p>
+        <a href="/about" className="self-start px-6 py-2 bg-white text-[#1a194d] text-[10px] font-bold rounded-full hover:bg-gray-100 transition-colors uppercase tracking-wider">
           → About AgenticSense
-        </button>
+        </a>
       </div>
 
       {/* MIDDLE: Image */}
       <div className="relative bg-black/50 lg:w-1/3 min-h-[260px] sm:min-h-[360px] lg:min-h-0">
-        <img src="/about.webp" alt="Professional Team" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/about.webp" alt="AgenticSense AI team building intelligent automation systems" className="absolute inset-0 w-full h-full object-cover" />
       </div>
 
-      {/* RIGHT: Keys to Success */}
+      {/* RIGHT: How We Work */}
       <div className="bg-[#EFF2F9] p-8 sm:p-10 lg:w-1/3 flex flex-col justify-center">
-        <h3 className="text-2xl sm:text-3xl font-light text-gray-800 mb-8 sm:mb-10 tracking-wider">OUR 5 KEY TO SUCCESS</h3>
+        <h3 className="text-2xl sm:text-3xl font-light text-gray-800 mb-8 sm:mb-10 tracking-wider">HOW WE DELIVER</h3>
         <div className="space-y-6 sm:space-y-8">
           {steps.map((step, index) => (
             <div key={index} className="flex items-start gap-4">
