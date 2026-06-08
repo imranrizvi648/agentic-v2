@@ -244,11 +244,11 @@ const industriesMegaMenu = [
 
 const navItems = [
   { name: "Home",       href: "/",          dropdown: false },
-  { name: "Services",   href: "/services",   dropdown: true  },
+  { name: "Services",   href: "/services",  dropdown: true  },
   { name: "Industries", href: "/industries", dropdown: true  },
   { name: "Blog",       href: "/blog",       dropdown: false },
   { name: "About",      href: "/about",      dropdown: false },
-    { name: "Our Team",      href: "/our-team",      dropdown: false },
+  { name: "Our Team",   href: "/our-team",   dropdown: false },
   { name: "Contact Us", href: "/contact",    dropdown: false },
 ];
 
@@ -267,8 +267,8 @@ export default function Navbar() {
   const [activeServicesTab,   setActiveServicesTab]   = useState(servicesMegaMenu[0].id);
   const [activeIndustriesTab, setActiveIndustriesTab] = useState(industriesMegaMenu[0].id);
 
-  // Pages where navbar text should ALWAYS be dark from start (e.g. light background layout)
-  const isLightPage = pathname === "/proposal" || pathname === "/contact";
+  // Updated logic: Contact removed, Blog added for permanent light header view
+  const isLightPage = pathname === "/proposal" || pathname.startsWith("/blog");
   const useDarkTheme = isScrolled || isLightPage;
 
   const getActiveTab = () => {
@@ -584,7 +584,7 @@ export default function Navbar() {
           </ul>
 
           {/* ── Desktop CTA ───────────────────────────────────────────────── */}
-          <Link href="/contact" className="hidden lg:block">
+          <Link href="/proposal" className="hidden lg:block">
             <button
               onMouseEnter={() => setIsButtonHovered(true)}
               onMouseLeave={() => setIsButtonHovered(false)}
@@ -703,7 +703,7 @@ export default function Navbar() {
                                   onClick={() => setIsMobileMenuOpen(false)}
                                   className={`py-1.5 text-[14px] font-semibold transition-colors
                                     ${useDarkTheme ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
-                                security="">
+                                >
                                   {sub.title}
                                 </Link>
                               ))
