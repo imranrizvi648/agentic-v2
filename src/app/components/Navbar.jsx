@@ -743,7 +743,7 @@ export default function Navbar() {
 
                 {/* Mobile CTA */}
                 <li className="mt-3 px-4 pb-2">
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/proposal" onClick={() => setIsMobileMenuOpen(false)}>
                     <button className="relative w-full flex justify-center items-center gap-2
                       bg-[#625eff] text-white px-7 py-3 rounded-xl
                       font-semibold text-[15px] overflow-hidden
