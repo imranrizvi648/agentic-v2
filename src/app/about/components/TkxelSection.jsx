@@ -57,9 +57,13 @@ export default function TkxelSection() {
           <div className="mt-8 lg:mt-0 pt-6 border-t border-slate-100">
             <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block mb-3">Enabled by our partnerships</span>
             <div className="flex flex-wrap gap-4 sm:gap-5 items-center opacity-60 text-sm">
-              <span className="font-bold">AWS</span>
-              <span className="font-bold">Oracle Fusion</span>
-              <span className="font-bold">SAP B1</span>
+              <span className="font-bold">SAP</span>
+              <span className="font-bold">Oddoo</span>
+              <span className="font-bold">Oracle</span>
+              <span className="font-bold">Microsoft Dynamics 365</span>
+<span className="font-bold">NetSuite</span>
+<span className="font-bold">ERPNext</span>
+<span className="font-bold">Infor</span>
             </div>
           </div>
         </div>

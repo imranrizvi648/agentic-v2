@@ -27,14 +27,14 @@ const AgenticSenseParticleText = dynamic(
 const QUICK_LINKS = [
   { name: "ABOUT",    href: "/about" }, { name: "WHO WE ARE", href: "/about" },
   { name: "SERVICES", href: "/services" }, { name: "PROJECTS",   href: "/projects" },
-  { name: "BLOG",     href: "/blog" }, { name: "PROPOSAL",    href: "/industries" },
+  { name: "BLOG",     href: "/blog" }, { name: "PROPOSAL",    href: "/proposal" },
 ];
 const SOCIAL_LINKS = [
-  { name: "Twitter / X", icon: <FaXTwitter size={12} />,   href: "#", hoverClass: "group-hover:bg-[#000000]" },
-  { name: "Facebook",    icon: <FaFacebookF size={12} />,  href: "#", hoverClass: "group-hover:bg-[#1877F2]" },
-  { name: "Instagram",   icon: <FaInstagram size={12} />,  href: "#", hoverClass: "group-hover:bg-[#E4405F]" },
-  { name: "Linkedin",    icon: <FaLinkedinIn size={12} />, href: "#", hoverClass: "group-hover:bg-[#0A66C2]" },
-  { name: "YouTube",     icon: <FaYoutube size={12} />,    href: "#", hoverClass: "group-hover:bg-[#FF0000]" },
+  // { name: "Twitter / X", icon: <FaXTwitter size={12} />,   href: "#", hoverClass: "group-hover:bg-[#000000]" },
+  { name: "Facebook",    icon: <FaFacebookF size={12} />,  href: "https://www.facebook.com/agenticsense", hoverClass: "group-hover:bg-[#1877F2]" },
+  { name: "Instagram",   icon: <FaInstagram size={12} />,  href: "https://www.instagram.com/agenticsense", hoverClass: "group-hover:bg-[#E4405F]" },
+  { name: "Linkedin",    icon: <FaLinkedinIn size={12} />, href: "https://www.linkedin.com/company/agenticsense", hoverClass: "group-hover:bg-[#0A66C2]" },
+  { name: "YouTube",     icon: <FaYoutube size={12} />,    href: "https://www.youtube.com/@AgenticSense", hoverClass: "group-hover:bg-[#FF0000]" },
 ];
 
 const Footer = React.memo(function Footer() {
@@ -49,7 +49,7 @@ const Footer = React.memo(function Footer() {
           {/* Quick Links */}
 <div className="space-y-5 sm:space-y-6 ml-15">
   <div className="flex items-center gap-2">
-    <span className="w-2 h-2 bg-[#ff4d00] rounded-full" />
+  
     <h3 className="text-lg font-bold text-gray-800 uppercase tracking-tight">Quick Links</h3>
   </div>
   <div className="grid grid-cols-2 gap-2 sm:gap-3">
@@ -88,7 +88,7 @@ const Footer = React.memo(function Footer() {
             <div className="space-y-2 text-gray-700 text-sm font-semibold">
               <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: info@agenticsense.co</p>
               <p>Phone: +92 (321) 3551490</p>
-              <p className="text-gray-500 font-medium text-[13px]">UAE · Pakistan</p>
+              <p className="text-gray-500 font-medium text-[13px]">UAE, PAKISTAN, USA, UK, Saudia Arabia</p>
             </div>
           <Link href="/contact">
   <button className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-5 py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-all group">
@@ -104,17 +104,22 @@ const Footer = React.memo(function Footer() {
         </div>
 
         {/* ── Social bar ─────────────────────────────────────────────────── */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10">
-          {SOCIAL_LINKS.map((social, i) => (
-            <a key={i} href={social.href}
-              className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-md transition-all group justify-between">
-              <span className="text-[10px] sm:text-[11px] font-bold text-gray-700">{social.name}</span>
-              <div className={`bg-[#1e1b4b] p-1.5 sm:p-2 rounded-full text-white transition-colors flex items-center justify-center ${social.hoverClass}`}>
-                {social.icon}
-              </div>
-            </a>
-          ))}
-        </div>
+       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10">
+  {SOCIAL_LINKS.map((social, i) => (
+    <a 
+      key={i} 
+      href={social.href}
+      target="_blank"             
+      rel="noopener noreferrer"   
+      className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-md transition-all group justify-between"
+    >
+      <span className="text-[10px] sm:text-[11px] font-bold text-gray-700">{social.name}</span>
+      <div className={`bg-[#1e1b4b] p-1.5 sm:p-2 rounded-full text-white transition-colors flex items-center justify-center ${social.hoverClass}`}>
+        {social.icon}
+      </div>
+    </a>
+  ))}
+</div>
 
         {/* ── Particle brand text + legal ────────────────────────────────── */}
        
