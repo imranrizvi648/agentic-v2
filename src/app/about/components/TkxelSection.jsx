@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -50,9 +51,12 @@ export default function TkxelSection() {
             <p className="text-sm sm:text-base text-slate-600 max-w-sm mb-5 sm:mb-6">
               Every engagement starts with your data, your ERP and measurable outcomes — agreed in writing before a line of code.
             </p>
-            <button className="flex items-center gap-2 border border-slate-900 rounded-full px-5 py-2.5 text-sm font-medium transition hover:bg-slate-950 hover:text-white group">
-              Explore all services <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+          <Link href="/services">
+  <button className="flex items-center gap-2 border border-slate-900 rounded-full px-5 py-2.5 text-sm font-medium transition hover:bg-slate-950 hover:text-white group">
+    Explore all services{" "}
+    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+  </button>
+</Link>
           </div>
           <div className="mt-8 lg:mt-0 pt-6 border-t border-slate-100">
             <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block mb-3">Enabled by our partnerships</span>
