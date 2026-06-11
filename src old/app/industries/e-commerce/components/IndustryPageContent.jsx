@@ -30,12 +30,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "💰", title: "Pricing optimised continuously", body: "Prices reflect current demand, competition and inventory in real time — not yesterday's manual review. Margin improvement is measured against your pre-agent baseline." },
-  { icon: "📦", title: "Stockouts prevented before they cost you", body: "Predictive replenishment fires purchase orders weeks before stockouts occur — based on your actual demand data, not rule-of-thumb reorder points." },
-  { icon: "⚡", title: "Checkout conversion improved", body: "AI identifies the specific friction points and abandonment patterns in your checkout flow — and acts on them automatically, not after a quarterly review." },
-  { icon: "🎯", title: "Customer service without the queue", body: "Agents resolve the 70–80% of support queries that follow predictable patterns — leaving your human agents for the cases that genuinely need them." },
-  { icon: "🔗", title: "Platform data stays consistent", body: "Agents update inventory, pricing and order data across your commerce platform, ERP and warehouse systems simultaneously — no data lag, no manual sync." },
-  { icon: "📊", title: "Commercial intelligence in real time", body: "Margin analysis, sell-through rates, supplier performance and customer lifetime value — available to commercial leadership without a BI analyst in the loop." },
+  { icon: "", title: "Pricing optimised continuously", body: "Prices reflect current demand, competition and inventory in real time — not yesterday's manual review. Margin improvement is measured against your pre-agent baseline." },
+  { icon: "", title: "Stockouts prevented before they cost you", body: "Predictive replenishment fires purchase orders weeks before stockouts occur — based on your actual demand data, not rule-of-thumb reorder points." },
+  { icon: "", title: "Checkout conversion improved", body: "AI identifies the specific friction points and abandonment patterns in your checkout flow — and acts on them automatically, not after a quarterly review." },
+  { icon: "", title: "Customer service without the queue", body: "Agents resolve the 70–80% of support queries that follow predictable patterns — leaving your human agents for the cases that genuinely need them." },
+  { icon: "", title: "Platform data stays consistent", body: "Agents update inventory, pricing and order data across your commerce platform, ERP and warehouse systems simultaneously — no data lag, no manual sync." },
+  { icon: "", title: "Commercial intelligence in real time", body: "Margin analysis, sell-through rates, supplier performance and customer lifetime value — available to commercial leadership without a BI analyst in the loop." },
 ];
 
 const features = [

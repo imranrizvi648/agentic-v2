@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -17,26 +19,26 @@ const overview = {
   lead: "Most AI integrations rely on third-party middleware that breaks whenever the ERP updates. We take a different position: if an official API exists, we use it.",
   body: "We connect intelligent agents directly to your enterprise platforms \u2014 from SAP Business One's Service Layer and HANA to Oracle Fusion's REST APIs and OCI GenAI infrastructure \u2014 so your automation is robust, upgrade-safe and completely owned by you.",
   stats: [
-  { val: "8+", label: "Enterprise platforms natively integrated" },
-  { val: "Zero", label: "Third-party connectors used" },
-  { val: "Linux", label: "Production deployment environment" },
-  { val: "Custom", label: "Built from scratch \u2014 no templates" },
-],
+    { val: "8+", label: "Enterprise platforms natively integrated" },
+    { val: "Zero", label: "Third-party connectors used" },
+    { val: "Linux", label: "Production deployment environment" },
+    { val: "Custom", label: "Built from scratch \u2014 no templates" },
+  ],
   cards: [
-  { title: "SAP Business One", body: "Service Layer REST API and SAP HANA direct connection \u2014 the official production path, not a screen-scraping workaround." },
-  { title: "Oracle Fusion Cloud", body: "REST APIs, OCI GenAI Agents and AI Agent Studio \u2014 full AI-native integration with Oracle's own intelligence layer." },
-  { title: "NetSuite, Odoo & Zoho", body: "SuiteTalk REST/SuiteScript, official JSON-RPC and REST APIs \u2014 clean integrations for mid-market ERP environments." },
-  { title: "Salesforce & Microsoft", body: "Salesforce REST/Bulk APIs plus Microsoft Fabric, Azure AI Foundry and Entra ID for secure, governed cloud integration." },
-],
+    { title: "SAP Business One", body: "Service Layer REST API and SAP HANA direct connection \u2014 the official production path, not a screen-scraping workaround." },
+    { title: "Oracle Fusion Cloud", body: "REST APIs, OCI GenAI Agents and AI Agent Studio \u2014 full AI-native integration with Oracle's own intelligence layer." },
+    { title: "NetSuite, Odoo & Zoho", body: "SuiteTalk REST/SuiteScript, official JSON-RPC and REST APIs \u2014 clean integrations for mid-market ERP environments." },
+    { title: "Salesforce & Microsoft", body: "Salesforce REST/Bulk APIs plus Microsoft Fabric, Azure AI Foundry and Entra ID for secure, governed cloud integration." },
+  ],
 };
 
 const benefits = [
-  { icon: "\ud83d\udd17", title: "Survives every ERP upgrade", body: "Official APIs are maintained by the vendor. When SAP or Oracle releases an update, your integration keeps working \u2014 because it was built the right way." },
-  { icon: "\ud83c\udfd7", title: "Your data never leaves your control", body: "Deployed on your own Linux production environment. No third-party service sitting between your agent and your ERP data." },
-  { icon: "\ud83d\udd10", title: "Enterprise identity and access", body: "Secure authentication via Microsoft Entra ID / Azure AD and OCI IAM \u2014 your access controls respected at every layer." },
-  { icon: "\u2699\ufe0f", title: "Custom-built, not configured", body: "No pre-built connectors with hidden limitations. Every integration is engineered for your specific data model, permissions structure and workflows." },
-  { icon: "\ud83c\udf10", title: "Multi-platform, single delivery team", body: "One team manages your entire integration landscape \u2014 SAP, Oracle, Salesforce and beyond \u2014 with a consistent architecture and support model." },
-  { icon: "\ud83d\udcc8", title: "Scales with your platform mix", body: "As your enterprise stack evolves \u2014 new ERPs, additional CRMs, cloud migrations \u2014 your AI integration layer extends without a rebuild." },
+  { icon: "", title: "Survives every ERP upgrade", body: "Official APIs are maintained by the vendor. When SAP or Oracle releases an update, your integration keeps working \u2014 because it was built the right way." },
+  { icon: "", title: "Your data never leaves your control", body: "Deployed on your own Linux production environment. No third-party service sitting between your agent and your ERP data." },
+  { icon: "", title: "Enterprise identity and access", body: "Secure authentication via Microsoft Entra ID / Azure AD and OCI IAM \u2014 your access controls respected at every layer." },
+  { icon: "", title: "Custom-built, not configured", body: "No pre-built connectors with hidden limitations. Every integration is engineered for your specific data model, permissions structure and workflows." },
+  { icon: "", title: "Multi-platform, single delivery team", body: "One team manages your entire integration landscape \u2014 SAP, Oracle, Salesforce and beyond \u2014 with a consistent architecture and support model." },
+  { icon: "", title: "Scales with your platform mix", body: "As your enterprise stack evolves \u2014 new ERPs, additional CRMs, cloud migrations \u2014 your AI integration layer extends without a rebuild." },
 ];
 
 const features = [
@@ -61,19 +63,19 @@ const process = [
 const whyUs = {
   heading: "ERP-Native by Design, Enterprise-Grade in Practice",
   points: [
-  { title: "Official APIs only \u2014 no workarounds", body: "We use the same interfaces SAP, Oracle and Salesforce maintain for their own certified partners. Your integration is upgrade-safe because it was built correctly." },
-  { title: "No third-party middleware in the chain", body: "Every system in your integration landscape connects directly \u2014 no iPaaS, no connector platforms, no hidden dependencies that introduce failure points." },
-  { title: "Custom-built for your data model", body: "Your entity structure, custom fields and approval hierarchies are built into the integration \u2014 not forced into a generic template." },
-  { title: "One team across your entire stack", body: "SAP, Oracle, Salesforce and Microsoft \u2014 managed by a single team with a consistent architecture. No separate vendor for each platform." },
-],
+    { title: "Official APIs only \u2014 no workarounds", body: "We use the same interfaces SAP, Oracle and Salesforce maintain for their own certified partners. Your integration is upgrade-safe because it was built correctly." },
+    { title: "No third-party middleware in the chain", body: "Every system in your integration landscape connects directly \u2014 no iPaaS, no connector platforms, no hidden dependencies that introduce failure points." },
+    { title: "Custom-built for your data model", body: "Your entity structure, custom fields and approval hierarchies are built into the integration \u2014 not forced into a generic template." },
+    { title: "One team across your entire stack", body: "SAP, Oracle, Salesforce and Microsoft \u2014 managed by a single team with a consistent architecture. No separate vendor for each platform." },
+  ],
   box: {
     heading: "Upgrade-Safe by Design",
     body: "Every integration we build is tested against your current ERP version and its next planned release \u2014 so an upgrade announcement is not a crisis.",
     stats: [
-  { val: "8+", label: "Enterprise platforms supported" },
-  { val: "Zero", label: "Third-party connectors used" },
-  { val: "API", label: "Official interfaces only \u2014 always" },
-],
+      { val: "8+", label: "Enterprise platforms supported" },
+      { val: "Zero", label: "Third-party connectors used" },
+      { val: "API", label: "Official interfaces only \u2014 always" },
+    ],
   },
 };
 
@@ -116,34 +118,49 @@ export default function ErpCrmAiIntegrationContent() {
   return (
     <main>
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-indigo-50/40 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 overflow-hidden">
+      {/* ── Hero (Premium Static Dark Theme Background) ────────────────────── */}
+      <section className="relative w-full min-h-[85vh] bg-[#1a194d] overflow-hidden flex items-center font-sans pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20">
+        
+        {/* Left vignette */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.025]"
-          style={{
-            backgroundImage: `linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)`,
-            backgroundSize: "48px 48px",
-          }}
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[rgba(18,16,60,0.85)] via-[rgba(18,16,60,0.55)] to-transparent"
         />
-        <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-indigo-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-         
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
-            {before}<span className="text-indigo-600">{hero.highlight}</span>{after}
+
+        {/* Bottom fade */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[rgba(26,25,77,0.85)] to-transparent pointer-events-none"
+        />
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+            {before}<span className="text-[#9482ff]">{hero.highlight}</span>{after}
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-10">{hero.sub}</p>
+          <p className="text-base sm:text-lg leading-relaxed text-white/70 max-w-2xl mb-10">
+            {hero.sub}
+          </p>
+          
+          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
-            <Link href="#" className="inline-flex items-center gap-2 bg-indigo-600 text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md hover:bg-indigo-700 transition-colors">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-[#625eff] text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md hover:bg-[#4b47e6] transition-colors shadow-lg shadow-indigo-950/50">
               {hero.cta1} →
             </Link>
-            <Link href="#" className="inline-flex items-center gap-2 bg-white text-slate-700 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 transition-all">
+            <Link href="#" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all">
               {hero.cta2}
             </Link>
           </div>
+
+          {/* Badges */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{hero.trustLabel}</span>
+            <span className="text-xs font-semibold text-white/40 uppercase tracking-wide">
+              {hero.trustLabel}
+            </span>
             {hero.badges.map((b) => (
-              <span key={b} className="text-xs font-semibold text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-full shadow-sm">{b}</span>
+              <span key={b} className="text-xs font-semibold text-white/90 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                {b}
+              </span>
             ))}
           </div>
         </div>

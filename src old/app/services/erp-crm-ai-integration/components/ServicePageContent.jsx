@@ -31,12 +31,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\ud83d\udd17", title: "Survives every ERP upgrade", body: "Official APIs are maintained by the vendor. When SAP or Oracle releases an update, your integration keeps working \u2014 because it was built the right way." },
-  { icon: "\ud83c\udfd7", title: "Your data never leaves your control", body: "Deployed on your own Linux production environment. No third-party service sitting between your agent and your ERP data." },
-  { icon: "\ud83d\udd10", title: "Enterprise identity and access", body: "Secure authentication via Microsoft Entra ID / Azure AD and OCI IAM \u2014 your access controls respected at every layer." },
-  { icon: "\u2699\ufe0f", title: "Custom-built, not configured", body: "No pre-built connectors with hidden limitations. Every integration is engineered for your specific data model, permissions structure and workflows." },
-  { icon: "\ud83c\udf10", title: "Multi-platform, single delivery team", body: "One team manages your entire integration landscape \u2014 SAP, Oracle, Salesforce and beyond \u2014 with a consistent architecture and support model." },
-  { icon: "\ud83d\udcc8", title: "Scales with your platform mix", body: "As your enterprise stack evolves \u2014 new ERPs, additional CRMs, cloud migrations \u2014 your AI integration layer extends without a rebuild." },
+  { icon: "", title: "Survives every ERP upgrade", body: "Official APIs are maintained by the vendor. When SAP or Oracle releases an update, your integration keeps working \u2014 because it was built the right way." },
+  { icon: "", title: "Your data never leaves your control", body: "Deployed on your own Linux production environment. No third-party service sitting between your agent and your ERP data." },
+  { icon: "", title: "Enterprise identity and access", body: "Secure authentication via Microsoft Entra ID / Azure AD and OCI IAM \u2014 your access controls respected at every layer." },
+  { icon: "", title: "Custom-built, not configured", body: "No pre-built connectors with hidden limitations. Every integration is engineered for your specific data model, permissions structure and workflows." },
+  { icon: "", title: "Multi-platform, single delivery team", body: "One team manages your entire integration landscape \u2014 SAP, Oracle, Salesforce and beyond \u2014 with a consistent architecture and support model." },
+  { icon: "", title: "Scales with your platform mix", body: "As your enterprise stack evolves \u2014 new ERPs, additional CRMs, cloud migrations \u2014 your AI integration layer extends without a rebuild." },
 ];
 
 const features = [

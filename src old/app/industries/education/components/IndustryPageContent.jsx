@@ -30,12 +30,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "📚", title: "Every student gets a personalised path", body: "Adaptive AI adjusts content and pacing to each student's demonstrated understanding — not the average of the cohort. Struggling students get support before they fall behind." },
-  { icon: "⏳", title: "Faculty time returned to teaching", body: "Administrative tasks — grading routine assessments, managing enrolment queries, compiling compliance reports — handled by agents. Faculty focus on the work that requires them." },
-  { icon: "🎯", title: "At-risk students identified early", body: "Engagement and assessment analytics surface students at risk of disengagement or failure weeks before it becomes irreversible — giving support teams time to intervene." },
-  { icon: "💬", title: "Student support available around the clock", body: "AI advisors answer course and administrative queries at any hour — reducing the volume reaching human advisors and improving student experience simultaneously." },
-  { icon: "📊", title: "Institutional analytics without manual compilation", body: "Retention rates, completion rates, assessment distributions and cohort performance — available to leadership in real time, not assembled quarterly." },
-  { icon: "🔒", title: "Student data protected", body: "Agents deploy on your infrastructure with appropriate data governance — student records and communication history managed to the standards your institution requires." },
+  { icon: "", title: "Every student gets a personalised path", body: "Adaptive AI adjusts content and pacing to each student's demonstrated understanding — not the average of the cohort. Struggling students get support before they fall behind." },
+  { icon: "", title: "Faculty time returned to teaching", body: "Administrative tasks — grading routine assessments, managing enrolment queries, compiling compliance reports — handled by agents. Faculty focus on the work that requires them." },
+  { icon: "", title: "At-risk students identified early", body: "Engagement and assessment analytics surface students at risk of disengagement or failure weeks before it becomes irreversible — giving support teams time to intervene." },
+  { icon: "", title: "Student support available around the clock", body: "AI advisors answer course and administrative queries at any hour — reducing the volume reaching human advisors and improving student experience simultaneously." },
+  { icon: "", title: "Institutional analytics without manual compilation", body: "Retention rates, completion rates, assessment distributions and cohort performance — available to leadership in real time, not assembled quarterly." },
+  { icon: "", title: "Student data protected", body: "Agents deploy on your infrastructure with appropriate data governance — student records and communication history managed to the standards your institution requires." },
 ];
 
 const features = [

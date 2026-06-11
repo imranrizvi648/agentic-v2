@@ -295,7 +295,7 @@ export default function AgenticSenseParticleText() {
         style={{
           fontSize: "13vw",          // initial guess; JS overrides to fit
           fontWeight: 900,
-          letterSpacing: "-0.05em",
+          letterSpacing: "-0.5em",
           lineHeight: 1.14,
           color: "transparent",
           userSelect: "none",

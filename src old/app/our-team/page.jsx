@@ -565,7 +565,7 @@ export default function OurTeamPage() {
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             
               <a href="/contact" className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 border border-white/20 text-white text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
-                Get in Touch
+                Get in
               </a>
             </div>
           </div>

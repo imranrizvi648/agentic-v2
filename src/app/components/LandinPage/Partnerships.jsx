@@ -11,9 +11,9 @@ const partners = [
   {
     id: 2,
     name: "Funuun",
-    logo: "/Gemini_Generated_Image_563xrm563xrm563x-removebg-preview.png",
+    logo: "/logoFunun.png",
     // Very wide logo gets a smaller height so its width doesn't over-expand
-    sizeClass: "max-h-8 md:max-h-20",
+    sizeClass: "max-h-12 md:max-h-41",
   },
   {
     id: 3,

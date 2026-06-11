@@ -30,12 +30,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "💰", title: "Pricing optimised continuously", body: "Prices reflect current demand, competition and inventory in real time — not yesterday's manual review. Margin improvement is measured against your pre-agent baseline." },
-  { icon: "📦", title: "Stockouts prevented before they cost you", body: "Predictive replenishment fires purchase orders weeks before stockouts occur — based on your actual demand data, not rule-of-thumb reorder points." },
-  { icon: "⚡", title: "Checkout conversion improved", body: "AI identifies the specific friction points and abandonment patterns in your checkout flow — and acts on them automatically, not after a quarterly review." },
-  { icon: "🎯", title: "Customer service without the queue", body: "Agents resolve the 70–80% of support queries that follow predictable patterns — leaving your human agents for the cases that genuinely need them." },
-  { icon: "🔗", title: "Platform data stays consistent", body: "Agents update inventory, pricing and order data across your commerce platform, ERP and warehouse systems simultaneously — no data lag, no manual sync." },
-  { icon: "📊", title: "Commercial intelligence in real time", body: "Margin analysis, sell-through rates, supplier performance and customer lifetime value — available to commercial leadership without a BI analyst in the loop." },
+  { icon: "", title: "Pricing optimised continuously", body: "Prices reflect current demand, competition and inventory in real time — not yesterday's manual review. Margin improvement is measured against your pre-agent baseline." },
+  { icon: "", title: "Stockouts prevented before they cost you", body: "Predictive replenishment fires purchase orders weeks before stockouts occur — based on your actual demand data, not rule-of-thumb reorder points." },
+  { icon: "", title: "Checkout conversion improved", body: "AI identifies the specific friction points and abandonment patterns in your checkout flow — and acts on them automatically, not after a quarterly review." },
+  { icon: "", title: "Customer service without the queue", body: "Agents resolve the 70–80% of support queries that follow predictable patterns — leaving your human agents for the cases that genuinely need them." },
+  { icon: "", title: "Platform data stays consistent", body: "Agents update inventory, pricing and order data across your commerce platform, ERP and warehouse systems simultaneously — no data lag, no manual sync." },
+  { icon: "", title: "Commercial intelligence in real time", body: "Margin analysis, sell-through rates, supplier performance and customer lifetime value — available to commercial leadership without a BI analyst in the loop." },
 ];
 
 const features = [
@@ -108,6 +108,107 @@ function Label({ text }) {
   );
 }
 
+// ─── Static Hero Background (ContactHero style, no canvas) ───────────────────
+// Replicates the layered dark navy aesthetic: base colour + linear depth +
+// radial glow + animated bezier-line SVG overlay (CSS only, zero JS).
+
+function HeroBackground() {
+  return (
+    <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+      {/* Base dark navy */}
+      <div className="absolute inset-0 bg-[#1a194d]" />
+
+      {/* Depth gradient — dark corners, slightly lighter centre */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(135deg, rgba(6,5,28,0.55) 0%, rgba(26,25,77,0) 50%, rgba(10,8,38,0.40) 100%)",
+        }}
+      />
+
+      {/* Radial purple glow — top-right, matches ContactHero */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 55% 70% at 90% 0%, rgba(98,94,255,0.22) 0%, rgba(98,94,255,0.06) 45%, transparent 70%)",
+        }}
+      />
+
+      {/* Secondary soft glow — left side */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 40% 60% at 5% 60%, rgba(98,94,255,0.10) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Subtle dot-grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: "radial-gradient(rgba(255,255,255,0.7) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
+
+      {/* Static SVG flow lines — visual twin of the bezier canvas without JS */}
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 1440 700"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <style>{`
+            @keyframes flowLine {
+              0%   { stroke-dashoffset: 2000; opacity: 0; }
+              10%  { opacity: 1; }
+              90%  { opacity: 0.6; }
+              100% { stroke-dashoffset: 0; opacity: 0; }
+            }
+            .fl { stroke-dasharray: 2000; animation: flowLine linear infinite both; }
+          `}</style>
+        </defs>
+
+        {/* 10 bezier curves — same geometry family as the canvas version */}
+        {[
+          { d:"M 648 0 C 792 49 432 385 72 595",  dur:"9s",  del:"0s",   a:"0.06" },
+          { d:"M 734 0 C 864 56 497 399 158 609",  dur:"11s", del:"1.2s", a:"0.08" },
+          { d:"M 820 0 C 936 63 562 413 244 623",  dur:"10s", del:"2.4s", a:"0.05" },
+          { d:"M 906 0 C 1008 70 627 427 330 637", dur:"13s", del:"0.6s", a:"0.09" },
+          { d:"M 992 0 C 1080 77 692 441 416 651", dur:"8s",  del:"3.0s", a:"0.07" },
+          { d:"M 1078 0 C 1152 84 757 455 502 665",dur:"12s", del:"1.8s", a:"0.06" },
+          { d:"M 1164 0 C 1224 91 822 469 588 679",dur:"9.5s",del:"4.2s", a:"0.05" },
+          { d:"M 1250 0 C 1296 98 887 483 674 693",dur:"14s", del:"0.3s", a:"0.08" },
+          { d:"M 1336 0 C 1368 105 952 497 760 700",dur:"11s",del:"2.1s", a:"0.06" },
+          { d:"M 562 0 C 720 42 367 371 -14 581",  dur:"10s", del:"3.6s", a:"0.07" },
+        ].map((l, i) => (
+          <path
+            key={i}
+            className="fl"
+            d={l.d}
+            stroke="white"
+            strokeWidth={i % 3 === 0 ? "0.8" : "0.45"}
+            strokeLinecap="round"
+            strokeOpacity={l.a}
+            style={{ animationDuration: l.dur, animationDelay: l.del }}
+          />
+        ))}
+      </svg>
+
+      {/* Left vignette — same as ContactHero */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(18,16,60,0.82)] via-[rgba(18,16,60,0.45)] to-transparent pointer-events-none" />
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 w-full h-14 bg-gradient-to-t from-[rgba(26,25,77,0.65)] to-transparent pointer-events-none" />
+
+      {/* Bottom accent line */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(98,94,255,0.4)] to-transparent" />
+    </div>
+  );
+}
+
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function EcommerceContent() {
@@ -116,41 +217,54 @@ export default function EcommerceContent() {
   return (
     <main className="bg-white text-brand-primary selection:bg-brand-secondary/20">
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative bg-white pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 overflow-hidden border-b border-brand-primary/10">
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[120px] pointer-events-none bg-brand-secondary/5"
-        />
-        <div
-          className="absolute inset-0 opacity-[0.015] pointer-events-none"
-          style={{ backgroundImage: "repeating-linear-gradient(45deg,#1a194d 0,#1a194d 1px,transparent 0,transparent 50%)", backgroundSize: "24px 24px" }}
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      {/* ── Hero — ContactHero style, no canvas ──────────────── */}
+      <section
+        aria-label="E-commerce AI — industry page header"
+        className="relative w-full min-h-[55vh] sm:min-h-[65vh] md:min-h-[72vh] overflow-hidden flex items-center font-sans"
+      >
+        <HeroBackground />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 py-24 sm:py-28 md:py-32">
+
+          {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-black text-brand-primary/30 tracking-widest">04</span>
-            <div className="h-px w-4 bg-brand-secondary" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-secondary">E-commerce · Retail Operations AI</span>
+            <span className="text-xs font-black text-white/30 tracking-widest">04</span>
+            <div className="h-px w-4 bg-[#625eff]" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#a095ff]">
+              E-commerce · Retail Operations AI
+            </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
-            {before}<span className="text-brand-secondary">{hero.highlight}</span>{after}
+
+          {/* H1 */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-4xl mb-6">
+            {before}<span className="text-[#a095ff]">{hero.highlight}</span>{after}
           </h1>
-          <p className="text-lg text-brand-primary/70 leading-relaxed max-w-2xl mb-10">{hero.sub}</p>
+
+          {/* Sub */}
+          <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-2xl mb-10">
+            {hero.sub}
+          </p>
+
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 mb-10">
-            <Link href="#"
-              className="inline-flex items-center gap-2 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md transition-all hover:opacity-90 bg-brand-secondary text-white shadow-sm shadow-brand-secondary/20"
+            <Link href="/contact"
+              className="inline-flex items-center gap-2 font-bold text-sm px-5 sm:px-6 py-3.5 rounded-md transition-all hover:opacity-90 bg-[#625eff] text-white shadow-lg shadow-[#625eff]/30"
             >
               {hero.cta1} →
             </Link>
-            <Link href="#"
-              className="inline-flex items-center gap-2 bg-brand-primary/[0.03] text-brand-primary/80 font-bold text-sm px-4 sm:px-6 py-3.5 rounded-md border border-brand-primary/10 hover:bg-brand-primary/[0.06] hover:text-brand-primary transition-all"
+            <Link href="/services"
+              className="inline-flex items-center gap-2 bg-white/[0.07] text-white/80 font-bold text-sm px-5 sm:px-6 py-3.5 rounded-md border border-white/[0.14] hover:bg-white/[0.12] hover:text-white transition-all"
             >
               {hero.cta2}
             </Link>
           </div>
+
+          {/* Platform badges */}
           <div className="flex flex-wrap items-center gap-2">
             {hero.badges.map((b) => (
               <span key={b}
-                className="text-xs font-semibold px-3 py-1.5 rounded-full border border-brand-secondary/20 bg-brand-secondary/5 text-brand-secondary"
+                className="text-xs font-semibold px-3 py-1.5 rounded-full border border-[#625eff]/30 bg-[#625eff]/10 text-[#a095ff]"
               >{b}</span>
             ))}
           </div>
@@ -314,12 +428,12 @@ export default function EcommerceContent() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-5">{cta.heading}</h2>
           <p className="text-base text-brand-primary/60 leading-relaxed mb-10">{cta.body}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-            <Link href="#"
+            <Link href="/contact"
               className="inline-flex items-center justify-center gap-2 font-bold text-sm px-7 py-4 rounded-md hover:opacity-90 transition-all bg-brand-secondary text-white shadow-sm shadow-brand-secondary/20"
             >
               {cta.cta1} →
             </Link>
-            <Link href="#"
+            <Link href="/services"
               className="inline-flex items-center justify-center gap-2 bg-brand-primary/[0.03] text-brand-primary/80 font-bold text-sm px-7 py-4 rounded-md border border-brand-primary/10 hover:bg-brand-primary/[0.06] hover:text-brand-primary transition-all"
             >
               {cta.cta2}

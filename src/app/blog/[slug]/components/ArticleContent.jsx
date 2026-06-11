@@ -57,7 +57,7 @@ function renderBlock(block, idx) {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-export default function ArticleContent({ post, author, relatedPosts }) {
+export default function ArticleContent({ post, relatedPosts }) {
   // Build TOC from h2 blocks
   const headings = post.body.filter((b) => b.type === "h2");
 
@@ -101,15 +101,6 @@ export default function ArticleContent({ post, author, relatedPosts }) {
 
           {/* Meta row */}
           <div className="flex flex-wrap items-center gap-4 text-xs text-white/40">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white text-[9px] font-black">
-                {author?.name.charAt(0)}
-              </div>
-              <span className="font-semibold text-white/60">{author?.name}</span>
-              <span className="text-white/25">·</span>
-              <span>{author?.role}</span>
-            </div>
-            <span className="text-white/25">·</span>
             <time dateTime={post.date}>{formatDate(post.date)}</time>
             <span className="text-white/25">·</span>
             <span>{post.readTime}</span>
@@ -170,29 +161,10 @@ export default function ArticleContent({ post, author, relatedPosts }) {
           >
             <meta itemProp="headline" content={post.title} />
             <meta itemProp="datePublished" content={post.date} />
-            <meta itemProp="author" content={author?.name} />
 
             <div className="prose-style max-w-2xl">
               {post.body.map((block, idx) => renderBlock(block, idx))}
             </div>
-
-            {/* ── Author card ───────────────────────── */}
-            {author && (
-              <div className="mt-16 pt-10 border-t border-slate-100">
-                <div className="flex items-start gap-5 bg-slate-50 border border-slate-200 rounded-2xl p-6">
-                  <div className="w-12 h-12 rounded-full bg-[#1a194d] flex items-center justify-center text-white font-black text-lg flex-shrink-0">
-                    {author.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="text-sm font-black text-[#1a194d] mb-0.5">{author.name}</p>
-                    <p className="text-xs text-[#625eff] font-semibold mb-2">{author.role}</p>
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      Part of the AgenticSense team — building production-grade agentic AI for enterprise finance, operations and sector automation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
 
           </article>
         </div>

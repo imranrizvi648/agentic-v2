@@ -31,12 +31,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\ud83d\udd2e", title: "From reactive to proactive", body: "Anomalies, shortfalls and opportunities are surfaced before they become problems \u2014 giving your team time to act rather than respond." },
-  { icon: "\ud83d\udcc8", title: "Forecasts built on your data", body: "Predictive models trained on your historical patterns \u2014 not industry benchmarks \u2014 deliver forecasts that reflect your actual business dynamics." },
-  { icon: "\ud83c\udfaf", title: "Leadership sees the signal, not the noise", body: "Executive dashboards surface the metrics that matter, with drill-down to the transaction level \u2014 without requiring an analyst to prepare each view." },
-  { icon: "\u26a1", title: "Recommendations, not just reports", body: "Decision-support agents go one step further \u2014 'here is the anomaly, here is the likely cause, here is the recommended action' \u2014 reducing cognitive load." },
-  { icon: "\ud83d\udd17", title: "Connects your entire data landscape", body: "Pipelines draw from your ERP, CRM, operational systems and external data sources \u2014 a unified view, not siloed reports from each system." },
-  { icon: "\ud83c\udfd7", title: "Built on enterprise-grade infrastructure", body: "Microsoft Fabric for data lakehouse architecture and pipelines, Azure AI Foundry for model services \u2014 platforms your IT team can govern." },
+  { icon: "", title: "From reactive to proactive", body: "Anomalies, shortfalls and opportunities are surfaced before they become problems \u2014 giving your team time to act rather than respond." },
+  { icon: "", title: "Forecasts built on your data", body: "Predictive models trained on your historical patterns \u2014 not industry benchmarks \u2014 deliver forecasts that reflect your actual business dynamics." },
+  { icon: "", title: "Leadership sees the signal, not the noise", body: "Executive dashboards surface the metrics that matter, with drill-down to the transaction level \u2014 without requiring an analyst to prepare each view." },
+  { icon: "", title: "Recommendations, not just reports", body: "Decision-support agents go one step further \u2014 'here is the anomaly, here is the likely cause, here is the recommended action' \u2014 reducing cognitive load." },
+  { icon: "", title: "Connects your entire data landscape", body: "Pipelines draw from your ERP, CRM, operational systems and external data sources \u2014 a unified view, not siloed reports from each system." },
+  { icon: "", title: "Built on enterprise-grade infrastructure", body: "Microsoft Fabric for data lakehouse architecture and pipelines, Azure AI Foundry for model services \u2014 platforms your IT team can govern." },
 ];
 
 const features = [

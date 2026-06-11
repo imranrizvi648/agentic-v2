@@ -30,12 +30,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "⚡", title: "Reconciliation in minutes, not days", body: "Transactions that required analyst teams working overnight now reconcile automatically — exceptions routed with matching evidence already attached." },
-  { icon: "🔒", title: "Audit-ready from day one", body: "Every agent decision is logged with inputs, outputs and reasoning. When the regulator asks, the trail is structured for review — not assembled under pressure." },
-  { icon: "🎯", title: "Fraud caught before it settles", body: "Real-time pattern monitoring against historical baselines means anomalies surface in seconds, not in the next-day exception report." },
-  { icon: "📊", title: "Regulatory burden reduced", body: "Automated compilation, validation and submission of regulatory returns eliminates a reporting cycle that consumes senior analyst time every period end." },
-  { icon: "🛡️", title: "No third-party data exposure", body: "Agents deploy on your own infrastructure. Sensitive financial data never passes through AgenticSense systems or third-party SaaS layers." },
-  { icon: "🌐", title: "Multi-entity, multi-currency native", body: "Intercompany transactions, currency revaluation, consolidated reporting and entity-level access controls — handled natively, not as add-ons." },
+  { icon: "", title: "Reconciliation in minutes, not days", body: "Transactions that required analyst teams working overnight now reconcile automatically — exceptions routed with matching evidence already attached." },
+  { icon: "", title: "Audit-ready from day one", body: "Every agent decision is logged with inputs, outputs and reasoning. When the regulator asks, the trail is structured for review — not assembled under pressure." },
+  { icon: "", title: "Fraud caught before it settles", body: "Real-time pattern monitoring against historical baselines means anomalies surface in seconds, not in the next-day exception report." },
+  { icon: "", title: "Regulatory burden reduced", body: "Automated compilation, validation and submission of regulatory returns eliminates a reporting cycle that consumes senior analyst time every period end." },
+  { icon: "", title: "No third-party data exposure", body: "Agents deploy on your own infrastructure. Sensitive financial data never passes through AgenticSense systems or third-party SaaS layers." },
+  { icon: "", title: "Multi-entity, multi-currency native", body: "Intercompany transactions, currency revaluation, consolidated reporting and entity-level access controls — handled natively, not as add-ons." },
 ];
 
 const features = [

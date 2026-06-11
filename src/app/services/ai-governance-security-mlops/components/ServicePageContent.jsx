@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -8,7 +7,7 @@ import Link from "next/link";
 const hero = {
   headline: "Agents You Can Put in Front of an Auditor.",
   highlight: "in Front of an Auditor.",
-  sub: "Enterprise AI has to be trustworthy \u2014 not just capable. We build governance, security and operational reliability into every agent from day one, so your automation stays accurate, compliant and under control long after go-live.",
+  sub: "Enterprise AI has to be trustworthy — not just capable. We build governance, security and operational reliability into every agent from day one, so your automation stays accurate, compliant and under control long after go-live.",
   cta1: "Discuss AI Governance Requirements",
   cta2: "See Our Governance Framework",
   trustLabel: "Standards we build to",
@@ -17,8 +16,8 @@ const hero = {
 
 const overview = {
   heading: "Governance Is Not a Feature. It Is the Foundation.",
-  lead: "Most AI projects add governance at the end \u2014 when the audit comes, or when something goes wrong. We build it from phase one. Every agent we ship has audit logging, access controls, human-in-the-loop checkpoints and monitoring active from the first day in production.",
-  body: "For enterprises operating in regulated environments \u2014 finance, healthcare, government, energy \u2014 this is not optional. Our governance practice covers the full lifecycle: design, deployment, ongoing operations, retraining and performance management.",
+  lead: "Most AI projects add governance at the end — when the audit comes, or when something goes wrong. We build it from phase one. Every agent we ship has audit logging, access controls, human-in-the-loop checkpoints and monitoring active from the first day in production.",
+  body: "For enterprises operating in regulated environments — finance, healthcare, government, energy — this is not optional. Our governance practice covers the full lifecycle: design, deployment, ongoing operations, retraining and performance management.",
   stats: [
     { val: "100%", label: "Agent actions logged and traceable" },
     { val: "Day 1", label: "Governance active from first production day" },
@@ -26,48 +25,48 @@ const overview = {
     { val: "Live", label: "Continuous monitoring and alerting" },
   ],
   cards: [
-    { title: "Human-in-the-Loop Controls", body: "Configurable approval gates and review checkpoints \u2014 so critical agent actions require human confirmation before execution." },
-    { title: "Full Audit Logging", body: "Every agent action, tool call, model decision and exception flag logged with timestamps, inputs and outputs \u2014 complete traceability." },
-    { title: "Monitoring & Alerting", body: "Real-time monitoring of agent accuracy, exception rates and performance drift \u2014 with alerting before problems reach a material level." },
-    { title: "Managed Operations", body: "Ongoing support, model retraining, performance tuning and optimisation \u2014 your agents stay accurate and cost-efficient after launch." },
+    { title: "Human-in-the-Loop Controls", body: "Configurable approval gates and review checkpoints — so critical agent actions require human confirmation before execution." },
+    { title: "Full Audit Logging", body: "Every agent action, tool call, model decision and exception flag logged with timestamps, inputs and outputs — complete traceability." },
+    { title: "Monitoring & Alerting", body: "Real-time monitoring of agent accuracy, exception rates and performance drift — with alerting before problems reach a material level." },
+    { title: "Managed Operations", body: "Ongoing support, model retraining, performance tuning and optimisation — your agents stay accurate and cost-efficient after launch." },
   ],
 };
 
 const benefits = [
-  { icon: "\ud83d\udccb", title: "Audit-ready from day one", body: "Every agent action is logged with inputs, outputs and decision context. When the auditor asks, the trail is already there \u2014 not assembled retrospectively under pressure." },
-  { icon: "\ud83d\udd10", title: "Access control that actually works", body: "AES-256 encrypted credentials, role-based access, Entra ID and OCI IAM integration \u2014 your security architecture is respected at every agent operation." },
-  { icon: "\ud83c\udf9b", title: "Human authority over critical decisions", body: "High-stakes actions \u2014 posting transactions, approving exceptions, modifying records \u2014 require human confirmation. The agent cannot bypass the gate." },
-  { icon: "\ud83d\udce1", title: "Performance problems caught early", body: "Monitoring tracks accuracy, exception rates and throughput in real time \u2014 so drift is caught and corrected before it affects your operations." },
-  { icon: "\ud83d\udd04", title: "Agents improve over time", body: "Managed retraining and optimisation post-launch \u2014 your agents get more accurate as your data grows and your processes evolve." },
-  { icon: "\u2696\ufe0f", title: "Compliance is demonstrable, not claimed", body: "Governance documentation, audit logs and control evidence are structured to support regulatory requirements \u2014 not assembled in a hurry before an inspection." },
+  { icon: "📋", title: "Audit-ready from day one", body: "Every agent action is logged with inputs, outputs and decision context. When the auditor asks, the trail is already there — not assembled retrospectively under pressure." },
+  { icon: "🔒", title: "Access control that actually works", body: "AES-256 encrypted credentials, role-based access, Entra ID and OCI IAM integration — your security architecture is respected at every agent operation." },
+  { icon: "🎛️", title: "Human authority over critical decisions", body: "High-stakes actions — posting transactions, approving exceptions, modifying records — require human confirmation. The agent cannot bypass the gate." },
+  { icon: "📡", title: "Performance problems caught early", body: "Monitoring tracks accuracy, exception rates and throughput in real time — so drift is caught and corrected before it affects your operations." },
+  { icon: "🔄", title: "Agents improve over time", body: "Managed retraining and optimisation post-launch — your agents get more accurate as your data grows and your processes evolve." },
+  { icon: "⚖️", title: "Compliance is demonstrable, not claimed", body: "Governance documentation, audit logs and control evidence are structured to support regulatory requirements — not assembled in a hurry before an inspection." },
 ];
 
 const features = [
-  { num: "01", title: "Configurable approval gates", body: "Human review required before any action above a defined threshold \u2014 amount, risk category or exception type. Configurable per workflow, per entity." },
-  { num: "02", title: "Guardrails and output constraints", body: "Agent output bounded by explicit rules \u2014 preventing actions outside defined parameters, regardless of model output." },
-  { num: "03", title: "Full action audit trail", body: "Every agent decision logged: tool called, input provided, output produced, decision made, action taken \u2014 with timestamps and operator identity." },
+  { num: "01", title: "Configurable approval gates", body: "Human review required before any action above a defined threshold — amount, risk category or exception type. Configurable per workflow, per entity." },
+  { num: "02", title: "Guardrails and output constraints", body: "Agent output bounded by explicit rules — preventing actions outside defined parameters, regardless of model output." },
+  { num: "03", title: "Full action audit trail", body: "Every agent decision logged: tool called, input provided, output produced, decision made, action taken — with timestamps and operator identity." },
   { num: "04", title: "Secure credential management", body: "AES-256 encryption for all API keys and credentials. No hard-coded secrets. Rotation supported without rebuild." },
   { num: "05", title: "Role-based access and multi-tenancy", body: "Agent access scoped to the minimum required permissions. Multi-tenant isolation enforced at data and credential layers." },
-  { num: "06", title: "Real-time performance monitoring", body: "Accuracy tracking, exception rate monitoring, throughput dashboards and latency alerting \u2014 live from day one of production." },
-  { num: "07", title: "Model drift detection", body: "Statistical monitoring of model output distribution \u2014 alerting when accuracy begins to drift before it affects operational quality." },
+  { num: "06", title: "Real-time performance monitoring", body: "Accuracy tracking, exception rate monitoring, throughput dashboards and latency alerting — live from day one of production." },
+  { num: "07", title: "Model drift detection", body: "Statistical monitoring of model output distribution — alerting when accuracy begins to drift before it affects operational quality." },
   { num: "08", title: "Managed retraining and optimisation", body: "Scheduled and trigger-based retraining pipelines. Performance reports and optimisation recommendations delivered as part of managed support." },
 ];
 
 const process = [
-  { num: "01", title: "Design Governance", body: "Approval gate architecture, audit trail design and access control model \u2014 agreed before build begins, not added at the end." },
-  { num: "02", title: "Build Controls In", body: "Guardrails, HITL checkpoints, credential management and logging built into the agent \u2014 not layered on top as an afterthought." },
-  { num: "03", title: "Validate Governance", body: "Pre-launch testing of every control: approval gates, logging completeness, access scope and exception handling \u2014 documented." },
+  { num: "01", title: "Design Governance", body: "Approval gate architecture, audit trail design and access control model — agreed before build begins, not added at the end." },
+  { num: "02", title: "Build Controls In", body: "Guardrails, HITL checkpoints, credential management and logging built into the agent — not layered on top as an afterthought." },
+  { num: "03", title: "Validate Governance", body: "Pre-launch testing of every control: approval gates, logging completeness, access scope and exception handling — documented." },
   { num: "04", title: "Launch with Monitoring", body: "Real-time dashboards, alerting and exception review workflows active from the first day in production." },
-  { num: "05", title: "Operate & Improve", body: "Ongoing monitoring, drift detection, retraining and performance optimisation \u2014 the agent improves and compliance stays current." },
+  { num: "05", title: "Operate & Improve", body: "Ongoing monitoring, drift detection, retraining and performance optimisation — the agent improves and compliance stays current." },
 ];
 
 const whyUs = {
-  heading: "Governance Built In \u2014 Not Bolted On",
+  heading: "Governance Built In — Not Bolted On",
   points: [
-    { title: "Governance from phase one \u2014 always", body: "We do not add governance after the build is done. Every design decision \u2014 approval gates, audit trail structure, access control \u2014 is made before a line of code is written." },
-    { title: "Every action is logged \u2014 by design", body: "Audit trails are not a reporting feature \u2014 they are a core architectural requirement. Every agent action is logged with full decision context from day one." },
-    { title: "Multi-tenant isolation by architecture", body: "Tenant data, credentials and audit trails are separated at the architecture level \u2014 not by configuration. Cross-tenant access is not possible, regardless of user action." },
-    { title: "Managed operations keeps governance current", body: "Retraining, performance tuning and compliance reviews are ongoing \u2014 not a one-time delivery. Your agents stay accurate and your governance stays current." },
+    { title: "Governance from phase one — always", body: "We do not add governance after the build is done. Every design decision — approval gates, audit trail structure, access control — is made before a line of code is written." },
+    { title: "Every action is logged — by design", body: "Audit trails are not a reporting feature — they are a core architectural requirement. Every agent action is logged with full decision context from day one." },
+    { title: "Multi-tenant isolation by architecture", body: "Tenant data, credentials and audit trails are separated at the architecture level — not by configuration. Cross-tenant access is not possible, regardless of user action." },
+    { title: "Managed operations keeps governance current", body: "Retraining, performance tuning and compliance reviews are ongoing — not a one-time delivery. Your agents stay accurate and your governance stays current." },
   ],
   box: {
     heading: "Audit-Ready on Day One",
@@ -81,16 +80,16 @@ const whyUs = {
 };
 
 const faqs = [
-  { q: "How do we demonstrate to regulators that AI actions are controlled and accountable?", a: "Every agent action in our builds is logged with the full decision context \u2014 input, model response, tool called, output produced and any human approval obtained. This log is structured for export in a format that supports regulatory review and internal audit." },
+  { q: "How do we demonstrate to regulators that AI actions are controlled and accountable?", a: "Every agent action in our builds is logged with the full decision context — input, model response, tool called, output produced and any human approval obtained. This log is structured for export in a format that supports regulatory review and internal audit." },
   { q: "What happens if an agent makes an error in production?", a: "The monitoring system alerts on accuracy anomalies in real time. High-risk actions require human approval before execution, so an error in agent reasoning cannot propagate to a system-of-record action without review. We also maintain rollback procedures and incident response protocols for every deployment." },
-  { q: "Does the governance framework work across multi-tenant deployments?", a: "Yes. Multi-tenant isolation is a core design requirement \u2014 tenant data, credentials and audit trails are separated at the architecture level, with no cross-tenant data access possible regardless of user action." },
-  { q: "Can we set different approval thresholds for different transaction types?", a: "Yes. Approval gates are configurable by transaction amount, exception type, vendor category, risk flag and workflow stage. Your control matrix is implemented in the agent architecture \u2014 the system enforces your rules, not a generic template." },
+  { q: "Does the governance framework work across multi-tenant deployments?", a: "Yes. Multi-tenant isolation is a core design requirement — tenant data, credentials and audit trails are separated at the architecture level, with no cross-tenant data access possible regardless of user action." },
+  { q: "Can we set different approval thresholds for different transaction types?", a: "Yes. Approval gates are configurable by transaction amount, exception type, vendor category, risk flag and workflow stage. Your control matrix is implemented in the agent architecture — the system enforces your rules, not a generic template." },
   { q: "What does ongoing managed support include?", a: "Managed support covers production monitoring and alerting, model performance reporting, scheduled retraining, compatibility checks ahead of ERP updates, and a defined response SLA for production incidents. The scope is agreed in writing before go-live." },
 ];
 
 const cta = {
   heading: "Your Agents Will Be in Front of an Auditor Eventually. Build Them So That Is Not a Problem.",
-  body: "Governance built in from day one costs a fraction of governance retrofitted under audit pressure. Tell us your compliance environment and control requirements \u2014 we will show you how we would build your agents to meet them.",
+  body: "Governance built in from day one costs a fraction of governance retrofitted under audit pressure. Tell us your compliance environment and control requirements — we will show you how we would build your agents to meet them.",
   cta1: "Discuss Governance Requirements",
   cta2: "Download Our Control Framework",
 };
@@ -116,265 +115,17 @@ function SectionLabel({ text }) {
 
 export default function AiGovernanceSecurityMlopsContent() {
   const [before, after] = hero.headline.split(hero.highlight);
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    let raf, W, H;
-    let mouse = { x: -999, y: -999 };
-
-    const resize = () => {
-      W = canvas.width  = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(canvas);
-
-    const onMouse = (e) => {
-      const r = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - r.left;
-      mouse.y = e.clientY - r.top;
-    };
-    const onLeave = () => { mouse.x = -999; mouse.y = -999; };
-    canvas.addEventListener("mousemove", onMouse);
-    canvas.addEventListener("mouseleave", onLeave);
-
-    /* ── Bezier lines ── */
-    const COUNT = 24;
-    const buildLines = () =>
-      Array.from({ length: COUNT }, (_, i) => {
-        const t = i / (COUNT - 1);
-        return {
-          sx:   W * (0.42 + t * 0.62), sy: 0,
-          ex:   W * (-0.08 + t * 0.55), ey: H * (0.82 + t * 0.22),
-          cp1x: W * (0.52 + t * 0.32), cp1y: H * (0.06 + t * 0.04),
-          cp2x: W * (0.28 + t * 0.28), cp2y: H * (0.52 + t * 0.18),
-          alpha: 0.04 + t * 0.07,
-          width: 0.4 + t * 0.25,
-        };
-      });
-    let lines = buildLines();
-    const roLines = new ResizeObserver(() => { lines = buildLines(); });
-    roLines.observe(canvas);
-
-    /* ── Palette ── */
-    const PALETTE = [
-      [148, 130, 255],
-      [98,  94,  255],
-      [180, 170, 255],
-      [80,  120, 255],
-      [200, 190, 255],
-      [255, 255, 255],
-      [120, 200, 255],
-    ];
-
-    /* ── Particle class ── */
-    class P {
-      constructor(init) { this.spawn(init); }
-      spawn(init = false) {
-        this.x    = Math.random() * W;
-        this.y    = init ? Math.random() * H : H + 8;
-        const speed = Math.random() * 1.8 + 0.6;
-        const angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.9;
-        this.vx   = Math.cos(angle) * speed;
-        this.vy   = Math.sin(angle) * speed;
-        this.col  = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-        this.life  = 1;
-        this.decay = Math.random() * 0.006 + 0.003;
-        const rnd = Math.random();
-        if (rnd < 0.08) {
-          this.type = "orb";
-          this.r    = Math.random() * 5 + 3;
-          this.decay *= 0.4;
-          this.pulse = Math.random() * Math.PI * 2;
-          this.pulseSpeed = Math.random() * 0.06 + 0.03;
-        } else if (rnd < 0.22) {
-          this.type = "star";
-          this.r    = Math.random() * 2 + 1.2;
-          this.rot  = Math.random() * Math.PI;
-          this.rotSpeed = (Math.random() - 0.5) * 0.08;
-        } else {
-          this.type = "dot";
-          this.r    = Math.random() * 1.4 + 0.3;
-          this.vx   *= 1.4;
-          this.vy   *= 1.4;
-        }
-      }
-      update() {
-        const dx = this.x - mouse.x;
-        const dy = this.y - mouse.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 < 160 * 160) {
-          const d = Math.sqrt(d2);
-          const f = (160 - d) / 160;
-          this.vx += (dx / d) * f * 1.2;
-          this.vy += (dy / d) * f * 1.2;
-        }
-        const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-        if (spd > 4) { this.vx = (this.vx / spd) * 4; this.vy = (this.vy / spd) * 4; }
-        this.x  += this.vx;
-        this.y  += this.vy;
-        this.vx *= 0.97;
-        this.vy *= 0.97;
-        this.life -= this.decay;
-        if (this.type === "orb")  this.pulse += this.pulseSpeed;
-        if (this.type === "star") this.rot   += this.rotSpeed;
-        if (this.life <= 0 || this.y < -12 || this.x < -20 || this.x > W + 20) this.spawn();
-      }
-      draw() {
-        const [r, g, b] = this.col;
-        const a = this.life;
-        ctx.save();
-        if (this.type === "orb") {
-          const pr = this.r * (1 + 0.3 * Math.sin(this.pulse));
-          ctx.globalAlpha = a * 0.6;
-          ctx.shadowBlur  = 20;
-          ctx.shadowColor = `rgb(${r},${g},${b})`;
-          const grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, pr * 3);
-          grd.addColorStop(0,   `rgba(${r},${g},${b},1)`);
-          grd.addColorStop(0.4, `rgba(${r},${g},${b},0.5)`);
-          grd.addColorStop(1,   `rgba(${r},${g},${b},0)`);
-          ctx.fillStyle = grd;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, pr * 3, 0, Math.PI * 2);
-          ctx.fill();
-        } else if (this.type === "star") {
-          ctx.globalAlpha = a * 0.85;
-          ctx.shadowBlur  = 8;
-          ctx.shadowColor = `rgb(${r},${g},${b})`;
-          ctx.fillStyle   = `rgba(${r},${g},${b},1)`;
-          ctx.translate(this.x, this.y);
-          ctx.rotate(this.rot);
-          ctx.beginPath();
-          const s = this.r;
-          for (let k = 0; k < 8; k++) {
-            const ang = (k * Math.PI) / 4;
-            const rad = k % 2 === 0 ? s : s * 0.4;
-            k === 0
-              ? ctx.moveTo(Math.cos(ang) * rad, Math.sin(ang) * rad)
-              : ctx.lineTo(Math.cos(ang) * rad, Math.sin(ang) * rad);
-          }
-          ctx.closePath();
-          ctx.fill();
-        } else {
-          ctx.globalAlpha = a * 0.9;
-          ctx.shadowBlur  = 6;
-          ctx.shadowColor = `rgb(${r},${g},${b})`;
-          ctx.fillStyle   = `rgba(${r},${g},${b},1)`;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        ctx.restore();
-      }
-    }
-
-    const particles = Array.from({ length: 130 }, () => new P(true));
-
-    /* ── Connection lines ── */
-    const drawLinks = () => {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const d2 = dx * dx + dy * dy;
-          if (d2 < 75 * 75) {
-            const d = Math.sqrt(d2);
-            const alpha = (1 - d / 75) * 0.18 * Math.min(particles[i].life, particles[j].life);
-            ctx.save();
-            ctx.globalAlpha = alpha;
-            const [r1,g1,b1] = particles[i].col;
-            const [r2,g2,b2] = particles[j].col;
-            const lg = ctx.createLinearGradient(particles[i].x, particles[i].y, particles[j].x, particles[j].y);
-            lg.addColorStop(0, `rgb(${r1},${g1},${b1})`);
-            lg.addColorStop(1, `rgb(${r2},${g2},${b2})`);
-            ctx.strokeStyle = lg;
-            ctx.lineWidth   = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-            ctx.restore();
-          }
-        }
-      }
-    };
-
-    let tick = 0;
-    const draw = () => {
-      tick++;
-      ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "rgba(26,25,77,0.55)";
-      ctx.fillRect(0, 0, W, H);
-
-      const depth = ctx.createLinearGradient(0, 0, W, H);
-      depth.addColorStop(0,   "rgba(6,5,28,0.3)");
-      depth.addColorStop(0.5, "rgba(26,25,77,0)");
-      depth.addColorStop(1,   "rgba(10,8,38,0.25)");
-      ctx.fillStyle = depth;
-      ctx.fillRect(0, 0, W, H);
-
-      const glow = ctx.createRadialGradient(W * 0.9, 0, 0, W * 0.9, 0, W * 0.52);
-      glow.addColorStop(0,   "rgba(98,94,255,0.14)");
-      glow.addColorStop(0.5, "rgba(98,94,255,0.05)");
-      glow.addColorStop(1,   "rgba(98,94,255,0)");
-      ctx.fillStyle = glow;
-      ctx.fillRect(0, 0, W, H);
-
-      drawLinks();
-      particles.forEach(p => { p.update(); p.draw(); });
-
-      lines.forEach((l, i) => {
-        const drift = Math.sin(tick * 0.004 + i * 0.38) * (H * 0.006);
-        ctx.save();
-        ctx.globalAlpha = l.alpha;
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth   = l.width;
-        ctx.lineCap     = "round";
-        ctx.beginPath();
-        ctx.moveTo(l.sx, l.sy);
-        ctx.bezierCurveTo(l.cp1x, l.cp1y + drift, l.cp2x, l.cp2y + drift * 0.5, l.ex, l.ey);
-        ctx.stroke();
-        ctx.restore();
-      });
-
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-
-    return () => {
-      cancelAnimationFrame(raf);
-      ro.disconnect();
-      roLines.disconnect();
-      canvas.removeEventListener("mousemove", onMouse);
-      canvas.removeEventListener("mouseleave", onLeave);
-    };
-  }, []);
 
   return (
     <main>
 
-      {/* ── Hero (Canvas Animated + Premium Dark Theme) ───────────────────────── */}
+      {/* ── Hero (Clean Premium Dark Theme - No Canvas/Lines) ───────────────────────── */}
       <section className="relative w-full min-h-[85vh] bg-[#1a194d] overflow-hidden flex items-center font-sans pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20">
-        <canvas
-          ref={canvasRef}
+        
+        {/* Glow Effects using CSS Gradients for premium vibe */}
+        <div 
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full block"
-        />
-
-        {/* Left vignette */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[rgba(18,16,60,0.85)] via-[rgba(18,16,60,0.55)] to-transparent"
-        />
-
-        {/* Bottom fade */}
-        <div
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[rgba(26,25,77,0.85)] to-transparent pointer-events-none"
+          className="absolute top-0 right-0 w-[50%] h-[50%] bg-gradient-to-bl from-indigo-500/10 to-transparent pointer-events-none filter blur-[80px]"
         />
 
         {/* Hero Content */}
@@ -408,12 +159,6 @@ export default function AiGovernanceSecurityMlopsContent() {
             ))}
           </div>
         </div>
-
-        {/* Bottom accent line */}
-        <div
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(98,94,255,0.45)] to-transparent z-10 pointer-events-none"
-        />
       </section>
 
       {/* ── Overview ─────────────────────────────────────────── */}

@@ -25,15 +25,16 @@ export default function OurTeamPage() {
       <TeamFilterBar activeDept={activeDept} onSelect={setActiveDept} />
 
       {/* ── Team grid ─────────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      {/* Changed container from max-w-7xl to max-w-5xl to constrain row stretching */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeDept}
-            initial={{ opacity:0, y:10 }}
-            animate={{ opacity:1, y:0  }}
-            exit={{    opacity:0, y:-10 }}
-            transition={{ duration:0.25 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0  }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center"
           >
             {filtered.map((member, i) => (
               <MemberCard

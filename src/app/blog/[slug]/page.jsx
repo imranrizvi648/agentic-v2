@@ -16,7 +16,9 @@ export async function generateStaticParams() {
 // ─── Per-post SEO metadata ────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+  // Next.js 15: params is a Promise — must be awaited
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) return { title: "Post Not Found | AgenticSense Blog" };
 
   const author = authors[post.author];
@@ -44,10 +46,6 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: post.seo.title,
       description: post.seo.description,
-    },
-
-    other: {
-      // JSON-LD structured data injected via script tag below
     },
   };
 }
@@ -87,8 +85,11 @@ function ArticleStructuredData({ post, author }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function BlogPostPage({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }) {
+  // Next.js 15: params is a Promise — must be awaited
+  const { slug } = await params;
+
+  const post = getPostBySlug(slug);
   if (!post) notFound();
 
   const author       = authors[post.author];

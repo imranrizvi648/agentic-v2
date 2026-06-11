@@ -31,12 +31,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\u23f1", title: "Hours reduced to seconds", body: "Document processing that took a finance analyst minutes per invoice now completes in seconds \u2014 for every invoice in the queue, simultaneously." },
-  { icon: "\ud83c\udfaf", title: "Errors caught before they post", body: "The matching logic catches discrepancies before anything hits the ERP. Vendor-supplied errors, duplicate invoices and tolerance overruns are flagged \u2014 not passed through." },
-  { icon: "\ud83d\udccb", title: "Full document provenance", body: "Every extracted field, every match decision and every exception route is logged. You have complete traceability from document receipt to posted transaction." },
-  { icon: "\ud83d\udce7", title: "Handles every format and channel", body: "PDFs, scanned images, emailed invoices, uploaded documents \u2014 the agent processes them all through the same extraction and validation pipeline." },
-  { icon: "\u26a1", title: "Scales without adding headcount", body: "Process ten times the invoice volume with the same team. The agent's throughput scales with your business \u2014 your people stay focused on exceptions." },
-  { icon: "\ud83d\udd04", title: "Integrates with your existing process", body: "Exception queues, approval workflows and ERP posting can be configured to match your existing controls \u2014 no process redesign required to go live." },
+  { icon: "", title: "Hours reduced to seconds", body: "Document processing that took a finance analyst minutes per invoice now completes in seconds \u2014 for every invoice in the queue, simultaneously." },
+  { icon: "", title: "Errors caught before they post", body: "The matching logic catches discrepancies before anything hits the ERP. Vendor-supplied errors, duplicate invoices and tolerance overruns are flagged \u2014 not passed through." },
+  { icon: "", title: "Full document provenance", body: "Every extracted field, every match decision and every exception route is logged. You have complete traceability from document receipt to posted transaction." },
+  { icon: "", title: "Handles every format and channel", body: "PDFs, scanned images, emailed invoices, uploaded documents \u2014 the agent processes them all through the same extraction and validation pipeline." },
+  { icon: "", title: "Scales without adding headcount", body: "Process ten times the invoice volume with the same team. The agent's throughput scales with your business \u2014 your people stay focused on exceptions." },
+  { icon: "", title: "Integrates with your existing process", body: "Exception queues, approval workflows and ERP posting can be configured to match your existing controls \u2014 no process redesign required to go live." },
 ];
 
 const features = [

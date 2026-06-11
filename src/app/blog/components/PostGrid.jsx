@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { posts, categories, authors, formatDate } from "../data";
+import { posts, categories, formatDate } from "../data";
 
 function PostCard({ post }) {
-  const author = authors[post.author];
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -44,14 +43,8 @@ function PostCard({ post }) {
           ))}
         </div>
 
-        {/* Author + date */}
-        <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-          <div className="w-6 h-6 rounded-full bg-[#1a194d] flex items-center justify-center text-white text-[9px] font-black flex-shrink-0">
-            {author?.name.charAt(0)}
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-[10px] font-bold text-slate-700 truncate">{author?.name}</p>
-          </div>
+        {/* Date block */}
+        <div className="flex items-center justify-end pt-4 border-t border-slate-100">
           <span className="text-[10px] text-slate-400 flex-shrink-0">{formatDate(post.date)}</span>
         </div>
       </div>

@@ -14,7 +14,7 @@ const servicesMegaMenu = [
       {
         title: "Agentic AI for the Office of Finance",
         href: "/services/agentic-ai-finance",
-        isNew: true,
+     
         desc: "AI agents that own AP, AR, GL and month-end close — end to end, natively inside your ERP.",
       },
       {

@@ -33,9 +33,7 @@ export default function ContactUs() {
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "clamp(40px,6vw,72px)" }}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(98,94,255,0.08)", border: "1px solid rgba(98,94,255,0.18)", borderRadius: 9999, padding: "5px 14px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#625eff", marginBottom: 20 }}>
-            <Sparkles size={11} />Contact Us
-          </span>
+         
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-primary tracking-tight leading-[1.1] mb-4">Let's Build Something Intelligent Together</h1>
           <p style={{ fontSize: "clamp(0.9rem,2vw,1rem)", color: "#6b7280", maxWidth: 420, margin: "0 auto", lineHeight: 1.65 }}>Have an idea, project or business challenge? Tell us about it. We'll show you exactly what an AI agent running inside your own systems could do with it.</p>
         </div>
@@ -74,7 +72,7 @@ export default function ContactUs() {
                 {submitted ? <><CheckCircle2 size={16} />Message Sent!</> : <>Send Your Request<ArrowRight size={16} /></>}
               </button>
             </form>
-            <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid #f0effe" }}>
+            {/* <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid #f0effe" }}>
               <p style={{ fontSize: "0.7rem", fontWeight: 700, color: "#9ca3af", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 12 }}>Or reach us directly</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
                 {[{ icon: <Mail size={13} />, label: "hello@agenticsense.ai", href: "mailto:hello@agenticsense.ai" },
@@ -84,7 +82,7 @@ export default function ContactUs() {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT: Info */}
@@ -104,7 +102,7 @@ export default function ContactUs() {
               </ul>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            {/* <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               {[{ country: "USA", flag: "🇺🇸", address: "280 W 17th St, 4th Floor\nNew York, NY 10011" },
                 { country: "Pakistan", flag: "🇵🇰", address: "Plot 8-2-601, University Rd\nKarachi, 500034" }].map(({ country, flag, address }) => (
                 <div key={country} style={{ background: "#f8f8fc", border: "1px solid #eeecfc", borderRadius: 14, padding: "16px 14px" }}>
@@ -118,13 +116,13 @@ export default function ContactUs() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <div style={{ display: "flex", alignItems: "center", gap: 14, background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: 14, padding: "14px 18px" }}>
               <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 0 3px rgba(34,197,94,0.2)", flexShrink: 0 }} />
               <div>
                 <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "#15803d", margin: 0 }}>Average response time: under 2 hours</p>
-                <p style={{ fontSize: "0.65rem", color: "#4ade80", margin: "2px 0 0" }}>Our team is online Mon – Fri, 9am – 6pm PKT</p>
+                <p style={{ fontSize: "0.65rem", color: "#4ade80", margin: "2px 0 0" }}>Our team is online Mon – Fri, 10am – 7pm PKT</p>
               </div>
             </div>
           </div>

@@ -34,12 +34,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\u26a1", title: "Processing time cut \u2014 not trimmed", body: "Invoices that moved in days move in minutes. Not because someone works faster, but because the agent never stops between steps." },
-  { icon: "\ud83d\udd12", title: "Every action is auditable", body: "Every decision, match, post and exception flag is logged. You have a complete audit trail that survives the next compliance review." },
-  { icon: "\ud83c\udfaf", title: "Human attention goes where it matters", body: "Your team reviews the exceptions that genuinely need judgement. The rest \u2014 the 80\u201390% that follows the rules \u2014 the agent handles without interruption." },
-  { icon: "\ud83d\udcca", title: "Month-end closes faster", body: "Close-orchestration agents prepare journals, reconcile and surface variances while the period is still open \u2014 not after it's too late." },
-  { icon: "\ud83d\udee1", title: "No brittle middleware", body: "Built natively on SAP Service Layer and Oracle Fusion REST APIs. Your automation survives the next ERP upgrade without a rebuild." },
-  { icon: "\ud83c\udf10", title: "Multi-entity ready", body: "One deployment can span multiple business units, currencies and entity structures \u2014 with consolidated reporting built in." },
+  { icon: "", title: "Processing time cut \u2014 not trimmed", body: "Invoices that moved in days move in minutes. Not because someone works faster, but because the agent never stops between steps." },
+  { icon: "", title: "Every action is auditable", body: "Every decision, match, post and exception flag is logged. You have a complete audit trail that survives the next compliance review." },
+  { icon: "", title: "Human attention goes where it matters", body: "Your team reviews the exceptions that genuinely need judgement. The rest \u2014 the 80\u201390% that follows the rules \u2014 the agent handles without interruption." },
+  { icon: "", title: "Month-end closes faster", body: "Close-orchestration agents prepare journals, reconcile and surface variances while the period is still open \u2014 not after it's too late." },
+  { icon: "", title: "No brittle middleware", body: "Built natively on SAP Service Layer and Oracle Fusion REST APIs. Your automation survives the next ERP upgrade without a rebuild." },
+  { icon: "", title: "Multi-entity ready", body: "One deployment can span multiple business units, currencies and entity structures \u2014 with consolidated reporting built in." },
 ];
 
 const features = [

@@ -34,12 +34,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\u23f3", title: "Turnaround time cut dramatically", body: "Approval workflows that took days move in hours. Processes that required email chains and manual chasing complete end to end \u2014 automatically." },
-  { icon: "\ud83d\udccb", title: "Consistent process execution", body: "Rules are applied the same way every time \u2014 no exceptions driven by workload or individual interpretation. Compliance is a function of the system, not the person." },
-  { icon: "\ud83d\udd17", title: "Systems of record stay current", body: "Agents update your ERP, HRMS and ITSM as they work \u2014 so downstream reports and dashboards reflect reality, not yesterday's manual update." },
-  { icon: "\ud83c\udfaf", title: "Your people focus on decisions, not administration", body: "Routing, chasing, logging and status updates are handled by the agent. Your team's attention goes to the judgements that require it." },
-  { icon: "\ud83d\udcca", title: "Cross-process visibility", body: "When agents handle the work, the data is clean. You get genuine process analytics \u2014 cycle times, bottlenecks, exception rates \u2014 because the workflow is instrumented." },
-  { icon: "\ud83d\udd04", title: "Extends your finance automation investment", body: "Procurement agents connect directly to your AP workflow. HR automation feeds into your GL. The disciplines reinforce each other across functions." },
+  { icon: "", title: "Turnaround time cut dramatically", body: "Approval workflows that took days move in hours. Processes that required email chains and manual chasing complete end to end \u2014 automatically." },
+  { icon: "", title: "Consistent process execution", body: "Rules are applied the same way every time \u2014 no exceptions driven by workload or individual interpretation. Compliance is a function of the system, not the person." },
+  { icon: "", title: "Systems of record stay current", body: "Agents update your ERP, HRMS and ITSM as they work \u2014 so downstream reports and dashboards reflect reality, not yesterday's manual update." },
+  { icon: "", title: "Your people focus on decisions, not administration", body: "Routing, chasing, logging and status updates are handled by the agent. Your team's attention goes to the judgements that require it." },
+  { icon: "", title: "Cross-process visibility", body: "When agents handle the work, the data is clean. You get genuine process analytics \u2014 cycle times, bottlenecks, exception rates \u2014 because the workflow is instrumented." },
+  { icon: "", title: "Extends your finance automation investment", body: "Procurement agents connect directly to your AP workflow. HR automation feeds into your GL. The disciplines reinforce each other across functions." },
 ];
 
 const features = [

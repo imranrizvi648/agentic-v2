@@ -47,10 +47,38 @@ export default function MemberModal({ member, onClose }) {
                 ))}
               </div>
             </div>
+            {/* Yahan changes kiye hain - Ab links new tab mein khulenge */}
             <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-100">
-              {member.social.linkedin && <a href={member.social.linkedin} className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#1a194d] text-white text-xs font-bold rounded hover:bg-[#625eff] transition-colors"><IconLinkedin /> LinkedIn</a>}
-              {member.social.twitter  && <a href={member.social.twitter}  className="inline-flex items-center gap-1.5 px-3 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded hover:bg-slate-200 transition-colors"><IconTwitter /> Twitter</a>}
-              {member.social.github   && <a href={member.social.github}   className="inline-flex items-center gap-1.5 px-3 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded hover:bg-slate-200 transition-colors"><IconGitBranch /> GitHub</a>}
+              {member.social.linkedin && (
+                <a 
+                  href={member.social.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#1a194d] text-white text-xs font-bold rounded hover:bg-[#625eff] transition-colors"
+                >
+                  <IconLinkedin /> LinkedIn
+                </a>
+              )}
+              {member.social.twitter && (
+                <a 
+                  href={member.social.twitter} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded hover:bg-slate-200 transition-colors"
+                >
+                  <IconTwitter /> Twitter
+                </a>
+              )}
+              {member.social.github && (
+                <a 
+                  href={member.social.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded hover:bg-slate-200 transition-colors"
+                >
+                  <IconGitBranch /> GitHub
+                </a>
+              )}
             </div>
           </div>
         </div>

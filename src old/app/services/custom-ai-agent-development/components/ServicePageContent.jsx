@@ -34,12 +34,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\ud83d\udd27", title: "Fits your exact workflow", body: "No compromises on edge cases, approval structures or data formats. The agent is designed for your process, not the other way around." },
-  { icon: "\ud83c\udff0", title: "Enterprise controls from day one", body: "Guardrails, approval gates, human-in-the-loop checkpoints and retry logic are not add-ons \u2014 they are part of the initial design." },
-  { icon: "\ud83e\udde0", title: "Reasons over your own data", body: "RAG pipelines give agents access to your policies, historical records and domain knowledge \u2014 no general-knowledge hallucination risk." },
-  { icon: "\ud83d\udd00", title: "Multi-agent coordination", body: "Complex workflows split across specialised agents \u2014 each owns its domain, passes context cleanly and verifies before acting." },
-  { icon: "\ud83d\udcc0", title: "Model cost is your call", body: "We build model-flexible architectures. As models improve and costs drop, your agent runs on a more capable and cheaper model without re-engineering." },
-  { icon: "\ud83d\udce6", title: "Fully owned by you", body: "The code is yours. Deployed on your infrastructure. No vendor dependency, no per-seat licensing and no black-box behaviour." },
+  { icon: "", title: "Fits your exact workflow", body: "No compromises on edge cases, approval structures or data formats. The agent is designed for your process, not the other way around." },
+  { icon: "", title: "Enterprise controls from day one", body: "Guardrails, approval gates, human-in-the-loop checkpoints and retry logic are not add-ons \u2014 they are part of the initial design." },
+  { icon: "", title: "Reasons over your own data", body: "RAG pipelines give agents access to your policies, historical records and domain knowledge \u2014 no general-knowledge hallucination risk." },
+  { icon: "", title: "Multi-agent coordination", body: "Complex workflows split across specialised agents \u2014 each owns its domain, passes context cleanly and verifies before acting." },
+  { icon: "", title: "Model cost is your call", body: "We build model-flexible architectures. As models improve and costs drop, your agent runs on a more capable and cheaper model without re-engineering." },
+  { icon: "", title: "Fully owned by you", body: "The code is yours. Deployed on your infrastructure. No vendor dependency, no per-seat licensing and no black-box behaviour." },
 ];
 
 const features = [

@@ -34,12 +34,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\u26a1", title: "Answers in seconds, not hours", body: "Reporting requests that required an analyst to pull, format and send data are answered instantly \u2014 from your live system." },
-  { icon: "\ud83d\udd10", title: "Governance is built in", body: "Users see only what their role permits. No risk of finance data reaching unauthorised staff \u2014 the copilot respects your RBAC at query time." },
-  { icon: "\ud83d\udcc9", title: "Support queue shrinks", body: "Customer and vendor assistants handle order status, invoice enquiries and routine support \u2014 your human team focuses on exceptions." },
-  { icon: "\ud83e\udde9", title: "Deploys where your team works", body: "Microsoft Teams, Outlook, web widget or embedded in your own applications \u2014 no new tool for your team to adopt." },
-  { icon: "\ud83d\udcca", title: "Grounded in your data \u2014 always", body: "Responses come from live records, not general AI knowledge. Accuracy is a function of your data quality, not the model's training set." },
-  { icon: "\ud83d\udd17", title: "Works across your systems", body: "A finance copilot can draw from SAP, Oracle and Salesforce simultaneously \u2014 joining data your team currently has to stitch manually." },
+  { icon: "", title: "Answers in seconds, not hours", body: "Reporting requests that required an analyst to pull, format and send data are answered instantly \u2014 from your live system." },
+  { icon: "", title: "Governance is built in", body: "Users see only what their role permits. No risk of finance data reaching unauthorised staff \u2014 the copilot respects your RBAC at query time." },
+  { icon: "", title: "Support queue shrinks", body: "Customer and vendor assistants handle order status, invoice enquiries and routine support \u2014 your human team focuses on exceptions." },
+  { icon: "", title: "Deploys where your team works", body: "Microsoft Teams, Outlook, web widget or embedded in your own applications \u2014 no new tool for your team to adopt." },
+  { icon: "", title: "Grounded in your data \u2014 always", body: "Responses come from live records, not general AI knowledge. Accuracy is a function of your data quality, not the model's training set." },
+  { icon: "", title: "Works across your systems", body: "A finance copilot can draw from SAP, Oracle and Salesforce simultaneously \u2014 joining data your team currently has to stitch manually." },
 ];
 
 const features = [

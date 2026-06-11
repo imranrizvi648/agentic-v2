@@ -30,12 +30,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "⏳", title: "Clinical time returned to clinical work", body: "Administrative tasks that consumed nursing and administrative staff hours are handled by agents — freeing capacity for patient-facing care." },
-  { icon: "💰", title: "Revenue cycle accelerated", body: "Pre-auth submissions, claim follow-up and denial management run continuously — shortening the gap between care delivery and cash collection." },
-  { icon: "🎯", title: "Fewer claim denials", body: "Documentation completeness checks before submission catch the issues that trigger denials — reducing rework and improving first-pass acceptance rates." },
-  { icon: "📊", title: "Population health visibility", body: "Aggregated patient data surfaces patterns — readmission risk, chronic condition clusters, capacity trends — that static reporting cannot." },
-  { icon: "🔒", title: "Patient data stays protected", body: "Agents deploy on your own infrastructure through FHIR-compliant APIs. Patient data never leaves your environment or passes through third-party systems." },
-  { icon: "🛡️", title: "Governance to healthcare standards", body: "Role-based access, full audit trails and human-in-the-loop checkpoints on patient-critical decisions — designed to survive a clinical governance review." },
+  { icon: "", title: "Clinical time returned to clinical work", body: "Administrative tasks that consumed nursing and administrative staff hours are handled by agents — freeing capacity for patient-facing care." },
+  { icon: "", title: "Revenue cycle accelerated", body: "Pre-auth submissions, claim follow-up and denial management run continuously — shortening the gap between care delivery and cash collection." },
+  { icon: "", title: "Fewer claim denials", body: "Documentation completeness checks before submission catch the issues that trigger denials — reducing rework and improving first-pass acceptance rates." },
+  { icon: "", title: "Population health visibility", body: "Aggregated patient data surfaces patterns — readmission risk, chronic condition clusters, capacity trends — that static reporting cannot." },
+  { icon: "", title: "Patient data stays protected", body: "Agents deploy on your own infrastructure through FHIR-compliant APIs. Patient data never leaves your environment or passes through third-party systems." },
+  { icon: "", title: "Governance to healthcare standards", body: "Role-based access, full audit trails and human-in-the-loop checkpoints on patient-critical decisions — designed to survive a clinical governance review." },
 ];
 
 const features = [

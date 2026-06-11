@@ -34,12 +34,12 @@ const overview = {
 };
 
 const benefits = [
-  { icon: "\ud83d\udccb", title: "Audit-ready from day one", body: "Every agent action is logged with inputs, outputs and decision context. When the auditor asks, the trail is already there \u2014 not assembled retrospectively under pressure." },
-  { icon: "\ud83d\udd10", title: "Access control that actually works", body: "AES-256 encrypted credentials, role-based access, Entra ID and OCI IAM integration \u2014 your security architecture is respected at every agent operation." },
-  { icon: "\ud83c\udf9b", title: "Human authority over critical decisions", body: "High-stakes actions \u2014 posting transactions, approving exceptions, modifying records \u2014 require human confirmation. The agent cannot bypass the gate." },
-  { icon: "\ud83d\udce1", title: "Performance problems caught early", body: "Monitoring tracks accuracy, exception rates and throughput in real time \u2014 so drift is caught and corrected before it affects your operations." },
-  { icon: "\ud83d\udd04", title: "Agents improve over time", body: "Managed retraining and optimisation post-launch \u2014 your agents get more accurate as your data grows and your processes evolve." },
-  { icon: "\u2696\ufe0f", title: "Compliance is demonstrable, not claimed", body: "Governance documentation, audit logs and control evidence are structured to support regulatory requirements \u2014 not assembled in a hurry before an inspection." },
+  { icon: "", title: "Audit-ready from day one", body: "Every agent action is logged with inputs, outputs and decision context. When the auditor asks, the trail is already there \u2014 not assembled retrospectively under pressure." },
+  { icon: "", title: "Access control that actually works", body: "AES-256 encrypted credentials, role-based access, Entra ID and OCI IAM integration \u2014 your security architecture is respected at every agent operation." },
+  { icon: "", title: "Human authority over critical decisions", body: "High-stakes actions \u2014 posting transactions, approving exceptions, modifying records \u2014 require human confirmation. The agent cannot bypass the gate." },
+  { icon: "", title: "Performance problems caught early", body: "Monitoring tracks accuracy, exception rates and throughput in real time \u2014 so drift is caught and corrected before it affects your operations." },
+  { icon: "", title: "Agents improve over time", body: "Managed retraining and optimisation post-launch \u2014 your agents get more accurate as your data grows and your processes evolve." },
+  { icon: "", title: "Compliance is demonstrable, not claimed", body: "Governance documentation, audit logs and control evidence are structured to support regulatory requirements \u2014 not assembled in a hurry before an inspection." },
 ];
 
 const features = [
@@ -461,7 +461,7 @@ export default function AiGovernanceSecurityMlopsContent() {
                 key={b.title}
                 className={`bg-white p-7 hover:bg-indigo-50/30 transition-colors ${i % 3 !== 2 ? "lg:border-r border-slate-100" : ""} ${i < 3 ? "border-b border-slate-100" : ""}`}
               >
-                <span className="text-2xl mb-4 block">{b.icon}</span>
+                {/* <span className="text-2xl mb-4 block">{b.icon}</span> */}
                 <h3 className="text-sm font-bold text-brand-primary mb-2 leading-snug">{b.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{b.body}</p>
               </div>
