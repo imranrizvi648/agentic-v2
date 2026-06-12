@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const sectors = [
   { label: "Finance & Banking", color: "text-amber-400 border-amber-400/20 bg-amber-400/5" },
-  { label: "Healthcare",        color: "text-emerald-400 border-emerald-400/20 bg-emerald-400/5" },
-  { label: "Real Estate",       color: "text-sky-400 border-sky-400/20 bg-sky-400/5" },
-  { label: "E-commerce",        color: "text-violet-400 border-violet-400/20 bg-violet-400/5" },
-  { label: "Education",         color: "text-rose-400 border-rose-400/20 bg-rose-400/5" },
+  { label: "Healthcare",         color: "text-emerald-400 border-emerald-400/20 bg-emerald-400/5" },
+  { label: "Real Estate",        color: "text-sky-400 border-sky-400/20 bg-sky-400/5" },
+  { label: "E-commerce",         color: "text-violet-400 border-violet-400/20 bg-violet-400/5" },
+  { label: "Education",          color: "text-rose-400 border-rose-400/20 bg-rose-400/5" },
 ];
 
 export default function FinalCtaSection() {
@@ -22,8 +22,6 @@ export default function FinalCtaSection() {
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         
-        
-
         {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5 leading-tight">
           Tell Us Which Sector Process Costing the Most Time.
@@ -38,13 +36,15 @@ export default function FinalCtaSection() {
 
         {/* Buttons (Exact Pehle code ka layout aur rounded-none styling) */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+          {/* Pehla Button: Linked to /proposal */}
           <Link
-            href="/contact"
+            href="/proposal"
             className="inline-flex items-center justify-center gap-2 bg-[#1a194d] text-white font-bold text-sm px-7 py-4 rounded-none hover:bg-indigo-700 transition-colors"
           >
             Book Your Free Sector Assessment →
           </Link>
 
+          {/* Dusra Button: Linked to /contact */}
           <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-none border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"

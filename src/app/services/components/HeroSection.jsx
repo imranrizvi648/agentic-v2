@@ -47,18 +47,23 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          
+          {/* Pehla Button: Proposal Page Ke Liye */}
           <Link
-            href="#"
+            href="/proposal"
             className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-bold text-sm px-7 py-4 rounded-none shadow-lg hover:bg-indigo-500 active:scale-[0.98] transition-all duration-200"
           >
             Book a Free Consultation →
           </Link>
+          
+          {/* Dusra Button: Contact Page Ke Liye */}
           <Link
-            href="#"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-white/[0.03] text-white/90 font-bold text-sm px-7 py-4 rounded-none border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
           >
             See How We Work
           </Link>
+          
         </div>
 
       </div>

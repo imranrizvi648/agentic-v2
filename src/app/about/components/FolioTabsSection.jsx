@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link'; // Next.js Link import kiya
 import { motion, AnimatePresence } from 'framer-motion';
 import { Flag } from 'lucide-react';
 
@@ -78,7 +79,7 @@ export default function FolioTabsSection() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="relative pb-3 text-sm font-bold tracking-wide transition-colors whitespace-nowrap"
+              className="relative pb-3 text-sm font-bold tracking-wide transition-colors whitespace-nowrap cursor-pointer"
               style={{ color: activeTab === tab.id ? '#0f172a' : '#64748b' }}
             >
               {tab.label}
@@ -174,9 +175,12 @@ export default function FolioTabsSection() {
             {currentData.footerText}
           </p>
           
-          <button className="border border-slate-900 rounded-xl px-4 sm:px-6 py-2 text-xs font-bold transition hover:bg-slate-950 hover:text-white shadow-sm">
-            Let's Connect
-          </button>
+          {/* Button wrapped seamlessly inside Next.js Link wrapper */}
+          <Link href="/contact" className="inline-block">
+            <button className="border border-slate-900 rounded-xl px-4 sm:px-6 py-2 text-xs font-bold transition hover:bg-slate-950 hover:text-white shadow-sm cursor-pointer">
+              Let's Connect
+            </button>
+          </Link>
         </div>
 
       </div>

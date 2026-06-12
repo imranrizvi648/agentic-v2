@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, FileText, Mic, Layers, Leaf, ChevronRight, Calendar, Users } from "lucide-react";
 
@@ -13,6 +14,7 @@ const slides = [
     buttonStyle: "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGuideCard: true,
     buttonText: "Book a Free Consultation",
+    buttonLink: "/contact",
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ const slides = [
     buttonStyle: "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasWebinarCard: true,
     buttonText: "Explore AI Services",
+    buttonLink: "/contact",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const slides = [
     buttonStyle: "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGlassCards: true,
     buttonText: "See Our Work in AI",
+    buttonLink: "/contact",
   },
 ];
 
@@ -109,11 +113,18 @@ export default function HeroSlider() {
                   <p className="text-xs text-white/40 mb-4 uppercase tracking-widest">
                     Built for startups, enterprises and future-ready organizations worldwide.
                   </p>
-                  <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                    className={`w-full max-w-[220px] sm:max-w-[280px] inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 font-semibold text-sm sm:text-base transition-all duration-300 ${slides[current].buttonStyle}`}>
-                    <span className="truncate">{slides[current].buttonText}</span>
-                    <ArrowRight size={16} className="flex-shrink-0" />
-                  </motion.button>
+                  
+                  {/* Modern Next.js Link syntax with motion button inside */}
+                  <Link href={slides[current].buttonLink}>
+                    <motion.button 
+                      whileHover={{ scale: 1.02 }} 
+                      whileTap={{ scale: 0.98 }}
+                      className={`w-full max-w-[220px] sm:max-w-[280px] inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 font-semibold text-sm sm:text-base transition-all duration-300 cursor-pointer ${slides[current].buttonStyle}`}
+                    >
+                      <span className="truncate">{slides[current].buttonText}</span>
+                      <ArrowRight size={16} className="flex-shrink-0" />
+                    </motion.button>
+                  </Link>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -148,9 +159,9 @@ export default function HeroSlider() {
                         <h3 className="text-[18px] font-bold text-white mb-2 leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">Finance Automation Assessment</h3>
                         <p className="text-white/70 text-[12px] leading-relaxed mb-4">We map your highest-value automation opportunity and show what an agent inside your ERP could do with it.</p>
                         <div className="h-[1px] bg-gradient-to-r from-[#625eff]/40 via-white/10 to-transparent mb-4" />
-                        <a href="/contact" className="group/btn inline-flex items-center gap-2 text-white font-semibold text-[13px] hover:text-[#a095ff] transition-colors duration-200">
+                        <Link href="/contact" className="group/btn inline-flex items-center gap-2 text-white font-semibold text-[13px] hover:text-[#a095ff] transition-colors duration-200">
                           Book Free Session <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   )}
@@ -184,9 +195,9 @@ export default function HeroSlider() {
                           <div className="flex items-center gap-1.5 text-white/60 text-[11px]"><Users size={11} /><span>No obligation</span></div>
                         </div>
                         <div className="h-[1px] bg-gradient-to-r from-[#625eff]/40 via-white/10 to-transparent mb-4" />
-                        <a href="/contact" className="group/btn inline-flex items-center gap-2 text-white font-semibold text-[13px] hover:text-[#a095ff] transition-colors duration-200">
+                        <Link href="/contact" className="group/btn inline-flex items-center gap-2 text-white font-semibold text-[13px] hover:text-[#a095ff] transition-colors duration-200">
                           Book a Consultation <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   )}

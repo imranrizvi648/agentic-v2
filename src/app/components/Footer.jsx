@@ -26,7 +26,7 @@ const AgenticSenseParticleText = dynamic(
 
 const QUICK_LINKS = [
   { name: "ABOUT",    href: "/about" }, { name: "WHO WE ARE", href: "/about" },
-  { name: "SERVICES", href: "/services" }, { name: "PROJECTS",   href: "/projects" },
+  { name: "SERVICES", href: "/services" }, { name: "PROJECTS",   href: "/industries" },
   { name: "BLOG",     href: "/blog" }, { name: "PROPOSAL",    href: "/proposal" },
 ];
 const SOCIAL_LINKS = [

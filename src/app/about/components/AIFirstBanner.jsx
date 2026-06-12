@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import Link from 'next/link'; // Next.js Link component import kiya
 import { ArrowRight, SlidersHorizontal } from 'lucide-react';
 
 export default function AIFirstBanner() {
@@ -12,15 +15,18 @@ export default function AIFirstBanner() {
             We're{' '}
             <span className="relative inline-block text-white">
               AI–first
-              <span className="absolute bottom-1 left-0 w-full h-[3px] bg-indigo-300/60 rounded" />
+             
             </span>
             , built with responsibility
           </h2>
           <div>
-            <button className="inline-flex items-center gap-3 bg-white text-slate-900 font-semibold px-5 sm:px-6 py-3 sm:py-3.5 rounded-sm transition-all hover:bg-slate-100 group text-sm shadow-sm">
-              Our Agentic AI Approach
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            {/* Button ko Link ke sath wrap kiya */}
+            <Link href="/contact" className="inline-block">
+              <button className="inline-flex items-center gap-3 bg-white text-slate-900 font-semibold px-5 sm:px-6 py-3 sm:py-3.5 rounded-sm transition-all hover:bg-slate-100 group text-sm shadow-sm cursor-pointer">
+                Our Agentic AI Approach
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </Link>
           </div>
         </div>
 
