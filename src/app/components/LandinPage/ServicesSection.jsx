@@ -13,46 +13,50 @@ const BgConversational = () => (<svg viewBox="0 0 300 400" xmlns="http://www.w3.
 
 // Tags array ko object array mein convert kiya taake har ek ka alag path define ho sake
 const servicesData = [
-  { 
-    id: "ai", 
-    title: "AI and Data Innovation", 
-    description: "AI agents that capture, validate, match and post transactions natively inside SAP and Oracle — end to end, with full audit trail.", 
+  {
+    id: "ai",
+    title: "AI and Data Innovation",
+    description:
+      "Enterprise AI solutions that automate finance and operational workflows through intelligent agents embedded directly inside SAP and Oracle systems with full traceability and auditability.",
     tags: [
       { name: "Enterprise ERP & CRM-Native AI Integration", path: "/services/erp-crm-ai-integration" },
       { name: "Agentic AI for the Office of Finance", path: "/services/agentic-ai-finance" },
       { name: "Intelligent Document Processing", path: "/services/intelligent-document-processing" }
-    ], 
-    Bg: BgAIData 
+    ],
+    Bg: BgAIData
   },
-  { 
-    id: "engineering", 
-    title: "Automation Excellence", 
-    description: "We connect intelligent agents directly to your enterprise platforms via official APIs — no fragile middleware, no workarounds.", 
+  {
+    id: "engineering",
+    title: "Automation Excellence",
+    description:
+      "End-to-end automation solutions that connect AI agents directly to enterprise systems using official APIs, eliminating middleware dependencies and improving system reliability.",
     tags: [
       { name: "Business Process Automation Beyond Finance", path: "/services/business-process-automation" },
       { name: "Custom AI Agent Development", path: "/services/custom-ai-agent-development" },
-      { name: "Conversational AI & Enterprise Copilots", path: "/services/conversational-ai-enterprise-copilots" } 
-    ], 
-    Bg: BgAutomation 
+      { name: "Conversational AI & Enterprise Copilots", path: "/services/conversational-ai-enterprise-copilots" }
+    ],
+    Bg: BgAutomation
   },
-  { 
-    id: "cloud", 
-    title: "Strategic AI Solution", 
-    description: "Multi-agent systems engineered for your workflows, your tools and your guardrails — model-flexible and production-ready.", 
+  {
+    id: "cloud",
+    title: "Strategic AI Solution",
+    description:
+      "Multi-agent enterprise systems designed around your workflows, data architecture, and governance requirements to deliver scalable and production-ready AI capabilities.",
     tags: [
       { name: "Agentic AI Strategy & Readiness Consulting", path: "/services/agentic-ai-strategy-consulting" },
       { name: "Data Intelligence & Decision Analytics", path: "/services/data-intelligence-decision-analytics" }
-    ], 
-    Bg: BgStrategic 
+    ],
+    Bg: BgStrategic
   },
-  { 
-    id: "AI Governance & Security", 
-    title: "AI Governance & Security", 
-    description: "Ask your ERP a question in plain language and get an answer backed by real records — grounded, permission-aware and secure.", 
+  {
+    id: "AI Governance & Security",
+    title: "AI Governance & Security",
+    description:
+      "Secure, permission-aware AI systems that provide natural language access to enterprise data while maintaining compliance, governance, and full audit control.",
     tags: [
       { name: "AI Governance, Security & MLOps", path: "/services/ai-governance-security-mlops" }
-    ], 
-    Bg: BgConversational 
+    ],
+    Bg: BgConversational
   },
 ];
 

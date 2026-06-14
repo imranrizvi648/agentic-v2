@@ -7,39 +7,44 @@ import { ArrowRight, FileText, Mic, Layers, Leaf, ChevronRight, Calendar, Users 
 const slides = [
   {
     id: 1,
-    title: "AI Agents That\nPower Smarter Business Automation.",
-    description: "AgenticSense helps businesses automate workflows, improve decision-making and scale operations with intelligent AI agent solutions.",
+    title: "AI Agents That Power Smarter Business Automation",
+    description:
+      "AgenticSense helps organizations automate workflows, improve decision-making, and scale operations through intelligent AI solutions designed for enterprise environments.",
     image: "/bg-1.webp",
     textColor: "text-white",
-    buttonStyle: "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
+    buttonStyle:
+      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGuideCard: true,
     buttonText: "Book a Free Consultation",
-    buttonLink: "/contact",
+        buttonLink: "/contact",
   },
   {
     id: 2,
-    title: "Intelligent Automation\nfor the Future of Work.",
-    description: "We build AI-powered systems that sense business needs, automate complex tasks and deliver measurable results. Reduce repetitive work, improve efficiency and scale smarter.",
+    title: "Intelligent Automation for the Future of Work",
+    description:
+      "We build AI-driven systems that automate complex workflows, improve operational efficiency, and support scalable business transformation with measurable outcomes.",
     image: "/bg2.webp",
     textColor: "text-white",
-    buttonStyle: "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
+    buttonStyle:
+      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasWebinarCard: true,
     buttonText: "Explore AI Services",
-    buttonLink: "/contact",
+        buttonLink: "/contact",
   },
   {
     id: 3,
-    title: "Proven Results\nWith Real AI Impact.",
-    description: "AgenticSense partners with enterprises to deliver ERP-native AI agents, finance automation and intelligent workflows — built for production, not just demos.",
+    title: "Real AI Impact for Enterprise Systems",
+    description:
+      "AgenticSense partners with enterprises to deliver ERP-native AI solutions, finance automation, and intelligent workflows designed for production environments and measurable business value.",
     image: "/bg-3.webp",
     textColor: "text-white",
-    buttonStyle: "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
+    buttonStyle:
+      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGlassCards: true,
     buttonText: "See Our Work in AI",
-    buttonLink: "/contact",
+        buttonLink: "/contact",
   },
 ];
-
 const AUTO_PLAY_DURATION = 6000;
 const EASE_EXPO_OUT = [0.19, 1, 0.22, 1];
 const EASE_IN_SOFT  = [0.4, 0, 0.6, 0];
