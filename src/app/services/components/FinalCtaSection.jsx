@@ -18,12 +18,9 @@ export default function FinalCtaSection() {
           Put an AI Agent to Work in Your Business.
         </h2>
 
-        <p className="text-base text-white/80 leading-relaxed mb-10">
-          Tell us the workflow that costs your team the most time. In a free
-          Finance Automation Assessment, we will show you exactly what an agent
-          that runs inside your own systems could do with it — no cost, no
-          obligation.
-        </p>
+       <p className="text-base text-white/80 leading-relaxed mb-10">
+  Discover how AI agents can automate critical business processes, improve operational efficiency, and unlock actionable insights across your organization. Schedule a consultation with our team to explore the opportunities within your existing systems.
+</p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
           {/* Pehla Button: Linked to /proposal */}

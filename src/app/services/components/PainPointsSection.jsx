@@ -35,86 +35,85 @@ export default function PainPointsSection() {
   const [hourlyRate, setHourlyRate] = useState(55);
 
   const painPoints = [
-    {
-      id: "01",
-      category: "FINANCIAL PIPELINES",
-      problem: "Your finance team keys the same invoice data two or three times.",
-      solution: "An AP agent captures, matches and posts it once — straight into your ERP.",
-      impact: "Saves 15 Hours / Wk",
-      metric: "99.2% Capture Precision",
-      // Custom minimal architectural SVG
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="square" d="M3 3h18v18H3V3zm6 6h6m-6 4h6m-6 4h3" />
-        </svg>
-      )
-    },
-    {
-      id: "02",
-      category: "DELIVERY RISK",
-      problem: "AI pilots dazzle in a demo, then quietly never reach production.",
-      solution: "We build for production from day one, on your live stack — not for the demo.",
-      impact: "100% Live Deploy",
-      metric: "Zero Simulated Sandboxes",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="square" d="M12 3v18M3 12h18M12 3l9 9-9 9-9-9 9-9z" />
-        </svg>
-      )
-    },
-    {
-      id: "03",
-      category: "WORKFLOW INTEGRATION",
-      problem: "Your 'automation' still needs someone clicking through SAP screens.",
-      solution: "Full end-to-end automation is our hard standard — the agent finishes the job.",
-      impact: "0% Manual Action",
-      metric: "Autonomous Core Integration",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="square" d="M4 4h16v16H4V4zm4 4l8 8M16 8l-8 8" />
-        </svg>
-      )
-    },
-    {
-      id: "04",
-      category: "PERIOD CLOSE",
-      problem: "Month-end close swallows a week your team never gets back.",
-      solution: "Close-orchestration agents prepare journals, reconcile and flag variances in the background.",
-      impact: "1-Day Close Cycle",
-      metric: "Continuous Sync Audits",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="square" d="M8 2v4M16 2v4M3 6h18v15H3V6zm5 6h8" />
-        </svg>
-      )
-    },
-    {
-      id: "05",
-      category: "ERP INTELLIGENCE",
-      problem: "The answers are in your ERP, but no one can get them without IT.",
-      solution: "A copilot lets your team ask in plain language and get answers from real records.",
-      impact: "Instant SQL/Queries",
-      metric: "Self-Serve Execution",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="square" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      )
-    },
-    {
-      id: "06",
-      category: "SYSTEM ROBUSTNESS",
-      problem: "Connectors break every time the ERP updates.",
-      solution: "We build on official APIs, so your automation survives the next upgrade.",
-      impact: "99.99% Live Uptime",
-      metric: "Zero Maintenance Overhead",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="square" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
-    }
-  ];
+  {
+    id: "01",
+    category: "FINANCIAL PIPELINES",
+    problem: "Your finance team enters the same invoice data multiple times across different systems.",
+    solution: "An AP automation agent captures, validates, matches, and posts invoices directly into your ERP.",
+    impact: "Saves 15 Hours / Week",
+    metric: "99.2% Capture Precision",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="square" d="M3 3h18v18H3V3zm6 6h6m-6 4h6m-6 4h3" />
+      </svg>
+    )
+  },
+  {
+    id: "02",
+    category: "DELIVERY RISK",
+    problem: "Many AI projects look impressive in demos but never make it into production.",
+    solution: "We design and deploy solutions for real-world production environments from day one.",
+    impact: "100% Production-Focused",
+    metric: "No Demo-Only Solutions",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="square" d="M12 3v18M3 12h18M12 3l9 9-9 9-9-9 9-9z" />
+      </svg>
+    )
+  },
+  {
+    id: "03",
+    category: "WORKFLOW INTEGRATION",
+    problem: "Many automation projects still depend on manual actions to complete critical workflows.",
+    solution: "We deliver true end-to-end automation that completes business processes without human intervention.",
+    impact: "0% Manual Actions",
+    metric: "Autonomous Workflow Execution",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="square" d="M4 4h16v16H4V4zm4 4l8 8M16 8l-8 8" />
+      </svg>
+    )
+  },
+  {
+    id: "04",
+    category: "PERIOD CLOSE",
+    problem: "Month-end close processes consume valuable time and resources.",
+    solution: "Close-management agents prepare journals, perform reconciliations, and identify variances automatically.",
+    impact: "1-Day Close Cycle",
+    metric: "Continuous Reconciliation Monitoring",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="square" d="M8 2v4M16 2v4M3 6h18v15H3V6zm5 6h8" />
+      </svg>
+    )
+  },
+  {
+    id: "05",
+    category: "ERP INTELLIGENCE",
+    problem: "Critical business insights are locked inside your ERP and often require technical teams to retrieve them.",
+    solution: "AI copilots allow users to query enterprise data using natural language and receive instant answers.",
+    impact: "Instant Data Access",
+    metric: "Self-Service Analytics",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="square" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    )
+  },
+  {
+    id: "06",
+    category: "SYSTEM ROBUSTNESS",
+    problem: "Integrations often fail when ERP platforms receive updates or changes.",
+    solution: "We integrate through official APIs, ensuring long-term stability and maintainability.",
+    impact: "99.99% Uptime",
+    metric: "Minimal Maintenance Requirements",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="square" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    )
+  }
+];
 
   /* Calculation formula metrics */
   const annualLoss = hoursSpent * hourlyRate * 52;

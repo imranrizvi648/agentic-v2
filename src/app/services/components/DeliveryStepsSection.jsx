@@ -3,13 +3,33 @@
 import React from "react";
 
 export default function DeliveryStepsSection() {
-  const deliverySteps = [
-    { num: "01", title: "Discover", body: "We align on business goals, map high-value use cases, and assess your data, systems and controls — separating what is deployable today from what needs to be built." },
-    { num: "02", title: "Design", body: "We define the target architecture, integration approach, governance model and success metrics, agreed in writing before the build begins." },
-    { num: "03", title: "Build", body: "We develop the agents against your real data and real integration constraints — proving the system works beyond a demo, with controls baked in." },
-    { num: "04", title: "Deploy", body: "We integrate, test and ship to your production environment with monitoring, audit logging and human-in-the-loop safeguards in place." },
-    { num: "05", title: "Scale", body: "We expand coverage across processes and functions, tune performance, and provide ongoing support, retraining and optimisation." },
-  ];
+const deliverySteps = [
+  {
+    num: "01",
+    title: "Discover",
+    body: "We align on business objectives, identify high-impact use cases, and assess your data, systems, and operational requirements to determine the fastest path to value."
+  },
+  {
+    num: "02",
+    title: "Design",
+    body: "We define the solution architecture, integration strategy, governance framework, and success metrics to ensure a clear and measurable implementation plan."
+  },
+  {
+    num: "03",
+    title: "Build",
+    body: "We develop and configure AI agents using your business data, workflows, and system requirements while incorporating security, compliance, and operational controls."
+  },
+  {
+    num: "04",
+    title: "Deploy",
+    body: "We integrate, validate, and deploy the solution into your production environment with monitoring, audit logging, and governance safeguards fully implemented."
+  },
+  {
+    num: "05",
+    title: "Scale",
+    body: "We extend automation across additional processes, optimize performance, and provide continuous support, enhancement, and model improvement."
+  },
+];
 
   return (
     <section className="bg-white py-14 sm:py-20 md:py-24 border-b border-slate-100 font-sans relative overflow-hidden select-none">

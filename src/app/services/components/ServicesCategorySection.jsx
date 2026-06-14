@@ -30,7 +30,7 @@ const categories = [
         number: "01",
         title: "Agentic AI for the Office of Finance",
         slug: "/services/agentic-ai-finance",
-        overviewLead: "Finance automation fails when it stops at extraction. Our agents go all the way — they capture, validate, match, post and reconcile inside your ERP.",
+        overviewLead: "Finance automation fails when it stops at extraction. Our agents capture, validate, match, post, and reconcile transactions directly inside your ERP.",
         badges: ["SAP Business One", "Oracle Fusion", "Microsoft Fabric"],
         bgImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
       },
@@ -39,7 +39,7 @@ const categories = [
         number: "02",
         title: "Enterprise ERP & CRM AI Integration",
         slug: "/services/erp-crm-ai-integration",
-        overviewLead: "Most AI integrations rely on third-party middleware that breaks. We take a different position: if an official API exists, we use it.",
+        overviewLead: "Most AI integrations rely on third-party middleware that eventually breaks. We take a different approach: when an official API exists, we use it.",
         badges: ["SAP", "Oracle Fusion", "NetSuite"],
         bgImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80"
       },
@@ -48,7 +48,7 @@ const categories = [
         number: "03",
         title: "IDP & Invoice Automation",
         slug: "/services/intelligent-document-processing",
-        overviewLead: "Vendor invoices, receipts, and forms handled instantly — extracting with vision AI, validating, and posting directly into your system of record.",
+        overviewLead: "Vendor invoices, receipts, and business documents are processed instantly using Vision AI, validated automatically, and posted directly into your system of record.",
         badges: ["Vision AI", "ERP Matching", "Direct Posting"],
         bgImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80"
       },
@@ -57,7 +57,7 @@ const categories = [
         number: "04",
         title: "Custom AI Agent Development",
         slug: "/services/custom-ai-agent-development",
-        overviewLead: "We build agents for approval chains spanning multiple systems and complex reconciliations that need to reason across multiple data sources.",
+        overviewLead: "We build custom AI agents for complex approval workflows, multi-system processes, and reconciliations that require reasoning across multiple data sources.",
         badges: ["LangGraph", "FastAPI", "Claude / GPT"],
         bgImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
       },
@@ -72,7 +72,7 @@ const categories = [
         number: "05",
         title: "Conversational AI & Copilots",
         slug: "/services/conversational-ai-enterprise-copilots",
-        overviewLead: "Don't wait on analysts to pull data from Oracle Fusion. Let internal teams query records instantly using plain language.",
+        overviewLead: "Give teams instant access to enterprise data through natural language. Users can retrieve records, insights, and reports without relying on analysts.",
         badges: ["MS Teams", "Outlook", "Secure DB Query"],
         bgImage: "https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?auto=format&fit=crop&w=600&q=80"
       },
@@ -81,7 +81,7 @@ const categories = [
         number: "06",
         title: "Process Automation Beyond Finance",
         slug: "/services/business-process-automation",
-        overviewLead: "Automate repetitive, rules-based work across your entire operations — approval chains, document routing, and supply chain decisions.",
+        overviewLead: "Automate repetitive and rule-based processes across operations, including approval workflows, document routing, procurement, HR, and supply chain activities.",
         badges: ["Procurement", "HR Onboarding", "Supply Chain"],
         bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
       },
@@ -90,7 +90,7 @@ const categories = [
         number: "07",
         title: "Data Intelligence & Analytics",
         slug: "/services/data-intelligence-decision-analytics",
-        overviewLead: "Dashboards show what happened. Decision agents tell you what to do. We build predictive models starting from your existing data sources.",
+        overviewLead: "Traditional dashboards explain what happened. Intelligent decision systems help predict outcomes and recommend actions using your existing business data.",
         badges: ["Fabric", "Oracle Analytics", "Azure AI"],
         bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
       },
@@ -105,7 +105,7 @@ const categories = [
         number: "08",
         title: "Agentic AI Strategy Consulting",
         slug: "/services/agentic-ai-strategy-consulting",
-        overviewLead: "Solve the readiness problem before deploying. We analyze your data structures, ERP APIs, and custom compliance rules.",
+        overviewLead: "Before deployment, we assess your readiness by evaluating data structures, ERP integrations, business workflows, and compliance requirements.",
         badges: ["GCC", "South Asia", "Europe Readiness"],
         bgImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
       },
@@ -114,7 +114,7 @@ const categories = [
         number: "09",
         title: "AI Governance, Security & MLOps",
         slug: "/services/ai-governance-security-mlops",
-        overviewLead: "Every agent we ship has complete audit logging, granular access controls, human-in-the-loop checkpoints, and live active monitoring.",
+        overviewLead: "Every AI agent includes audit logging, granular access controls, human oversight checkpoints, and continuous monitoring to ensure security and compliance.",
         badges: ["Audit Trails", "HITL Controls", "MLOps Guard"],
         bgImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
       },

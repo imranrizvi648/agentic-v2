@@ -246,17 +246,13 @@ export default function AboutSection() {
             <h2 className="about-heading">
               Real AI. Real Enterprise. Tangible Business Outcomes.
             </h2>
-            <p className="about-body">
-              AgenticSense is a global B2B Agentic AI services company — not a
-              generic AI consultancy or software platform. We design, engineer, and
-              deploy autonomous AI agents that integrate natively with enterprise ERP
-              systems through official production-grade APIs. Every solution is built
-              from the ground up for real operational environments, complex workflows,
-              and measurable business outcomes. 
-              <br /><br />
-              We become your AI Arm — embedded intelligence within your organisational 
-              structure, operating continuously on your behalf and across the clients you serve.
-            </p>
+           <p className="about-body">
+  AgenticSense helps organizations transform business operations through enterprise AI and intelligent automation. We design, build, and deploy AI agents that integrate seamlessly with ERP platforms and core business systems, delivering scalable solutions for complex workflows, operational excellence, and measurable results.
+  
+  <br /><br />
+  
+  By combining deep technical expertise with business domain knowledge, we enable organizations to adopt AI confidently, improve productivity, strengthen decision-making, and accelerate digital transformation initiatives.
+</p>
           </div>
 
           {/* ── RIGHT ── */}

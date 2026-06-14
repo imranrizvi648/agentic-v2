@@ -39,7 +39,7 @@ export default function MemberCard({ member, index, onClick }) {
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a194d]/80 via-[#1a194d]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Department Badge */}
-        <div className="absolute top-3 left-3">
+        {/* <div className="absolute top-3 left-3">
           <span
             className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-white/90 backdrop-blur-sm ${
               DEPT_TEXT[member.department] || "text-slate-500"
@@ -52,7 +52,7 @@ export default function MemberCard({ member, index, onClick }) {
             />
             {member.department}
           </span>
-        </div>
+        </div> */}
 
         {/* Hover CTA */}
         <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
@@ -89,7 +89,7 @@ export default function MemberCard({ member, index, onClick }) {
         )}
 
         {/* Skills Section */}
-        <div>
+        {/* <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="text-[9px] font-black uppercase tracking-wider text-slate-700">
               Skills
@@ -107,7 +107,7 @@ export default function MemberCard({ member, index, onClick }) {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

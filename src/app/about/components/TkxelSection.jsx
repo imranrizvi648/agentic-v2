@@ -5,10 +5,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const SERVICES_DATA = [
-  { id: 1, title: "We deploy AI agents natively inside your ERP and CRM", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Our Services", graphicType: "star" },
-  { id: 2, title: "We automate finance, procurement, HR and supply chain workflows", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Automation Services", graphicType: "ring" },
-  { id: 3, title: "We build custom AI agents for workflows your existing tools cannot handle", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Custom AI Development", graphicType: "sphere" },
-  { id: 4, title: "We govern every agent with audit logging, access control and monitoring from day one", description: "Transform your legacy infrastructure to ensure smooth, efficient operations. We identify and prevent performance issues through strategic updates.", linkText: "See Governance & Security", graphicType: "star" }
+  {
+    id: 1,
+    title: "Enterprise AI Integration for ERP and CRM Platforms",
+    description: "We integrate AI agents directly with your ERP, CRM, and core business systems to streamline operations, improve data accessibility, and enable intelligent automation across the organization.",
+    linkText: "Explore Integration Services",
+    graphicType: "star"
+  },
+  {
+    id: 2,
+    title: "Intelligent Business Process Automation",
+    description: "Automate finance, procurement, HR, supply chain, and other critical business processes with AI-powered workflows designed to improve efficiency, accuracy, and scalability.",
+    linkText: "Explore Automation Solutions",
+    graphicType: "ring"
+  },
+  {
+    id: 3,
+    title: "Custom AI Agent Development",
+    description: "We design and build tailored AI agents for complex business requirements, enabling automation and decision support where standard software solutions fall short.",
+    linkText: "Explore Custom AI Solutions",
+    graphicType: "sphere"
+  },
+  {
+    id: 4,
+    title: "AI Governance, Security & Monitoring",
+    description: "Every solution includes governance frameworks, access controls, audit logging, monitoring, and operational safeguards to support security, compliance, and long-term reliability.",
+    linkText: "Explore Governance & Security",
+    graphicType: "star"
+  }
 ];
 
 export default function TkxelSection() {
@@ -49,7 +73,7 @@ export default function TkxelSection() {
               Agentic AI, Finance Expertise <br className="hidden sm:block" /> and Enterprise Delivery
             </h1>
             <p className="text-sm sm:text-base text-slate-600 max-w-sm mb-5 sm:mb-6">
-              Every engagement starts with your data, your ERP and measurable outcomes — agreed in writing before a line of code.
+              Every engagement starts with your data, your ERP and measurable outcomes agreed in writing before a line of code.
             </p>
           <Link href="/services">
   <button className="flex items-center gap-2 border border-slate-900 rounded-full px-5 py-2.5 text-sm font-medium transition hover:bg-slate-950 hover:text-white group">

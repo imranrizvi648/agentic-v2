@@ -584,43 +584,45 @@ export default function Navbar() {
           </ul>
 
           {/* ── Desktop CTA ───────────────────────────────────────────────── */}
-          <Link href="/proposal" className="hidden lg:block">
-            <button
-              onMouseEnter={() => setIsButtonHovered(true)}
-              onMouseLeave={() => setIsButtonHovered(false)}
-              className={`relative flex items-center gap-2 px-6 py-2.5 rounded-lg
-                font-semibold text-[14px] transition-all duration-300 overflow-hidden
-                ${isButtonHovered
-                  ? useDarkTheme
-                    ? "bg-[#1a194d]/[0.08] text-[#1a194d] shadow-[inset_0_0_0_1px_rgba(26,25,77,0.15)]"
-                    : "bg-white/[0.12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.12)]"
-                  : "bg-[#625eff] text-white"
-                }`}
-            >
-              {!isButtonHovered && (
-                <>
-                  <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
-                  <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
-                  <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
-                </>
-              )}
-              {isButtonHovered && (
-                <div className="absolute inset-1 pointer-events-none">
-                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-                </div>
-              )}
-              <span className="relative z-10 flex items-center gap-2">
-                Request Proposal
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </span>
-            </button>
-          </Link>
+         <Link href="/proposal" className="hidden lg:block">
+  <button
+    onMouseEnter={() => setIsButtonHovered(true)}
+    onMouseLeave={() => setIsButtonHovered(false)}
+    className={`relative flex items-center gap-2 px-6 py-2.5 rounded-lg
+      font-semibold text-[14px] transition-all duration-300 overflow-hidden
+      ${isButtonHovered
+        ? useDarkTheme
+          ? "bg-[#1a194d]/[0.08] text-[#1a194d] shadow-[inset_0_0_0_1px_rgba(26,25,77,0.15)]"
+          : "bg-white/[0.12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.12)]"
+        : "bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white hover:shadow-lg hover:shadow-[#625eff]/20"
+      }`}
+  >
+    {!isButtonHovered && (
+      <>
+        <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
+        <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
+        <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+      </>
+    )}
+    
+    {isButtonHovered && (
+      <div className="absolute inset-1 pointer-events-none">
+        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+      </div>
+    )}
+    
+    <span className="relative z-10 flex items-center gap-2">
+      Request Proposal
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </span>
+  </button>
+</Link>
 
           {/* ── Mobile Hamburger ──────────────────────────────────────────── */}
           <button

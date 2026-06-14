@@ -2,10 +2,10 @@ import React from 'react';
 import { Flag } from 'lucide-react';
 
 const points = [
-  "We build production-grade AI agents that run natively inside your ERP — not demos that stall before deployment.",
-  "We deliver ERP-native AI integration through official SAP, Oracle and Microsoft APIs — no fragile middleware.",
-  "We are finance-first: our agents understand AP, AR, GL, reconciliations and the month-end close at posting level.",
-  "We are big believers in intelligent automation that is governed, auditable and genuinely useful to your team."
+  "Enterprise AI agents built to automate complex business processes and enhance operational efficiency.",
+  "Direct integration with SAP, Oracle, Microsoft, and other enterprise platforms through supported APIs.",
+  "Deep domain expertise across finance, operations, and enterprise technology environments.",
+  "Governed, secure, and scalable AI solutions designed for long-term business impact and compliance."
 ];
 
 export default function WhoWeAre() {
@@ -46,7 +46,7 @@ export default function WhoWeAre() {
           </div>
           <div className="pt-2 sm:pt-4 max-w-sm self-end lg:self-start">
             <p className="text-slate-800 leading-relaxed text-sm sm:text-base">
-              <span className="font-extrabold text-slate-900">Our Goal:</span> To become a trusted global technology partner for businesses adopting agentic AI and intelligent automation — with production deployments, not stalled pilots.
+              <span className="font-extrabold text-slate-900">Our Goal:</span> To become a trusted global technology partner for businesses adopting agentic AI and intelligent automation with production deployments, not stalled pilots.
             </p>
           </div>
         </div>

@@ -1,31 +1,31 @@
 export default function WhySection() {
   const whyPoints = [
-    {
-      icon: "",
-      title: "ERP-native by design",
-      body: "We build directly on the official APIs of SAP Business One, Oracle Fusion Cloud and Microsoft Fabric — not on fragile middleware or third-party connectors that break at the next upgrade.",
-    },
-    {
-      icon: "",
-      title: "Finance-first depth",
-      body: "The Office of Finance is our home domain. We understand AP, AR, GL, landed costs, reconciliations, the month-end close and statutory reporting at the level of the posting logic, not the slide.",
-    },
-    {
-      icon: "",
-      title: "Fully automated, end to end",
-      body: "Our agents complete the task — they don't hand it back halfway. No manual GUI steps in the middle of a workflow is a hard standard on every engagement.",
-    },
-    {
-      icon: "",
-      title: "Built for your environment",
-      body: "Custom-built on your data, your controls and your Linux-based production stack. Architecture and security decisions are made for your environment, not retrofitted to ours.",
-    },
-    {
-      icon: "",
-      title: "Proven in production",
-      body: "Live enterprise deployments — not pilots that never shipped. Every engagement is measured against numbers agreed before we start.",
-    },
-  ];
+  {
+    icon: "",
+    title: "ERP-Native by Design",
+    body: "We integrate directly with the official APIs of SAP Business One, Oracle Fusion Cloud, and Microsoft Fabric, ensuring reliability, scalability, and long-term compatibility without depending on fragile middleware.",
+  },
+  {
+    icon: "",
+    title: "Deep Finance Expertise",
+    body: "Finance is our core domain. We understand accounts payable, accounts receivable, general ledger processes, reconciliations, month-end close activities, and financial reporting at an operational level.",
+  },
+  {
+    icon: "",
+    title: "End-to-End Automation",
+    body: "Our AI agents complete entire business processes from start to finish. Every solution is designed to eliminate unnecessary manual intervention and deliver true workflow automation.",
+  },
+  {
+    icon: "",
+    title: "Built for Your Environment",
+    body: "Every deployment is tailored to your data, security requirements, governance standards, and production infrastructure, ensuring seamless integration with your existing ecosystem.",
+  },
+  {
+    icon: "",
+    title: "Proven in Production",
+    body: "Our solutions are deployed in live enterprise environments and measured against clearly defined business outcomes, delivering measurable value beyond proof-of-concept projects.",
+  },
+];
 
   return (
     <section className="bg-slate-50 py-14 sm:py-14 sm:py-12 sm:py-10 sm:py-14 md:py-16 md:py-20 border-b border-slate-100">

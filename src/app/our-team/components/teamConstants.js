@@ -60,7 +60,7 @@ export const DEPT_TEXT = {
 };
 
 export const STATS = [
-  { value: "15+", label: "Core Team Members" },
+  { value: "50+", label: "Core Team Members" },
   { value: "5",   label: "Departments"       },
   { value: "12+", label: "Countries Served"  },
   { value: "40+", label: "Projects Shipped"  },

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link"; // Next.js Link import kiya
 
 /* ── SVG Backgrounds (unchanged) ── */
 const BgAIData = () => (<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 w-full h-full"><rect width="300" height="400" fill="#050d1a"/><circle cx="150" cy="180" r="130" fill="none" stroke="#1a3a6e" strokeWidth="60" opacity="0.45"/><circle cx="150" cy="180" r="75" fill="none" stroke="#0f2a5a" strokeWidth="38" opacity="0.55"/><ellipse cx="150" cy="180" rx="88" ry="32" fill="none" stroke="#1e4a99" strokeWidth="0.8" opacity="0.7"/><ellipse cx="150" cy="180" rx="52" ry="88" fill="none" stroke="#1e4a99" strokeWidth="0.8" opacity="0.7"/><circle cx="150" cy="180" r="18" fill="#1e5ccc" opacity="0.9"/><circle cx="150" cy="180" r="10" fill="#4a8fff"/><circle cx="150" cy="72" r="7" fill="#2563eb" opacity="0.9"/><circle cx="240" cy="128" r="5" fill="#3b82f6" opacity="0.8"/><circle cx="240" cy="232" r="7" fill="#1d4ed8" opacity="0.9"/><circle cx="150" cy="288" r="5" fill="#3b82f6" opacity="0.7"/><circle cx="60" cy="232" r="7" fill="#2563eb" opacity="0.9"/><circle cx="60" cy="128" r="5" fill="#60a5fa" opacity="0.8"/><line x1="150" y1="162" x2="150" y2="79" stroke="#3b82f6" strokeWidth="0.8" opacity="0.6"/><line x1="162" y1="170" x2="233" y2="133" stroke="#3b82f6" strokeWidth="0.8" opacity="0.6"/><line x1="162" y1="190" x2="233" y2="227" stroke="#3b82f6" strokeWidth="0.8" opacity="0.6"/><line x1="150" y1="198" x2="150" y2="281" stroke="#3b82f6" strokeWidth="0.8" opacity="0.6"/><line x1="138" y1="190" x2="67" y2="227" stroke="#3b82f6" strokeWidth="0.8" opacity="0.6"/><line x1="138" y1="170" x2="67" y2="133" stroke="#3b82f6" strokeWidth="0.8" opacity="0.6"/><text x="14" y="44" fontSize="8" fill="#1e4a99" opacity="0.45" fontFamily="monospace">10110101</text></svg>);
@@ -10,11 +11,49 @@ const BgStrategic = () => (<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2
 
 const BgConversational = () => (<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 w-full h-full"><rect width="300" height="400" fill="#080714"/><circle cx="150" cy="220" r="180" fill="#1a194d" opacity="0.55"/><path d="M108,200 Q129,168 150,200 Q171,232 192,200" fill="none" stroke="#625eff" strokeWidth="1.6" opacity="0.75"/><path d="M122,200 Q136,180 150,200 Q164,220 178,200" fill="none" stroke="#a095ff" strokeWidth="2.2" opacity="0.9"/><rect x="136" y="174" width="28" height="40" rx="14" fill="#1a194d" stroke="#625eff" strokeWidth="1.5"/><rect x="140" y="178" width="20" height="32" rx="10" fill="#3d2fb0" opacity="0.9"/><rect x="22" y="82" width="118" height="36" rx="10" fill="#1a194d" opacity="0.75"/><circle cx="50" cy="100" r="4" fill="#a095ff" opacity="0.75"/><circle cx="65" cy="100" r="4" fill="#a095ff" opacity="0.75"/><circle cx="80" cy="100" r="4" fill="#a095ff" opacity="0.75"/></svg>);
 
+// Tags array ko object array mein convert kiya taake har ek ka alag path define ho sake
 const servicesData = [
-  { id: "ai", title: "Agentic AI\nfor Finance", description: "AI agents that capture, validate, match and post transactions natively inside SAP and Oracle — end to end, with full audit trail.", tags: ["AP Automation", "GL & Reconciliations", "Month-End Close"], Bg: BgAIData },
-  { id: "engineering", title: "ERP & CRM\nAI Integration", description: "We connect intelligent agents directly to your enterprise platforms via official APIs — no fragile middleware, no workarounds.", tags: ["SAP Business One", "Oracle Fusion", "NetSuite / Zoho"], Bg: BgAutomation },
-  { id: "cloud", title: "Custom AI\nAgent Development", description: "Multi-agent systems engineered for your workflows, your tools and your guardrails — model-flexible and production-ready.", tags: ["LangGraph", "FastAPI", "Claude / GPT"], Bg: BgStrategic },
-  { id: "strategy", title: "Conversational\nAI & Copilots", description: "Ask your ERP a question in plain language and get an answer backed by real records — grounded, permission-aware and secure.", tags: ["MS Teams / Outlook", "Finance Copilots", "NL Reporting"], Bg: BgConversational },
+  { 
+    id: "ai", 
+    title: "AI and Data Innovation", 
+    description: "AI agents that capture, validate, match and post transactions natively inside SAP and Oracle — end to end, with full audit trail.", 
+    tags: [
+      { name: "Enterprise ERP & CRM-Native AI Integration", path: "/services/erp-crm-ai-integration" },
+      { name: "Agentic AI for the Office of Finance", path: "/services/agentic-ai-finance" },
+      { name: "Intelligent Document Processing", path: "/services/intelligent-document-processing" }
+    ], 
+    Bg: BgAIData 
+  },
+  { 
+    id: "engineering", 
+    title: "Automation Excellence", 
+    description: "We connect intelligent agents directly to your enterprise platforms via official APIs — no fragile middleware, no workarounds.", 
+    tags: [
+      { name: "Business Process Automation Beyond Finance", path: "/services/business-process-automation" },
+      { name: "Custom AI Agent Development", path: "/services/custom-ai-agent-development" },
+      { name: "Conversational AI & Enterprise Copilots", path: "/services/conversational-ai-enterprise-copilots" } 
+    ], 
+    Bg: BgAutomation 
+  },
+  { 
+    id: "cloud", 
+    title: "Strategic AI Solution", 
+    description: "Multi-agent systems engineered for your workflows, your tools and your guardrails — model-flexible and production-ready.", 
+    tags: [
+      { name: "Agentic AI Strategy & Readiness Consulting", path: "/services/agentic-ai-strategy-consulting" },
+      { name: "Data Intelligence & Decision Analytics", path: "/services/data-intelligence-decision-analytics" }
+    ], 
+    Bg: BgStrategic 
+  },
+  { 
+    id: "AI Governance & Security", 
+    title: "AI Governance & Security", 
+    description: "Ask your ERP a question in plain language and get an answer backed by real records — grounded, permission-aware and secure.", 
+    tags: [
+      { name: "AI Governance, Security & MLOps", path: "/services/ai-governance-security-mlops" }
+    ], 
+    Bg: BgConversational 
+  },
 ];
 
 export default function ServicesSection() {
@@ -56,12 +95,17 @@ export default function ServicesSection() {
                     <h3 className="text-[18px] sm:text-[22px] font-bold text-white leading-tight mb-3 whitespace-pre-line drop-shadow-[0_2px_8px_rgba(98,94,255,0.4)]">{title}</h3>
                     <div className="h-[1px] bg-gradient-to-r from-[#625eff]/60 via-white/20 to-transparent mb-4" />
                     <p className="text-white/70 text-[12px] sm:text-[13px] leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{description}</p>
+                    
                     <div className="space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">
                       {tags.map((tag) => (
-                        <div key={tag} className="flex items-center justify-between px-3 sm:px-3.5 py-2 rounded-lg bg-white/[0.06] border border-white/[0.12] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-                          <span className="text-[9px] sm:text-[10px] font-bold text-white/90 uppercase tracking-widest">{tag}</span>
+                        <Link 
+                          key={tag.name} 
+                          href={tag.path}
+                          className="flex items-center justify-between px-3 sm:px-3.5 py-2 rounded-lg bg-white/[0.06] border border-white/[0.12] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-white/[0.12] hover:border-[#625eff]/50 transition-all duration-300 block"
+                        >
+                          <span className="text-[9px] sm:text-[10px] font-bold text-white/90 uppercase tracking-widest">{tag.name}</span>
                           <span className="w-1.5 h-1.5 rounded-full bg-[#625eff] shadow-[0_0_6px_2px_rgba(98,94,255,0.7)]" />
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </div>

@@ -6,8 +6,8 @@ export default function ImpactStatsSection() {
   const stats = [
     { val: "5",     label: "Sectors in production",       sub: "Finance · Health · Property · Retail · Education" },
     { val: "GCC+",  label: "Geographic reach",               sub: "UAE · KSA · Pakistan · UK · Europe" },
-    { val: "Weeks",   label: "Pilot to live deployment",       sub: "Not months. Not quarters." },
-    { val: "100%",    label: "Agent actions audit-logged",     sub: "Every sector. Every deployment." },
+    { val: "Months",   label: "Pilot to live deployment",       sub: "Not quarters. Not years." },
+    { val: "100%",    label: "Agent actions require Approval",     sub: "Automation where you want it. Control where you need it." },
   ];
 
   return (

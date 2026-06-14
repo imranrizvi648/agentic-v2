@@ -25,7 +25,7 @@ export default function CommitmentSection() {
             </h2>
           </div>
           <p className="text-base sm:text-lg text-white/60 max-w-sm pt-0 sm:pt-4 border-l border-[#625eff]/40 pl-5 sm:pl-6">
-            We deploy AI agents natively inside your ERP — automating finance, operations and{" "}
+            We deploy AI agents natively inside your ERP, automating finance, operations and{" "}
             <span className="text-white">decision-making from end to end</span> across the GCC, South Asia and Europe.
           </p>
         </div>

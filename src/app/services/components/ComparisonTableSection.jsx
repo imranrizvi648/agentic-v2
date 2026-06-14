@@ -3,14 +3,38 @@
 import React from "react";
 
 export default function ComparisonTableSection() {
-  const comparisonData = [
-    { dim: "Integration", them: "Third-party connectors and middleware", us: "Native builds on official SAP, Oracle & Microsoft APIs" },
-    { dim: "Automation", them: "Assists a step, hands the rest back", us: "Completes the workflow end to end — no manual steps" },
-    { dim: "Domain depth", them: "Generic, horizontal AI", us: "Finance-first, posting-level expertise" },
-    { dim: "Delivery", them: "Strategy deck, then a separate build team", us: "One team from roadmap to production and support" },
-    { dim: "Deployment", them: "Demo that rarely reaches production", us: "Production-grade systems on your live stack" },
-    { dim: "Governance", them: "Added at the end, if at all", us: "Audit trail, controls and guardrails from day one" },
-  ];
+ const comparisonData = [
+  {
+    dim: "Integration",
+    them: "Dependent on third-party connectors and middleware",
+    us: "Direct integrations using official SAP, Oracle, and Microsoft APIs"
+  },
+  {
+    dim: "Automation",
+    them: "Automates individual tasks but still requires manual intervention",
+    us: "End-to-end workflow automation with minimal human involvement"
+  },
+  {
+    dim: "Domain Expertise",
+    them: "General-purpose AI solutions",
+    us: "Deep expertise in finance, ERP systems, and enterprise operations"
+  },
+  {
+    dim: "Delivery",
+    them: "Separate consulting and implementation teams",
+    us: "A single team responsible from strategy through deployment and support"
+  },
+  {
+    dim: "Deployment",
+    them: "Proof-of-concept focused engagements",
+    us: "Production-ready solutions deployed in live enterprise environments"
+  },
+  {
+    dim: "Governance",
+    them: "Governance and controls added later in the process",
+    us: "Security, auditability, and governance built in from the beginning"
+  },
+];
 
   return (
     <section className="bg-white py-14 sm:py-20 md:py-24 border-b border-slate-100 font-sans relative overflow-hidden select-none">

@@ -9,9 +9,9 @@ const industries = [
     title: "Finance & Banking",
     slug: "/industries/finance-and-banking",
     icon: Building2,
-    tagline: "Capital markets move fast. Your automation must keep up.",
-    lead: "Straight-through reconciliation, real-time fraud detection, automated regulatory reporting and AI-powered client advisory.",
-    capabilities: ["Transaction Reconciliation", "Fraud Detection & AML", "Regulatory Reporting"],
+    tagline: "Intelligent automation for modern financial operations.",
+    lead: "Enhance efficiency with automated reconciliation, regulatory reporting, risk monitoring, and AI-powered financial insights.",
+    capabilities: ["Transaction Reconciliation", "Risk & Compliance Monitoring", "Regulatory Reporting"],
   },
   {
     id: "healthcare",
@@ -19,9 +19,9 @@ const industries = [
     title: "Healthcare",
     slug: "/industries/healthcare",
     icon: HeartPulse,
-    tagline: "Administrative burden costs clinical time. AI gives it back.",
-    lead: "Revenue cycle automation, clinical documentation processing, pre-authorisation agents and predictive patient analytics.",
-    capabilities: ["Revenue Cycle Management", "Pre-Auth Automation", "Clinical Documentation AI"],
+    tagline: "Empowering healthcare teams through intelligent automation.",
+    lead: "Streamline administrative processes, improve patient experiences, and support clinical teams with AI-driven workflows and analytics.",
+    capabilities: ["Revenue Cycle Management", "Patient Workflow Automation", "Clinical Documentation AI"],
   },
   {
     id: "real-estate",
@@ -29,9 +29,9 @@ const industries = [
     title: "Real Estate",
     slug: "/industries/real-estate",
     icon: Home,
-    tagline: "Your best agents should be closing, not qualifying.",
-    lead: "AI lead qualification, automated valuation models, portfolio performance analytics and transaction document processing.",
-    capabilities: ["Lead Scoring", "Automated Valuation", "Portfolio Analytics"],
+    tagline: "Data-driven intelligence for modern property operations.",
+    lead: "Optimize lead management, property valuation, portfolio performance, and document processing with enterprise AI solutions.",
+    capabilities: ["Lead Qualification", "Property Valuation", "Portfolio Analytics"],
   },
   {
     id: "e-commerce",
@@ -39,9 +39,9 @@ const industries = [
     title: "E-commerce",
     slug: "/industries/e-commerce",
     icon: ShoppingBag,
-    tagline: "Thin margins don't forgive slow decisions.",
-    lead: "Dynamic pricing engines, predictive inventory replenishment, checkout conversion agents and customer service automation.",
-    capabilities: ["Dynamic Pricing Engine", "Inventory Intelligence", "Checkout Optimisation"],
+    tagline: "Smarter decisions across the entire customer journey.",
+    lead: "Increase operational efficiency with inventory intelligence, pricing optimization, customer service automation, and predictive analytics.",
+    capabilities: ["Pricing Optimization", "Inventory Intelligence", "Customer Experience Automation"],
   },
   {
     id: "education",
@@ -49,9 +49,9 @@ const industries = [
     title: "Education",
     slug: "/industries/education",
     icon: GraduationCap,
-    tagline: "Better student outcomes need smarter infrastructure.",
-    lead: "Adaptive learning systems, administrative workflow automation, 24/7 virtual academic advisors and student outcome analytics.",
-    capabilities: ["Adaptive Learning Paths", "Enrolment Automation", "Virtual Advisor"],
+    tagline: "Intelligent systems that support better learning outcomes.",
+    lead: "Improve student engagement, streamline administration, and deliver personalized learning experiences through AI-powered solutions.",
+    capabilities: ["Adaptive Learning", "Enrollment Automation", "Virtual Student Support"],
   },
 ];
 
@@ -63,10 +63,7 @@ export default function IndustriesCategorySection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-brand-secondary" />
-              <span className="text-xs font-bold text-brand-secondary uppercase tracking-[0.2em]">Five Sectors</span>
-            </div>
+            
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-primary tracking-tight leading-tight">
               Deep in Every Sector.
             </h2>

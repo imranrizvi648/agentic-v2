@@ -1,3 +1,6 @@
+import React from "react";
+import Link from "next/link"; // Next.js standard link import kiya
+
 export default function TeamJoinBanner() {
   return (
     <section className="bg-[#1a194d] py-16 sm:py-20">
@@ -16,9 +19,13 @@ export default function TeamJoinBanner() {
             </p>
           </div>
           <div className="flex-shrink-0">
-            <a href="/contact" className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 border border-white/20 text-white text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
+            {/* <a> tag ko Next.js <Link> se replace kiya */}
+            <Link 
+              href="/careers" 
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 border border-white/20 text-white text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
+            >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       </div>

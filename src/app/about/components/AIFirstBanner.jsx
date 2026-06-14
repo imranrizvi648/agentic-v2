@@ -30,11 +30,19 @@ export default function AIFirstBanner() {
           </div>
         </div>
 
-        <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-white/90 text-[15px] lg:text-base leading-relaxed max-w-2xl lg:pl-6">
-          <p>Being agentic AI–first at AgenticSense means we deploy agents that complete workflows end to end — not tools that assist a step, then hand it back. If an official API exists for your ERP, we use it. Full automation is a hard standard.</p>
-          <p>We build directly on SAP Business One, Oracle Fusion Cloud and Microsoft Fabric APIs — not on fragile middleware. Every agent we deploy includes audit logging, access control and human-in-the-loop checkpoints from day one.</p>
-          <p className="font-medium text-white">Governance is not added at the end. Security, reliability and compliance are engineered in from the start — so your agents stay accurate, controlled and accountable long after go-live.</p>
-        </div>
+      <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-white/90 text-[15px] lg:text-base leading-relaxed max-w-2xl lg:pl-6">
+  <p>
+    At AgenticSense, we help organizations deploy enterprise AI solutions that automate complex business processes, improve operational efficiency, and support better decision-making across the enterprise.
+  </p>
+
+  <p>
+    Our solutions integrate directly with leading ERP, CRM, and business platforms, including SAP Business One, Oracle Fusion Cloud, and Microsoft technologies through supported APIs, ensuring secure, scalable, and reliable connectivity.
+  </p>
+
+  <p className="font-medium text-white">
+    Security, governance, compliance, and operational reliability are embedded throughout every implementation, providing organizations with the visibility, control, and confidence required for enterprise-scale AI adoption.
+  </p>
+</div>
       </div>
 
       <div className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-20">

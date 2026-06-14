@@ -360,12 +360,8 @@ export default function AboutSection() {
           About us
         </h2>
         <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-xl">
-          AgenticSense is a global B2B Agentic AI services company — not a generic
-          AI consultancy or software platform. We design, engineer, and deploy
-          autonomous AI agents that integrate natively with enterprise ERP systems
-          through official production-grade APIs, built for real operational
-          environments, complex workflows, and measurable business outcomes.
-        </p>
+  AgenticSense helps organizations transform operations through enterprise AI and intelligent automation. Our team designs, builds, and deploys AI agents that integrate seamlessly with ERP platforms and core business systems, delivering scalable solutions for complex workflows, operational excellence, and long-term business value.
+</p>
       </div>
 
       {/* Bottom fade */}

@@ -1,8 +1,122 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+const countryCodes = [
+  { code: '+92', name: 'PK', full: 'Pakistan' },
+  { code: '+1', name: 'US/CA', full: 'USA/Canada' },
+  { code: '+44', name: 'UK', full: 'United Kingdom' },
+  { code: '+971', name: 'AE', full: 'UAE' },
+  { code: '+91', name: 'IN', full: 'India' },
+  { code: '+61', name: 'AU', full: 'Australia' },
+  { code: '+65', name: 'SG', full: 'Singapore' },
+  { code: '+966', name: 'SA', full: 'Saudi Arabia' },
+  { code: '+974', name: 'QA', full: 'Qatar' },
+  { code: '+49', name: 'DE', full: 'Germany' },
+  { code: '+33', name: 'FR', full: 'France' },
+  { code: '+31', name: 'NL', full: 'Netherlands' },
+  { code: '+60', name: 'MY', full: 'Malaysia' },
+  { code: '+20', name: 'EG', full: 'Egypt' },
+  { code: '+27', name: 'ZA', full: 'South Africa' },
+  { code: '+90', name: 'TR', full: 'Turkey' },
+  { code: '+81', name: 'JP', full: 'Japan' },
+  { code: '+852', name: 'HK', full: 'Hong Kong' },
+  { code: '+39', name: 'IT', full: 'Italy' },
+  { code: '+34', name: 'ES', full: 'Spain' },
+  { code: '+41', name: 'CH', full: 'Switzerland' },
+  { code: '+64', name: 'NZ', full: 'New Zealand' },
+  { code: '+353', name: 'IE', full: 'Ireland' },
+  { code: '+46', name: 'SE', full: 'Sweden' },
+  { code: '+47', name: 'NO', full: 'Norway' },
+  { code: '+45', name: 'DK', full: 'Denmark' },
+  { code: '+32', name: 'BE', full: 'Belgium' },
+  { code: '+43', name: 'AT', full: 'Austria' },
+  { code: '+55', name: 'BR', full: 'Brazil' },
+  { code: '+52', name: 'MX', full: 'Mexico' },
+  { code: '+86', name: 'CN', full: 'China' },
+  { code: '+82', name: 'KR', full: 'South Korea' },
+  { code: '+62', name: 'ID', full: 'Indonesia' },
+  { code: '+63', name: 'PH', full: 'Philippines' },
+  { code: '+66', name: 'TH', full: 'Thailand' },
+  { code: '+84', name: 'VN', full: 'Vietnam' },
+  { code: '+94', name: 'LK', full: 'Sri Lanka' },
+  { code: '+880', name: 'BD', full: 'Bangladesh' },
+  { code: '+977', name: 'NP', full: 'Nepal' },
+  { code: '+965', name: 'KW', full: 'Kuwait' },
+  { code: '+968', name: 'OM', full: 'Oman' },
+  { code: '+973', name: 'BH', full: 'Bahrain' },
+  { code: '+962', name: 'JO', full: 'Jordan' },
+  { code: '+961', name: 'LB', full: 'Lebanon' },
+].sort((a, b) => a.full.localeCompare(b.full));
+
+function CustomCountryDropdown({ value, onChange }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleKeyDown = (e) => {
+    const char = e.key.toLowerCase();
+    if (char.length === 1 && isOpen) {
+      const targetIndex = countryCodes.findIndex(item => item.full.toLowerCase().startsWith(char));
+      if (targetIndex !== -1) {
+        const element = document.getElementById(`item-${value}-${targetIndex}`);
+        if (element) element.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  };
+
+  const selectedItem = countryCodes.find(item => item.code === value) || countryCodes[0];
+
+  return (
+    <div className="relative w-[95px] h-full" ref={containerRef} onKeyDown={handleKeyDown}>
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full h-full pl-3 pr-6 py-3 text-sm font-semibold text-slate-600 bg-transparent border-r border-slate-200 focus:outline-none flex items-center justify-between cursor-pointer select-none"
+      >
+        <span>{selectedItem.code}</span>
+        <span className="absolute right-2 inset-y-0 flex items-center pointer-events-none text-slate-400">
+          <svg className={`w-2.5 h-2.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </span>
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-full left-0 w-[240px] mt-1 bg-white border border-slate-200 rounded shadow-xl z-50 max-h-48 overflow-y-auto">
+          {countryCodes.map((item, index) => (
+            <div
+              key={index}
+              id={`item-${value}-${index}`}
+              onClick={() => {
+                onChange(item.code);
+                setIsOpen(false);
+              }}
+              className={`px-3 py-2 text-xs cursor-pointer flex justify-between items-center hover:bg-slate-100 transition-colors ${item.code === value ? 'bg-indigo-50 font-bold text-[#625eff]' : 'text-slate-700'}`}
+            >
+              <span className="truncate pr-2">{item.full}</span>
+              <span className="text-slate-400 flex-shrink-0 font-medium">{item.code}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function RFPPage() {
-  const [budget, setBudget] = useState(1000);
+  const [budget, setBudget]   = useState(1000); // Reset to default $1,000 starting point
+  const [submitted, setSubmitted] = useState(false);
+  const [loading,   setLoading]   = useState(false);
+  const [error,     setError]     = useState("");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,28 +134,78 @@ export default function RFPPage() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleBudgetChange = (e) => {
+    const val = Number(e.target.value);
+    if (val <= 10000) {
+      setBudget(Math.round(val / 1000) * 1000 || 1000);
+    } else if (val <= 100000) {
+      setBudget(Math.round(val / 5000) * 5000);
+    } else if (val <= 500000) {
+      setBudget(Math.round(val / 25000) * 25000);
+    } else {
+      setBudget(Math.round(val / 50000) * 50000);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true); setError("");
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type:        "proposal",
+          name:        formData.name,
+          email:       formData.email,
+          phone:       `${formData.countryCodeContact} ${formData.contactNumber}`,
+          whatsapp:    `${formData.countryCodeWhatsapp} ${formData.whatsappNumber}`,
+          identity:    formData.identity,
+          company:     formData.companyName,
+          projectBrief:formData.projectBrief,
+          budget:      budget,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Failed");
+      
+      setSubmitted(true);
+      
+      // Perfectly empties and resets all inputs on successful submission
+      setFormData({
+        name: '',
+        email: '',
+        countryCodeContact: '+92',
+        contactNumber: '',
+        countryCodeWhatsapp: '+92',
+        whatsappNumber: '',
+        identity: '',
+        companyName: '',
+        projectBrief: ''
+      });
+      setBudget(1000);
+
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-brand-primary py-12 lg:py-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
 
-        {/* ── LEFT: BRANDING & TRUST ──────────────────────────────────────────── */}
+        {/* ── LEFT: BRANDING ─────────────────────────────────────────────────── */}
         <div className="lg:col-span-5 space-y-6 sm:space-y-8 border-l-4 border-brand-secondary pl-5 sm:pl-6 md:pl-8">
           <div className="space-y-3 sm:space-y-4">
-
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-brand-secondary rounded-full text-xs font-semibold uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse" />
               Let's Collaborate
             </div>
-
-            {/* H1 — unified system */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-brand-primary leading-[1.1] tracking-tight">
-              Transform Your{' '}
-              Vision
-              Into Reality.
+              Transform Your Vision Into Reality.
             </h1>
-
-            {/* Lead paragraph */}
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-slate-500 max-w-lg">
               Ready to innovate? Tell us about your project. Whether it's a new product,
               a digital transformation, or a complex integration, AgenticSense is your
@@ -49,7 +213,6 @@ export default function RFPPage() {
             </p>
           </div>
 
-          {/* Why Start Now Card */}
           <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-md border border-slate-100 max-w-md">
             <h3 className="text-base font-bold text-brand-primary flex items-center gap-2 mb-4">
               <svg className="w-5 h-5 text-brand-secondary flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -59,9 +222,9 @@ export default function RFPPage() {
             </h3>
             <ul className="space-y-3 text-sm leading-relaxed text-slate-500">
               {[
-                'Strict NDA Protection Guaranteed',
-                'Response within 24 Hours',
-                'Detailed Proposal & Roadmap',
+                'NDA available — your data and systems details stay confidential',
+                'Response within 24 business hours',
+                'Prioritised roadmap with measurable success metrics',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary flex-shrink-0" />
@@ -74,8 +237,6 @@ export default function RFPPage() {
 
         {/* ── RIGHT: FORM CARD ────────────────────────────────────────────────── */}
         <div className="lg:col-span-7 bg-white rounded-none shadow-2xl overflow-hidden border border-slate-100">
-
-          {/* Form Header */}
           <div className="bg-brand-primary px-4 sm:px-6 py-4 flex justify-between items-center border-b-4 border-brand-secondary">
             <h2 className="text-white font-extrabold tracking-wide uppercase text-sm sm:text-base">
               Project Inquiry
@@ -85,9 +246,8 @@ export default function RFPPage() {
             </span>
           </div>
 
-          {/* Form Body */}
-          <form className="p-4 sm:p-6 space-y-4 sm:space-y-5">
-
+          <form className="p-4 sm:p-6 space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
+            
             {/* Row 1: Name & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="relative">
@@ -98,6 +258,7 @@ export default function RFPPage() {
                 </span>
                 <input
                   type="text" required placeholder="Name*"
+                  name="name" value={formData.name} onChange={handleInputChange}
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-secondary text-sm text-brand-primary placeholder-slate-400 transition-colors"
                 />
               </div>
@@ -109,6 +270,7 @@ export default function RFPPage() {
                 </span>
                 <input
                   type="email" required placeholder="E-mail*"
+                  name="email" value={formData.email} onChange={handleInputChange}
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-secondary text-sm text-brand-primary placeholder-slate-400 transition-colors"
                 />
               </div>
@@ -116,36 +278,26 @@ export default function RFPPage() {
 
             {/* Row 2: Contact & WhatsApp */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              <div className="flex bg-slate-50 border border-slate-200 rounded overflow-hidden focus-within:border-brand-secondary transition-colors">
-                <select
-                  name="countryCodeContact" value={formData.countryCodeContact}
-                  onChange={handleInputChange}
-                  className="bg-transparent px-3 py-3 text-sm font-medium text-slate-600 border-r border-slate-200 focus:outline-none"
-                >
-                  <option value="+92">+92</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                  <option value="+971">+971</option>
-                </select>
+              <div className="flex bg-slate-50 border border-slate-200 rounded overflow-visible focus-within:border-brand-secondary transition-colors relative items-center">
+                <CustomCountryDropdown 
+                  value={formData.countryCodeContact}
+                  onChange={(val) => setFormData(prev => ({ ...prev, countryCodeContact: val }))}
+                />
                 <input
-                  type="tel" placeholder="Contact Number*"
+                  type="tel" required placeholder="Contact Number*"
+                  name="contactNumber" value={formData.contactNumber} onChange={handleInputChange}
                   className="w-full min-w-0 px-3 py-3 bg-transparent focus:outline-none text-sm text-brand-primary placeholder-slate-400"
                 />
               </div>
 
-              <div className="flex bg-slate-50 border border-slate-200 rounded overflow-hidden focus-within:border-brand-secondary transition-colors">
-                <select
-                  name="countryCodeWhatsapp" value={formData.countryCodeWhatsapp}
-                  onChange={handleInputChange}
-                  className="bg-transparent px-3 py-3 text-sm font-medium text-slate-600 border-r border-slate-200 focus:outline-none"
-                >
-                  <option value="+92">+92</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                  <option value="+971">+971</option>
-                </select>
+              <div className="flex bg-slate-50 border border-slate-200 rounded overflow-visible focus-within:border-brand-secondary transition-colors relative items-center">
+                <CustomCountryDropdown 
+                  value={formData.countryCodeWhatsapp}
+                  onChange={(val) => setFormData(prev => ({ ...prev, countryCodeWhatsapp: val }))}
+                />
                 <input
                   type="tel" placeholder="WhatsApp Number"
+                  name="whatsappNumber" value={formData.whatsappNumber} onChange={handleInputChange}
                   className="w-full min-w-0 px-3 py-3 bg-transparent focus:outline-none text-sm text-brand-primary placeholder-slate-400"
                 />
               </div>
@@ -162,13 +314,16 @@ export default function RFPPage() {
                 <select
                   name="identity" required value={formData.identity}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-secondary text-slate-500 text-sm appearance-none transition-colors"
+                  className="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-secondary text-slate-500 text-sm appearance-none transition-colors cursor-pointer"
                 >
                   <option value="" disabled>How do you identify?*</option>
-                  <option value="startup">Startup / Founder</option>
-                  <option value="enterprise">Enterprise Executive</option>
-                  <option value="agency">Agency / Partner</option>
-                  <option value="individual">Individual</option>
+                  <option value="startup">Startup Founder / Co-Founder</option>
+                  <option value="enterprise_exec">Enterprise Executive (C-Level / VP)</option>
+                  <option value="product_manager">Product Manager / Director</option>
+                  <option value="agency">Agency Owner / Strategic Partner</option>
+                  <option value="investor">Venture Capitalist / Angel Investor</option>
+                  <option value="ngo_govt">Non-Profit / Government Representative</option>
+                  <option value="individual">Individual Developer / Consultant</option>
                 </select>
                 <span className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-400">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -185,6 +340,7 @@ export default function RFPPage() {
                 </span>
                 <input
                   type="text" placeholder="Company Name"
+                  name="companyName" value={formData.companyName} onChange={handleInputChange}
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded focus:outline-none focus:border-brand-secondary text-sm text-brand-primary placeholder-slate-400 transition-colors"
                 />
               </div>
@@ -199,16 +355,24 @@ export default function RFPPage() {
                   </svg>
                   Project Budget
                 </label>
-                <span className="text-base sm:text-lg font-extrabold text-brand-primary">${budget.toLocaleString()}</span>
+                <span className="text-base sm:text-lg font-extrabold text-brand-primary">
+                  {budget >= 1000000 ? "$1,000,000+" : `$${budget.toLocaleString()}`}
+                </span>
               </div>
               <input
-                type="range" min="500" max="10000" step="500"
-                value={budget} onChange={(e) => setBudget(Number(e.target.value))}
+                type="range" 
+                min="1000" 
+                max="1000000" 
+                value={budget} 
+                onChange={handleBudgetChange}
                 className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#625eff]"
               />
               <div className="flex justify-between text-[10px] text-slate-400 font-medium">
-                <span>$500</span>
-                <span>$10,000+</span>
+                <span>$1,000</span>
+                <span>$250k</span>
+                <span>$500k</span>
+                <span>$750k</span>
+                <span>$1M+</span>
               </div>
             </div>
 
@@ -220,9 +384,8 @@ export default function RFPPage() {
                 </svg>
               </span>
               <textarea
-                name="projectBrief"
-                value={formData.projectBrief}
-                onChange={handleInputChange}
+                name="projectBrief" required
+                value={formData.projectBrief} onChange={handleInputChange}
                 placeholder="Your Project Brief*"
                 rows="4"
                 className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-brand-secondary text-sm text-brand-primary placeholder-slate-400 resize-none transition-colors"
@@ -230,18 +393,21 @@ export default function RFPPage() {
             </div>
 
             {/* Row 6: Submit */}
+            {error && <p className="text-red-500 text-xs mb-2 font-medium">{error}</p>}
+            {submitted && <p className="text-green-600 text-xs mb-2 font-semibold">✓ Proposal submitted! We'll be in touch within 1–2 business days.</p>}
+            
             <button
               type="submit"
-              className="w-full bg-brand-primary hover:bg-[#2d2b7a] text-white font-bold text-xs uppercase tracking-widest py-4 rounded transition-all duration-200 flex items-center justify-center gap-2 shadow-md cursor-pointer"
+              disabled={loading}
+              className="w-full bg-brand-primary hover:bg-[#2d2b7a] text-white font-bold text-xs uppercase tracking-widest py-4 rounded transition-all duration-200 flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-50"
             >
-              Send Message
-              <svg className="w-3.5 h-3.5 rotate-45 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-              </svg>
+              {submitted ? "Proposal Sent ✓" : loading ? "Sending…" : "Send Message"}
+              {!submitted && !loading && (
+                <svg className="w-3.5 h-3.5 rotate-45 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                </svg>
+              )}
             </button>
-
-            {/* Privacy note */}
-          
 
           </form>
         </div>

@@ -8,40 +8,44 @@ const TAB_DATA = [
   {
     id: "why-folio3",
     label: "Why AgenticSense?",
-    title: "We started AgenticSense",
-    subtitle: "To Close the Gap Between AI Potential and Enterprise Reality",
-    description: "Most AI projects dazzle in a demo, then quietly never reach production. AgenticSense was founded to solve exactly that problem. We are an agentic AI services company headquartered in Dubai with a delivery centre in Karachi, focused on one thing: production-grade AI agents that integrate directly with enterprise platforms and deliver measurable results.",
-    extraInfo: "Our founding conviction is simple:",
+    title: "We founded AgenticSense",
+    subtitle: "To bridge the gap between AI potential and enterprise execution",
+    description:
+      "Most AI initiatives succeed in pilots but fail to scale into production. AgenticSense was created to address this gap. We are an agentic AI services company headquartered in Dubai with a delivery center in Karachi, focused on building production-grade AI systems that integrate with enterprise platforms and deliver measurable business outcomes.",
+    extraInfo: "Our core principles:",
     points: [
-      "Build AI agents that complete workflows end to end — not tools that assist a step and hand it back.",
-      "Integrate natively with ERP and CRM through official APIs — not fragile middleware.",
-      "Go finance-first: AP, AR, GL, reconciliations and the month-end close at posting level.",
-      "Govern every agent from day one: audit logging, access control, human-in-the-loop checkpoints.",
-      "Deliver production systems, not slide decks — measured against outcomes agreed before we start."
+      "Build AI agents that execute workflows end to end, not tools that only assist individual steps.",
+      "Integrate natively with ERP and CRM systems through official APIs, avoiding fragile middleware.",
+      "Focus on finance-first processes including AP, AR, GL, reconciliations, and month-end close at posting level.",
+      "Embed governance from day one with audit logging, access controls, and human-in-the-loop checkpoints.",
+      "Deliver production systems with measurable outcomes defined before implementation begins."
     ],
-    footerText: "We become your AI execution partner — embedded intelligence operating continuously on your behalf across the workflows that matter most.",
+    footerText:
+      "We act as your AI execution partner, embedding intelligent systems directly into your operations to continuously support critical business workflows.",
     image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800",
     isGridPoints: false
   },
   {
     id: "what-we-do",
     label: "What We Do",
-    title: "We Build Agentic AI That Runs Where Your Business Actually Runs",
+    title: "We Build Enterprise AI Where Your Business Operates",
     subtitle: "",
-    description: "AgenticSense specializes in developing AI agents, ERP-native automation platforms, data intelligence solutions and digital transformation strategies. We serve enterprises across the GCC, South Asia and Europe — from distribution groups and investment firms to healthcare networks and manufacturing operations.",
-    extraInfo: "Our nine core services:",
+    description:
+      "AgenticSense develops AI agents, ERP-native automation systems, data intelligence platforms, and digital transformation solutions for enterprises across the GCC, South Asia, and Europe, including distribution, financial services, healthcare, and manufacturing sectors.",
+    extraInfo: "Our core service areas:",
     points: [
-      "Agentic AI for the Office of Finance",
-      "Enterprise ERP & CRM AI Integration",
-      "Intelligent Document Processing & Invoice Automation",
+      "Agentic AI for Finance Operations",
+      "ERP & CRM AI Integration",
+      "Document Processing & Invoice Automation",
       "Custom AI Agent Development",
-      "Conversational AI & Enterprise Copilots",
+      "Enterprise Copilots & Conversational AI",
       "Business Process Automation",
       "Data Intelligence & Decision Analytics",
-      "Agentic AI Strategy & Readiness Consulting",
+      "AI Strategy & Readiness Consulting",
       "AI Governance, Security & MLOps"
     ],
-    footerText: "Each service is built to the same hard standard: full end-to-end automation, no manual steps in the middle, and governance built in from the start.",
+    footerText:
+      "Every solution follows the same standard: full workflow automation, no manual steps in execution, and governance built in from the start.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
     isGridPoints: true
   },
@@ -49,17 +53,19 @@ const TAB_DATA = [
     id: "our-strength",
     label: "Our Strength",
     title: "Our Strength",
-    subtitle: "ERP-Native Expertise, Finance-First Depth, Enterprise Security",
-    description: "AgenticSense combines deep agentic AI capability with certified ERP integration expertise:",
+    subtitle: "ERP-native expertise, finance-first depth, enterprise-grade security",
+    description:
+      "AgenticSense combines advanced agentic AI capabilities with deep enterprise system integration expertise across leading platforms:",
     extraInfo: "",
     points: [
-      "SAP Business One: native Service Layer REST API and SAP HANA integration — posting-level finance automation.",
-      "Oracle Fusion Cloud: REST APIs, OCI GenAI Agents and AI Agent Studio — finance copilots and operations agents.",
-      "Microsoft Fabric & Azure AI Foundry: data engineering, predictive analytics and model services.",
-      "NetSuite, Odoo, Zoho, Salesforce: official REST APIs — no third-party connectors, no middleware.",
-      "Security by design: Microsoft Entra ID / Azure AD, OCI access control, full audit logging on every agent action."
+      "SAP Business One: Service Layer APIs and SAP HANA integration for finance-level automation.",
+      "Oracle Fusion Cloud: REST APIs and OCI AI services for enterprise copilots and operations automation.",
+      "Microsoft Fabric & Azure AI: data engineering, analytics, and AI model deployment at scale.",
+      "NetSuite, Odoo, Zoho, Salesforce: native API-based integrations without middleware dependencies.",
+      "Security-first architecture with Entra ID, OCI IAM, and full audit logging across all agent actions."
     ],
-    footerText: "From AP automation that posts straight to your ERP, to finance copilots that answer in plain language — we don't just implement AI. We transform how your operations run.",
+    footerText:
+      "From AP automation that posts directly into ERP systems to intelligent copilots that respond in natural language, we help enterprises transform how operations actually run.",
     image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=800",
     isGridPoints: false
   }

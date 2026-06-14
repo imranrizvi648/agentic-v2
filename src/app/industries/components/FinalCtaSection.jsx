@@ -29,10 +29,8 @@ export default function FinalCtaSection() {
 
         {/* Body Text */}
         <p className="text-base text-white/80 leading-relaxed mb-10">
-          In a free Industry AI Assessment, we identify your single highest-value automation opportunity, 
-          sketch how a production agent handles it inside your real systems, and give you an honest 
-          view of integration complexity, compliance requirements and expected impact — at no cost.
-        </p>
+  Our Industry AI Assessment helps uncover high-value opportunities for automation and intelligent decision-making within your organization. We review your existing systems, processes, and business objectives to provide a strategic roadmap, implementation guidance, and a clear understanding of the potential impact of AI across your operations.
+</p>
 
         {/* Buttons (Exact Pehle code ka layout aur rounded-none styling) */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">

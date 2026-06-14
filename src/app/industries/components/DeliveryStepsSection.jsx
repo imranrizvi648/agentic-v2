@@ -3,28 +3,28 @@ import React from 'react';
 const steps = [
   {
     num: "PHASE_01",
-    title: "Sector Audit",
-    body: "We map your industry's regulatory requirements, system landscape, data governance constraints and integration environment before any architecture decisions are made.",
+    title: "Discovery & Assessment",
+    body: "We evaluate your business processes, regulatory requirements, technology landscape, data architecture, and integration environment to establish a strong foundation for implementation.",
   },
   {
     num: "PHASE_02",
-    title: "Use-Case Design",
-    body: "Sector-specific use cases prioritised by ROI and compliance feasibility. Success metrics, exception handling and human oversight points agreed in writing before build.",
+    title: "Solution Design",
+    body: "High-impact use cases are prioritized based on business value, operational feasibility, and governance requirements. Success criteria, workflows, and oversight mechanisms are clearly defined before development begins.",
   },
   {
     num: "PHASE_03",
-    title: "Build & Integrate",
-    body: "Agent development against your live industry systems and real data — proving performance in your environment, not a generic test sandbox, from sprint one.",
+    title: "Build & Integration",
+    body: "AI agents are developed and integrated with your existing systems, data sources, and business processes while maintaining security, reliability, and operational continuity.",
   },
   {
     num: "PHASE_04",
-    title: "Govern & Deploy",
-    body: "Production go-live with sector-appropriate audit logging, access controls, regulatory safeguards and human-in-the-loop checkpoints active from day one.",
+    title: "Deployment & Governance",
+    body: "Solutions are deployed into production environments with audit logging, access controls, monitoring, and governance frameworks fully implemented to support compliance and operational visibility.",
   },
   {
     num: "PHASE_05",
-    title: "Operate & Scale",
-    body: "Ongoing monitoring, model retraining and process expansion — keeping your agents accurate, compliant and improving as your sector evolves.",
+    title: "Optimization & Scale",
+    body: "We continuously monitor performance, refine models, expand automation opportunities, and support long-term adoption to maximize business impact.",
   },
 ];
 

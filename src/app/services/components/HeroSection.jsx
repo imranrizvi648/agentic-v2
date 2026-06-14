@@ -33,14 +33,14 @@ export default function HeroSection() {
         <div className="max-w-2xl space-y-4">
           <p className="text-base sm:text-lg leading-relaxed text-white/80">
             AgenticSense designs, builds and deploys custom agentic AI that operates 
-            natively inside your ERP — automating finance, operations and decision-making 
+            natively inside your ERP, automating finance, operations and decision-making 
             from end to end.
           </p>
           <p className="text-sm sm:text-base leading-relaxed text-white/50">
             No half-finished demos. No manual steps in the middle of a workflow. No brittle 
             third-party connectors.{" "}
             <span className="font-semibold text-indigo-200 block sm:inline mt-2 sm:mt-0">
-              Trusted by enterprises across the GCC, South Asia and Europe to put agentic AI into production — safely.
+              Trusted by enterprises across the GCC, South Asia and Europe to put agentic AI into production safely.
             </span>
           </p>
         </div>
