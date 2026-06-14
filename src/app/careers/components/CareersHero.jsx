@@ -176,7 +176,7 @@ export default function CareersHero() {
           <span className="text-[#a095ff]"> Enterprise AI</span> With Us.
         </h1>
         <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-xl">
-          We're a tight-knit team building production AI agents that run natively inside enterprise ERP systems. If you're exceptional at what you do and want to work on problems that actually matter — apply below.
+          We're a tight-knit team building production AI agents that run natively inside enterprise ERP systems. If you're exceptional at what you do and want to work on problems that actually matter apply below.
         </p>
       </div>
       <div aria-hidden="true" className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[rgba(98,94,255,0.35)] to-transparent z-10 pointer-events-none"/>

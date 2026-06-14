@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import {
-  User, Mail, Phone, MessageSquare, MapPin, Linkedin,
+  User, Mail, Phone, MessageSquare, MapPin,
   Link2, Briefcase, FileText, ChevronRight, CheckCircle2,
   ChevronLeft, Building2, Code2, Star, Upload
 } from "lucide-react";
@@ -62,7 +62,6 @@ function TextInput({ icon, label, required, type = "text", placeholder, value, o
     if (focused) {
       baseClass += " border-[#625eff] bg-[#fafaff] shadow-[0_0_0_4px_rgba(98,94,255,0.08)]";
     } else if (color) {
-      // Dynamic border inject logic for fields like WhatsApp
       if (color === "#25d366") baseClass += " border-[#25d366]";
     }
     return baseClass;
@@ -94,6 +93,7 @@ function Step1({ data, set }) {
       <TextInput icon={Phone}   label="Phone Number"        required placeholder="+1 555 000 0000"        value={data.phone}     onChange={e => set("phone", e.target.value)} />
       <TextInput icon={Phone}   label="WhatsApp Number"              placeholder="+1 555 000 0000"        value={data.whatsapp}  onChange={e => set("whatsapp", e.target.value)} color="#25d366" />
       <TextInput icon={MapPin}  label="Current Address"     required placeholder="City, Country"          value={data.address}   onChange={e => set("address", e.target.value)} />
+      {/* LinkedIn input field customized with Link2 icon */}
       <TextInput icon={Link2}   label="LinkedIn Profile URL"         placeholder="linkedin.com/in/you"    value={data.linkedin}  onChange={e => set("linkedin", e.target.value)} />
 
       {/* Portfolio — full width */}
@@ -275,7 +275,7 @@ function Step4({ data }) {
         {data.motivation && (
           <div className="mt-[14px] pt-[14px] border-t border-solid border-[rgba(98,94,255,0.12)]">
             <span className="text-[0.65rem] font-bold text-[#9ca3af] uppercase tracking-[0.12em]">Motivation</span>
-            <p className="text-[0.82rem] text-[#1a194d] mt-1 line-height-[1.55]">{data.motivation}</p>
+            <p className="text-[0.82rem] text-[#1a194d] mt-1 leading-[1.55]">{data.motivation}</p>
           </div>
         )}
       </div>
@@ -308,7 +308,7 @@ export default function CareersForm() {
     e.preventDefault();
     if (step < 4) { setStep(s => s + 1); return; }
 
-    setLoading(true); setError("");
+    loading(true); setError("");
     try {
       const fd = new FormData();
       fd.append("type", "careers");
@@ -333,7 +333,7 @@ export default function CareersForm() {
     return (
       <section className="min-h-[60vh] flex items-center justify-center bg-white py-[60px] px-6">
         <div className="text-center max-w-[440px]">
-          <div className="w-[72px] height-[72px] rounded-full bg-gradient-to-br from-[#625eff] to-[#a095ff] flex items-center justify-center mx-auto mb-6">
+          <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#625eff] to-[#a095ff] flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={36} className="text-white"/>
           </div>
           <h2 className="text-[1.75rem] font-extrabold text-[#1a194d] mb-3">Application Received!</h2>
@@ -351,8 +351,8 @@ export default function CareersForm() {
   return (
     <section className="bg-white text-[#1a194d] relative overflow-hidden">
       {/* Bg glows */}
-      <div aria-hidden className="absolute -top-[160px] -right-[120px] w-[520px] height-[520px] rounded-full bg-[radial-gradient(circle,rgba(98,94,255,0.07)_0%,transparent_70%)] pointer-events-none"/>
-      <div aria-hidden className="absolute -bottom-[100px] -left-[80px] w-[380px] height-[380px] rounded-full bg-[radial-gradient(circle,rgba(26,25,77,0.04)_0%,transparent_70%)] pointer-events-none"/>
+      <div aria-hidden className="absolute -top-[160px] -right-[120px] w-[520px] h-[520px] rounded-full bg-[radial-gradient(circle,rgba(98,94,255,0.07)_0%,transparent_70%)] pointer-events-none"/>
+      <div aria-hidden className="absolute -bottom-[100px] -left-[80px] w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,rgba(26,25,77,0.04)_0%,transparent_70%)] pointer-events-none"/>
 
       <div className="max-w-[1200px] mx-auto py-[clamp(40px,8vw,80px)] px-[clamp(16px,4vw,32px)]">
 
@@ -399,7 +399,7 @@ export default function CareersForm() {
                   </button>
                 )}
                 <button type="submit"
-                  className={`flex-1 flex items-center justify-center gap-2 padding-3 py-[14px] px-6 rounded-[8px] border-none text-white font-bold text-[0.88rem] cursor-pointer font-inherit transition-all duration-250 ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-[14px] px-6 rounded-[8px] border-none text-white font-bold text-[0.88rem] cursor-pointer font-inherit transition-all duration-250 ${
                     step === 4 
                       ? "bg-gradient-to-br from-[#22c55e] to-[#16a34a] shadow-[0_8px_24px_rgba(34,197,94,0.25)]" 
                       : "bg-gradient-to-br from-[#1a194d] to-[#2d2b7a] shadow-[0_8px_24px_rgba(26,25,77,0.22)]"
@@ -422,7 +422,7 @@ export default function CareersForm() {
                 { icon: "", title: "Growing fast", body: "Early team member advantage — direct impact on architecture, culture and direction." },
               ].map(({ icon, title, body }) => (
                 <div key={title} className="flex gap-[14px] pb-[14px] mb-[14px] border-b border-solid border-[#f5f4ff]">
-                  <span className="text-[1.3rem] shrink-0 line-height-[1]">{icon}</span>
+                  <span className="text-[1.3rem] shrink-0 leading-[1]">{icon}</span>
                   <div>
                     <p className="font-bold text-[0.85rem] text-[#1a194d] mb-[3px]">{title}</p>
                     <p className="text-[0.78rem] text-[#6b7280] leading-[1.55]">{body}</p>
