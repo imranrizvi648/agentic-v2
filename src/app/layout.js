@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "Customer Support",
-                email: "info@agenticsense.ai",
+                email: "info@agenticsense.co",
                 availableLanguage: ["English"],
               },
             }),

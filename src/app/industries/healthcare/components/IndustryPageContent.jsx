@@ -381,7 +381,7 @@ export default function HealthcareContent() {
               {cta.cta2}
             </Link>
           </div>
-          <p className="text-xs text-brand-primary/40">Dubai, UAE · Karachi, Pakistan · info@agenticsense.ai · agenticsense.ai</p>
+          <p className="text-xs text-brand-primary/40">Dubai, UAE · Karachi, Pakistan · info@agenticsense.co · agenticsense.ai</p>
         </div>
       </section>
 
