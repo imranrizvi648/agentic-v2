@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   if (!post) return { title: "Post Not Found | AgenticSense Blog" };
 
   const author = authors[post.author];
-  const url    = `https://www.agenticsense.ai/blog/${post.slug}`;
+  const url    = `https://www.agenticsense.co/blog/${post.slug}`;
 
   return {
     title: post.seo.title,
@@ -68,9 +68,9 @@ function ArticleStructuredData({ post, author }) {
     publisher: {
       "@type": "Organization",
       name: "AgenticSense",
-      url: "https://www.agenticsense.ai",
+      url: "https://www.agenticsense.co",
     },
-    url: `https://www.agenticsense.ai/blog/${post.slug}`,
+    url: `https://www.agenticsense.co/blog/${post.slug}`,
     keywords: post.tags.join(", "),
     articleSection: post.category,
   };

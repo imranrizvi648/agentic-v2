@@ -19,7 +19,7 @@ export const metadata = {
     "e-commerce AI", "education AI", "industry AI solutions", "sector-specific AI",
     "enterprise AI by industry", "agentic AI healthcare", "financial services AI",
   ],
-  alternates: { canonical: "https://www.agenticsense.ai/industries" },
+  alternates: { canonical: "https://www.agenticsense.co/industries" },
 };
 
 export default function IndustriesPage() {

@@ -399,7 +399,7 @@ export default function EducationContent() {
               {cta.cta2}
             </Link>
           </div>
-          <p className="text-xs text-brand-primary/40">Dubai, UAE · Karachi, Pakistan · info@agenticsense.co · agenticsense.ai</p>
+          <p className="text-xs text-brand-primary/40">Dubai, UAE · Karachi, Pakistan · info@agenticsense.co · agenticsense.co</p>
         </div>
       </section>
 

@@ -29,10 +29,10 @@ export const metadata = {
     title: "AgenticSense | AI Agents & Intelligent Automation Solutions",
     description:
       "AgenticSense helps businesses automate workflows, improve decision-making and scale faster with intelligent AI agent solutions.",
-    url: "https://www.agenticsense.ai/",
+    url: "https://www.agenticsense.co/",
     images: [
       {
-        url: "https://www.agenticsense.ai/assets/images/agenticsense-og-image.jpg",
+        url: "https://www.agenticsense.co/assets/images/agenticsense-og-image.jpg",
         width: 1200,
         height: 630,
         alt: "AgenticSense AI Agents and Automation Solutions",
@@ -45,10 +45,10 @@ export const metadata = {
     title: "AgenticSense | AI Agents & Intelligent Automation",
     description:
       "Build smarter workflows with AI agents, automation systems and intelligent business solutions from AgenticSense.",
-    images: ["https://www.agenticsense.ai/assets/images/agenticsense-og-image.jpg"],
+    images: ["https://www.agenticsense.co/assets/images/agenticsense-og-image.jpg"],
   },
   alternates: {
-    canonical: "https://www.agenticsense.ai/",
+    canonical: "https://www.agenticsense.co/",
   },
   icons: "/iconeee.png",
 };
@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="en" href="https://www.agenticsense.ai/" />
+        <link rel="alternate" hrefLang="en" href="https://www.agenticsense.co/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -65,8 +65,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "AgenticSense",
-              url: "https://www.agenticsense.ai/",
-              logo: "https://www.agenticsense.ai/assets/images/logo.png",
+              url: "https://www.agenticsense.co/",
+              logo: "https://www.agenticsense.co/assets/images/logo.png",
               description:
                 "AgenticSense builds intelligent AI agents, automation systems and AI-powered business solutions for modern businesses.",
               sameAs: [
@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "AgenticSense",
-              url: "https://www.agenticsense.ai/",
+              url: "https://www.agenticsense.co/",
             }),
           }}
         />

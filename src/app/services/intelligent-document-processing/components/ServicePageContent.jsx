@@ -333,7 +333,7 @@ export default function IntelligentDocumentProcessingContent() {
               {cta.cta2}
             </Link>
           </div>
-          <p className="text-xs text-slate-400">Dubai, UAE · Karachi, Pakistan · info@agenticsense.co · agenticsense.ai</p>
+          <p className="text-xs text-slate-400">Dubai, UAE · Karachi, Pakistan · info@agenticsense.co · agenticsense.co</p>
         </div>
       </section>
 

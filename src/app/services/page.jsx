@@ -22,7 +22,7 @@ export const metadata = {
     "Odoo AI integration", "Zoho AI", "Salesforce AI", "AI for finance",
     "AP automation", "intelligent automation", "custom AI agent development",
   ],
-  alternates: { canonical: "https://www.agenticsense.ai/services" },
+  alternates: { canonical: "https://www.agenticsense.co/services" },
 };
 
 export default function ServicesPage() {

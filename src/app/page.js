@@ -2,7 +2,7 @@ export const metadata = {
   title: "AgenticSense | AI Agents, Intelligent Automation & Business AI Solutions",
   description:
     "AgenticSense builds intelligent AI agents, automation systems and AI-powered business solutions to help companies improve productivity, reduce manual work and scale faster.",
-  alternates: { canonical: "https://www.agenticsense.ai/" },
+  alternates: { canonical: "https://www.agenticsense.co/" },
 };
 
 import React from 'react'
