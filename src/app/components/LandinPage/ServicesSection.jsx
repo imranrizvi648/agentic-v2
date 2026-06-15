@@ -69,7 +69,7 @@ export default function ServicesSection() {
             Our AI & Automation Services
           </h2>
           <p className="mt-4 sm:mt-6 text-slate-500 text-base sm:text-lg max-w-2xl leading-relaxed">
-            Nine production-grade services. One operating principle: agentic AI that ships to production and runs where the work happens. Finance-first. Enterprise-ready.
+          Production-ready automation built for scale. We design and deploy high-impact AI agents that integrate directly into your operational workflows, ensuring security, compliance, and measurable efficiency.
           </p>
         </div>
 
