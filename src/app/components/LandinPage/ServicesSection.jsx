@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -52,6 +52,13 @@ const servicesData = [
 ];
 
 export default function ServicesSection() {
+  // Mobile par clicked card track karne ke liye state
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleCardToggle = (id) => {
+    setActiveCard(activeCard === id ? null : id);
+  };
+
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
@@ -68,86 +75,112 @@ export default function ServicesSection() {
 
         {/* VIP Sharp Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {servicesData.map(({ id, title, description, tags, imageUrl }) => (
-            <div 
-              key={id}
-              className="group relative h-[380px] sm:h-[420px] md:h-[420px] overflow-hidden rounded-none border border-slate-200/80 bg-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(98,94,255,0.15)] hover:border-[#625eff]/60 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer"
-            >
-              
-              {/* ── Background Image Layer (Always Visible & Vibrant) ── */}
-              <div className="absolute inset-0 w-full h-full">
-                <Image 
-                  src={imageUrl} 
-                  alt={title}
-                  fill
-                  sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 25vw"
-                  className="object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out"
-                  priority={id === "ai"}
-                />
-              </div>
+          {servicesData.map(({ id, title, description, tags, imageUrl }) => {
+            const isSelected = activeCard === id;
 
-              {/* Dynamic Overlays: Default and Hover States */}
-              {/* Default Gradient: Niche se text readibility ke liye built-in blend */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-black/10 group-hover:opacity-0 transition-opacity duration-500" />
-              
-              {/* Hover Premium Overlay: Dynamic translucent frosted tint, no pitch-dark background */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-b from-[#0c0a21]/75 via-[#0c0a21]/85 to-[#050412]/95 backdrop-blur-[2px]" />
-              
-              {/* Top Linear Highlight Tracking */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#625eff] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-
-              {/* ── Resting State ── */}
-              <div className="absolute bottom-0 inset-x-0 p-6 z-10 opacity-100 group-hover:opacity-0 group-hover:translate-y-4 transition-all duration-500 ease-in-out">
-                <span className="inline-block w-8 h-[2px] bg-[#625eff] mb-3" />
-                <h3 className="text-xl font-bold text-white tracking-tight leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-                  {title}
-                </h3>
-              </div>
-
-              {/* ── VIP Hover State ── */}
-              <div className="absolute inset-0 z-20 flex flex-col justify-end p-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
+            return (
+              <div 
+                key={id}
+                onClick={() => handleCardToggle(id)}
+                className={`group relative h-[380px] sm:h-[420px] md:h-[420px] overflow-hidden rounded-none border bg-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer
+                  ${isSelected 
+                    ? "shadow-[0_20px_40px_rgba(98,94,255,0.15)] border-[#625eff]/60" 
+                    : "border-slate-200/80 hover:shadow-[0_20px_40px_rgba(98,94,255,0.15)] hover:border-[#625eff]/60"
+                  }`}
+              >
                 
-                <div className="w-full">
-                  <div className="text-[9px] uppercase tracking-widest text-[#8b88ff] font-bold mb-1 drop-shadow-sm">Service</div>
-                  
-                  <h3 className="text-xl font-extrabold tracking-tight text-white mb-2.5 drop-shadow-sm">
+                {/* ── Background Image Layer ── */}
+                <div className="absolute inset-0 w-full h-full">
+                  <Image 
+                    src={imageUrl} 
+                    alt={title}
+                    fill
+                    sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 25vw"
+                    className={`object-cover object-center transition-transform duration-1000 ease-out
+                      ${isSelected ? "scale-105" : "scale-100 group-hover:scale-105"}`}
+                    priority={id === "ai"}
+                  />
+                </div>
+
+                {/* Dynamic Overlays */}
+                {/* Default Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-black/10 transition-opacity duration-500
+                  ${isSelected ? "opacity-0" : "group-hover:opacity-0"}`} 
+                />
+                
+                {/* Hover/Active Premium Overlay */}
+                <div className={`absolute inset-0 transition-opacity duration-500 bg-gradient-to-b from-[#0c0a21]/75 via-[#0c0a21]/85 to-[#050412]/95 backdrop-blur-[2px]
+                  ${isSelected ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} 
+                />
+                
+                {/* Top Linear Highlight Tracking */}
+                <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#625eff] to-transparent transform transition-transform duration-500
+                  ${isSelected ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} 
+                />
+
+                {/* ── Resting State ── */}
+                <div className={`absolute bottom-0 inset-x-0 p-6 z-10 transition-all duration-500 ease-in-out
+                  ${isSelected 
+                    ? "opacity-0 translate-y-4" 
+                    : "opacity-100 group-hover:opacity-0 group-hover:translate-y-4"
+                  }`}
+                >
+                  <span className="inline-block w-8 h-[2px] bg-[#625eff] mb-3" />
+                  <h3 className="text-xl font-bold text-white tracking-tight leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
                     {title}
                   </h3>
+                </div>
+
+                {/* ── VIP Hover / Active State ── */}
+                <div className={`absolute inset-0 z-20 flex flex-col justify-end p-5 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]
+                  ${isSelected 
+                    ? "opacity-100 translate-y-0" 
+                    : "opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0"
+                  }`}
+                >
                   
-                  <p className="text-slate-200 text-[12px] sm:text-[13px] leading-relaxed mb-4 font-normal drop-shadow-sm">
-                    {description}
-                  </p>
-                  
-                  {/* Premium Translucent Links */}
-                  <div className="space-y-1.5 max-h-[190px] overflow-y-auto no-scrollbar">
-                    {tags.map((tag) => (
-                      <Link 
-                        key={tag.name} 
-                        href={tag.path}
-                        className="flex items-center justify-between p-2.5 rounded-none bg-white/[0.06] border border-white/10 hover:bg-[#625eff] hover:border-[#625eff] backdrop-blur-md transition-all duration-300 group/item"
-                      >
-                        <span className="text-[10px] font-semibold text-white uppercase tracking-wider truncate pr-2">
-                          {tag.name}
-                        </span>
-                        
-                        <svg 
-                          className="w-3.5 h-3.5 text-slate-300 group-hover/item:text-white transform group-hover/item:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor" 
-                          strokeWidth={2.5}
+                  <div className="w-full">
+              
+                    
+                    <h3 className="text-xl font-extrabold tracking-tight text-white mb-2.5 drop-shadow-sm">
+                      {title}
+                    </h3>
+                    
+                    <p className="text-slate-200 text-[12px] sm:text-[13px] leading-relaxed mb-4 font-normal drop-shadow-sm">
+                      {description}
+                    </p>
+                    
+                    {/* Premium Translucent Links */}
+                    <div className="space-y-1.5 max-h-[190px] overflow-y-auto no-scrollbar" onClick={(e) => e.stopPropagation()}>
+                      {tags.map((tag) => (
+                        <Link 
+                          key={tag.name} 
+                          href={tag.path}
+                          className="flex items-center justify-between p-2.5 rounded-none bg-white/[0.06] border border-white/10 hover:bg-[#625eff] hover:border-[#625eff] backdrop-blur-md transition-all duration-300 group/item"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </Link>
-                    ))}
+                          <span className="text-[10px] font-semibold text-white uppercase tracking-wider truncate pr-2">
+                            {tag.name}
+                          </span>
+                          
+                          <svg 
+                            className="w-3.5 h-3.5 text-slate-300 group-hover/item:text-white transform group-hover/item:translate-x-1 transition-transform" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor" 
+                            strokeWidth={2.5}
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
+
                 </div>
 
               </div>
-
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

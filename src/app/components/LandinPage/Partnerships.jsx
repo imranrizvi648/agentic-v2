@@ -7,30 +7,30 @@ const partnerData = {
   xpace: {
     name: 'XPACE Technologies',
     logo: '/xpace white logo.png',
-    sizeClass: 'max-h-12 md:max-h-16',
+    sizeClass: 'max-h-12 md:max-h-17',
     description: 'Delivering cutting-edge enterprise solutions across global markets through our strategic alliance.',
     clients: [
-      { name: 'European Union', industry: 'Governance', project: 'AI Based Psychological Assessment for digital well-being' },
-      { name: 'Applied Electronic', industry: 'Electronics', project: 'AI Based Product Quality Control via multi Agent' },
+      { name: 'European Union', industry: 'Governance', project: 'AI-Based Psychological Assessment for digital well-being' },
+      { name: 'Applied Electronics', industry: 'Electronics', project: 'AI-Based Product Quality Control via Multi-Agent' },
       { name: 'BEST Enterprises', industry: 'Enterprise', project: 'Confidential / Under NDA' },
-      { name: 'CCDC Matrics Research (PVT)', industry: 'Research', project: 'AI Based Medical Vitiligo Disease Diagnosis through computer vision and multi-agent' },
-      { name: 'Global Solution Service', industry: 'IT Services', project: 'AI Based Product Quality Control via multi Agent' },
-      { name: 'Central Software Company', industry: 'Software', project: 'AI Based FBR Invoices automation' },
+      { name: 'CCDC Metrics Research (PVT)', industry: 'Research', project: 'AI-Based Medical Vitiligo Disease Diagnosis through computer vision and Multi-Agent' },
+      { name: 'Global Solution Service', industry: 'IT Services', project: 'AI-Based Product Quality Control via Multi-Agent' },
+      { name: 'Central Software Company', industry: 'Software', project: 'AI-Based FBR Invoice Automation' },
     ],
   },
   fanuun: {
     name: 'FANUUN BCG',
     logo: '/logoFunun.png',
-    sizeClass: 'max-h-12 md:max-h-34',
+    sizeClass: 'max-h-28 md:max-h-36',
     description: 'Transforming businesses with innovative consulting and operational excellence.',
     clients: [
-      { name: 'Funuun Solutions', industry: 'AI & Data', project: 'AI Based Document Digitalization' },
+      { name: 'Funuun Solutions', industry: 'AI & Data', project: 'AI-Based Document Digitization' },
     ],
   },
   aithentic: {
     name: 'AITHENTIC',
     logo: '/Gemini_Generated_Image_qa7eg1qa7eg1qa7e-removebg-preview.png',
-    sizeClass: 'max-h-10 md:max-h-12',
+    sizeClass: 'max-h-8 md:max-h-13',
     isWhite: true,
     description: 'Driving authentic AI implementation and augmented outcomes for forward-thinking enterprises.',
     clients: [
@@ -44,7 +44,7 @@ const partnerData = {
   brb: {
     name: 'BRB GROUP',
     logo: '/BRB-LOGO.png',
-    sizeClass: 'max-h-12 md:max-h-18',
+    sizeClass: 'max-h-12 md:max-h-19',
     isWhite: false, // Keeping branding native
     description: 'Executing large-scale infrastructure and development projects with precision.',
     clients: [
@@ -107,10 +107,10 @@ function ClientCard({ client }) {
 
 // ── Main component ────────────────────────────────────────────────────────────
 export default function Partnerships() {
-  const [activePartner, setActivePartner] = useState('xpace');
+  const [activePartner, setActivePartner] = useState(null);
 
   const handlePartnerSelect = (id) => {
-    setActivePartner(id);
+    setActivePartner(activePartner === id ? null : id);
   };
 
   return (
@@ -126,14 +126,11 @@ export default function Partnerships() {
             Partnerships with<br className="hidden sm:block" /> Industry Leaders
           </h2>
 
-          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Explore the network of clients we have empowered through our strategic alliances.
-            Select a partner below to view collaborative projects.
-          </p>
+        
         </div>
 
         {/* ── Partner selector grid (Logo selector grid) ────────────────────────────────── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6 relative z-10">
+        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 relative z-10 ${activePartner ? 'mb-6' : 'mb-0'}`}>
           {PARTNERS.map(({ id }) => {
             const partner = partnerData[id];
             const active = activePartner === id;
@@ -141,7 +138,7 @@ export default function Partnerships() {
               <button
                 key={id}
                 onClick={() => handlePartnerSelect(id)}
-                className={`relative rounded p-4 h-28
+                className={`relative rounded p-4 h-32
                   flex flex-col items-center justify-center
                   cursor-pointer transition-all duration-300
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#152374]
@@ -173,47 +170,49 @@ export default function Partnerships() {
         </div>
 
         {/* ── Dynamic content panel (Clients detail panel) ────────────────────────── */}
-        <div className="relative bg-white/5 rounded border border-white/10
-          shadow-[0_4px_32px_rgba(0,0,0,0.2)] overflow-hidden min-h-[360px]">
+        {activePartner && (
+          <div className="relative bg-white/5 rounded border border-white/10
+            shadow-[0_4px_32px_rgba(0,0,0,0.2)] overflow-hidden min-h-[360px] transition-all duration-300">
 
-          {/* Decorative subtle background glow */}
-          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full
-            bg-white/5 blur-3xl pointer-events-none" />
+            {/* Decorative subtle background glow */}
+            <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full
+              bg-white/5 blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 p-8 sm:p-10">
+            <div className="relative z-10 p-8 sm:p-10">
 
-            {/* Partner clients view */}
-            <div>
-              {/* Panel header */}
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between
-                gap-4 mb-8 pb-6 border-b border-white/10">
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-px w-5 bg-white/50" />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
-                      Partner Clients
-                    </span>
+              {/* Partner clients view */}
+              <div>
+                {/* Panel header */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between
+                  gap-4 mb-8 pb-6 border-b border-b-white/10">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="h-px w-5 bg-white/50" />
+                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/70">
+                        Partner Clients
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">
+                      {partnerData[activePartner].name}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-white/70 max-w-lg leading-relaxed">
+                      {partnerData[activePartner].description}
+                    </p>
                   </div>
+                </div>
 
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">
-                    {partnerData[activePartner].name}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-white/70 max-w-lg leading-relaxed">
-                    {partnerData[activePartner].description}
-                  </p>
+                {/* Client cards grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {partnerData[activePartner].clients.map((client, i) => (
+                    <ClientCard key={i} client={client} />
+                  ))}
                 </div>
               </div>
 
-              {/* Client cards grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {partnerData[activePartner].clients.map((client, i) => (
-                  <ClientCard key={i} client={client} />
-                ))}
-              </div>
             </div>
-
           </div>
-        </div>
+        )}
 
       </div>
     </section>

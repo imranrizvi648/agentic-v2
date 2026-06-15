@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/Gemini_Generated_Image_2vling2vling2vli.png"
+          src="/industry.webp"
           alt="Background"
           fill
           priority

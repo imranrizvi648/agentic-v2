@@ -11,7 +11,7 @@ export default function HeroSection() {
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ 
           // Replace this path with your actual image file located in the public folder
-          backgroundImage: "url('/service.png')" 
+          backgroundImage: "url('/service.webp')" 
         }}
       />
 
