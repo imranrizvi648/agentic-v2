@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { CheckCircle2, ArrowRight, X } from "lucide-react";
 
 const FEATURES = [
   "Map your highest-value automation opportunity in one session",
@@ -14,6 +14,18 @@ export default function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  // Toast notification state
+  const [showToast, setShowToast] = useState(false);
+
+  // Form submit hone ke baad toast ko 5 seconds baad khud hi chupane ke liye
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +39,14 @@ export default function ContactUs() {
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Failed");
+      
       setSubmitted(true);
+      setShowToast(true); // Top-Right Toast show karein
+      setFormData({ name: "", email: "", message: "" }); // Form fields empty karein
+      
+      // Submit button ko 3 seconds baad wapas normal state me lane ke liye
+      setTimeout(() => setSubmitted(false), 3000);
+
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -43,6 +62,28 @@ export default function ContactUs() {
       {/* Background Glow Designs */}
       <div aria-hidden className="absolute -top-40 -right-30 w-[520px] h-[520px] rounded-full bg-radial-gradient from-[rgba(98,94,255,0.08)] to-transparent pointer-events-none" />
       <div aria-hidden className="absolute -bottom-24 -left-20 w-[380px] h-[380px] rounded-full bg-radial-gradient from-[rgba(26,25,77,0.05)] to-transparent pointer-events-none" />
+
+      {/* --- CUSTOM THEME TOAST NOTIFICATION (TOP RIGHT) --- */}
+      <div 
+        className={`fixed top-5 right-5 z-50 flex items-center gap-3 bg-[#1a194d] border border-[#625eff]/30 text-white px-5 py-4 rounded-[12px] shadow-[0_12px_40px_rgba(26,25,77,0.25)] transition-all duration-300 transform ${
+          showToast ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#625eff]/20 border border-[#625eff]">
+          <CheckCircle2 size={14} className="text-[#625eff]" />
+        </div>
+        <div className="flex flex-col">
+          <p className="text-sm font-bold tracking-wide">Thank You!</p>
+          <p className="text-xs text-gray-300">Your message has been sent successfully.</p>
+        </div>
+        <button 
+          onClick={() => setShowToast(false)}
+          className="ml-4 p-1 rounded-md hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+        >
+          <X size={14} />
+        </button>
+      </div>
+      {/* ---------------------------------------------------- */}
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 md:py-20">
         
@@ -103,9 +144,10 @@ export default function ContactUs() {
               
               <button 
                 type="submit" 
+                disabled={loading}
                 className={`flex items-center justify-center gap-2 w-full p-3.5 rounded-[10px] border-none text-white font-bold text-sm tracking-[0.03em] cursor-pointer transition-all duration-250 mt-1 hover:-translate-y-[1px] ${
                   submitted 
-                    ? "bg-gradient-to-br from-green-500 to-green-600 shadow-[0_8px_24px_rgba(34,197,94,0.3)]" 
+                    ? "bg-gradient-to-br from-[#1a194d] to-[#2d2b7a] shadow-[0_8px_24px_rgba(34,197,94,0.3)]" 
                     : "bg-gradient-to-br from-[#1a194d] to-[#2d2b7a] shadow-[0_8px_24px_rgba(26,25,77,0.22)]"
                 }`}
               >

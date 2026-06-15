@@ -109,7 +109,7 @@ export default function HeroSlider() {
             <div className="relative w-full" style={{ minHeight: 300 }}>
               <AnimatePresence mode="sync">
                 <motion.div key={`left-${current}`} variants={leftVariants} initial="initial" animate="animate" exit="exit" className="absolute inset-0 flex flex-col justify-center" style={{ willChange: "opacity, transform" }}>
-                  <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.1] tracking-tight whitespace-pre-line mb-4 sm:mb-6 ${slides[current].textColor}`}>
+                  <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.1] tracking-tight whitespace-pre-line mb-4 sm:mb-6 lg:mt-30 ${slides[current].textColor}`}>
                     {slides[current].title}
                   </h1>
                   <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-6 sm:mb-8 ${isDarkSlide ? "text-white/70" : "text-slate-500"}`}>

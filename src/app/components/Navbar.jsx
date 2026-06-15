@@ -588,15 +588,12 @@ export default function Navbar() {
   <button
     onMouseEnter={() => setIsButtonHovered(true)}
     onMouseLeave={() => setIsButtonHovered(false)}
-    className={`relative flex items-center gap-2 px-6 py-2.5 rounded-lg
+    className="relative flex items-center gap-2 px-6 py-2.5 rounded
       font-semibold text-[14px] transition-all duration-300 overflow-hidden
-      ${isButtonHovered
-        ? useDarkTheme
-          ? "bg-[#1a194d]/[0.08] text-[#1a194d] shadow-[inset_0_0_0_1px_rgba(26,25,77,0.15)]"
-          : "bg-white/[0.12] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.12)]"
-        : "bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white hover:shadow-lg hover:shadow-[#625eff]/20"
-      }`}
+      bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white 
+      hover:shadow-lg hover:shadow-[#625eff]/20 cursor-pointer"
   >
+    {/* Default State Corners & Line */}
     {!isButtonHovered && (
       <>
         <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
@@ -605,15 +602,17 @@ export default function Navbar() {
       </>
     )}
     
+    {/* Hover State: Premium Border Drawing Animation */}
     {isButtonHovered && (
       <div className="absolute inset-1 pointer-events-none">
-        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute top-0 left-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 h-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
-        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className={`absolute bottom-0 right-0 w-[1px] ${useDarkTheme ? "bg-[#1a194d]/50" : "bg-white/70"}`} />
+        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 h-[1px] bg-white/70" />
+        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 w-[1px] bg-white/70" />
+        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 h-[1px] bg-white/70" />
+        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 w-[1px] bg-white/70" />
       </div>
     )}
     
+    {/* Button Content */}
     <span className="relative z-10 flex items-center gap-2">
       Request Proposal
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

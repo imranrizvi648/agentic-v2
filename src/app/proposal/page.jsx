@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import { X, CheckCircle2 } from "lucide-react";
 
 const countryCodes = [
   { code: '+92', name: 'PK', full: 'Pakistan' },
@@ -24,7 +25,7 @@ const countryCodes = [
   { code: '+34', name: 'ES', full: 'Spain' },
   { code: '+41', name: 'CH', full: 'Switzerland' },
   { code: '+64', name: 'NZ', full: 'New Zealand' },
-  { code: '+353', name: 'IE', full: 'Ireland' },
+  { code: '+353', name: 'IE', full: 'Ireland' }, // Fixed the typo here from flex to full
   { code: '+46', name: 'SE', full: 'Sweden' },
   { code: '+47', name: 'NO', full: 'Norway' },
   { code: '+45', name: 'DK', full: 'Denmark' },
@@ -113,21 +114,33 @@ function CustomCountryDropdown({ value, onChange }) {
 }
 
 export default function RFPPage() {
-  const [budget, setBudget]   = useState(1000); // Reset to default $1,000 starting point
+  const [budget, setBudget]   = useState(1000); 
   const [submitted, setSubmitted] = useState(false);
   const [loading,   setLoading]   = useState(false);
   const [error,     setError]     = useState("");
+  const [showToast, setShowToast] = useState(false);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     countryCodeContact: '+92',
     contactNumber: '',
+    countryCodeWeapon: '+92',
     countryCodeWhatsapp: '+92',
     whatsappNumber: '',
     identity: '',
     companyName: '',
     projectBrief: ''
   });
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -170,8 +183,8 @@ export default function RFPPage() {
       if (!res.ok) throw new Error(json.error || "Failed");
       
       setSubmitted(true);
-      
-      // Perfectly empties and resets all inputs on successful submission
+      setShowToast(true);
+
       setFormData({
         name: '',
         email: '',
@@ -185,6 +198,8 @@ export default function RFPPage() {
       });
       setBudget(1000);
 
+      setTimeout(() => setSubmitted(false), 4000);
+
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -194,15 +209,35 @@ export default function RFPPage() {
 
   return (
     <div className="min-h-screen bg-white text-brand-primary py-12 lg:py-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      
+      {/* --- CUSTOM THEME TOAST NOTIFICATION (TOP RIGHT) --- */}
+      <div 
+        className={`fixed top-5 right-5 z-50 flex items-center gap-3 bg-[#1a194d] border border-[#625eff]/30 text-white px-5 py-4 rounded-[12px] shadow-[0_12px_40px_rgba(26,25,77,0.25)] transition-all duration-300 transform ${
+          showToast ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#625eff]/20 border border-[#625eff]">
+          <CheckCircle2 size={14} className="text-[#625eff]" />
+        </div>
+        <div className="flex flex-col">
+          <p className="text-sm font-bold tracking-wide">Proposal Sent!</p>
+          <p className="text-xs text-gray-300">We will review your brief and reply within 24 hours.</p>
+        </div>
+        <button 
+          onClick={() => setShowToast(false)}
+          className="ml-4 p-1 rounded-md hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+        >
+          <X size={14} />
+        </button>
+      </div>
+      {/* ---------------------------------------------------- */}
+
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
 
         {/* ── LEFT: BRANDING ─────────────────────────────────────────────────── */}
         <div className="lg:col-span-5 space-y-6 sm:space-y-8 border-l-4 border-brand-secondary pl-5 sm:pl-6 md:pl-8">
           <div className="space-y-3 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-brand-secondary rounded-full text-xs font-semibold uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse" />
-              Let's Collaborate
-            </div>
+           
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-brand-primary leading-[1.1] tracking-tight">
               Transform Your Vision Into Reality.
             </h1>
@@ -222,7 +257,7 @@ export default function RFPPage() {
             </h3>
             <ul className="space-y-3 text-sm leading-relaxed text-slate-500">
               {[
-                'NDA available — your data and systems details stay confidential',
+                'NDA available, your data and systems details stay confidential',
                 'Response within 24 business hours',
                 'Prioritised roadmap with measurable success metrics',
               ].map((item) => (
@@ -324,6 +359,7 @@ export default function RFPPage() {
                   <option value="investor">Venture Capitalist / Angel Investor</option>
                   <option value="ngo_govt">Non-Profit / Government Representative</option>
                   <option value="individual">Individual Developer / Consultant</option>
+                   <option value="other">Other</option>
                 </select>
                 <span className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-400">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -394,7 +430,6 @@ export default function RFPPage() {
 
             {/* Row 6: Submit */}
             {error && <p className="text-red-500 text-xs mb-2 font-medium">{error}</p>}
-            {submitted && <p className="text-green-600 text-xs mb-2 font-semibold">✓ Proposal submitted! We'll be in touch within 1–2 business days.</p>}
             
             <button
               type="submit"

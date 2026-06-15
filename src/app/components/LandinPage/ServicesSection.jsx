@@ -17,7 +17,7 @@ const servicesData = [
     id: "ai",
     title: "AI and Data Innovation",
     description:
-      "Enterprise AI solutions that automate finance and operational workflows through intelligent agents embedded directly inside SAP and Oracle systems with full traceability and auditability.",
+      "Enterprise AI agents embedded in SAP & Oracle. Automate your workflows with full auditability.",
     tags: [
       { name: "Enterprise ERP & CRM-Native AI Integration", path: "/services/erp-crm-ai-integration" },
       { name: "Agentic AI for the Office of Finance", path: "/services/agentic-ai-finance" },

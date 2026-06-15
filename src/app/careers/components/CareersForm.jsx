@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   User, Mail, Phone, MessageSquare, MapPin,
   Link2, Briefcase, FileText, ChevronRight, CheckCircle2,
-  ChevronLeft, Building2, Code2, Star, Upload
+  ChevronLeft, Building2, Code2, Star, Upload, X
 } from "lucide-react";
 
 // ── Steps definition ──────────────────────────────────────────────────────────
@@ -84,8 +84,7 @@ function TextInput({ icon, label, required, type = "text", placeholder, value, o
 }
 
 // ── Step components ───────────────────────────────────────────────────────────
-function Step1({ data, set }) {
-  const [cvName, setCvName] = useState("");
+function Step1({ data, set, cvName, setCvName }) {
   return (
     <div className="grid grid-cols-2 gap-4">
       <TextInput icon={User}    label="Full Name"           required placeholder="John Smith"             value={data.name}      onChange={e => set("name", e.target.value)} />
@@ -93,7 +92,6 @@ function Step1({ data, set }) {
       <TextInput icon={Phone}   label="Phone Number"        required placeholder="+1 555 000 0000"        value={data.phone}     onChange={e => set("phone", e.target.value)} />
       <TextInput icon={Phone}   label="WhatsApp Number"              placeholder="+1 555 000 0000"        value={data.whatsapp}  onChange={e => set("whatsapp", e.target.value)} color="#25d366" />
       <TextInput icon={MapPin}  label="Current Address"     required placeholder="City, Country"          value={data.address}   onChange={e => set("address", e.target.value)} />
-      {/* LinkedIn input field customized with Link2 icon */}
       <TextInput icon={Link2}   label="LinkedIn Profile URL"         placeholder="linkedin.com/in/you"    value={data.linkedin}  onChange={e => set("linkedin", e.target.value)} />
 
       {/* Portfolio — full width */}
@@ -115,7 +113,7 @@ function Step1({ data, set }) {
           </div>
           <label className="ml-auto inline-flex items-center gap-[6px] bg-[#1a194d] text-white font-bold text-[0.78rem] py-2 px-4 rounded-[6px] cursor-pointer shrink-0">
             <Upload size={13}/> Choose File
-            <input type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required
+            <input type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required={!data.cv}
               className="hidden"
               onChange={e => { setCvName(e.target.files[0]?.name || ""); set("cv", e.target.files[0]); }}
             />
@@ -292,6 +290,11 @@ function Step4({ data }) {
 export default function CareersForm() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [cvName, setCvName] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const [form, setForm] = useState({
     name: "", email: "", phone: "", whatsapp: "", address: "",
     linkedin: "", portfolio: "", cv: null,
@@ -301,14 +304,22 @@ export default function CareersForm() {
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }));
 
-  const [loading, setLoading] = useState(false);
-  const [error,   setError]   = useState("");
+  // Auto-hide toast timer
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (step < 4) { setStep(s => s + 1); return; }
 
-    loading(true); setError("");
+    setLoading(true); // Fixed the original broken code bug here
+    setError("");
     try {
       const fd = new FormData();
       fd.append("type", "careers");
@@ -321,7 +332,19 @@ export default function CareersForm() {
       const res = await fetch("/api/send-email", { method: "POST", body: fd });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Failed");
+      
       setSubmitted(true);
+      setShowToast(true); // Show top-right toast
+      
+      // Reset entire form state completely
+      setForm({
+        name: "", email: "", phone: "", whatsapp: "", address: "",
+        linkedin: "", portfolio: "", cv: null,
+        role: "", experience: "", company: "", notice: "", salary: "",
+        skills: [], motivation: "", project: "", source: "",
+      });
+      setCvName("");
+
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -332,17 +355,39 @@ export default function CareersForm() {
   if (submitted) {
     return (
       <section className="min-h-[60vh] flex items-center justify-center bg-white py-[60px] px-6">
+        {/* --- CUSTOM THEME TOAST NOTIFICATION (TOP RIGHT) --- */}
+        <div 
+          className={`fixed top-5 right-5 z-50 flex items-center gap-3 bg-[#1a194d] border border-[#625eff]/30 text-white px-5 py-4 rounded-[12px] shadow-[0_12px_40px_rgba(26,25,77,0.25)] transition-all duration-300 transform ${
+            showToast ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
+          }`}
+        >
+          <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#625eff]/20 border border-[#625eff]">
+            <CheckCircle2 size={14} className="text-[#625eff]" />
+          </div>
+          <div className="flex flex-col">
+            <p className="text-sm font-bold tracking-wide">Success!</p>
+            <p className="text-xs text-gray-300">Your application has been submitted.</p>
+          </div>
+          <button 
+            onClick={() => setShowToast(false)}
+            className="ml-4 p-1 rounded-md hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+          >
+            <X size={14} />
+          </button>
+        </div>
+        {/* ---------------------------------------------------- */}
+
         <div className="text-center max-w-[440px]">
           <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#625eff] to-[#a095ff] flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={36} className="text-white"/>
           </div>
           <h2 className="text-[1.75rem] font-extrabold text-[#1a194d] mb-3">Application Received!</h2>
           <p className="text-[#6b7280] leading-[1.65] text-[0.95rem]">
-            Thanks for applying, <strong>{form.name}</strong>. We review every application carefully. If your profile is a match, we'll be in touch within 1–2 business days.
+            Thanks for applying. We review every application carefully. If your profile is a match, we'll be in touch within 1–2 business days.
           </p>
-          <a href="/" className="inline-flex items-center gap-[6px] mt-7 bg-[#1a194d] text-white font-bold py-3 px-6 rounded-[8px] no-underline text-[0.85rem]">
-            Back to Home <ChevronRight size={14}/>
-          </a>
+          <button onClick={() => { setSubmitted(false); setStep(1); }} className="inline-flex items-center gap-[6px] mt-7 bg-[#1a194d] text-white font-bold py-3 px-6 rounded-[8px] no-underline text-[0.85rem] cursor-pointer">
+            Apply for Another Position <ChevronRight size={14}/>
+          </button>
         </div>
       </section>
     );
@@ -383,7 +428,7 @@ export default function CareersForm() {
             </div>
 
             <form onSubmit={handleSubmit}>
-              {step === 1 && <Step1 data={form} set={set}/>}
+              {step === 1 && <Step1 data={form} set={set} cvName={cvName} setCvName={setCvName}/>}
               {step === 2 && <Step2 data={form} set={set}/>}
               {step === 3 && <Step3 data={form} set={set}/>}
               {step === 4 && <Step4 data={form}/>}
@@ -401,7 +446,7 @@ export default function CareersForm() {
                 <button type="submit"
                   className={`flex-1 flex items-center justify-center gap-2 py-[14px] px-6 rounded-[8px] border-none text-white font-bold text-[0.88rem] cursor-pointer font-inherit transition-all duration-250 ${
                     step === 4 
-                      ? "bg-gradient-to-br from-[#22c55e] to-[#16a34a] shadow-[0_8px_24px_rgba(34,197,94,0.25)]" 
+                      ? "bg-gradient-to-br from-[#1a194d] to-[#2d2b7a]shadow-[0_8px_24px_rgba(34,197,94,0.25)]" 
                       : "bg-gradient-to-br from-[#1a194d] to-[#2d2b7a] shadow-[0_8px_24px_rgba(26,25,77,0.22)]"
                   }`}>
                   {step === 4 ? (loading ? <>Submitting…</> : <><CheckCircle2 size={16}/> Submit Application</>) : <>Next: {STEPS[step].label} <ChevronRight size={15}/></>}
