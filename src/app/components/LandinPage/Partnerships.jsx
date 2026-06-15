@@ -10,21 +10,21 @@ const partnerData = {
     sizeClass: 'max-h-12 md:max-h-16',
     description: 'Delivering cutting-edge enterprise solutions across global markets through our strategic alliance.',
     clients: [
-      { name: 'European Union', industry: 'Governance', project: 'Institutional Solutions & Frameworks' },
-      { name: 'Applied Electronic', industry: 'Electronics', project: 'Hardware & System Integration' },
-      { name: 'BEST Enterprises', industry: 'Enterprise', project: 'Business Automation Services' },
-      { name: 'CCDC Matrics Research (PVT)', industry: 'Research', project: 'Data Analytics & Matrices Systems' },
-      { name: 'Global Solution Service', industry: 'IT Services', project: 'Global Infrastructure Support' },
-      { name: 'Central Software Company', industry: 'Software', project: 'Core Software Architecture Development' },
+      { name: 'European Union', industry: 'Governance', project: 'AI Based Psychological Assessment for digital well-being' },
+      { name: 'Applied Electronic', industry: 'Electronics', project: 'AI Based Product Quality Control via multi Agent' },
+      { name: 'BEST Enterprises', industry: 'Enterprise', project: 'Confidential / Under NDA' },
+      { name: 'CCDC Matrics Research (PVT)', industry: 'Research', project: 'AI Based Medical Vitiligo Disease Diagnosis through computer vision and multi-agent' },
+      { name: 'Global Solution Service', industry: 'IT Services', project: 'AI Based Product Quality Control via multi Agent' },
+      { name: 'Central Software Company', industry: 'Software', project: 'AI Based FBR Invoices automation' },
     ],
   },
   fanuun: {
     name: 'FANUUN BCG',
     logo: '/logoFunun.png',
-    sizeClass: 'max-h-12 md:max-h-41',
+    sizeClass: 'max-h-12 md:max-h-34',
     description: 'Transforming businesses with innovative consulting and operational excellence.',
     clients: [
-      { name: 'AI Based Document Digitalization', industry: 'AI & Data', project: 'Automated Document Processing & Scanning' },
+      { name: 'Funuun Solutions', industry: 'AI & Data', project: 'AI Based Document Digitalization' },
     ],
   },
   aithentic: {
@@ -45,17 +45,18 @@ const partnerData = {
     name: 'BRB GROUP',
     logo: '/BRB-LOGO.png',
     sizeClass: 'max-h-12 md:max-h-18',
+    isWhite: false, // Keeping branding native
     description: 'Executing large-scale infrastructure and development projects with precision.',
     clients: [
-      { name: 'Document Management', industry: 'Corporate', project: 'Enterprise Document Archiving System' },
-      { name: 'AI HR System', industry: 'Human Resources', project: 'Automated Talent & Payroll Management' },
-      { name: 'AI IT Management System', industry: 'Information Technology', project: 'Predictive IT Infra & Monitoring' },
-      { name: 'AI Marketing System', industry: 'Marketing', project: 'Smart Campaign Automation & Analytics' },
+      { name: 'Document Management', industry: 'Corporate', project: 'Enterprise Document Archiving & Management System' },
+      { name: 'AI HR System', industry: 'Human Resources', project: 'Automated Talent Acquisition & HR System' },
+      { name: 'AI IT Management System', industry: 'Information Technology', project: 'Intelligent Infrastructure & IT Management System' },
+      { name: 'AI Marketing System', industry: 'Marketing', project: 'Smart Campaign Automation & AI Marketing Analytics' },
     ],
   },
 };
 
-// ── PARTNERS Array (جو غائب تھا، اسے یہاں واپس ایڈ کر دیا ہے) ──────────────────────
+// ── PARTNERS Array ──────────────────────────────────────────────────────────
 const PARTNERS = [
   { id: 'xpace' },
   { id: 'fanuun' },
@@ -86,8 +87,10 @@ function ClientCard({ client }) {
       </div>
 
       {/* Content */}
-      <div className="min-w-0">
-        <h4 className="text-sm font-bold text-white leading-snug">{client.name}</h4>
+      <div className="min-w-0 flex-1">
+        <h4 className="text-sm font-bold text-white leading-snug truncate" title={client.name}>
+          {client.name}
+        </h4>
         <span className="inline-block mt-1.5 text-[10px] font-bold uppercase tracking-wider
           text-white/90 bg-white/10 border border-white/20
           px-2 py-0.5 rounded-full">
@@ -104,17 +107,15 @@ function ClientCard({ client }) {
 
 // ── Main component ────────────────────────────────────────────────────────────
 export default function Partnerships() {
-  // 1. By default pehla partner 'xpace' select rahega taaki empty screen na dikhe
   const [activePartner, setActivePartner] = useState('xpace');
 
-  // 2. Click karne par sirf active partner change hoga, toggle (close) nahi hoga
   const handlePartnerSelect = (id) => {
     setActivePartner(id);
   };
 
   return (
     <section 
-      className="relative overflow-hidden bg-gradient-to-r from-[#0d133b] via-[#152374] to-[#0047d4] py-20 text-white font-sans"
+      className="relative overflow-hidden bg-[#1a194d] py-20 text-white font-sans"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -181,7 +182,7 @@ export default function Partnerships() {
 
           <div className="relative z-10 p-8 sm:p-10">
 
-            {/* Partner clients view - Hamesha koi na koi partner select rahega */}
+            {/* Partner clients view */}
             <div>
               {/* Panel header */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between
@@ -201,19 +202,6 @@ export default function Partnerships() {
                     {partnerData[activePartner].description}
                   </p>
                 </div>
-
-                {/* Project count badge */}
-                {/* <div className="flex-shrink-0 self-start sm:self-center
-                  bg-white/10 border border-white/20
-                  rounded-xl px-5 py-3 text-center">
-                  <span className="block text-2xl font-extrabold text-white leading-none">
-                    {partnerData[activePartner].clients.length}
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest
-                    text-white/70 mt-0.5 block">
-                    Projects
-                  </span>
-                </div> */}
               </div>
 
               {/* Client cards grid */}
