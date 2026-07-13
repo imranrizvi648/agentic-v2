@@ -7,34 +7,34 @@ export const TEAM = [
     "id": 1, 
     "name": "Waqas Ali", 
     "role": "Chief Executive Officer (CEO)", 
-    "department": "Leadership", 
+
     "description": "Drives overall company vision, strategy, and growth. Responsible for stakeholder relations, business development, and long-term value creation.",
     "bio": "Visionary leader driving AgenticSense's mission to redefine enterprise AI. 15+ years building technology companies across the Gulf and South Asia.", 
     "image": "/team-images/Waqas.jpeg", 
     "tags": ["STRATEGY", "BUSINESS LEADERSHIP", "ENTERPRISE AI", "M&A", "GOVERNANCE", "INNOVATION"], 
-    "social": { "linkedin": "https://www.linkedin.com/in/waqas-ali-cais-cds-fcma-adma-82492538/", "github": "#" } 
+    "social": { "linkedin": "https://www.linkedin.com/in/waqas-ali-cais-cds-fcma-adma-82492538/" } 
   },
   { 
     "id": 2, 
     "name": "Raheel Ahmed", 
     "role": "Chief Technology Officer (CTO)", 
-    "department": "Leadership", 
+ 
     "description": "Leads technology vision, architecture, and innovation. Oversees product engineering, R&D, and emerging technologies.",
     "bio": "Architect of our multi-agent AI platform. Previously led engineering at two unicorn-stage SaaS companies. Expert in LangGraph and distributed systems.", 
     "image": "/team-images/Raheel.jpeg", 
     "tags": ["SYSTEM ARCHITECTURE", "AI/ML", "CLOUD", "DEVOPS", "MLOPS", "INFORMATION SECURITY"], 
-    "social": { "linkedin": "https://www.linkedin.com/in/muhammadraheel42/", "github": "#" } 
+    "social": { "linkedin": "https://www.linkedin.com/in/muhammadraheel42/" } 
   },
   { 
     "id": 3, 
     "name": "Syed Muzammil", 
     "role": "Chief Operating Officer (COO)", 
-    "department": "Leadership", 
+
     "description": "Ensures operational excellence and delivery at scale. Manages projects, processes, and cross-functional execution.",
     "bio": "Bridges the gap between client business needs and technical delivery. Expert in agile execution, sprint planning, and managing enterprise automation workflows.", 
     "image": "/team-images/Muzammil.jpeg", 
     "tags": ["OPERATIONS MANAGEMENT", "AGILE", "SCRUM", "JIRA", "PROCESS OPTIMIZATION", "RISK MANAGEMENT"], 
-    "social": { "linkedin": "https://www.linkedin.com/in/syed-muzammil1/?skipRedirect=true", "github": "#" } 
+    "social": { "linkedin": "https://www.linkedin.com/in/syed-muzammil1/?skipRedirect=true", } 
   },
   
 ];

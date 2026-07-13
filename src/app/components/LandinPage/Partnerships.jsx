@@ -45,13 +45,26 @@ const partnerData = {
     name: 'BRB GROUP',
     logo: '/BRB-LOGO.png',
     sizeClass: 'max-h-12 md:max-h-19',
-    isWhite: false, // Keeping branding native
+    isWhite: false,
     description: 'Executing large-scale infrastructure and development projects with precision.',
     clients: [
       { name: 'Document Management', industry: 'Corporate', project: 'Enterprise Document Archiving & Management System' },
       { name: 'AI HR System', industry: 'Human Resources', project: 'Automated Talent Acquisition & HR System' },
       { name: 'AI IT Management System', industry: 'Information Technology', project: 'Intelligent Infrastructure & IT Management System' },
       { name: 'AI Marketing System', industry: 'Marketing', project: 'Smart Campaign Automation & AI Marketing Analytics' },
+    ],
+  },
+  medics: {
+    name: 'MEDICS LABORATORIES',
+    logo: '/medics.png',
+    sizeClass: 'max-h-12 md:max-h-[156px]',
+    isWhite: false, 
+    description: 'Transforming traditional botanical wisdom into modern certified wellness products through DRAP-approved and cGMP manufacturing standards.',
+    clients: [
+      { name: 'Digestive Wellness (Digas)', industry: 'Healthcare', project: 'AI-Driven Batch Consistency & Quality Control Management' },
+      { name: 'Respiratory Care (Ivy Syrup)', industry: 'Pharmaceutical', project: 'Smart Supply Chain Tracking & Automated Inventory Logs' },
+      { name: 'Women Care (FC Forte)', industry: 'Wellness', project: 'Automated Recipe Formulation & Raw Botanical Ingredient Matrix' },
+      { name: 'Pediatric Range (Epigro)', industry: 'Child Care', project: 'Regulatory Compliance Automation & DRAP Documentation Pipeline' },
     ],
   },
 };
@@ -62,6 +75,7 @@ const PARTNERS = [
   { id: 'fanuun' },
   { id: 'aithentic' },
   { id: 'brb' },
+  { id: 'medics' },
 ];
 
 // ── Initials avatar helper ────────────────────────────────────────────────────
@@ -69,7 +83,7 @@ function initials(name) {
   return name.split(' ').slice(0, 2).map(w => w[0]).join('');
 }
 
-// ── Client card (Dark theme ke mutabik card design) ─────────────────────────────────
+// ── Client card ───────────────────────────────────────────────────────────────
 function ClientCard({ client }) {
   return (
     <div
@@ -77,7 +91,6 @@ function ClientCard({ client }) {
         hover:border-white/30 hover:bg-white/10 hover:shadow-[0_8px_32px_rgba(255,255,255,0.05)]
         transition-all duration-300"
     >
-      {/* Initials avatar */}
       <div className="flex-shrink-0 w-11 h-11 rounded-full
         bg-white/10 border border-white/20
         flex items-center justify-center">
@@ -86,7 +99,6 @@ function ClientCard({ client }) {
         </span>
       </div>
 
-      {/* Content */}
       <div className="min-w-0 flex-1">
         <h4 className="text-sm font-bold text-white leading-snug truncate" title={client.name}>
           {client.name}
@@ -106,17 +118,19 @@ function ClientCard({ client }) {
 }
 
 // ── Main component ────────────────────────────────────────────────────────────
+// ── Main component ────────────────────────────────────────────────────────────
 export default function Partnerships() {
   const [activePartner, setActivePartner] = useState(null);
 
   const handlePartnerSelect = (id) => {
+    // Agar 'medics' par click ho toh panel open nahi hoga, function yahin ruk jayega
+    if (id === 'medics') return;
+
     setActivePartner(activePartner === id ? null : id);
   };
 
   return (
-    <section 
-      className="relative overflow-hidden bg-[#1a194d] py-20 text-white font-sans"
-    >
+    <section className="relative overflow-hidden bg-[#1a194d] py-20 text-white font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* ── Section header ─────────────────────────────────────────────────── */}
@@ -125,38 +139,43 @@ export default function Partnerships() {
             font-extrabold text-white tracking-tight leading-[1.1] mb-4">
             Partnerships with<br className="hidden sm:block" /> Industry Leaders
           </h2>
-
-        
         </div>
 
-        {/* ── Partner selector grid (Logo selector grid) ────────────────────────────────── */}
-        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 relative z-10 ${activePartner ? 'mb-6' : 'mb-0'}`}>
+        {/* ── Partner selector grid ────────────────── */}
+        <div className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10 ${activePartner ? 'mb-6' : 'mb-0'}`}>
           {PARTNERS.map(({ id }) => {
             const partner = partnerData[id];
             const active = activePartner === id;
+            const isMedics = id === 'medics'; // Check if this is medics
+
             return (
               <button
                 key={id}
                 onClick={() => handlePartnerSelect(id)}
+                // Disabled attribute un-clickable bana dega keyboard aur screen readers ke liye bhi
+                disabled={isMedics} 
                 className={`relative rounded p-4 h-32
                   flex flex-col items-center justify-center
-                  cursor-pointer transition-all duration-300
-                  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#152374]
+                  transition-all duration-300
+                  ${isMedics 
+                    ? 'cursor-default opacity-90 bg-white/5 border border-white/10' // Medics ke liye normal look, no hover/pointer
+                    : 'cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#152374]'
+                  }
                   ${active
                     ? 'scale-[1.04] bg-white/15 shadow-[0_8px_32px_rgba(255,255,255,0.1)] border-[1.5px] border-white'
-                    : 'bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
+                    : !isMedics && 'bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
                   }`}
               >
                 <img 
                   src={partner.logo} 
                   alt={`${partner.name} logo`}
                   loading="lazy"
-                  className={`w-auto object-contain transition-transform duration-300 max-w-[140px] md:max-w-[200px] ${partner.sizeClass} ${
+                  className={`w-auto object-contain transition-transform duration-300 max-w-[120px] md:max-w-[160px] ${partner.sizeClass} ${
                     partner.isWhite ? 'brightness-0 invert' : ''
                   }`}
                 />
 
-                {/* Caret pointer pointing down to the panel */}
+                {/* Caret pointer (Sirf active partner ke liye) */}
                 {active && (
                   <span className="absolute -bottom-[15px] left-1/2 -translate-x-1/2
                     w-0 h-0
@@ -169,18 +188,15 @@ export default function Partnerships() {
           })}
         </div>
 
-        {/* ── Dynamic content panel (Clients detail panel) ────────────────────────── */}
-        {activePartner && (
+        {/* ── Dynamic content panel (Sirf tabhi dikhega jab activePartner ho aur vo medics na ho) ────────────────────────────────────────── */}
+        {activePartner && activePartner !== 'medics' && (
           <div className="relative bg-white/5 rounded border border-white/10
             shadow-[0_4px_32px_rgba(0,0,0,0.2)] overflow-hidden min-h-[360px] transition-all duration-300">
 
-            {/* Decorative subtle background glow */}
             <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full
               bg-white/5 blur-3xl pointer-events-none" />
 
             <div className="relative z-10 p-8 sm:p-10">
-
-              {/* Partner clients view */}
               <div>
                 {/* Panel header */}
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between
@@ -209,7 +225,6 @@ export default function Partnerships() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         )}

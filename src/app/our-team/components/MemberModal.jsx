@@ -27,10 +27,7 @@ export default function MemberModal({ member, onClose }) {
             <img src={member.image} alt={member.name} className="absolute inset-0 w-full h-full object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a194d]/60 to-transparent" />
             <div className="absolute bottom-4 left-4">
-              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-white/90 ${DEPT_TEXT[member.department]}`}>
-                <span className={`w-1.5 h-1.5 rounded-full ${DEPT_ACCENT[member.department]}`} />
-                {member.department}
-              </span>
+             
             </div>
           </div>
           <div className="p-6 sm:p-8 flex flex-col justify-between">
