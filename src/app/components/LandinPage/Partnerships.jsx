@@ -7,7 +7,7 @@ const partnerData = {
   xpace: {
     name: 'XPACE Technologies',
     logo: '/xpace white logo.png',
-    sizeClass: 'max-h-12 md:max-h-17',
+    sizeClass: 'max-h-12 md:max-h-16',
     description: 'Delivering cutting-edge enterprise solutions across global markets through our strategic alliance.',
     clients: [
       { name: 'European Union', industry: 'Governance', project: 'AI-Based Psychological Assessment for digital well-being' },
@@ -21,7 +21,7 @@ const partnerData = {
   fanuun: {
     name: 'FANUUN BCG',
     logo: '/logoFunun.png',
-    sizeClass: 'max-h-28 md:max-h-36',
+    sizeClass: 'max-h-24 md:max-h-32', // Slightly adjusted for better alignment inside h-32 button
     description: 'Transforming businesses with innovative consulting and operational excellence.',
     clients: [
       { name: 'Funuun Solutions', industry: 'AI & Data', project: 'AI-Based Document Digitization' },
@@ -30,7 +30,7 @@ const partnerData = {
   aithentic: {
     name: 'AITHENTIC',
     logo: '/Gemini_Generated_Image_qa7eg1qa7eg1qa7e-removebg-preview.png',
-    sizeClass: 'max-h-8 md:max-h-13',
+    sizeClass: 'max-h-8 md:max-h-23',
     isWhite: true,
     description: 'Driving authentic AI implementation and augmented outcomes for forward-thinking enterprises.',
     clients: [
@@ -44,7 +44,7 @@ const partnerData = {
   brb: {
     name: 'BRB GROUP',
     logo: '/BRB-LOGO.png',
-    sizeClass: 'max-h-12 md:max-h-19',
+    sizeClass: 'max-h-12 md:max-h-17',
     isWhite: false,
     description: 'Executing large-scale infrastructure and development projects with precision.',
     clients: [
@@ -56,8 +56,9 @@ const partnerData = {
   },
   medics: {
     name: 'MEDICS LABORATORIES',
-    logo: '/medics.png',
-    sizeClass: 'max-h-12 md:max-h-[156px]',
+    logo: '/medicswhitelogo.webp',
+    // Iski max height ko button container ke maximum available height par map kiya hai (bhari look dene k liye)
+    sizeClass: 'h-16 md:h-23 w-auto object-contain', 
     isWhite: false, 
     description: 'Transforming traditional botanical wisdom into modern certified wellness products through DRAP-approved and cGMP manufacturing standards.',
     clients: [
@@ -117,15 +118,11 @@ function ClientCard({ client }) {
   );
 }
 
-// ── Main component ────────────────────────────────────────────────────────────
-// ── Main component ────────────────────────────────────────────────────────────
 export default function Partnerships() {
   const [activePartner, setActivePartner] = useState(null);
 
   const handlePartnerSelect = (id) => {
-    // Agar 'medics' par click ho toh panel open nahi hoga, function yahin ruk jayega
     if (id === 'medics') return;
-
     setActivePartner(activePartner === id ? null : id);
   };
 
@@ -146,19 +143,18 @@ export default function Partnerships() {
           {PARTNERS.map(({ id }) => {
             const partner = partnerData[id];
             const active = activePartner === id;
-            const isMedics = id === 'medics'; // Check if this is medics
+            const isMedics = id === 'medics';
 
             return (
               <button
                 key={id}
                 onClick={() => handlePartnerSelect(id)}
-                // Disabled attribute un-clickable bana dega keyboard aur screen readers ke liye bhi
                 disabled={isMedics} 
-                className={`relative rounded p-4 h-32
+                className={`relative rounded p-2 h-32
                   flex flex-col items-center justify-center
                   transition-all duration-300
                   ${isMedics 
-                    ? 'cursor-default opacity-90 bg-white/5 border border-white/10' // Medics ke liye normal look, no hover/pointer
+                    ? 'cursor-default opacity-100 bg-white/5 border border-white/10' 
                     : 'cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#152374]'
                   }
                   ${active
@@ -170,9 +166,15 @@ export default function Partnerships() {
                   src={partner.logo} 
                   alt={`${partner.name} logo`}
                   loading="lazy"
-                  className={`w-auto object-contain transition-transform duration-300 max-w-[120px] md:max-w-[160px] ${partner.sizeClass} ${
-                    partner.isWhite ? 'brightness-0 invert' : ''
-                  }`}
+                  /* 
+                    Yahan humne logic lagayi hai: 
+                    Agar medics hai toh wrapper ki max-width ko bypass kar k full breadth pe display karega.
+                  */
+                  className={`object-contain transition-transform duration-300 ${partner.sizeClass} ${
+                    isMedics 
+                      ? 'max-w-[150px] md:max-w-[200px]' 
+                      : 'w-auto max-w-[110px] md:max-w-[140px]'
+                  } ${partner.isWhite ? 'brightness-0 invert' : ''}`}
                 />
 
                 {/* Caret pointer (Sirf active partner ke liye) */}
@@ -188,7 +190,7 @@ export default function Partnerships() {
           })}
         </div>
 
-        {/* ── Dynamic content panel (Sirf tabhi dikhega jab activePartner ho aur vo medics na ho) ────────────────────────────────────────── */}
+        {/* ── Dynamic content panel ────────────────────────────────────────── */}
         {activePartner && activePartner !== 'medics' && (
           <div className="relative bg-white/5 rounded border border-white/10
             shadow-[0_4px_32px_rgba(0,0,0,0.2)] overflow-hidden min-h-[360px] transition-all duration-300">
