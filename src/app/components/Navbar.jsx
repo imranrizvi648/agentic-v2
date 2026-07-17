@@ -14,7 +14,6 @@ const servicesMegaMenu = [
       {
         title: "Agentic AI for the Office of Finance",
         href: "/services/agentic-ai-finance",
-     
         desc: "AI agents that own AP, AR, GL and month-end close — end to end, natively inside your ERP.",
       },
       {
@@ -242,9 +241,102 @@ const industriesMegaMenu = [
   },
 ];
 
+// ── Products Mega Menu ────────────────────────────────────────────────────────
+const productsMegaMenu = [
+  {
+    id: "leadsense",
+    label: "Leadsense",
+    href: "/our-product/leadsense",
+    subServices: [
+      {
+        title: "AI Email Auto-Responder",
+        href: "/our-product/leadsense",
+        desc: "First-priority AI that drafts context-aware replies within seconds of inbound queries.",
+      },
+      {
+        title: "CRM Sync & Lead Enrichment",
+        href: "/our-product/leadsense",
+        desc: "Verified leads pushed straight to HubSpot, Salesforce, or your CRM with enriched context.",
+      },
+    ],
+    spotlight: {
+      title: "How Leadsense hits 2-minute reply times for enterprise sales.",
+      cta: "Explore Leadsense",
+      img: "/leadSensedashboard.webp",
+    },
+  },
+  {
+    id: "liaison",
+    label: "Liaison",
+    href: "/our-product/liaison",
+    subServices: [
+      {
+        title: "Enterprise AI Chatbot",
+        href: "/our-product/liaison",
+        desc: "Multi-tenant conversational hub across web, WhatsApp, and social channels.",
+      },
+      {
+        title: "Instant Knowledge Lookup",
+        href: "/our-product/liaison",
+        desc: "RAG-powered answers grounded in your documentation with clean handoff to human agents.",
+      },
+    ],
+    spotlight: {
+      title: "Resolve 85% of inbound inquiries without touching a human queue.",
+      cta: "Explore Liaison",
+      img: "/liaisondashboard.webp",
+    },
+  },
+  {
+    id: "linkedinagent",
+    label: "Linkedinagent",
+    href: "/our-product/linkedinagent",
+    subServices: [
+      {
+        title: "LinkedIn Outreach Agent",
+        href: "/our-product/linkedinagent",
+        desc: "Scrapes target profiles and sends personalized connection requests at scale, safely.",
+      },
+      {
+        title: "Auto-Response & Follow-ups",
+        href: "/our-product/linkedinagent",
+        desc: "Warm conversational touchpoints inside LinkedIn chat with account-safety throttles.",
+      },
+    ],
+    spotlight: {
+      title: "38% average connection accept rate across our pilot customers.",
+      cta: "Explore Linkedinagent",
+      img: "/linkedinagent-spotlight.png",
+    },
+  },
+  {
+    id: "invoicesense",
+    label: "Invoicesense",
+    href: "/our-product/invoicesense",
+    subServices: [
+      {
+        title: "FBR-Compliant Billing Agent",
+        href: "/our-product/invoicesense",
+        desc: "OCR-driven invoice processing with automatic FBR filing, QR verification and STRN validation.",
+      },
+      {
+        title: "Bank Reconciliation & Follow-ups",
+        href: "/our-product/invoicesense",
+        desc: "Auto-matched transactions and polite payment reminders via WhatsApp and email.",
+      },
+    ],
+    spotlight: {
+      title: "100% FBR regulatory compliance with zero manual filing overhead.",
+      cta: "Explore Invoicesense",
+      img: "/invoicesensedashboard.webp",
+    },
+  },
+];
+
 const navItems = [
   { name: "Home",       href: "/",          dropdown: false },
   { name: "Services",   href: "/services",  dropdown: true  },
+  { name: "Product",    href: "/our-product", dropdown: true  },
   { name: "Industries", href: "/industries", dropdown: true  },
   { name: "Blog",       href: "/blog",       dropdown: false },
   { name: "About",      href: "/about",      dropdown: false },
@@ -261,14 +353,16 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Mobile Dropdowns states
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileServicesOpen,   setMobileServicesOpen]   = useState(false);
+  const [mobileProductsOpen,   setMobileProductsOpen]   = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
 
   const [activeServicesTab,   setActiveServicesTab]   = useState(servicesMegaMenu[0].id);
+  const [activeProductsTab,   setActiveProductsTab]   = useState(productsMegaMenu[0].id);
   const [activeIndustriesTab, setActiveIndustriesTab] = useState(industriesMegaMenu[0].id);
 
   // Updated logic: Contact removed, Blog added for permanent light header view
-  const isLightPage = pathname === "/proposal" || pathname.startsWith("/blog");
+  const isLightPage = pathname === "/proposal" || pathname.startsWith("/blog") || pathname === "/our-product/leadsense" || pathname === "/our-product/liaison" || pathname === "/our-product/linkedinagent" || pathname === "/our-product/invoicesense";
   const useDarkTheme = isScrolled || isLightPage;
 
   const getActiveTab = () => {
@@ -294,6 +388,7 @@ export default function Navbar() {
   }, []);
 
   const currentServicesData   = servicesMegaMenu.find((i) => i.id === activeServicesTab)   || servicesMegaMenu[0];
+  const currentProductsData   = productsMegaMenu.find((i) => i.id === activeProductsTab)   || productsMegaMenu[0];
   const currentIndustriesData = industriesMegaMenu.find((i) => i.id === activeIndustriesTab) || industriesMegaMenu[0];
 
   return (
@@ -490,6 +585,96 @@ export default function Navbar() {
                   </AnimatePresence>
                 )}
 
+                {/* ── MEGA MENU: PRODUCT ───────────────────────────────────── */}
+                {item.name === "Product" && item.dropdown && (
+                  <AnimatePresence>
+                    {hoveredTab === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.22, ease: "easeInOut" }}
+                        className={`absolute top-full left-0 right-0 mx-auto mt-4 w-[90vw] max-w-[1200px] min-h-[410px] flex rounded overflow-hidden border shadow-2xl z-50 backdrop-blur-2xl
+                          ${useDarkTheme
+                            ? "bg-white border-slate-200 text-slate-800"
+                            : "bg-[#0b0a14]/95 border-white/10 text-white"
+                          }`}
+                      >
+                        {/* LEFT: Product tabs */}
+                        <div className={`w-[25%] flex flex-col p-5 gap-1 border-r ${useDarkTheme ? "bg-slate-50/50 border-slate-100" : "bg-white/[0.02] border-white/5"}`}>
+                          {productsMegaMenu.map((menuItem) => (
+                            <button
+                              key={menuItem.id}
+                              onMouseEnter={() => setActiveProductsTab(menuItem.id)}
+                              onClick={() => setActiveProductsTab(menuItem.id)}
+                              className={`flex items-center justify-between px-4 py-3 text-left font-semibold text-[13.5px] rounded-lg transition-all duration-200
+                                ${activeProductsTab === menuItem.id
+                                  ? useDarkTheme
+                                    ? "bg-[#625eff]/10 text-[#625eff]"
+                                    : "bg-white/10 text-white"
+                                  : "hover:bg-slate-100/50 dark:hover:bg-white/5 opacity-80"
+                                }`}
+                            >
+                              <span>{menuItem.label}</span>
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                                className={`transition-transform duration-200 ${activeProductsTab === menuItem.id ? "translate-x-1" : ""}`}>
+                                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* CENTER: Product details */}
+                        <div className="w-[50%] p-8 grid grid-cols-2 gap-x-8 gap-y-6 items-start content-start">
+                          {currentProductsData.subServices.map((sub, idx) => (
+                            <Link
+                              key={idx}
+                              href={sub.href}
+                              onClick={() => setHoveredTab(null)}
+                              className="group/item flex flex-col gap-1.5 cursor-pointer"
+                            >
+                              <h4 className="font-bold text-[14.5px] flex items-center gap-2 group-hover/item:text-[#625eff] transition-colors">
+                                {sub.title}
+                              </h4>
+                              <p className={`text-[12.5px] leading-relaxed ${useDarkTheme ? "text-slate-500" : "text-slate-400"}`}>
+                                {sub.desc}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* RIGHT: Product Spotlight */}
+                        <div className={`w-[25%] p-8 flex flex-col justify-between border-l ${useDarkTheme ? "bg-slate-50/40 border-slate-100" : "bg-white/[0.01] border-white/5"}`}>
+                          <div className="flex flex-col justify-start">
+                            <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Spotlight</span>
+                            <div className="mt-3 relative rounded-lg overflow-hidden border border-white/5 aspect-[16/10] bg-gradient-to-br from-[#625eff]/20 to-purple-600/20 flex items-center justify-center shadow-sm max-h-[140px]">
+                              {currentProductsData.spotlight.img ? (
+                                <img src={currentProductsData.spotlight.img} alt="Spotlight" className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xs text-slate-500">Banner Asset</span>
+                              )}
+                            </div>
+                            <h5 className="mt-4 font-bold text-[13px] leading-snug tracking-normal">
+                              {currentProductsData.spotlight.title}
+                            </h5>
+                          </div>
+                          <Link
+                            href={currentProductsData.href}
+                            onClick={() => setHoveredTab(null)}
+                            className="mt-4 flex items-center gap-1 text-[12px] font-semibold text-[#625eff] hover:underline pt-1"
+                          >
+                            {currentProductsData.spotlight.cta}
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                              <line x1="5" y1="12" x2="19" y2="12" />
+                              <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+
                 {/* ── MEGA MENU: INDUSTRIES ────────────────────────────────── */}
                 {item.name === "Industries" && item.dropdown && (
                   <AnimatePresence>
@@ -584,44 +769,44 @@ export default function Navbar() {
           </ul>
 
           {/* ── Desktop CTA ───────────────────────────────────────────────── */}
-         <Link href="/proposal" className="hidden lg:block">
-  <button
-    onMouseEnter={() => setIsButtonHovered(true)}
-    onMouseLeave={() => setIsButtonHovered(false)}
-    className="relative flex items-center gap-2 px-6 py-2.5 rounded
-      font-semibold text-[14px] transition-all duration-300 overflow-hidden
-      bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white 
-      hover:shadow-lg hover:shadow-[#625eff]/20 cursor-pointer"
-  >
-    {/* Default State Corners & Line */}
-    {!isButtonHovered && (
-      <>
-        <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
-        <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
-        <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
-      </>
-    )}
-    
-    {/* Hover State: Premium Border Drawing Animation */}
-    {isButtonHovered && (
-      <div className="absolute inset-1 pointer-events-none">
-        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 h-[1px] bg-white/70" />
-        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 w-[1px] bg-white/70" />
-        <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 h-[1px] bg-white/70" />
-        <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 w-[1px] bg-white/70" />
-      </div>
-    )}
-    
-    {/* Button Content */}
-    <span className="relative z-10 flex items-center gap-2">
-      Request Proposal
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="5" y1="12" x2="19" y2="12"/>
-        <polyline points="12 5 19 12 12 19"/>
-      </svg>
-    </span>
-  </button>
-</Link>
+          <Link href="/proposal" className="hidden lg:block">
+            <button
+              onMouseEnter={() => setIsButtonHovered(true)}
+              onMouseLeave={() => setIsButtonHovered(false)}
+              className="relative flex items-center gap-2 px-6 py-2.5 rounded
+                font-semibold text-[14px] transition-all duration-300 overflow-hidden
+                bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white 
+                hover:shadow-lg hover:shadow-[#625eff]/20 cursor-pointer"
+            >
+              {/* Default State Corners & Line */}
+              {!isButtonHovered && (
+                <>
+                  <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
+                  <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
+                  <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                </>
+              )}
+
+              {/* Hover State: Premium Border Drawing Animation */}
+              {isButtonHovered && (
+                <div className="absolute inset-1 pointer-events-none">
+                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 h-[1px] bg-white/70" />
+                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 w-[1px] bg-white/70" />
+                  <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 h-[1px] bg-white/70" />
+                  <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 w-[1px] bg-white/70" />
+                </div>
+              )}
+
+              {/* Button Content */}
+              <span className="relative z-10 flex items-center gap-2">
+                Request Proposal
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </button>
+          </Link>
 
           {/* ── Mobile Hamburger ──────────────────────────────────────────── */}
           <button
@@ -652,7 +837,7 @@ export default function Navbar() {
               <ul className="flex flex-col py-2 gap-1">
                 {navItems.map((item) => (
                   <li key={item.name} className="flex flex-col">
-                    
+
                     {/* Item Main Block */}
                     <div className="flex items-center justify-between w-full rounded-lg">
                       <Link
@@ -672,12 +857,18 @@ export default function Navbar() {
                         <button
                           onClick={(e) => {
                             e.preventDefault();
-                            if (item.name === "Services") setMobileServicesOpen(!mobileServicesOpen);
+                            if (item.name === "Services")   setMobileServicesOpen(!mobileServicesOpen);
+                            if (item.name === "Product")    setMobileProductsOpen(!mobileProductsOpen);
                             if (item.name === "Industries") setMobileIndustriesOpen(!mobileIndustriesOpen);
                           }}
                           className={`p-3 mr-2 transition-transform duration-300
                             ${useDarkTheme ? "text-slate-600" : "text-white/70"}
-                            ${(item.name === "Services" && mobileServicesOpen) || (item.name === "Industries" && mobileIndustriesOpen) ? "rotate-180" : ""}`}
+                            ${
+                              (item.name === "Services"   && mobileServicesOpen)   ||
+                              (item.name === "Product"    && mobileProductsOpen)   ||
+                              (item.name === "Industries" && mobileIndustriesOpen)
+                                ? "rotate-180" : ""
+                            }`}
                         >
                           <svg width="12" height="8" viewBox="0 0 10 6" fill="none">
                             <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -690,7 +881,7 @@ export default function Navbar() {
                     {item.name === "Services" && item.dropdown && (
                       <AnimatePresence>
                         {mobileServicesOpen && (
-                          <motion.div 
+                          <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
@@ -699,7 +890,7 @@ export default function Navbar() {
                             {servicesMegaMenu.flatMap((cat) =>
                               cat.subServices.map((sub) => (
                                 <Link
-                                  key={sub.href}
+                                  key={sub.href + sub.title}
                                   href={sub.href}
                                   onClick={() => setIsMobileMenuOpen(false)}
                                   className={`py-1.5 text-[14px] font-semibold transition-colors
@@ -714,11 +905,37 @@ export default function Navbar() {
                       </AnimatePresence>
                     )}
 
+                    {/* Mobile Products Submenu Inner Logic */}
+                    {item.name === "Product" && item.dropdown && (
+                      <AnimatePresence>
+                        {mobileProductsOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="flex flex-col pl-6 pr-4 gap-2 border-l border-slate-500/20 ml-4 my-1 overflow-hidden"
+                          >
+                            {productsMegaMenu.map((prod) => (
+                              <Link
+                                key={prod.id}
+                                href={prod.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={`py-1.5 text-[14px] font-semibold transition-colors
+                                  ${useDarkTheme ? "text-slate-600 hover:text-[#625eff]" : "text-white/75 hover:text-white"}`}
+                              >
+                                {prod.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    )}
+
                     {/* Mobile Industries Submenu Inner Logic */}
                     {item.name === "Industries" && item.dropdown && (
                       <AnimatePresence>
                         {mobileIndustriesOpen && (
-                          <motion.div 
+                          <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
