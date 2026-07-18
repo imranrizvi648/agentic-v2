@@ -306,7 +306,7 @@ const productsMegaMenu = [
     spotlight: {
       title: "38% average connection accept rate across our pilot customers.",
       cta: "Explore Linkedinagent",
-      img: "/linkedinagent-spotlight.png",
+      img: "/linkdineadashboard.webp",
     },
   },
   {

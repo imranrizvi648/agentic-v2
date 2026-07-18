@@ -133,7 +133,7 @@ const EXTENDED_PRODUCTS_DB = {
   extendedDesc:
     "LinkedInAgent intelligently discovers high-value prospects, engages them with personalized interactions, and nurtures conversations that help your team build stronger business relationships at scale.",
 
-  dashboardImg: "/images/linkedinagent-dashboard.png",
+  dashboardImg: "/linkdineadashboard.webp",
 
   features: [
   "Discover qualified prospects that match your ideal audience",
