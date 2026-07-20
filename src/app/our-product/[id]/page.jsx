@@ -131,7 +131,7 @@ const EXTENDED_PRODUCTS_DB = {
     "Discover ideal prospects and automate meaningful LinkedIn engagement at scale.",
 
   extendedDesc:
-    "LinkedInAgent intelligently discovers high-value prospects, engages them with personalized interactions, and nurtures conversations that help your team build stronger business relationships at scale.",
+    "Linkdsense intelligently discovers high-value prospects, engages them with personalized interactions, and nurtures conversations that help your team build stronger business relationships at scale.",
 
   dashboardImg: "/linkdineadashboard.webp",
 
