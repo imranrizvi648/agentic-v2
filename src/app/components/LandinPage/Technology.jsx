@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 
 const leftFeatures = [
-  { title: "NetSuite", image: "/Gemini_Generated_Image_aq8ak2aq8ak2aq8a-removebg-preview.webp", subtitle: "Enterprise Integration" },
+  { title: "NetSuite", image: "/Netsuite.webp", subtitle: "Enterprise Integration" },
   { title: "Microsoft Fabric", image: "/microsoft-fusion.png", subtitle: "Enterprise Integration" },
   { title: "Oracle Fusion", image: "/image-removebg-preview.png", subtitle: "Enterprise Integration" },
   { title: "", redundantTitle: "Salesforce", image: "/salessforce.png", subtitle: "Enterprise Integration" },
@@ -11,9 +11,10 @@ const leftFeatures = [
 
 const rightFeatures = [
   { title: "SAP BTP", image: "/sap-logo-svg.png", subtitle: "Enterprise Integration" },
-  { title: "SAP S/4HANA", image: "/logo.png", subtitle: "Enterprise Integration" },
+  
   { title: "Zoho", image: "/zoho-logo-web.png", subtitle: "Enterprise Integration" },
   { title: "Odoo", image: "/odoo_.png", subtitle: "Enterprise Integration" },
+  { title: "Custom ERP", image: "/customerp.webp", subtitle: "Enterprise Integration" },
 ];
 
 function AnimatedLine({ d, delay = 0, gradientId = "gradient", markerId }) {

@@ -124,8 +124,8 @@ const EXTENDED_PRODUCTS_DB = {
     },
   },
 
- linkedinagent: {
-  name: "LinkedInAgent",
+ linkdsense: {
+  name: "Linkdsense",
   role: "LinkedIn Outreach Agent",
   tagline:
     "Discover ideal prospects and automate meaningful LinkedIn engagement at scale.",

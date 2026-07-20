@@ -31,9 +31,9 @@ const PRODUCTS = [
     desc: "Integrates diverse touchpoints, syncs customer conversations across email, social, and support desks, keeping communication streams unified and beautifully coordinated.",
   },
   {
-    id: "linkedinagent",
+    id: "linkdsense",
     num: "03",
-    name: "Linkedinagent",
+    name: "Linkdsense",
     role: "LinkedIn Outreach & Automation Suite",
     tagline: "Your dedicated silent agent, growing your professional pipeline.",
     desc: "Identifies ideal connections on LinkedIn, monitors target account activities, drafts personalized context-rich messages, and maintains warm conversational touchpoints safely.",

@@ -288,8 +288,8 @@ const productsMegaMenu = [
     },
   },
   {
-    id: "linkedinagent",
-    label: "Linkedinagent",
+    id: "Linkdsense",
+    label: "Linkdsense",
     href: "/our-product/linkedinagent",
     subServices: [
       {
