@@ -400,9 +400,9 @@ export default function ALJHCaseStudy() {
                 Request a Proposal <Arrow />
               </button>
             </Link>
-            <a href="mailto:mraheel@agenticsense.co">
+            <a href="mailto:info@agenticsense.co">
               <button className="px-8 py-3 font-semibold text-[15px] border border-white/20 text-white/70 hover:border-white/40 hover:text-white transition-all duration-200">
-                mraheel@agenticsense.co
+                info@agenticsense.co
               </button>
             </a>
           </div>
