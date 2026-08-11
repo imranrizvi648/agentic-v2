@@ -16,7 +16,7 @@ export const TEAM = [
   },
   { 
     "id": 2, 
-    "name": "Raheel Ahmed", 
+    "name": "Muhammad Raheel", 
     "role": "Chief Technology Officer (CTO)", 
  
     "description": "Leads technology vision, architecture, and innovation. Oversees product engineering, R&D, and emerging technologies.",
