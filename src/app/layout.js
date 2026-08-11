@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </div>
         <Script
-          src="https://liaison.203-130-9-165.sslip.io/widget/wid_23157115a3234a07.js"
+          src="https://liaison.203-130-9-165.sslip.io/widget/wid_c019a568ccd14a05.js"
           strategy="lazyOnload"
         />
       </body>
