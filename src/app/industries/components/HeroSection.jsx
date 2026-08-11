@@ -35,15 +35,15 @@ export default function HeroSection() {
 
           {/* Left Content */}
           <div>
-           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-2 mt-15">
+           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.02] tracking-[-0.03em] mb-2 mt-15">
   AI Solutions Built for the Demands of Your Industry
 </h1>
 
-<p className="text-lg text-white/80 leading-relaxed max-w-lg mb-4">
+<p className="text-base sm:text-lg text-white/80 leading-[1.65] tracking-[-0.005em] max-w-lg mb-4">
   We deliver production-ready AI solutions tailored to the workflows, compliance requirements, and data structures that drive your industry, with seamless integration into your core business systems.
 </p>
 
-<p className="text-sm text-white/60 leading-relaxed max-w-lg mb-10">
+<p className="text-base text-white/60 leading-[1.65] tracking-[-0.005em] max-w-lg mb-10">
   Serving organizations across multiple industries with proven deployments, deep domain expertise, and AI solutions designed around the systems your business depends on every day.
 </p>
 

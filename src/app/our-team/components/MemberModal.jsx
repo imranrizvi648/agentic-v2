@@ -35,9 +35,9 @@ export default function MemberModal({ member, onClose }) {
               <button onClick={onClose} className="mb-6 p-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-[#1a194d] transition-colors flex items-center justify-center">
                 <IconX />
               </button>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-[#1a194d] leading-tight mb-1">{member.name}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#1a194d] leading-tight mb-1">{member.name}</h2>
               <p className={`text-xs font-bold uppercase tracking-widest mb-4 ${DEPT_TEXT[member.department]}`}>{member.role}</p>
-              <p className="text-sm text-slate-500 leading-relaxed mb-5">{member.bio}</p>
+              <p className="text-base text-slate-600 leading-[1.65] tracking-[-0.005em] mb-5">{member.bio}</p>
               <div className="flex flex-wrap gap-1.5 mb-6">
                 {member.tags.map(tag => (
                   <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-slate-50 border border-slate-100 text-slate-400 px-2.5 py-1 rounded-full">{tag}</span>

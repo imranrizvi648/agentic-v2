@@ -28,13 +28,13 @@ export default function TeamHero() {
         </motion.div>
 
         <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={1}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-3xl mb-5">
+          className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.02] tracking-[-0.03em] max-w-3xl mb-5">
           Meet the Team <br className="hidden sm:block" />
           Building <span className="text-[#625eff]">AgenticSense</span>.
         </motion.h1>
 
         <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2}
-          className="text-sm sm:text-base md:text-lg leading-relaxed text-white/60 max-w-xl mb-12 sm:mb-16">
+          className="text-base sm:text-lg leading-[1.65] tracking-[-0.005em] text-white/60 max-w-xl mb-12 sm:mb-16">
           A tight-knit team of engineers, researchers, designers, and strategists obsessed with making enterprise AI actually work in production.
         </motion.p>
 
@@ -43,7 +43,7 @@ export default function TeamHero() {
           {STATS.map((s, i) => (
             <div key={s.label}
               className={`flex flex-col pr-4 sm:pr-10 ${i!==0?"pl-4 sm:pl-10 border-l border-white/10":""} ${i<2?"pb-6 md:pb-0 mb-0":""}`}>
-              <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">{s.value}</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">{s.value}</span>
               <span className="text-[10px] sm:text-[11px] font-bold text-[#625eff] uppercase tracking-widest mt-1 leading-tight">{s.label}</span>
             </div>
           ))}

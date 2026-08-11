@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-// Case study metrics — real enterprise outcomes
+// Case study metrics real enterprise outcomes
 const caseStudies = [
   {
     tag: "ACCOUNTS PAYABLE",
@@ -51,7 +51,7 @@ export default function CaseStudiesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start border-b border-slate-200 pb-12">
           <div className="lg:col-span-7 space-y-4">
            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-brand-primary uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-brand-primary uppercase">
               The Difference <br />
               An Agent Makes.
             </h2>
@@ -61,7 +61,7 @@ export default function CaseStudiesSection() {
             <p className="text-xs font-mono text-[#625eff] uppercase tracking-wider">
               // VERIFIABLE OPERATIONAL OUTCOMES
             </p>
-            <p className="text-sm text-slate-500 leading-relaxed font-medium">
+            <p className="text-base text-slate-600 leading-[1.65] tracking-[-0.005em] font-medium">
               We measure every engagement against numbers agreed before we start. Here is the exact shape of the impact our agents are engineered to deliver.
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function CaseStudiesSection() {
                       }`}>
                         // SYSTEM OUTCOME MEASURE
                       </span>
-                      <span className="text-4xl font-mono font-black tracking-tight leading-none">
+                      <span className="text-4xl font-mono font-bold tracking-tight leading-none">
                         {c.resultMetric}
                       </span>
                     </div>

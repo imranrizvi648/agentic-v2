@@ -7,7 +7,7 @@ import {
 } from "../data";
 import ArticleContent from "./components/ArticleContent";
 
-// ─── Static params — all slugs pre-rendered at build time ────────────────────
+// ─── Static params all slugs pre-rendered at build time ────────────────────
 
 export async function generateStaticParams() {
   return getAllSlugs();
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 // ─── Per-post SEO metadata ────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }) {
-  // Next.js 15: params is a Promise — must be awaited
+  // Next.js 15: params is a Promise must be awaited
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return { title: "Post Not Found | AgenticSense Blog" };
@@ -86,7 +86,7 @@ function ArticleStructuredData({ post, author }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function BlogPostPage({ params }) {
-  // Next.js 15: params is a Promise — must be awaited
+  // Next.js 15: params is a Promise must be awaited
   const { slug } = await params;
 
   const post = getPostBySlug(slug);

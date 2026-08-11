@@ -43,7 +43,7 @@ export default function ImpactStatsSection() {
               <div className="absolute top-0 left-0 w-full h-0.5 bg-transparent group-hover:bg-[#625eff] transition-all duration-300" />
 
               {/* Bold numbers colored in crisp white transitioning to secondary brand purple */}
-              <div className="text-4xl sm:text-5xl font-mono font-black text-white mb-3 tracking-tight group-hover:text-[#625eff] transition-colors duration-200">
+              <div className="text-4xl sm:text-5xl font-mono font-bold text-white mb-3 tracking-tight group-hover:text-[#625eff] transition-colors duration-200">
                 {s.val}
               </div>
 

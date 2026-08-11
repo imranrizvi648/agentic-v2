@@ -57,11 +57,11 @@ export default function DeepSectorPage() {
             {/* Left Column: Sticky Heading */}
             <div className="lg:col-span-4 lg:sticky lg:top-40 self-start">
              
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight leading-tight mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary tracking-tight leading-tight mb-6">
                 The Problems That Generic AI Cannot Solve.
               </h2>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Every sector has the same fundamental problem with off-the-shelf AI: it understands the vocabulary, not the operations. We build at the operational level — where the actual work happens.
+              <p className="text-slate-600 text-base leading-[1.65] tracking-[-0.005em]">
+                Every sector has the same fundamental problem with off-the-shelf AI: it understands the vocabulary, not the operations. We build at the operational level where the actual work happens.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ export default function DeepSectorPage() {
         <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-500 mb-2">
           The Problem
         </p>
-        <p className="text-sm text-slate-800 font-medium leading-relaxed group-hover:text-slate-900 transition-colors duration-300">
+        <p className="text-sm text-slate-700 font-medium leading-[1.6] group-hover:text-slate-900 transition-colors duration-300">
           {c.challenge}
         </p>
       </div>

@@ -64,12 +64,12 @@ export default function IndustriesCategorySection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-primary tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary tracking-tight leading-tight">
               Deep in Every Sector.
             </h2>
           </div>
-          <p className="text-slate-500 text-sm max-w-md leading-relaxed">
-            We do not spread thin across every industry. We go deep in five — understanding workflows at the level that makes production AI possible.
+          <p className="text-slate-600 text-base max-w-md leading-[1.65] tracking-[-0.005em]">
+            We do not spread thin across every industry. We go deep in five understanding workflows at the level that makes production AI possible.
           </p>
         </div>
 
@@ -92,12 +92,12 @@ export default function IndustriesCategorySection() {
                     {ind.title}
                   </h3>
                   
-                  <p className="text-xs font-medium text-slate-400 leading-normal mb-4">
+                  <p className="text-sm font-medium text-slate-500 leading-[1.6] mb-4">
                     {ind.tagline}
                   </p>
 
                   {/* Short Lead Text */}
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-base text-slate-600 leading-[1.65] tracking-[-0.005em] mb-6">
                     {ind.lead}
                   </p>
                 </div>

@@ -1,7 +1,7 @@
 export const metadata = {
   title: "About AgenticSense | Intelligent AI Automation Company",
   description:
-    "Learn about AgenticSense — an AI technology company building intelligent AI agents, ERP-native automation systems and digital transformation solutions for businesses worldwide.",
+    "Learn about AgenticSense an AI technology company building intelligent AI agents, ERP-native automation systems and digital transformation solutions for businesses worldwide.",
   keywords: "about AgenticSense, AI automation company, enterprise AI agents, ERP automation, agentic AI company Dubai",
   alternates: { canonical: "https://www.agenticsense.co/about" },
   openGraph: {
@@ -19,7 +19,7 @@ import TkxelSection from './components/TkxelSection'
 import FolioTabsSection from './components/FolioTabsSection'
 import AIFirstBanner from './components/AIFirstBanner'
 
-// ✅ Use the wrapper — NOT PdfViewerSection directly
+// ✅ Use the wrapper NOT PdfViewerSection directly
 // This prevents the DOMMatrix SSR crash during `npm run build`
 import PdfViewerWrapper from './components/PdfViewerWrapper'
 

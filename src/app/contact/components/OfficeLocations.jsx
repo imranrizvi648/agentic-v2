@@ -28,10 +28,10 @@ export default function OfficeLocations() {
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10">
           <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#625eff] mb-0">Our Offices</p>
-          <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold tracking-[-0.03em] text-[#1a194d] mt-2.5">Where to find us</h2>
+          <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-bold tracking-[-0.03em] text-[#1a194d] mt-2.5">Where to find us</h2>
         </div>
 
-        {/* Map container — responsive height */}
+        {/* Map container responsive height */}
         <div className="relative rounded-[20px] overflow-hidden border border-[#eeecfc] shadow-[0_8px_40px_rgba(26,25,77,0.10)]" style={{ height: "clamp(420px,60vh,520px)" }}>
 
           <iframe src={loc.mapUrl} width="100%" height="100%" style={{ border: 0, display: "block", position: "absolute", inset: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title={`${active} office map`} />
@@ -53,7 +53,7 @@ export default function OfficeLocations() {
             ))}
           </div>
 
-          {/* Info card — responsive positioning */}
+          {/* Info card responsive positioning */}
           <div className="absolute top-3 sm:top-5 right-3 sm:right-5 bottom-3 sm:bottom-5 z-10 w-[240px] sm:w-[280px] bg-white/97 border border-[#eeecfc] rounded-2xl shadow-[0_8px_40px_rgba(26,25,77,0.14)] p-5 sm:p-7 flex flex-col gap-4 sm:gap-6 overflow-y-auto" style={{ backdropFilter: "blur(12px)" }}>
             {/* Header */}
             <div>

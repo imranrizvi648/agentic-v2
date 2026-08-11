@@ -65,7 +65,7 @@ export default function Recognitions() {
         {/* SEO Friendly Heading */}
         <h2 
           id="recognition-heading" 
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary mb-12 sm:mb-20 tracking-tight mx-auto max-w-4xl leading-[1.2]"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary mb-12 sm:mb-20 tracking-tight mx-auto max-w-4xl leading-[1.2]"
         >
           We’ve been recognized by <br className="hidden md:block" /> the best, year after year
         </h2>

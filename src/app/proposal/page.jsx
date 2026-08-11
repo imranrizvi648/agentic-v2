@@ -238,10 +238,10 @@ export default function RFPPage() {
         <div className="lg:col-span-5 space-y-6 sm:space-y-8 border-l-4 border-brand-secondary pl-5 sm:pl-6 md:pl-8">
           <div className="space-y-3 sm:space-y-4">
            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-brand-primary leading-[1.1] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-brand-primary leading-[1.1] tracking-tight">
               Transform Your Vision Into Reality.
             </h1>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-slate-500 max-w-lg">
+            <p className="text-base sm:text-lg leading-[1.65] tracking-[-0.005em] text-slate-500 max-w-lg">
               Ready to innovate? Tell us about your project. Whether it's a new product,
               a digital transformation, or a complex integration, AgenticSense is your
               strategic partner.
@@ -273,10 +273,10 @@ export default function RFPPage() {
         {/* ── RIGHT: FORM CARD ────────────────────────────────────────────────── */}
         <div className="lg:col-span-7 bg-white rounded-none shadow-2xl overflow-hidden border border-slate-100">
           <div className="bg-brand-primary px-4 sm:px-6 py-4 flex justify-between items-center border-b-4 border-brand-secondary">
-            <h2 className="text-white font-extrabold tracking-wide uppercase text-sm sm:text-base">
+            <h2 className="text-white font-bold tracking-wide uppercase text-sm sm:text-base">
               Project Inquiry
             </h2>
-            <span className=" text-white text-[10px] font-black uppercase px-2 py-1 rounded tracking-widest whitespace-nowrap">
+            <span className=" text-white text-[10px] font-bold uppercase px-2 py-1 rounded tracking-widest whitespace-nowrap">
               Priority Review
             </span>
           </div>
@@ -385,13 +385,13 @@ export default function RFPPage() {
             {/* Row 4: Budget Slider */}
             <div className="space-y-2 pt-1">
               <div className="flex justify-between items-center">
-                <label className="text-xs font-black tracking-wider uppercase text-brand-primary flex items-center gap-1.5">
+                <label className="text-xs font-bold tracking-wider uppercase text-brand-primary flex items-center gap-1.5">
                   <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                   Project Budget
                 </label>
-                <span className="text-base sm:text-lg font-extrabold text-brand-primary">
+                <span className="text-base sm:text-lg font-bold text-brand-primary">
                   {budget >= 1000000 ? "$1,000,000+" : `$${budget.toLocaleString()}`}
                 </span>
               </div>

@@ -15,14 +15,14 @@ export default function WhoWeAre() {
 
         {/* LEFT: 7 cols */}
         <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-          <h2 className="text-xl sm:text-2xl font-extrabold text-brand-primary tracking-tight">Who we are</h2>
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-800 leading-tight">
+          <h2 className="text-xl sm:text-2xl font-bold text-brand-primary tracking-[-0.02em]">Who we are</h2>
+          <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 leading-[1.1] tracking-[-0.025em]">
             An Agentic AI Company Built for Enterprise Production
           </h3>
-          <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-lg text-slate-700 leading-[1.65] tracking-[-0.005em] max-w-2xl">
             AgenticSense is built on the belief that the future of business will be powered by intelligent, adaptive and autonomous digital systems. We specialize in developing AI agents, ERP automation platforms, data intelligence solutions and digital transformation strategies that help enterprises operate more efficiently across the GCC, South Asia and Europe.
           </p>
-          <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
+          <p className="text-base text-slate-600 leading-[1.65] tracking-[-0.005em] max-w-2xl">
             <strong>Mission:</strong> To empower businesses with intelligent AI systems that simplify work, improve decisions and accelerate growth.
           </p>
           <ul className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
@@ -45,8 +45,8 @@ export default function WhoWeAre() {
             </div>
           </div>
           <div className="pt-2 sm:pt-4 max-w-sm self-end lg:self-start">
-            <p className="text-slate-800 leading-relaxed text-sm sm:text-base">
-              <span className="font-extrabold text-slate-900">Our Goal:</span> To become a trusted global technology partner for businesses adopting agentic AI and intelligent automation with production deployments, not stalled pilots.
+            <p className="text-slate-700 leading-[1.65] tracking-[-0.005em] text-sm sm:text-base">
+              <span className="font-bold text-slate-900">Our Goal:</span> To become a trusted global technology partner for businesses adopting agentic AI and intelligent automation with production deployments, not stalled pilots.
             </p>
           </div>
         </div>

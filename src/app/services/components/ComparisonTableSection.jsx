@@ -49,7 +49,7 @@ export default function ComparisonTableSection() {
         <div className="border-b border-slate-200 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-brand-primary uppercase leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-brand-primary uppercase leading-tight">
               Most AI Firms Advise, Then Hand Off. We Strategise, Build, Integrate and Run.
             </h2>
           </div>
@@ -69,7 +69,7 @@ export default function ComparisonTableSection() {
                 <th className="text-left py-5 px-4 sm:px-6 text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 w-2/5">
                   Typical AI Vendor
                 </th>
-                <th className="text-left py-5 px-4 sm:px-6 text-[11px] font-mono font-black uppercase tracking-widest text-[#625eff] bg-slate-50 w-2/5 border-l border-slate-200 relative">
+                <th className="text-left py-5 px-4 sm:px-6 text-[11px] font-mono font-bold uppercase tracking-widest text-[#625eff] bg-slate-50 w-2/5 border-l border-slate-200 relative">
                   <div className="absolute top-0 left-0 w-full h-[3px] bg-[#625eff]" />
                    AgenticSense
                 </th>

@@ -9,13 +9,13 @@ export default function TeamJoinBanner() {
           <div className="max-w-xl">
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#625eff] animate-pulse" />
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#625eff]">We're Hiring</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#625eff]">We're Hiring</p>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight mb-3">
               Think you belong here?
             </h2>
-            <p className="text-sm sm:text-base leading-relaxed text-white/60">
-              We're always looking for exceptional people. If you're passionate about enterprise AI, ERP integration and building agents that actually run in production — we want to hear from you.
+            <p className="text-base leading-[1.65] tracking-[-0.005em] text-white/60">
+              We're always looking for exceptional people. If you're passionate about enterprise AI, ERP integration and building agents that actually run in production we want to hear from you.
             </p>
           </div>
           <div className="flex-shrink-0">

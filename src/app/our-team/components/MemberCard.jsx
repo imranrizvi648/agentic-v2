@@ -41,7 +41,7 @@ export default function MemberCard({ member, index, onClick }) {
         {/* Department Badge */}
         {/* <div className="absolute top-3 left-3">
           <span
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-white/90 backdrop-blur-sm ${
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/90 backdrop-blur-sm ${
               DEPT_TEXT[member.department] || "text-slate-500"
             }`}
           >
@@ -64,7 +64,7 @@ export default function MemberCard({ member, index, onClick }) {
 
       {/* Content Section */}
       <div className="p-4 sm:p-5">
-        <h3 className="text-sm sm:text-base font-extrabold text-[#1a194d] leading-snug mb-0.5 group-hover:text-[#625eff] transition-colors">
+        <h3 className="text-sm sm:text-base font-bold text-[#1a194d] leading-snug mb-0.5 group-hover:text-[#625eff] transition-colors">
           {member.name}
         </h3>
 
@@ -76,7 +76,7 @@ export default function MemberCard({ member, index, onClick }) {
         {member.description && (
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[9px] font-black uppercase tracking-wider text-slate-700">
+              <span className="text-[9px] font-bold uppercase tracking-wider text-slate-700">
                 Role
               </span>
               <div className="h-[1px] flex-1 bg-slate-100" />
@@ -91,7 +91,7 @@ export default function MemberCard({ member, index, onClick }) {
         {/* Skills Section */}
         {/* <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[9px] font-black uppercase tracking-wider text-slate-700">
+            <span className="text-[9px] font-bold uppercase tracking-wider text-slate-700">
               Skills
             </span>
             <div className="h-[1px] flex-1 bg-slate-100" />

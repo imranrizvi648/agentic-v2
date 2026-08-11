@@ -97,7 +97,7 @@ export default function AboutSection() {
   return (
     <>
       <style>{`
-        /* Font loaded via layout.js — Geist Sans */
+        /* Font loaded via layout.js Inter */
 
         .about-section *{ box-sizing: border-box; }
 

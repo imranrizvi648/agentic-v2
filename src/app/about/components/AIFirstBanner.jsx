@@ -11,7 +11,7 @@ export default function AIFirstBanner() {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center relative z-10">
         <div className="lg:col-span-5 space-y-6 sm:space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-bold tracking-[-0.025em] leading-[1.1]">
             We're{' '}
             <span className="relative inline-block text-white">
               AI–first
@@ -30,7 +30,7 @@ export default function AIFirstBanner() {
           </div>
         </div>
 
-      <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-white/90 text-[15px] lg:text-base leading-relaxed max-w-2xl lg:pl-6">
+      <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-white/90 text-base sm:text-lg leading-[1.65] tracking-[-0.005em] max-w-2xl lg:pl-6">
   <p>
     At AgenticSense, we help organizations deploy enterprise AI solutions that automate complex business processes, improve operational efficiency, and support better decision-making across the enterprise.
   </p>

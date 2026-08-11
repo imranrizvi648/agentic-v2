@@ -44,13 +44,13 @@ const deliverySteps = [
         <div className="border-b border-slate-200 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-xl">
            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-brand-primary uppercase leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-brand-primary uppercase leading-tight">
               A Disciplined Path from Idea to a System Your Teams Trust
             </h2>
           </div>
           <div className="max-w-xs">
-            <p className="text-[11px] text-slate-500 leading-normal font-medium">
-              Every engagement follows the same five-phase delivery — from discovery to ongoing production.
+            <p className="text-sm text-slate-600 leading-[1.6] font-medium">
+              Every engagement follows the same five-phase delivery from discovery to ongoing production.
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const deliverySteps = [
                         </div>
                         
                         {/* Body content */}
-                        <p className="text-[12px] text-slate-500 leading-relaxed font-medium">
+                        <p className="text-sm text-slate-600 leading-[1.6] font-medium">
                           {step.body}
                         </p>
                       </div>

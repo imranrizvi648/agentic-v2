@@ -48,7 +48,7 @@ const Footer = React.memo(function Footer() {
           {/* Quick Links */}
           <div className="space-y-5 sm:space-y-6 w-full max-w-sm sm:max-w-none sm:ml-12 md:ml-16">
             <div className="flex justify-center sm:justify-start items-center gap-2">
-              <h3 className="text-xl font-extrabold text-gray-800 uppercase tracking-tight">Quick Links</h3>
+              <h3 className="text-base font-bold text-gray-800 tracking-[-0.01em]">Quick Links</h3>
             </div>
             <div className="grid grid-cols-2 gap-2 sm:gap-3 w-full">
               {QUICK_LINKS.map((link, i) => (
@@ -57,7 +57,7 @@ const Footer = React.memo(function Footer() {
                   href={link.href}
                   className="flex items-center justify-between bg-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-md transition-all group"
                 >
-                  <span className="text-[9px] sm:text-[10px] font-black text-gray-700 tracking-wider truncate">
+                  <span className="text-[9px] sm:text-[10px] font-bold text-gray-700 tracking-wider truncate">
                     {link.name}
                   </span>
                   <div className="flex-shrink-0 bg-[#1e1b4b] p-1 sm:p-1.5 rounded-full text-white">
@@ -70,8 +70,8 @@ const Footer = React.memo(function Footer() {
 
           {/* Brand centre */}
           <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6 sm:ml-10 order-first sm:order-none">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-black uppercase">AGENTICSENSE</h1>
-            <p className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed max-w-xs">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-[-0.02em] text-black">AGENTICSENSE</h1>
+            <p className="text-sm text-gray-600 leading-[1.65] tracking-[-0.005em] max-w-xs">
               Building intelligent AI agents that help businesses automate work, make smarter decisions and scale faster natively inside your ERP.
             </p>
           </div>
@@ -79,7 +79,7 @@ const Footer = React.memo(function Footer() {
           {/* Contact */}
           <div className="space-y-5 sm:space-y-7 flex flex-col items-center sm:items-start text-center sm:text-left sm:col-span-2 md:col-span-1 md:pl-12 md:ml-10 w-full">
             <div className="flex justify-center sm:justify-start items-center gap-2 w-full">
-              <h3 className="text-xl font-extrabold text-gray-800 uppercase">Contact</h3>
+              <h3 className="text-xl font-bold text-gray-800 uppercase">Contact</h3>
             </div>
             <div className="space-y-2 text-gray-700 text-sm font-semibold w-full">
               <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: info@agenticsense.co</p>
@@ -88,7 +88,7 @@ const Footer = React.memo(function Footer() {
             </div>
             <Link href="/contact" className="inline-block">
               <button className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-5 py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-all group">
-                <span className="text-xs font-black text-gray-800 uppercase tracking-widest">
+                <span className="text-xs font-bold text-gray-800 uppercase tracking-widest">
                   Contact Us
                 </span>
                 <div className="bg-[#1e1b4b] p-2 rounded-full text-white">

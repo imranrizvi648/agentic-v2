@@ -78,7 +78,7 @@ export default function Technology() {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16 flex flex-col items-center">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-brand-primary leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-brand-primary leading-tight">
             Technologies We Master
           </h2>
         </div>

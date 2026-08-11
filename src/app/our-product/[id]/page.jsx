@@ -124,14 +124,14 @@ const EXTENDED_PRODUCTS_DB = {
     },
   },
 
- linkdsense: {
-  name: "Linkdsense",
+ linksense: {
+  name: "Linksense",
   role: "LinkedIn Outreach Agent",
   tagline:
     "Discover ideal prospects and automate meaningful LinkedIn engagement at scale.",
 
   extendedDesc:
-    "Linkdsense intelligently discovers high-value prospects, engages them with personalized interactions, and nurtures conversations that help your team build stronger business relationships at scale.",
+    "Linksense intelligently discovers high-value prospects, engages them with personalized interactions, and nurtures conversations that help your team build stronger business relationships at scale.",
 
   dashboardImg: "/linkdineadashboard.webp",
 
@@ -483,7 +483,7 @@ export default function ProductDetailPage() {
               </div>
             </section>
 
-            {/* Integration Stack — dynamic paragraph text kept, tech chips REMOVED */}
+            {/* Integration Stack dynamic paragraph text kept, tech chips REMOVED */}
             <section className="md:col-span-4 bg-white border border-slate-200 rounded-xl p-8 lg:p-10 flex flex-col">
               <div className="flex items-center gap-2.5 mb-4">
                 <div className="p-1.5 rounded-md bg-slate-50 border border-slate-200 text-brand-primary">
@@ -565,13 +565,13 @@ export default function ProductDetailPage() {
                   <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">
                     {stage1.title}
                   </h3>
-                  <p className="text-white/55 text-[13px] font-normal leading-relaxed">
+                  <p className="text-white/55 text-sm font-normal leading-[1.6]">
                     {stage1.desc}
                   </p>
                 </div>
               </div>
 
-              {/* STAGE 02 — dynamic dials */}
+              {/* STAGE 02 dynamic dials */}
               <div className="relative bg-white/[0.04] border border-white/10 rounded-xl p-7 flex flex-col justify-between min-h-[260px]">
                 <div className="flex items-center justify-between mb-8">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40">Stage 02</span>
@@ -599,7 +599,7 @@ export default function ProductDetailPage() {
                   <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">
                     {stage2.title}
                   </h3>
-                  <p className="text-white/55 text-[13px] font-normal leading-relaxed">
+                  <p className="text-white/55 text-sm font-normal leading-[1.6]">
                     {stage2.desc}
                   </p>
                 </div>
@@ -630,7 +630,7 @@ export default function ProductDetailPage() {
                   <h3 className="text-lg font-semibold text-brand-primary mb-2 tracking-tight">
                     {stage3.title}
                   </h3>
-                  <p className="text-slate-600 text-[13px] font-normal leading-relaxed">
+                  <p className="text-slate-600 text-sm font-normal leading-[1.6]">
                     {stage3.desc}
                   </p>
                 </div>

@@ -65,10 +65,10 @@ export default function ServicesSection() {
         
         {/* Heading Section */}
         <div className="mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-brand-primary tracking-tight">
+          <h2 className="text-3xl lg:text-4xl font-bold text-brand-primary tracking-[-0.025em] leading-[1.1]">
             Our AI & Automation Services
           </h2>
-          <p className="mt-4 sm:mt-6 text-slate-500 text-base sm:text-lg max-w-2xl leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-slate-500 text-base sm:text-lg max-w-2xl leading-[1.6] tracking-[-0.005em]">
             Nine production-grade services. One operating principle: agentic AI that ships to production and runs where the work happens. Finance-first. Enterprise-ready.
           </p>
         </div>
@@ -142,11 +142,11 @@ export default function ServicesSection() {
                   <div className="w-full">
                     <div className="text-[9px] uppercase tracking-widest text-[#8b88ff] font-bold mb-1 drop-shadow-sm">Service</div>
                     
-                    <h3 className="text-xl font-extrabold tracking-tight text-white mb-2.5 drop-shadow-sm">
+                    <h3 className="text-xl font-bold tracking-tight text-white mb-2.5 drop-shadow-sm">
                       {title}
                     </h3>
                     
-                    <p className="text-slate-200 text-[12px] sm:text-[13px] leading-relaxed mb-4 font-normal drop-shadow-sm">
+                    <p className="text-slate-200 text-sm leading-[1.6] mb-4 font-normal drop-shadow-sm">
                       {description}
                     </p>
                     

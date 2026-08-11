@@ -15,7 +15,7 @@ export default function TeamHeroCanvas() {
     let W = 0, H = 0;
     let mouse = { x:-9999, y:-9999 };
 
-    // ── 1. buildLines FIRST — resize() calls it so it must exist before ───────
+    // ── 1. buildLines FIRST resize() calls it so it must exist before ───────
     const LINE_COUNT = 24;
     const buildLines = () =>
       Array.from({ length: LINE_COUNT }, (_, i) => {
@@ -50,7 +50,7 @@ export default function TeamHeroCanvas() {
     canvas.addEventListener("mousemove", onMouse);
     canvas.addEventListener("mouseleave", onLeave);
 
-    // ── 3. Sprite cache — shadowBlur baked once per (type,ci,radius) ──────────
+    // ── 3. Sprite cache shadowBlur baked once per (type,ci,radius) ──────────
     const cache = new Map();
     const getSprite = (type, ci, radius) => {
       const key = `${type}|${ci}|${radius.toFixed(1)}`;
@@ -148,7 +148,7 @@ export default function TeamHeroCanvas() {
       ctx.globalAlpha=1;
     };
 
-    // ── 5. Render — 40fps cap ─────────────────────────────────────────────────
+    // ── 5. Render 40fps cap ─────────────────────────────────────────────────
     const FRAME_MS=1000/40;
     let lastTs=0;
     const render=(ts)=>{
@@ -184,11 +184,11 @@ export default function TeamHeroCanvas() {
     const start=()=>{if(running)return;running=true;lastTs=0;raf=requestAnimationFrame(render);};
     const stop =()=>{running=false;if(raf)cancelAnimationFrame(raf);raf=0;};
 
-    // ── 6. IntersectionObserver — pause off-screen ────────────────────────────
+    // ── 6. IntersectionObserver pause off-screen ────────────────────────────
     const io=new IntersectionObserver(([e])=>{e.isIntersecting?start():stop();},{threshold:0});
     io.observe(canvas);
 
-    // ── 7. Tab hidden — pause ─────────────────────────────────────────────────
+    // ── 7. Tab hidden pause ─────────────────────────────────────────────────
     const onVis=()=>{document.hidden?stop():start();};
     document.addEventListener("visibilitychange",onVis);
 

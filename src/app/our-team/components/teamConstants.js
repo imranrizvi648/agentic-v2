@@ -1,6 +1,6 @@
-// ── Shared constants — imported by all team components ────────────────────────
+// ── Shared constants imported by all team components ────────────────────────
 
-// ── Shared constants — imported by all team components ────────────────────────
+// ── Shared constants imported by all team components ────────────────────────
 
 export const TEAM = [
   { 

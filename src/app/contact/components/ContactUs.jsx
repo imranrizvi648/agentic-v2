@@ -6,7 +6,7 @@ const FEATURES = [
   "Map your highest-value automation opportunity in one session",
   "See exactly what an AI agent inside your ERP could do",
   "Honest assessment of effort, impact and what is deployable today",
-  "No cost, no obligation — just clear, actionable intelligence",
+  "No cost, no obligation just clear, actionable intelligence",
 ];
 
 export default function ContactUs() {
@@ -74,7 +74,7 @@ export default function ContactUs() {
         </div>
         <div className="flex flex-col">
           <p className="text-sm font-bold tracking-wide">Thank You!</p>
-          <p className="text-xs text-gray-300">Your message has been sent successfully.</p>
+          <p className="text-sm text-gray-300">Your message has been sent successfully.</p>
         </div>
         <button 
           onClick={() => setShowToast(false)}
@@ -89,10 +89,10 @@ export default function ContactUs() {
         
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14 md:mb-18">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-primary tracking-tight leading-[1.1] mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-brand-primary tracking-[-0.03em] leading-[1.02] mb-4">
             Let's Build Something Intelligent Together
           </h1>
-          <p className="text-sm sm:text-base text-gray-500 max-w-[420px] mx-auto leading-relaxed">
+          <p className="text-base text-gray-500 max-w-[420px] mx-auto leading-[1.65]">
             Have an idea, project or business challenge? Tell us about it. We'll show you exactly what an AI agent running inside your own systems could do with it.
           </p>
         </div>
@@ -178,7 +178,7 @@ export default function ContactUs() {
                     <span className="inline-flex items-center justify-center w-5 h-5 rounded-full shrink-0 bg-[#625eff]/25 border border-[#625eff]/40 mt-0.5">
                       <CheckCircle2 size={11} className="text-indigo-300" />
                     </span>
-                    <span className="text-[0.85rem] text-white/70 leading-relaxed">
+                    <span className="text-sm text-white/70 leading-[1.6]">
                       {text}
                     </span>
                   </li>

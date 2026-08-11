@@ -3,7 +3,7 @@ import PostGrid from "./components/PostGrid";
 import BlogCTA from "./components/BlogCTA";
 
 export const metadata = {
-  title: "Blog — AI Agents, ERP Integration & Enterprise Automation | AgenticSense",
+  title: "Blog AI Agents, ERP Integration & Enterprise Automation | AgenticSense",
   description:
     "Production-depth articles on agentic AI, ERP-native automation, finance AI, healthcare AI and enterprise engineering from the AgenticSense team.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata = {
   ],
   alternates: { canonical: "https://www.agenticsense.co/blog" },
   openGraph: {
-    title: "Blog — AI Agents, ERP Integration & Enterprise Automation | AgenticSense",
+    title: "Blog AI Agents, ERP Integration & Enterprise Automation | AgenticSense",
     description:
       "Production-depth articles on agentic AI, ERP-native automation and enterprise AI engineering.",
     url: "https://www.agenticsense.co/blog",
@@ -22,7 +22,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog — AgenticSense",
+    title: "Blog AI Agents, ERP Integration & Enterprise Automation | AgenticSense",
     description: "Production-depth articles on agentic AI and enterprise automation.",
   },
 };

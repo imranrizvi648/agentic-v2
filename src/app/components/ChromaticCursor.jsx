@@ -18,14 +18,14 @@
  *        <nav data-glitch>...</nav>
  *      Or target all text automatically (see SELECTOR below)
  *
- * NO extra packages needed — pure CSS + Vanilla JS in a React useEffect.
+ * NO extra packages needed pure CSS + Vanilla JS in a React useEffect.
  */
 
 import { useEffect, useRef } from "react";
 
 /* ── Config ────────────────────────────────────────────────── */
-const INFLUENCE_RADIUS = 140;   // px — how close cursor must be to trigger effect
-const MAX_SPLIT        = 8;     // px — maximum RGB split distance at closest point
+const INFLUENCE_RADIUS = 140;   // px how close cursor must be to trigger effect
+const MAX_SPLIT        = 8;     // px maximum RGB split distance at closest point
 const CURSOR_SIZE      = 10;    // dot size px
 const RING_SIZE        = 36;    // ring size px
 const SPRING           = 0.12;  // ring follow speed (0–1)
@@ -94,7 +94,7 @@ export default function ChromaticCursor() {
           const sy    = Math.sin(angle) * split;
 
           /*
-           * CSS text-shadow trick — R shifted one way, B the other.
+           * CSS text-shadow trick R shifted one way, B the other.
            * Works on text. For non-text elements we use filter + pseudo-layer.
            */
           el.style.textShadow = `
@@ -106,7 +106,7 @@ export default function ChromaticCursor() {
           el.style.filter = `hue-rotate(${strength * 12}deg)`;
           el.style.transition = "none";
         } else {
-          /* Restore — use transition for smooth fade-out */
+          /* Restore use transition for smooth fade-out */
           if (el.style.textShadow) {
             el.style.transition = "text-shadow 0.4s ease, filter 0.4s ease";
             el.style.textShadow = "none";
@@ -177,7 +177,7 @@ export default function ChromaticCursor() {
 
   return (
     <>
-      {/* Dot — snaps to cursor exactly */}
+      {/* Dot snaps to cursor exactly */}
       <div
         ref={dotRef}
         aria-hidden="true"
@@ -192,7 +192,7 @@ export default function ChromaticCursor() {
         }}
       />
 
-      {/* Ring — spring-follows with slight lag */}
+      {/* Ring spring-follows with slight lag */}
       <div
         ref={ringRef}
         aria-hidden="true"

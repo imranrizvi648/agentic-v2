@@ -130,7 +130,7 @@ export default function FolioTabsSection() {
 
             {/* RIGHT SIDE: Typography & Lists */}
             <div className="lg:col-span-7 space-y-5">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary tracking-tight">
                 {currentData.title}
               </h2>
               
@@ -140,7 +140,7 @@ export default function FolioTabsSection() {
                 </h3>
               )}
               
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-base text-slate-600 leading-[1.65] tracking-[-0.005em]">
                 {currentData.description}
               </p>
 

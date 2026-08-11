@@ -19,18 +19,18 @@ export default function ServiceHero({ number, tagline, headline, highlight, sub,
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Service number + eyebrow */}
         <div className="flex items-center gap-3 mb-6">
-          <span className="text-xs font-black text-indigo-400 tracking-widest uppercase">{number}</span>
+          <span className="text-xs font-bold text-indigo-400 tracking-widest uppercase">{number}</span>
           <span className="w-4 h-px bg-indigo-300" />
           <span className="text-xs font-bold text-slate-500 tracking-wide uppercase">{tagline}</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-brand-primary leading-[1.1] tracking-tight max-w-4xl mb-6">
           {parts[0]}
           <span className="text-indigo-600">{highlight}</span>
           {parts[1]}
         </h1>
 
-        <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-10">{sub}</p>
+        <p className="text-base sm:text-lg text-slate-600 leading-[1.65] tracking-[-0.005em] max-w-2xl mb-10">{sub}</p>
 
         <div className="flex flex-col sm:flex-row gap-3 mb-12">
           <Link

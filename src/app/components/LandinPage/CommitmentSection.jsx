@@ -2,10 +2,11 @@
 import React from "react";
 
 const stats = [
-  { value: "9+", label: "ENTERPRISE AI\nSERVICES" },
-  { value: "3", label: "GLOBAL\nOFFICES" },
-  { value: "100%", label: "PRODUCTION-GRADE\nDEPLOYMENTS" },
-  { value: "24/7", label: "AGENT\nMONITORING" },
+
+    { value: "9+", label: "Enterprise Ai\nServices" },
+    { value: "3", label: "Global\nOffice" },
+   { value: "100%", label: "PGrade\nDeployments" },
+   { value: "24/7", label: "Agent\nMonitoring" },
 ];
 
 export default function CommitmentSection() {
@@ -18,13 +19,13 @@ export default function CommitmentSection() {
         {/* Upper Content */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-10 sm:mb-16 md:mb-18 gap-8 sm:gap-12">
           <div className="max-w-2xl">
-            <div className="w-12 h-1 bg-[#625eff] mb-6 sm:mb-8" />
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-[1.1] tracking-tight">
+          
+            <h2 className="text-3xl lg:text-4xl font-bold leading-[1.1] ">
               We build intelligent AI agents <br /> that automate work, <br />
               <span className="text-white">improve decisions and scale faster.</span>
             </h2>
           </div>
-          <p className="text-base sm:text-lg text-white/60 max-w-sm pt-0 sm:pt-4 border-l border-[#625eff]/40 pl-5 sm:pl-6">
+          <p className="text-base sm:text-lg text-white/60 max-w-sm pt-0 sm:pt-4 border-l border-[#625eff]/40 pl-5 sm:pl-6 leading-[1.65] tracking-[-0.005em]">
             We deploy AI agents natively inside your ERP, automating finance, operations and{" "}
             <span className="text-white">decision-making from end to end</span> across the GCC, South Asia and Europe.
           </p>
@@ -40,8 +41,8 @@ export default function CommitmentSection() {
                 ${index < 2 ? "pb-6 md:pb-2 border-b border-white/10 md:border-b-0" : "pt-6 md:pt-2"}
               `}
             >
-              <span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-2 text-white">{stat.value}</span>
-              <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.25em] leading-relaxed whitespace-pre-line uppercase text-[#625eff]">{stat.label}</span>
+              <span className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-[-0.03em] mb-2 text-white">{stat.value}</span>
+              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] leading-relaxed whitespace-pre-line  text-[#625eff]">{stat.label}</span>
             </div>
           ))}
         </div>

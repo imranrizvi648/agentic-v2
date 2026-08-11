@@ -22,7 +22,7 @@ export default function HeroSection() {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 sm:px-12 lg:px-16 w-full grid grid-cols-1 gap-8">
         
         {/* Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-white max-w-4xl">
+        <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-[-0.03em] leading-[1.02] text-white max-w-4xl">
           AI Agents That Run Inside the Systems{" "}
           <span className="text-[#1a194d]">
             You Already Use.

@@ -1,18 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FluidCursor from "./components/FluidCursor";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata = {
@@ -55,8 +52,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={inter.className}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
         <link rel="alternate" hrefLang="en" href="https://www.agenticsense.co/" />
         <script
           type="application/ld+json"
@@ -95,22 +98,18 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col antialiased bg-black text-white relative`}
+        className="min-h-screen flex flex-col antialiased bg-black text-white relative"
       >
-        <FluidCursor />
+        {/* <FluidCursor /> */}
         <div className="relative z-10 flex flex-col min-h-screen w-full">
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-  <Script 
-  src="http://203.130.9.165:18086/widget/wid_c019a568ccd14a05.js"
-
-  strategy="lazyOnload"
-/>
-
-
-
+        <Script
+          src="http://203.130.9.165:18086/widget/wid_c019a568ccd14a05.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

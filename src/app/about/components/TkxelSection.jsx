@@ -69,10 +69,10 @@ export default function TkxelSection() {
         {/* LEFT: Sticky */}
         <div className="lg:sticky lg:top-24 lg:h-[calc(100vh-12rem)] flex flex-col justify-between py-4">
           <div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-brand-primary mb-4">
+            <h1 className="text-3xl lg:text-4xl font-bold tracking-[-0.025em] leading-[1.1] text-brand-primary mb-4">
               Agentic AI, Finance Expertise <br className="hidden sm:block" /> and Enterprise Delivery
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 max-w-sm mb-5 sm:mb-6">
+            <p className="text-base text-slate-600 max-w-sm mb-5 sm:mb-6 leading-[1.65] tracking-[-0.005em]">
               Every engagement starts with your data, your ERP and measurable outcomes agreed in writing before a line of code.
             </p>
           <Link href="/services">
@@ -113,7 +113,7 @@ export default function TkxelSection() {
               </div>
               <div className="space-y-2 sm:space-y-3">
                 <h2 className="text-base sm:text-lg font-bold tracking-tight text-brand-primary leading-snug">{item.title}</h2>
-                <p className="text-slate-600 leading-relaxed text-sm">{item.description}</p>
+                <p className="text-slate-600 leading-[1.65] tracking-[-0.005em] text-base">{item.description}</p>
                 <div className="pt-1 sm:pt-2">
                   <a href="#" className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 uppercase tracking-wider group">
                     {item.linkText} <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

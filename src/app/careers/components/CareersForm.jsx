@@ -94,12 +94,12 @@ function Step1({ data, set, cvName, setCvName }) {
       <TextInput icon={MapPin}  label="Current Address"     required placeholder="City, Country"          value={data.address}   onChange={e => set("address", e.target.value)} />
       <TextInput icon={Link2}   label="LinkedIn Profile URL"         placeholder="linkedin.com/in/you"    value={data.linkedin}  onChange={e => set("linkedin", e.target.value)} />
 
-      {/* Portfolio — full width */}
+      {/* Portfolio full width */}
       <div className="col-span-2">
         <TextInput icon={Link2} label="Portfolio / GitHub Link" placeholder="github.com/yourname or portfolio URL" value={data.portfolio} onChange={e => set("portfolio", e.target.value)} />
       </div>
 
-      {/* CV Upload — full width */}
+      {/* CV Upload full width */}
       <div className="col-span-2">
         <label className="text-[0.68rem] font-bold tracking-[0.14em] uppercase text-[#9ca3af] mb-[6px] block">
           CV / Resume (PDF, Word, Image)<span className="text-[#625eff] ml-[3px]">*</span>
@@ -266,7 +266,7 @@ function Step4({ data }) {
           {fields.map(([k, v]) => (
             <div key={k}>
               <span className="text-[0.65rem] font-bold text-[#9ca3af] uppercase tracking-[0.12em]">{k}</span>
-              <p className="text-[0.82rem] text-[#1a194d] font-semibold mt-[2px] break-all">{v || "—"}</p>
+              <p className="text-[0.82rem] text-[#1a194d] font-semibold mt-[2px] break-all">{v || ""}</p>
             </div>
           ))}
         </div>
@@ -381,7 +381,7 @@ export default function CareersForm() {
           <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#625eff] to-[#a095ff] flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={36} className="text-white"/>
           </div>
-          <h2 className="text-[1.75rem] font-extrabold text-[#1a194d] mb-3">Application Received!</h2>
+          <h2 className="text-[1.75rem] font-bold text-[#1a194d] mb-3">Application Received!</h2>
           <p className="text-[#6b7280] leading-[1.65] text-[0.95rem]">
             Thanks for applying. We review every application carefully. If your profile is a match, we'll be in touch within 1–2 business days.
           </p>
@@ -403,7 +403,7 @@ export default function CareersForm() {
 
         {/* Header */}
         <div className="text-center mb-[clamp(40px,6vw,64px)]">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-primary tracking-tight leading-[1.1] mb-4">Apply to AgenticSense</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-primary tracking-tight leading-[1.1] mb-4">Apply to AgenticSense</h2>
           <p className="text-[clamp(0.9rem,2vw,1rem)] text-[#6b7280] max-w-[440px] mx-auto leading-[1.65]">
             Fill in the form below. We read every application personally and respond to every shortlisted candidate.
           </p>
@@ -423,7 +423,7 @@ export default function CareersForm() {
                 ))}
               </div>
               <p className="text-[0.7rem] font-bold text-[#625eff] uppercase tracking-[0.16em]">
-                — Step {step}: {STEPS[step - 1].label}
+                 Step {step}: {STEPS[step - 1].label}
               </p>
             </div>
 
@@ -461,10 +461,10 @@ export default function CareersForm() {
             <div className="bg-white border border-solid border-[#eeecfc] rounded-[16px] py-7 px-7 shadow-[0_2px_16px_rgba(26,25,77,0.05)]">
               <p className="text-[0.68rem] font-bold tracking-[0.16em] uppercase text-[#625eff] mb-4">Why Join Us</p>
               {[
-                { icon: "", title: "Real production work", body: "Build AI agents that run inside SAP, Oracle and enterprise ERP — not demos, not prototypes." },
+                { icon: "", title: "Real production work", body: "Build AI agents that run inside SAP, Oracle and enterprise ERP not demos, not prototypes." },
                 { icon: "", title: "Global & distributed", body: "Work with clients across the GCC, South Asia and Europe from wherever you're most productive." },
-                { icon: "", title: "Deep technical problems", body: "Agentic pipelines, ERP integrations, multi-tenant SaaS — problems that actually require engineering skill." },
-                { icon: "", title: "Growing fast", body: "Early team member advantage — direct impact on architecture, culture and direction." },
+                { icon: "", title: "Deep technical problems", body: "Agentic pipelines, ERP integrations, multi-tenant SaaS problems that actually require engineering skill." },
+                { icon: "", title: "Growing fast", body: "Early team member advantage direct impact on architecture, culture and direction." },
               ].map(({ icon, title, body }) => (
                 <div key={title} className="flex gap-[14px] pb-[14px] mb-[14px] border-b border-solid border-[#f5f4ff]">
                   <span className="text-[1.3rem] shrink-0 leading-[1]">{icon}</span>

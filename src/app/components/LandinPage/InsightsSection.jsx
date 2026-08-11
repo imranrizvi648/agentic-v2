@@ -8,7 +8,7 @@ const insightsData = [
     type: "ARTICLE",
     tagBg: "bg-indigo-100",
     tagColor: "text-indigo-600",
-    title: "Why Finance AI Pilots Fail — And What to Do Instead",
+    title: "Why Finance AI Pilots Fail And What to Do Instead",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600&h=350",
     href: "/blog/why-finance-ai-pilots-fail",
   },
@@ -82,7 +82,7 @@ export default function InsightsSection() {
         
         {/* Header Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight">
+          <h2 className="text-3xl lg:text-4xl font-bold text-brand-primary tracking-[-0.025em] leading-[1.1]">
             Latest insights & resources
           </h2>
           

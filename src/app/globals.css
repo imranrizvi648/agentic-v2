@@ -9,9 +9,14 @@
   --color-background: white;
   --color-foreground: #1a194d;
 
-  /* Fonts Configuration (Mapped to Next.js font variables) */
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), sans-serif;
+  /*
+   * Font: Inter literal string so Tailwind resolves it correctly.
+   * DO NOT use var(--font-inter) here; next/font variables are not
+   * available at :root/@theme level.
+   */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
 }
 
 /* Dark Mode Overrides */
@@ -24,39 +29,88 @@
   }
 }
 
-/* Base Styles */
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES Inter applied to EVERY element, no exceptions
+───────────────────────────────────────────────────────────────────────────── */
 @layer base {
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: var(--color-foreground);
-    font-family: var(--font-sans); /* डिफ़ॉल्ट रूप से Plus Jakarta Sans यूज़ होगा */
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Force Inter on every single element */
+  *,
+  *::before,
+  *::after {
+    font-family: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+
+  p, span, div, a, button, input, textarea, select, label, li {
+    font-family: inherit;
   }
 }
 
-/* ── Typography System ─────────────────────────────────────────────────────── */
-/* H1: Page/Hero Headlines (Using premium tech display font) */
+/* ─────────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY SYSTEM matches product page exactly
+───────────────────────────────────────────────────────────────────────────── */
+
+/* H1: Hero / page titles bold, tight tracking (like "Leadsense." heading) */
 .typo-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 5vw, 3.25rem);   /* ~28px → 52px */
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.75rem, 5vw, 3.25rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+/* H2: Section headlines */
+.typo-h2 {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.375rem, 3vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
-/* H2: Section Headlines */
-.typo-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.375rem, 3vw, 2.25rem);  /* ~22px → 36px */
-  font-weight: 800;
-  line-height: 1.2;
+/* H3: Card / sub-section titles */
+.typo-h3 {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
   letter-spacing: -0.01em;
 }
 
-/* H3: Card/Sub-section Titles */
-.typo-h3 {
-  font-family: var(--font-sans);
-  font-size: 1rem;           /* 16px */
-  font-weight: 700;
-  line-height: 1.35;
+/* Body paragraph like the tagline under "Leadsense." */
+.typo-body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+/* Small label / eyebrow text like "MODULE / LEADSENSE" */
+.typo-label {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }

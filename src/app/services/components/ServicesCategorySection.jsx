@@ -147,7 +147,7 @@ export default function ServicesCategorySection() {
                 CAPABILITIES CATALOGUE // VOL. 02
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mx-auto max-w-4xl leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mx-auto max-w-4xl leading-tight">
               Our Services.
             </h2>
           </div>
@@ -191,7 +191,7 @@ export default function ServicesCategorySection() {
               <div className="flex items-center justify-between border-b border-slate-200 pb-3">
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-[#1a194d]" />
-                  <h3 className="text-[11px] font-mono font-black uppercase tracking-[0.15em] text-brand-primary">
+                  <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.15em] text-brand-primary">
                     {cat.label}
                   </h3>
                 </div>
@@ -235,7 +235,7 @@ export default function ServicesCategorySection() {
                       </h4>
 
                       {/* Description */}
-                      <p className="text-[12px] text-slate-500 leading-relaxed font-medium">
+                      <p className="text-base text-slate-600 leading-[1.65] tracking-[-0.005em] font-medium">
                         {s.overviewLead}
                       </p>
                     </div>

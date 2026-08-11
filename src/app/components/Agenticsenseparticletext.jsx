@@ -35,7 +35,7 @@ export default function AgenticSenseParticleText() {
       let lo = 20, hi = 800, best = 20;
       for (let i = 0; i < 22; i++) {
         const mid = (lo + hi) / 2;
-        measureCtx.font = `900 ${mid}px 'Geist Sans', ui-sans-serif, system-ui, sans-serif`;
+        measureCtx.font = `900 ${mid}px 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif`;
         // approximate letter-spacing effect: (chars-1) * -0.05 * fontSize
         const spacing = (TEXT.length - 1) * (-0.05) * mid;
         const w = measureCtx.measureText(TEXT).width + spacing;
@@ -189,7 +189,7 @@ export default function AgenticSenseParticleText() {
     const buildMask = () => {
       maskCanvas.width = W; maskCanvas.height = H;
       maskCtx.clearRect(0, 0, W, H);
-      maskCtx.font = `900 ${fontSize}px 'Geist Sans', ui-sans-serif, system-ui, sans-serif`;
+      maskCtx.font = `900 ${fontSize}px 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif`;
       maskCtx.textBaseline = "top"; maskCtx.textAlign = "center";
       maskCtx.letterSpacing = `${Math.round(-fontSize * 0.05)}px`;
       maskCtx.fillStyle = "rgba(6,5,36,1)";
@@ -288,7 +288,7 @@ export default function AgenticSenseParticleText() {
 
   return (
     <div ref={wrapRef} className="relative w-full select-none text-center block overflow-hidden" style={{ lineHeight: 1 }}>
-      {/* Spacer — font-size set by JS at runtime to fit the container exactly */}
+      {/* Spacer font-size set by JS at runtime to fit the container exactly */}
       <div
         ref={textRef}
         aria-hidden="true"

@@ -4,11 +4,11 @@ import Link from "next/link";
 import ProductHero from "./components/ProductHero";
 
 /*
-  FONT: Inter (Google Fonts) — same as detail page for consistency.
+  FONT: Inter (Google Fonts) same as detail page for consistency.
   Load once in your root layout (link tag from earlier snippet).
 
   ANIMATIONS: All custom CSS keyframes inline via <style jsx global>.
-  No external GIFs — every mockup is a live, meaningful product
+  No external GIFs every mockup is a live, meaningful product
   story built with Tailwind + a handful of keyframes so it never
   breaks and always matches the brand.
 */
@@ -31,9 +31,9 @@ const PRODUCTS = [
     desc: "Integrates diverse touchpoints, syncs customer conversations across email, social, and support desks, keeping communication streams unified and beautifully coordinated.",
   },
   {
-    id: "linkdsense",
+    id: "linksense",
     num: "03",
-    name: "Linkdsense",
+    name: "Linksense",
     role: "LinkedIn Outreach & Automation Suite",
     tagline: "Your dedicated silent agent, growing your professional pipeline.",
     desc: "Identifies ideal connections on LinkedIn, monitors target account activities, drafts personalized context-rich messages, and maintains warm conversational touchpoints safely.",
@@ -435,7 +435,7 @@ export default function OurProductPage() {
     >
       {/* FBR header */}
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-[7px] font-black text-emerald-700 tracking-wider">FBR</span>
+        <span className="text-[7px] font-bold text-emerald-700 tracking-wider">FBR</span>
         <span
           className="flex items-center gap-0.5 text-[6px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-1 py-0.5 rounded"
           style={{ animation: "tickPop .5s ease-out 1s both" }}
@@ -445,7 +445,7 @@ export default function OurProductPage() {
         </span>
       </div>
 
-      {/* QR code — 6x6 grid built from divs, generated look */}
+      {/* QR code 6x6 grid built from divs, generated look */}
       <div
         className="grid grid-cols-6 gap-[1px] bg-white p-1 border border-slate-200 rounded-sm mx-auto w-[42px] h-[42px]"
         style={{ animation: "tickPop .5s ease-out .7s both" }}

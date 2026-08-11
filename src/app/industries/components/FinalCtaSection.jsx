@@ -23,12 +23,12 @@ export default function FinalCtaSection() {
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-5 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-5 leading-tight">
           Tell Us Which Sector Process Costing the Most Time.
         </h2>
 
         {/* Body Text */}
-        <p className="text-base text-white/80 leading-relaxed mb-10">
+        <p className="text-base sm:text-lg text-white/80 leading-[1.65] tracking-[-0.005em] mb-10">
   Our Industry AI Assessment helps uncover high-value opportunities for automation and intelligent decision-making within your organization. We review your existing systems, processes, and business objectives to provide a strategic roadmap, implementation guidance, and a clear understanding of the potential impact of AI across your operations.
 </p>
 

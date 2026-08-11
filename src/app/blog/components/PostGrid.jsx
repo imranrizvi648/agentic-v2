@@ -15,19 +15,19 @@ function PostCard({ post }) {
       <div className="p-6 flex flex-col flex-1">
         {/* Category + read time */}
         <div className="flex items-center justify-between mb-4">
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#625eff] bg-[#625eff]/8 border border-[#625eff]/15 px-2.5 py-1 rounded-full">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-[#625eff] bg-[#625eff]/8 border border-[#625eff]/15 px-2.5 py-1 rounded-full">
             {post.category.replace(/-/g, " ")}
           </span>
           <span className="text-[10px] text-slate-400 font-medium">{post.readTime}</span>
         </div>
 
         {/* Title */}
-        <h3 className="text-base font-black text-[#1a194d] leading-snug mb-3 group-hover:text-[#625eff] transition-colors flex-1">
+        <h3 className="text-base font-bold text-[#1a194d] leading-snug mb-3 group-hover:text-[#625eff] transition-colors flex-1">
           {post.title}
         </h3>
 
         {/* Excerpt */}
-        <p className="text-xs text-slate-500 leading-relaxed mb-5 line-clamp-3">
+        <p className="text-sm text-slate-600 leading-[1.6] mb-5 line-clamp-3">
           {post.excerpt}
         </p>
 

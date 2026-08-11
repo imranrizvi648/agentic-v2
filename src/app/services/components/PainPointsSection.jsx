@@ -134,7 +134,7 @@ export default function PainPointsSection() {
         <div className="border-b border-slate-200 pb-12 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-3xl space-y-4">
            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mx-auto max-w-4xl leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mx-auto max-w-4xl leading-tight">
               You Don&apos;t Have an AI Problem. <br />
               You HaveExpensive, Repetitive Work.
             </h2>
@@ -252,10 +252,10 @@ export default function PainPointsSection() {
               <span className="font-mono text-[11px] tracking-[0.2em] text-[#625eff] font-bold uppercase block">
                 ANALYSIS & MODELING
               </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-brand-primary leading-tight uppercase">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-brand-primary leading-tight uppercase">
                 Active ERP Waste <br />Calculator
               </h3>
-              <p className="text-xs text-slate-500 leading-relaxed max-w-sm">
+              <p className="text-sm text-slate-500 leading-relaxed max-w-sm">
                 Compounding operational inefficiencies in manual ledger keying, broken pipeline APIs, and latency inside SAP terminals yield significant financial leakage. Select your variables to observe true cost adjustments.
               </p>
             </div>
@@ -311,7 +311,7 @@ export default function PainPointsSection() {
                 <span className="text-[#625eff] font-mono text-[10px] tracking-wider uppercase block font-bold">
                   Recovered Agent Capital
                 </span>
-                <span className="text-3xl font-extrabold text-[#625eff] font-mono">
+                <span className="text-3xl font-bold text-[#625eff] font-mono">
                   ${annualSavings.toLocaleString()}
                 </span>
               </div>

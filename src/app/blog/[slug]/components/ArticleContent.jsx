@@ -14,13 +14,13 @@ function renderBlock(block, idx) {
     case "h2":
       return (
         <h2 key={idx} id={block.text.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}
-          className="text-2xl font-black text-[#1a194d] leading-tight mt-12 mb-5 scroll-mt-24">
+          className="text-2xl font-bold text-[#1a194d] leading-tight mt-12 mb-5 scroll-mt-24">
           {block.text}
         </h2>
       );
     case "h3":
       return (
-        <h3 key={idx} className="text-lg font-black text-[#1a194d] leading-tight mt-8 mb-4">
+        <h3 key={idx} className="text-lg font-bold text-[#1a194d] leading-tight mt-8 mb-4">
           {block.text}
         </h3>
       );
@@ -43,7 +43,7 @@ function renderBlock(block, idx) {
       return (
         <ul key={idx} className="mb-6 space-y-2 ml-1">
           {block.items?.map((item, i) => (
-            <li key={i} className="flex gap-3 text-sm text-slate-600 leading-relaxed">
+            <li key={i} className="flex gap-3 text-base text-slate-600 leading-[1.65] tracking-[-0.005em]">
               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#625eff] mt-2" />
               {item}
             </li>
@@ -87,11 +87,11 @@ export default function ArticleContent({ post, relatedPosts }) {
           </nav>
 
           {/* Category */}
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-white/60 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full mb-6">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-white/60 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full mb-6">
             {post.category.replace(/-/g, " ")}
           </span>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6 max-w-3xl">
             {post.title}
           </h1>
 
@@ -117,7 +117,7 @@ export default function ArticleContent({ post, relatedPosts }) {
           {headings.length > 0 && (
             <aside className="hidden lg:block md:col-span-1 lg:col-span-3">
               <div className="sticky top-28">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
                   In this article
                 </p>
                 <nav className="space-y-1" aria-label="Article contents">
@@ -140,7 +140,7 @@ export default function ArticleContent({ post, relatedPosts }) {
 
                 {/* Tags */}
                 <div className="mt-10 pt-8 border-t border-slate-100">
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Tags</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Tags</p>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span key={tag} className="text-[10px] font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-full">
@@ -176,7 +176,7 @@ export default function ArticleContent({ post, relatedPosts }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex items-center gap-3 mb-10">
               <div className="h-px w-8 bg-[#625eff]" />
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-[#625eff]">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#625eff]">
                 Related Articles
               </h2>
             </div>
@@ -189,10 +189,10 @@ export default function ArticleContent({ post, relatedPosts }) {
                 >
                   <div className={`h-1.5 bg-gradient-to-r ${rp.coverGradient}`} />
                   <div className="p-5">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-[#625eff] mb-3 block">
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-[#625eff] mb-3 block">
                       {rp.category.replace(/-/g, " ")}
                     </span>
-                    <h3 className="text-sm font-black text-[#1a194d] leading-snug mb-3 group-hover:text-[#625eff] transition-colors">
+                    <h3 className="text-sm font-bold text-[#1a194d] leading-snug mb-3 group-hover:text-[#625eff] transition-colors">
                       {rp.title}
                     </h3>
                     <div className="flex items-center gap-2 text-[10px] text-slate-400">

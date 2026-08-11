@@ -12,11 +12,9 @@ const slides = [
       "AgenticSense helps organizations automate workflows, improve decision-making, and scale operations through intelligent AI solutions designed for enterprise environments.",
     image: "/bg-1.webp",
     textColor: "text-white",
-    buttonStyle:
-      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGuideCard: true,
     buttonText: "Book a Free Consultation",
-        buttonLink: "/contact",
+    buttonLink: "/contact",
   },
   {
     id: 2,
@@ -25,11 +23,9 @@ const slides = [
       "We build AI-driven systems that automate complex workflows, improve operational efficiency, and support scalable business transformation with measurable outcomes.",
     image: "/bg2.webp",
     textColor: "text-white",
-    buttonStyle:
-      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasWebinarCard: true,
     buttonText: "Explore AI Services",
-        buttonLink: "/contact",
+    buttonLink: "/contact",
   },
   {
     id: 3,
@@ -38,13 +34,12 @@ const slides = [
       "AgenticSense partners with enterprises to deliver ERP-native AI solutions, finance automation, and intelligent workflows designed for production environments and measurable business value.",
     image: "/bg-3.webp",
     textColor: "text-white",
-    buttonStyle:
-      "bg-[#625eff] text-white hover:bg-[#5a52e0] shadow-[0_4px_20px_rgba(98,94,255,0.5),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-none",
     hasGlassCards: true,
     buttonText: "See Our Work in AI",
-        buttonLink: "/contact",
+    buttonLink: "/contact",
   },
 ];
+
 const AUTO_PLAY_DURATION = 6000;
 const EASE_EXPO_OUT = [0.19, 1, 0.22, 1];
 const EASE_IN_SOFT  = [0.4, 0, 0.6, 0];
@@ -73,6 +68,10 @@ function useImagePreload(images) {
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  const [isHeroBtnHovered, setIsHeroBtnHovered] = useState(false);
+  const [isCard1BtnHovered, setIsCard1BtnHovered] = useState(false);
+  const [isCard2BtnHovered, setIsCard2BtnHovered] = useState(false);
+
   const timerRef = useRef(null);
 
   useImagePreload(slides.map((s) => s.image));
@@ -109,39 +108,58 @@ export default function HeroSlider() {
             <div className="relative w-full" style={{ minHeight: 300 }}>
               <AnimatePresence mode="sync">
                 <motion.div key={`left-${current}`} variants={leftVariants} initial="initial" animate="animate" exit="exit" className="absolute inset-0 flex flex-col justify-center" style={{ willChange: "opacity, transform" }}>
-                  <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.1] tracking-tight whitespace-pre-line mb-4 sm:mb-6 lg:mt-30 ${slides[current].textColor}`}>
+                  <h1 className={`text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.02] tracking-[-0.03em] whitespace-pre-line mb-4 sm:mb-6 lg:mt-30 ${slides[current].textColor}`}>
                     {slides[current].title}
                   </h1>
-                  <p className={`text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-6 sm:mb-8 ${isDarkSlide ? "text-white/70" : "text-slate-500"}`}>
+                  <p className={`text-base sm:text-lg leading-[1.6] tracking-[-0.005em] max-w-xl mb-6 sm:mb-8 ${isDarkSlide ? "text-white/70" : "text-slate-500"}`}>
                     {slides[current].description}
                   </p>
                   <p className="text-xs text-white/40 mb-4 uppercase tracking-widest">
                     Built for startups, enterprises and future-ready organizations worldwide.
                   </p>
-                  
-                  {/* Modern Next.js Link syntax with motion button inside */}
-                  <Link href={slides[current].buttonLink}>
-                    <motion.button 
-                      whileHover={{ scale: 1.02 }} 
-                      whileTap={{ scale: 0.98 }}
-                      className={`w-full max-w-[220px] sm:max-w-[280px] inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 font-semibold text-sm sm:text-base transition-all duration-300 cursor-pointer ${slides[current].buttonStyle}`}
-                    >
-                      <span className="truncate">{slides[current].buttonText}</span>
-                      <ArrowRight size={16} className="flex-shrink-0" />
-                    </motion.button>
-                  </Link>
+
+                  {/* 1. Main Left Hero Gradient Button */}
+                  <div className="w-full">
+                    <Link href={slides[current].buttonLink} className="inline-block">
+                      <button
+                        onMouseEnter={() => setIsHeroBtnHovered(true)}
+                        onMouseLeave={() => setIsHeroBtnHovered(false)}
+                        className="relative flex items-center gap-2 px-6 py-3 rounded font-semibold text-[14px] sm:text-[15px] transition-all duration-300 overflow-hidden bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white hover:shadow-lg hover:shadow-[#625eff]/20 cursor-pointer group/btn"
+                      >
+                        {!isHeroBtnHovered && (
+                          <>
+                            <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
+                            <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
+                            <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                          </>
+                        )}
+                        {isHeroBtnHovered && (
+                          <div className="absolute inset-1 pointer-events-none">
+                            <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 h-[1px] bg-white/70" />
+                            <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 w-[1px] bg-white/70" />
+                            <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 h-[1px] bg-white/70" />
+                            <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 w-[1px] bg-white/70" />
+                          </div>
+                        )}
+                        <span className="relative z-10 flex items-center gap-2">
+                          <span className="truncate">{slides[current].buttonText}</span>
+                          <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform duration-200 flex-shrink-0" />
+                        </span>
+                      </button>
+                    </Link>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
 
-          {/* Right: Cards — desktop only */}
+          {/* Right: Cards desktop only */}
           <div className="hidden lg:block w-full max-w-[400px] mt-12 lg:mt-16" style={{ minHeight: 380 }}>
             <div className="relative w-full" style={{ minHeight: 380 }}>
               <AnimatePresence mode="sync">
                 <motion.div key={`right-${current}`} variants={rightVariants} initial="initial" animate="animate" exit="exit" className="absolute inset-0 flex flex-col justify-center" style={{ willChange: "opacity, transform" }}>
 
-                  {/* SLIDE 1 — Free Assessment Card */}
+                  {/* SLIDE 1 Free Assessment Card */}
                   {slides[current].hasGuideCard && (
                     <div className="relative overflow-hidden rounded-2xl backdrop-blur-3xl bg-[#0c0a1c]/65 border border-white/[0.15] shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.6),0_4px_20px_rgba(98,94,255,0.15)]">
                       <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
@@ -162,16 +180,42 @@ export default function HeroSlider() {
                           <span className="w-1.5 h-1.5 rounded-full bg-[#625eff] shadow-[0_0_5px_rgba(98,94,255,0.9)]" />No Cost · No Obligation
                         </div>
                         <h3 className="text-[18px] font-bold text-white mb-2 leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">Finance Automation Assessment</h3>
-                        <p className="text-white/70 text-[12px] leading-relaxed mb-4">We map your highest-value automation opportunity and show what an agent inside your ERP could do with it.</p>
+                        <p className="text-white/70 text-sm leading-[1.6] mb-4">We map your highest-value automation opportunity and show what an agent inside your ERP could do with it.</p>
                         <div className="h-[1px] bg-gradient-to-r from-[#625eff]/40 via-white/10 to-transparent mb-4" />
-                        <Link href="/contact" className="group/btn inline-flex items-center gap-2 text-white font-semibold text-[13px] hover:text-[#a095ff] transition-colors duration-200">
-                          Book Free Session <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        
+                        {/* 2. Slide 1 Card Gradient Button */}
+                        <Link href="/contact" className="w-full inline-block">
+                          <button
+                            onMouseEnter={() => setIsCard1BtnHovered(true)}
+                            onMouseLeave={() => setIsCard1BtnHovered(false)}
+                            className="relative w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded font-semibold text-[13px] transition-all duration-300 overflow-hidden bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white hover:shadow-lg hover:shadow-[#625eff]/20 cursor-pointer group/btn"
+                          >
+                            {!isCard1BtnHovered && (
+                              <>
+                                <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
+                                <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
+                                <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                              </>
+                            )}
+                            {isCard1BtnHovered && (
+                              <div className="absolute inset-1 pointer-events-none">
+                                <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 h-[1px] bg-white/70" />
+                                <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 w-[1px] bg-white/70" />
+                                <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 h-[1px] bg-white/70" />
+                                <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 w-[1px] bg-white/70" />
+                              </div>
+                            )}
+                            <span className="relative z-10 flex items-center gap-2">
+                              Book Free Session
+                              <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+                            </span>
+                          </button>
                         </Link>
                       </div>
                     </div>
                   )}
 
-                  {/* SLIDE 2 — Webinar Card */}
+                  {/* SLIDE 2 Webinar Card */}
                   {slides[current].hasWebinarCard && (
                     <div className="relative overflow-hidden rounded-2xl backdrop-blur-3xl bg-[#0c0a1c]/65 border border-white/[0.15] shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.6),0_4px_20px_rgba(98,94,255,0.15)]">
                       <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
@@ -200,14 +244,40 @@ export default function HeroSlider() {
                           <div className="flex items-center gap-1.5 text-white/60 text-[11px]"><Users size={11} /><span>No obligation</span></div>
                         </div>
                         <div className="h-[1px] bg-gradient-to-r from-[#625eff]/40 via-white/10 to-transparent mb-4" />
-                        <Link href="/contact" className="group/btn inline-flex items-center gap-2 text-white font-semibold text-[13px] hover:text-[#a095ff] transition-colors duration-200">
-                          Book a Consultation <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        
+                        {/* 3. Slide 2 Card Gradient Button */}
+                        <Link href="/contact" className="w-full inline-block">
+                          <button
+                            onMouseEnter={() => setIsCard2BtnHovered(true)}
+                            onMouseLeave={() => setIsCard2BtnHovered(false)}
+                            className="relative w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded font-semibold text-[13px] transition-all duration-300 overflow-hidden bg-gradient-to-r from-[#1a194d] to-[#625eff] text-white hover:shadow-lg hover:shadow-[#625eff]/20 cursor-pointer group/btn"
+                          >
+                            {!isCard2BtnHovered && (
+                              <>
+                                <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-white/60 rounded-tl-[2px]" />
+                                <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-white/60 rounded-br-[2px]" />
+                                <div className="absolute top-0 left-3 right-3 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+                              </>
+                            )}
+                            {isCard2BtnHovered && (
+                              <div className="absolute inset-1 pointer-events-none">
+                                <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 h-[1px] bg-white/70" />
+                                <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute top-0 left-0 w-[1px] bg-white/70" />
+                                <motion.span initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 h-[1px] bg-white/70" />
+                                <motion.span initial={{ height: 0 }} animate={{ height: "100%" }} transition={{ duration: 0.28 }} className="absolute bottom-0 right-0 w-[1px] bg-white/70" />
+                              </div>
+                            )}
+                            <span className="relative z-10 flex items-center gap-2">
+                              Book a Consultation
+                              <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+                            </span>
+                          </button>
                         </Link>
                       </div>
                     </div>
                   )}
 
-                  {/* SLIDE 3 — Results / Client Cards */}
+                  {/* SLIDE 3 Results / Client Cards */}
                   {slides[current].hasGlassCards && (
                     <div className="space-y-3">
                       <div className="flex items-center gap-3 mb-5">

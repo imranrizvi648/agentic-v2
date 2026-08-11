@@ -15,7 +15,7 @@ import FinalCtaSection from "./components/FinalCtaSection";
 export const metadata = {
   title: "Enterprise AI Agents & ERP-Native Automation Services | AgenticSense",
   description:
-    "AgenticSense builds custom AI agents that run natively inside SAP Business One, Oracle Fusion Cloud and Microsoft Fabric — automating finance, operations and decisions end to end via official APIs.",
+    "AgenticSense builds custom AI agents that run natively inside SAP Business One, Oracle Fusion Cloud and Microsoft Fabric automating finance, operations and decisions end to end via official APIs.",
   keywords: [
     "agentic AI services", "enterprise AI agents", "ERP AI integration",
     "SAP Business One AI", "Oracle Fusion AI", "NetSuite AI integration",

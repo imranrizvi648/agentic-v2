@@ -38,11 +38,11 @@ export default function DeliveryStepsSection() {
           <div className="flex items-center justify-center gap-3 mb-4">
            
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-4">
             A Process Built Around Your Sector's Reality.
           </h2>
-          <p className="text-slate-500 text-sm max-w-lg mx-auto leading-relaxed">
-            Five phases — adapted to the specific compliance requirements, data constraints and integration landscape of your industry.
+          <p className="text-slate-600 text-base max-w-lg mx-auto leading-[1.65] tracking-[-0.005em]">
+            Five phases adapted to the specific compliance requirements, data constraints and integration landscape of your industry.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function DeliveryStepsSection() {
                       <div>
                         {/* Header with Title and Phase badge */}
                         <div className="flex items-center justify-between mb-4 gap-4">
-                          <h4 className="text-[15px] font-black tracking-wide text-[#0f2d59] uppercase">
+                          <h4 className="text-[15px] font-bold tracking-wide text-[#0f2d59] uppercase">
                             {step.title}
                           </h4>
                           <span className="text-[10px] font-bold text-slate-400 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-sm tracking-wider">
@@ -78,7 +78,7 @@ export default function DeliveryStepsSection() {
                         </div>
                         
                         {/* Body text */}
-                        <p className="text-[13px] text-slate-500 leading-relaxed font-normal">
+                        <p className="text-sm text-slate-600 leading-[1.6] font-normal">
                           {step.body}
                         </p>
                       </div>

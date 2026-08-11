@@ -171,11 +171,11 @@ export default function CareersHero() {
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24">
         {/* Eyebrow */}
        
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.1] tracking-tight max-w-3xl mb-5">
+        <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.02] tracking-[-0.03em] max-w-3xl mb-5">
           Build the Future of<br className="hidden sm:block"/>
           <span className="text-[#a095ff]"> Enterprise AI</span> With Us.
         </h1>
-        <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-xl">
+        <p className="text-base sm:text-lg leading-[1.65] tracking-[-0.005em] text-white/60 max-w-xl">
           We're a tight-knit team building production AI agents that run natively inside enterprise ERP systems. If you're exceptional at what you do and want to work on problems that actually matter apply below.
         </p>
       </div>

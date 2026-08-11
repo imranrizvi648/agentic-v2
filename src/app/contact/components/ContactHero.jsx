@@ -18,7 +18,7 @@ export default function ContactHero() {
     let W = 0, H = 0;
     let mouse = { x:-9999, y:-9999 };
 
-    // ── Bezier lines — declared FIRST so doResize can call buildLines ─────────
+    // ── Bezier lines declared FIRST so doResize can call buildLines ─────────
     const LINE_COUNT = 24;
     const buildLines = () =>
       Array.from({ length: LINE_COUNT }, (_, i) => {
@@ -159,7 +159,7 @@ export default function ContactHero() {
 
     const particles = Array.from({ length:130 }, ()=>new P(true));
 
-    // ── Spatial grid — O(n) link culling ──────────────────────────────────────
+    // ── Spatial grid O(n) link culling ──────────────────────────────────────
     const CELL = 75;
     const drawLinks = () => {
       const grid = {};
@@ -191,7 +191,7 @@ export default function ContactHero() {
       ctx.globalAlpha=1;
     };
 
-    // ── Render — 40fps cap ────────────────────────────────────────────────────
+    // ── Render 40fps cap ────────────────────────────────────────────────────
     const FRAME_MS = 1000/40;
     let lastTs = 0;
     const render = (ts) => {
@@ -230,11 +230,11 @@ export default function ContactHero() {
     const start = () => { if (running) return; running=true; lastTs=0; raf=requestAnimationFrame(render); };
     const stop  = () => { running=false; if (raf) cancelAnimationFrame(raf); raf=0; };
 
-    // ── IntersectionObserver — pause off-screen ───────────────────────────────
+    // ── IntersectionObserver pause off-screen ───────────────────────────────
     const io = new IntersectionObserver(([e])=>{ e.isIntersecting?start():stop(); },{ threshold:0 });
     io.observe(canvas);
 
-    // ── Tab hidden — pause ────────────────────────────────────────────────────
+    // ── Tab hidden pause ────────────────────────────────────────────────────
     const onVis = ()=>{ document.hidden?stop():start(); };
     document.addEventListener("visibilitychange",onVis);
 
@@ -259,10 +259,10 @@ export default function ContactHero() {
       <div aria-hidden="true" className="absolute bottom-0 left-0 w-full h-14 bg-gradient-to-t from-[rgba(26,25,77,0.7)] to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl px-6 py-16 sm:px-16 sm:py-20 lg:px-24 lg:py-24">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-4">
+        <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-[-0.03em] leading-[1.02] text-white mb-4">
           Contact AgenticSense
         </h1>
-        <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-xl">
+        <p className="text-base sm:text-lg leading-[1.65] tracking-[-0.005em] text-white/60 max-w-xl">
           Have a project, business challenge or automation opportunity? Let AgenticSense help you build intelligent AI-powered solutions. We work with enterprises across the GCC, South Asia and Europe.
         </p>
       </div>

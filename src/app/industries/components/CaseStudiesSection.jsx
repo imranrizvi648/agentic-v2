@@ -6,7 +6,7 @@ const caseStudies = [
     accentBorder: "border-amber-400/20",
     org: "Regional investment group",
     challenge: "Manual reconciliation of thousands of daily transactions across multiple asset classes consumed analyst time and introduced material error risk at every period end.",
-    built: "An AI reconciliation agent cross-referencing trade data, bank statements and custodian feeds — posting matched entries automatically and surfacing only genuine breaks for review.",
+    built: "An AI reconciliation agent cross-referencing trade data, bank statements and custodian feeds posting matched entries automatically and surfacing only genuine breaks for review.",
     result: "85% of reconciliations now straight-through. Analyst hours reallocated from matching to investment analysis.",
   },
   {
@@ -15,7 +15,7 @@ const caseStudies = [
     accentBg: "bg-emerald-400/10",
     accentBorder: "border-emerald-400/20",
     org: "Multi-site hospital group",
-    challenge: "Revenue cycle delays — from documentation gaps to slow pre-authorisation — were adding weeks to cash collection and straining operational budgets.",
+    challenge: "Revenue cycle delays from documentation gaps to slow pre-authorisation were adding weeks to cash collection and straining operational budgets.",
     built: "A revenue cycle AI agent that checks documentation completeness at point of care, submits pre-auth automatically and tracks claim status without manual follow-up.",
     result: "Average claim cycle reduced by 12 days. Denial rate down 23% in the first quarter of operation.",
   },
@@ -25,7 +25,7 @@ const caseStudies = [
     accentBg: "bg-sky-400/10",
     accentBorder: "border-sky-400/20",
     org: "Commercial property developer",
-    challenge: "Lead qualification was inconsistent — high-value prospects treated identically to low-intent enquiries, and follow-up timing was unpredictable and manual.",
+    challenge: "Lead qualification was inconsistent high-value prospects treated identically to low-intent enquiries, and follow-up timing was unpredictable and manual.",
     built: "A conversational AI qualification agent that scores inbound enquiries against portfolio criteria, routes high-intent leads immediately and nurtures the rest automatically.",
     result: "40% increase in qualified-lead-to-appointment rate. 18 hours of senior agent time recovered weekly.",
   },
@@ -40,10 +40,10 @@ export default function CaseStudiesSection() {
           <div className="h-px w-8 bg-amber-400" />
           <span className="text-xs font-bold text-amber-400 uppercase tracking-[0.2em]">Real Impact</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4 max-w-2xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight mb-4 max-w-2xl">
           What Sector-Specific AI Actually Delivers.
         </h2>
-        <p className="text-white/35 text-sm max-w-xl mb-14 leading-relaxed">
+        <p className="text-white/60 text-base max-w-xl mb-14 leading-[1.65] tracking-[-0.005em]">
           Every engagement is measured against outcomes agreed before we start. These are the shapes of the results our industry agents are built to produce.
         </p>
 
@@ -55,21 +55,21 @@ export default function CaseStudiesSection() {
             >
               {/* Sector header */}
               <div className={`${c.accentBg} border-b ${c.accentBorder} px-4 sm:px-6 py-3 flex items-center justify-between`}>
-                <span className={`text-xs font-black uppercase tracking-widest ${c.accentColor}`}>{c.sector}</span>
+                <span className={`text-xs font-bold uppercase tracking-widest ${c.accentColor}`}>{c.sector}</span>
                 <span className="text-xs text-white/30 font-medium">{c.org}</span>
               </div>
 
               <div className="p-6 flex flex-col flex-1 gap-5">
                 <div>
-                  <p className="text-[9px] font-black uppercase tracking-[0.18em] text-white/25 mb-2">Challenge</p>
-                  <p className="text-xs text-white/50 leading-relaxed">{c.challenge}</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-white/25 mb-2">Challenge</p>
+                  <p className="text-sm text-white/50 leading-[1.6]">{c.challenge}</p>
                 </div>
                 <div>
-                  <p className="text-[9px] font-black uppercase tracking-[0.18em] text-white/25 mb-2">What We Built</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-white/25 mb-2">What We Built</p>
                   <p className="text-xs text-white/65 leading-relaxed">{c.built}</p>
                 </div>
                 <div className={`mt-auto rounded-xl ${c.accentBg} border ${c.accentBorder} px-5 py-4`}>
-                  <p className={`text-[9px] font-black uppercase tracking-[0.18em] ${c.accentColor} mb-2`}>Result</p>
+                  <p className={`text-[9px] font-bold uppercase tracking-[0.18em] ${c.accentColor} mb-2`}>Result</p>
                   <p className={`text-sm font-bold ${c.accentColor} leading-snug`}>{c.result}</p>
                 </div>
               </div>

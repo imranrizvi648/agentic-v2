@@ -9,7 +9,7 @@ import {
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-/* ── Use the legacy build — fixes DOMMatrix / Node.js environment errors ── */
+/* ── Use the legacy build fixes DOMMatrix / Node.js environment errors ── */
 pdfjs.GlobalWorkerOptions.workerSrc =
   `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
 
@@ -39,7 +39,7 @@ export default function PdfViewerSection({ pdfUrl = "/AGENTICSENSE_PROFILE.pdf" 
     setFullscreen(f => !f);
   };
 
-  /* Safe window width — avoids SSR crash */
+  /* Safe window width avoids SSR crash */
   const pageWidth = typeof window !== "undefined"
     ? Math.min(window.innerWidth - 48, 1100)
     : 900;
@@ -49,7 +49,7 @@ export default function PdfViewerSection({ pdfUrl = "/AGENTICSENSE_PROFILE.pdf" 
       width: "100%", background: "#f5f4ff",
       padding: "64px 24px 72px",
       display: "flex", flexDirection: "column", alignItems: "center",
-      fontFamily: "'Geist Sans', ui-sans-serif, system-ui, sans-serif",
+      fontFamily: "'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
     }}>
 
       {/* Header */}
@@ -92,7 +92,7 @@ export default function PdfViewerSection({ pdfUrl = "/AGENTICSENSE_PROFILE.pdf" 
           </span>
           <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
             <span style={{ fontSize: "0.7rem", color: "#9ca3af" }}>
-              {pageNumber} / {numPages || "—"}
+              {pageNumber} / {numPages || ""}
             </span>
             <button onClick={toggleFullscreen} style={{
               background: "none", border: "none", cursor: "pointer",
@@ -103,7 +103,7 @@ export default function PdfViewerSection({ pdfUrl = "/AGENTICSENSE_PROFILE.pdf" 
           </div>
         </div>
 
-        {/* PDF render — 16:9 */}
+        {/* PDF render 16:9 */}
         <div style={{
           position: "relative", width: "100%",
           aspectRatio: "16/9", background: "#f0effe",
@@ -213,7 +213,7 @@ export default function PdfViewerSection({ pdfUrl = "/AGENTICSENSE_PROFILE.pdf" 
         }}>
           <span style={{ fontWeight: 800 }}>{pageNumber}</span>
           <span style={{ color: "#d1d5db" }}>/</span>
-          <span style={{ color: "#9ca3af" }}>{numPages || "—"}</span>
+          <span style={{ color: "#9ca3af" }}>{numPages || ""}</span>
         </div>
 
         <Btn onClick={() => goTo(1)} disabled={pageNumber >= (numPages || 1)}><ChevronRight size={17}/></Btn>

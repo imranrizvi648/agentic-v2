@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
           <div className="h-px w-8 bg-amber-400" />
           <span className="text-xs font-bold text-amber-400 uppercase tracking-[0.2em]">Client Voice</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-14 max-w-2xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-14 max-w-2xl">
           From the Teams Running Our Agents in Production.
         </h2>
 
@@ -35,13 +35,13 @@ export default function TestimonialsSection() {
               className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-8 hover:bg-white/[0.04] transition-colors"
             >
               <div className="text-5xl text-white/10 font-serif leading-none mb-6 select-none">"</div>
-              <p className="text-base text-white/70 font-medium leading-relaxed italic mb-8">{t.quote}</p>
+              <p className="text-base sm:text-lg text-white/70 font-medium leading-[1.65] italic mb-8">{t.quote}</p>
               <div className="flex items-center justify-between pt-5 border-t border-white/[0.07]">
                 <div>
                   <p className="text-xs font-bold text-white/60">{t.author}</p>
                   <p className="text-xs text-white/30">{t.company}</p>
                 </div>
-                <span className={`text-[10px] font-black uppercase tracking-widest ${t.accent}`}>{t.sector}</span>
+                <span className={`text-[10px] font-bold uppercase tracking-widest ${t.accent}`}>{t.sector}</span>
               </div>
             </div>
           ))}

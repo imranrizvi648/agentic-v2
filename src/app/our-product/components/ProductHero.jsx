@@ -296,10 +296,10 @@ export default function ProductHero() {
 
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24">
 
-        {/* Eyebrow badge — matches listing page style */}
+        {/* Eyebrow badge matches listing page style */}
         
 
-        {/* Headline — matches "Our Product Specialities." */}
+        {/* Headline matches "Our Product Specialities." */}
         <motion.h1
           variants={fadeUp}
           initial="hidden"
@@ -312,7 +312,7 @@ export default function ProductHero() {
           <span className="text-[#8d8aff]"> products.</span>
         </motion.h1>
 
-        {/* Sub-headline — refined for readability, no ALL CAPS, matches detail-page tagline weight */}
+        {/* Sub-headline refined for readability, no ALL CAPS, matches detail-page tagline weight */}
         <motion.p
           variants={fadeUp}
           initial="hidden"
@@ -323,7 +323,7 @@ export default function ProductHero() {
          Agentic platforms powering outbound pipelines, intelligent automation, and operational intelligence.
         </motion.p>
 
-        {/* Stats — tighter typography, cleaner label style */}
+        {/* Stats tighter typography, cleaner label style */}
         <motion.div
           variants={fadeUp}
           initial="hidden"

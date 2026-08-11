@@ -3,16 +3,16 @@
 import { useEffect, useRef } from "react";
 
 // ── PERFORMANCE OPTIMIZATIONS (zero visual change) ────────────────────────────
-// 1. shadowBlur removed entirely — replaced with pre-rendered sprite canvases.
-//    shadowBlur forces a GPU blur pass per draw call per frame — the #1 cost.
+// 1. shadowBlur removed entirely replaced with pre-rendered sprite canvases.
+//    shadowBlur forces a GPU blur pass per draw call per frame the #1 cost.
 //    Sprites bake the glow once; per frame = one cheap drawImage() blit.
-// 2. O(n²) link loop replaced with spatial grid — O(n) neighbor lookup.
+// 2. O(n²) link loop replaced with spatial grid O(n) neighbor lookup.
 //    130 particles → 16,900 checks/frame → now ~300 checks/frame max.
-// 3. requestAnimationFrame throttled to 40fps — slow canvas drift is identical.
-// 4. IntersectionObserver — animation pauses when section is off-screen.
-// 5. visibilitychange — animation pauses when tab is hidden.
+// 3. requestAnimationFrame throttled to 40fps slow canvas drift is identical.
+// 4. IntersectionObserver animation pauses when section is off-screen.
+// 5. visibilitychange animation pauses when tab is hidden.
 // 6. Bezier lines rebuilt only on resize (debounced 150ms), not every frame.
-// 7. ResizeObserver on canvas only — removed window resize listener.
+// 7. ResizeObserver on canvas only removed window resize listener.
 
 export default function AboutSection() {
   const canvasRef = useRef(null);
@@ -25,7 +25,7 @@ export default function AboutSection() {
     let W = 0, H = 0;
     let mouse = { x: -9999, y: -9999 };
 
-    // ── Bezier lines — declared FIRST so resize() can call buildLines() ────────
+    // ── Bezier lines declared FIRST so resize() can call buildLines() ────────
     const LINE_COUNT = 22;
     const buildLines = () =>
       Array.from({ length: LINE_COUNT }, (_, i) => {
@@ -71,7 +71,7 @@ export default function AboutSection() {
       [80,120,255],[200,190,255],[255,255,255],[120,200,255],
     ];
 
-    // ── Sprite cache — glow baked once per (type, color, size) ────────────────
+    // ── Sprite cache glow baked once per (type, color, size) ────────────────
     // Per frame: one drawImage() blit instead of shadowBlur + gradient per particle
     const spriteCache = new Map();
     const getSprite = (type, ci, radius) => {
@@ -208,7 +208,7 @@ export default function AboutSection() {
 
     // ── Spatial grid for O(n) link culling ────────────────────────────────────
     // Instead of checking all 16,900 particle pairs, each particle only checks
-    // its immediate grid cell + 8 neighbours — ~15–20 particles total.
+    // its immediate grid cell + 8 neighbours ~15–20 particles total.
     const CELL = 75; // same as original link distance threshold
     let grid = {};
     const buildGrid = () => {
@@ -297,7 +297,7 @@ export default function AboutSection() {
       // Links (O(n) grid)
       drawLinks();
 
-      // Particles (sprite blits — no shadowBlur)
+      // Particles (sprite blits no shadowBlur)
       ctx.globalAlpha = 1;
       for (let i = 0; i < particles.length; i++) { particles[i].update(); particles[i].draw(); }
       ctx.globalAlpha = 1;
@@ -356,10 +356,10 @@ export default function AboutSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-6 py-16 sm:px-16 sm:py-20 lg:px-24 lg:py-24">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-3 mt-6">
+        <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-[-0.03em] leading-[1.02] text-white mb-3 mt-6">
           About us
         </h2>
-        <p className="text-base sm:text-lg leading-relaxed text-white/60 max-w-xl">
+        <p className="text-base sm:text-lg leading-[1.65] tracking-[-0.005em] text-white/60 max-w-xl">
   AgenticSense helps organizations transform operations through enterprise AI and intelligent automation. Our team designs, builds, and deploys AI agents that integrate seamlessly with ERP platforms and core business systems, delivering scalable solutions for complex workflows, operational excellence, and long-term business value.
 </p>
       </div>

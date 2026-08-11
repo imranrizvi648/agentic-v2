@@ -45,12 +45,12 @@ export default function WhySection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-primary tracking-tight max-w-xl leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary tracking-tight max-w-xl leading-tight">
               Sector AI Requires More Than Sector Awareness.
             </h2>
           </div>
           <p className="text-slate-500 text-sm md:text-base max-w-sm leading-relaxed font-medium">
-            Five principles that define every industry engagement — from the first assessment through to managed production operations.
+            Five principles that define every industry engagement from the first assessment through to managed production operations.
           </p>
         </div>
 

@@ -22,13 +22,13 @@ export default function BlogCTA() {
             </div>
 
             {/* Main Heading */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 max-w-2xl mx-auto">
               Get production-grade AI insights. Zero hype.
             </h2>
             
             {/* Subheading */}
-            <p className="text-white/60 text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto">
-              Deep-dives into agentic workflows, ERP integrations, and enterprise automation. Only what we build, test, and break in production—delivered straight to your inbox.
+            <p className="text-white/60 text-base sm:text-lg leading-[1.65] tracking-[-0.005em] mb-8 max-w-xl mx-auto">
+              Deep-dives into agentic workflows, ERP integrations, and enterprise automation. Only what we build, test, and break in productiondelivered straight to your inbox.
             </p>
 
             {/* Subscription Form */}
