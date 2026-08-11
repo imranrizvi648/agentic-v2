@@ -1,3 +1,4 @@
+// new version
 export const metadata = {
   title: "About AgenticSense | Intelligent AI Automation Company",
   description:
