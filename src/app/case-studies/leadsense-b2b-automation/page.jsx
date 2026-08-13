@@ -352,7 +352,7 @@ export default function LeadSenseCaseStudy() {
       {/* ── 07 · BUSINESS IMPACT ──────────────────────────────────────────── */}
       <Section>
         <SectionHead n="07" kicker="Why It Mattered" title="Business Impact" />
-        <div className="space-y-5 max-w-3xl">
+        <div className="space-y-5 max-w-7xl mx-auto">
           <p className="typo-body text-slate-600">
             By automating repetitive communication tasks, LeadSense enabled the organization to streamline sales
             operations without increasing operational complexity.

@@ -8,7 +8,8 @@ const caseStudies = [
     id: 1, slug: "leadsense-b2b-automation", category: "AI Agent Development", industry: "Technology", erp: "LeadSense",
     num: "01",
     title: "Multi-Agent Sales AI Cuts Manual Email Work by 60%",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
+    image: "/leadsensee.webp",
+    imgPos: "object-center",
     summary: "As inbound and outbound email volume grew, a B2B technology company deployed LeadSense Powered by AgenticSense to automate its entire sales communication workflow and free reps to focus on qualified prospects.",
     challenge: "A 15-person sales team handling 2,000+ prospects a month was buried in manual outreach, slow inbound responses, inconsistent follow-ups, and scattered campaign tooling with limited visibility into performance.",
     solution: "LeadSense deployed multiple AI agents for inbound engagement, outbound outreach, campaign management, and support each with its own inbox, knowledge base, scheduler, and guidelines. Agents personalize outreach, run follow-up sequences, qualify prospects, and escalate complex threads to humans.",
@@ -20,7 +21,8 @@ const caseStudies = [
     id: 2, slug: "aljh-bank-reconciliation", category: "Finance Automation", industry: "Healthcare", erp: "Oracle",
     num: "02",
     title: "Month-End Bank Reconciliation Done in 55 Seconds",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
+    image: "/Alj.webp",
+    imgPos: "object-center",
     summary: "Abdul Latif Jameel Health spent days each month manually matching bank transactions against Oracle. The ALJH AI Agent now reads the statement, matches by rule, flags exceptions, and delivers a CFO-ready report in under a minute.",
     challenge: "Every month, the finance team manually matched dozens of transactions across three bank accounts main, payroll, and supplier payments against Oracle records, line by line. The entire monthly close waited on this single manual step.",
     solution: "The ALJH AI Agent reads the bank statement automatically, retrieves Oracle records, matches every transaction with accountant-friendly rules, flags exceptions with plain explanations, suggests journal entries for bank fees, verifies balances, and produces a signable, fully audited report.",
@@ -29,101 +31,31 @@ const caseStudies = [
     author: "Automated Monthly Close · ALJH",
   },
   {
-    id: 3, slug: "document-approval-automation", category: "Process Automation", industry: "Professional Services", erp: "NetSuite",
+    id: 3, slug: "brc-grn-gl-automation", category: "Finance Automation", industry: "Manufacturing", erp: "SAP B1",
     num: "03",
-    title: "Approval Turnaround Reduced 70% Zero Manual Touchpoints",
-    image: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=800&auto=format&fit=crop",
-    summary: "A large professional services firm had approval workflows spanning email, SharePoint, and NetSuite all manual. AgenticSense built agentic workflows that route, approve, and post documents end-to-end.",
-    challenge: "Approval cycles averaged 6-8 days. Documents bounced between systems manually. No audit trail, no SLA visibility, constant chasing.",
-    solution: "Agentic workflows connect NetSuite, SharePoint, and Outlook via official APIs. Documents are classified, routed to the correct approver, reminders sent automatically, and approved records posted back to NetSuite.",
-    results: [{ metric: "70%", label: "Faster approvals" }, { metric: "6→1.8d", label: "Turnaround" }, { metric: "100%", label: "Audit trail" }, { metric: "0", label: "Manual routing" }],
-    quote: "Agentic workflows that route approvals, process documents and update the systems of record end to end, with full traceability.",
-    author: "Head of Digital Operations",
+    title: "Six AP & GL Workflows Fully Automated in SAP Business One",
+    image: "/brccasestudies.jpg",
+    imgPos: "object-center",
+    summary: "BRC deployed a single AI automation platform to handle six high-volume, document-heavy financial workflows — GRN invoicing, landed cost reconciliation, bulk GL entries, and monthly salary postings — all posting directly into SAP Business One with no manual approval gate.",
+    challenge: "Each posting workflow required cross-referencing multiple documents by hand — commercial invoices, GRNs, customs Bayan declarations, bank statements, and routing tables — across six very different processes. At this volume, manual processing meant slower postings, inconsistent handling, and a real risk of data-entry error reaching SAP directly.",
+    solution: "One automation platform, six modules, each posting directly to SAP B1 through the same validate-then-post discipline: Upload → Parse → Reconcile / Validate → Build Payload → Post to SAP → Verify. Every module has its own sequential validation chain, duplicate detection, and a live dashboard surfacing every failure with reason, step, and timestamp.",
+    results: [{ metric: "6", label: "SAP modules automated" }, { metric: "0%", label: "Amount tolerance" }, { metric: "0", label: "Silent failures" }, { metric: "100%", label: "Duplicate detection" }],
+    quote: "The system handles postings we used to process manually across multiple staff members. Validation catches every mismatch before it reaches SAP.",
+    author: "Finance Operations Lead — BRC",
   },
-  // {
-  //   id: 4, slug: "fbr-invoice-automation", category: "Regulatory Compliance", industry: "Manufacturing", erp: "Custom ERP",
-  //   num: "04",
-  //   title: "100% FBR-Compliant Filing with Zero Manual Overhead",
-  //   image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop",
-  //   summary: "A Pakistani manufacturing company faced mounting FBR compliance risk. AgenticSense deployed InvoiceSense an agentic billing system that handles OCR extraction, STRN validation, and FBR filing automatically.",
-  //   challenge: "The accounts team manually filed 800+ invoices monthly with FBR, spending 40+ hours per month. Error rates were high and penalty risk was growing.",
-  //   solution: "InvoiceSense deployed as an overlay on the existing ERP. OCR extracts invoice data, validates STRN against FBR's live API, generates compliant QR codes, and submits all in under 90 seconds per invoice.",
-  //   results: [{ metric: "100%", label: "FBR compliance" }, { metric: "40h→2h", label: "Filing time" }, { metric: "< 90s", label: "Per invoice" }, { metric: "0", label: "Penalty incidents" }],
-  //   quote: "We went from dreading FBR deadlines to not thinking about them at all. The agent just handles it.",
-  //   author: "Finance Manager",
-  // },
-  // {
-  //   id: 5, slug: "healthcare-document-processing", category: "Document Processing", industry: "Healthcare", erp: "Oracle Health",
-  //   num: "05",
-  //   title: "5,000 Patient Documents Processed Per Day",
-  //   image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
-  //   summary: "A regional hospital network needed to digitize decades of paper patient records into Oracle Health. AgenticSense deployed an IDP pipeline handling classification, extraction, and EHR posting at scale.",
-  //   challenge: "250,000+ historical paper records needed digitization with 99%+ accuracy. Manual entry was projected to take 4 years. HIPAA compliance was non-negotiable.",
-  //   solution: "A multi-agent IDP system classifies document types, extracts structured data, validates against patient master data, and posts to Oracle Health via HL7 FHIR with full encryption.",
-  //   results: [{ metric: "5,000+", label: "Docs/day" }, { metric: "99.2%", label: "Accuracy" }, { metric: "4y→6mo", label: "Timeline" }, { metric: "100%", label: "HIPAA compliant" }],
-  //   quote: "The accuracy and speed exceeded what we thought was possible with AI at this scale.",
-  //   author: "Chief Information Officer",
-  // },
-  // {
-  //   id: 6, slug: "real-estate-lead-automation", category: "AI Agent Development", industry: "Real Estate", erp: "Salesforce",
-  //   num: "06",
-  //   title: "Real Estate Group Qualifies 3× More Leads with AI Agent",
-  //   image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
-  //   summary: "A UAE-based real estate group was losing high-intent leads due to slow follow-up. LeadSense responds within 2 minutes and qualifies leads through intelligent conversation in Arabic and English.",
-  //   challenge: "Average lead response time was 4+ hours. Sales reps spent 60% of their time on unqualified leads. High-intent buyers were going to competitors who responded faster.",
-  //   solution: "LeadSense integrated with Salesforce CRM and property portal. The agent responds within 2 minutes, qualifies through conversation, scores by intent, and hands off hot leads with full context.",
-  //   results: [{ metric: "2 min", label: "Response time" }, { metric: "3×", label: "Qualified leads" }, { metric: "60%", label: "Time recovered" }, { metric: "38%", label: "Lead-to-viewing" }],
-  //   quote: "Our sales team now only talks to people who are actually ready to buy. The agent handles everything else.",
-  //   author: "Sales Director",
-  // },
-  // {
-  //   id: 7, slug: "erp-hr-automation", category: "Process Automation", industry: "Enterprise", erp: "SAP B1 + Odoo",
-  //   num: "07",
-  //   title: "HR Onboarding Automated Across 3 Legal Entities",
-  //   image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
-  //   summary: "A multi-entity enterprise group ran HR across SAP B1 and Odoo with no integration. AgenticSense built an agentic HR workflow that syncs employee data and automates onboarding.",
-  //   challenge: "New hire onboarding required 47 manual steps across 3 systems. Payroll prep took 2 days each cycle. HR had no single view of headcount.",
-  //   solution: "An agentic HR orchestrator syncs employee master data between SAP B1 and Odoo in real-time. Onboarding triggers automated workflows: IT provisioning, document collection, and payroll input preparation.",
-  //   results: [{ metric: "47→6", label: "Onboarding steps" }, { metric: "2d→3h", label: "Payroll prep" }, { metric: "100%", label: "Data sync" }, { metric: "Zero", label: "Duplicate records" }],
-  //   quote: "Onboarding used to take us a week. Now a new hire is fully set up in the systems before their first day.",
-  //   author: "Group HR Director",
-  // },
-  // {
-  //   id: 8, slug: "ecommerce-inventory-agent", category: "AI Agent Development", industry: "E-Commerce", erp: "NetSuite + Shopify",
-  //   num: "08",
-  //   title: "E-Commerce Eliminates Stockouts with Predictive Inventory Agent",
-  //   image: "https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=800&q=80",
-  //   summary: "A multi-channel e-commerce operator was losing $200K+ annually to stockouts and overstock. An AI agent monitors sell-through rates and triggers purchase orders automatically.",
-  //   challenge: "Inventory decisions were based on gut feel and spreadsheets. Stockouts on top SKUs during peak season cost significant revenue.",
-  //   solution: "An inventory intelligence agent monitors Shopify sell-through rates, NetSuite stock levels, and supplier lead times in real-time. When reorder points are hit, the agent drafts and routes POs for one-click approval.",
-  //   results: [{ metric: "94%", label: "Stockout eliminated" }, { metric: "$200K+", label: "Revenue recovered" }, { metric: "23%", label: "Carrying cost ↓" }, { metric: "Live", label: "Stock visibility" }],
-  //   quote: "We stopped making inventory decisions based on spreadsheets from last week. The agent just handles it.",
-  //   author: "Head of Operations",
-  // },
-  // {
-  //   id: 9, slug: "ai-strategy-consulting", category: "AI Strategy", industry: "Financial Services", erp: "Multiple ERPs",
-  //   num: "09",
-  //   title: "Regional Bank Gets 18-Month AI Roadmap, First Agent Live in 6 Weeks",
-  //   image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
-  //   summary: "A regional bank wanted to adopt AI but didn't know where to start. AgenticSense ran a 3-week readiness assessment, delivered a prioritized roadmap, then built the first agent in 6 weeks.",
-  //   challenge: "Leadership had AI ambitions but no clarity on where to start. Multiple vendors were pitching solutions the bank didn't fully understand.",
-  //   solution: "We ran a structured AI readiness assessment: mapped systems, interviewed 22 stakeholders, identified 14 automation opportunities, and scored them by ROI and buildability.",
-  //   results: [{ metric: "18mo", label: "Roadmap delivered" }, { metric: "6 wks", label: "First agent live" }, { metric: "14", label: "Opportunities" }, { metric: "$2.4M", label: "Projected ROI" }],
-  //   quote: "For the first time we had a clear picture of what AI could actually do for us not vendor promises, but a real plan.",
-  //   author: "Chief Digital Officer",
-  // },
-  // {
-  //   id: 10, slug: "supply-chain-analytics", category: "Data Intelligence", industry: "Manufacturing", erp: "Microsoft Fabric + SAP",
-  //   num: "10",
-  //   title: "Real-Time Supply Chain Intelligence on Microsoft Fabric",
-  //   image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
-  //   summary: "A mid-size manufacturer had data scattered across SAP, Excel, and 3 supplier portals. AgenticSense built a unified intelligence layer with AI-powered anomaly detection.",
-  //   challenge: "Leadership had no real-time supply chain visibility. Monthly reporting took a week to compile. Disruptions were discovered late.",
-  //   solution: "We unified data from SAP, supplier portals, and production systems into Microsoft Fabric. An anomaly detection agent monitors KPIs and alerts on deviations before they become crises.",
-  //   results: [{ metric: "Live", label: "Supply visibility" }, { metric: "1wk→2h", label: "Report time" }, { metric: "73%", label: "Earlier detection" }, { metric: "5→1", label: "Data sources" }],
-  //   quote: "We used to find out about supply chain problems after the damage was done. Now we know before they happen.",
-  //   author: "VP of Operations",
-  // },
+  {
+    id: 4, slug: "linksense-outreach", category: "AI Agent Development", industry: "Technology", erp: "LinkSense",
+    num: "04",
+    title: "Always-On LinkedIn Outreach Delivering 3× More Profile Views",
+    image: "/linksense.webp",
+    imgPos: "object-center",
+    summary: "LinkSense turns LinkedIn prospecting into a structured, AI-assisted workflow — coordinating discovery, personalized messaging, follow-up, and pipeline engagement as one continuous process, so sellers spend their time on real conversations, not repetitive admin.",
+    challenge: "LinkedIn prospecting at scale is a collection of isolated manual actions — search, connect, message, remind, repeat. Follow-ups get missed, messaging stays generic, and sales representatives spend more time on administrative tasks than actual selling.",
+    solution: "LinkSense coordinates the full outreach cycle — AI-assisted audience targeting, personalized connection requests and opening messages, structured follow-up sequences, and conversation management — running continuously so sellers focus on replies and buying signals, not inbox management.",
+    results: [{ metric: "3×", label: "Profile views" }, { metric: "24/7", label: "AI outreach" }, { metric: "↑", label: "Pipeline strength" }, { metric: "↓", label: "Manual prospecting" }],
+    quote: "Automate connections. Engage smarter. Close more deals.",
+    author: "LinkSense · Powered by AgenticSense",
+  },
 ];
 
 const categories = ["All", "Finance Automation", "AI Agent Development", "Process Automation", "Regulatory Compliance", "Document Processing", "AI Strategy", "Data Intelligence"];
@@ -206,7 +138,7 @@ function CaseModal({ cs, onClose }) {
   );
 }
 
-// ── Card (redesigned same fonts/colors, cleaner modern layout) ────────────
+// ── Card ──────────────────────────────────────────────────────────────────
 function CaseCard({ cs, index }) {
   return (
     <motion.article
@@ -219,27 +151,38 @@ function CaseCard({ cs, index }) {
       className="group"
     >
       <Link href={`/case-studies/${cs.slug}`} className="block">
-        {/* Image */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 border border-slate-200
-          transition-shadow duration-300 group-hover:shadow-[0_18px_50px_-18px_rgba(26,25,77,0.35)]">
+
+        {/* ── Image container ── */}
+        <div className="relative w-full overflow-hidden bg-[#1a194d] border border-slate-200 transition-shadow duration-300 group-hover:shadow-[0_18px_50px_-18px_rgba(26,25,77,0.35)]"
+          style={{ aspectRatio: "16/10" }}>
+
           <img
             src={cs.image}
             alt={cs.title}
-            className="w-full h-full object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[1.06]"
+            className={`
+              w-full h-full object-cover object-top
+              transition-transform duration-[700ms] ease-[cubic-bezier(0.19,1,0.22,1)]
+              group-hover:scale-[1.04]
+            `}
           />
-          {/* scrim */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a194d]/85 via-[#1a194d]/10 to-transparent" />
+
+          {/* dark scrim — stronger at bottom for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a194d]/90 via-[#1a194d]/20 to-[#1a194d]/10" />
 
           {/* case number chip */}
           <span className="absolute top-4 left-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 px-2.5 py-1">
             Case {cs.num}
           </span>
 
-          {/* hero metric + arrow on image */}
+          {/* hero metric + hover arrow */}
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
             <div className="flex items-baseline gap-1.5">
-              <span className="text-[26px] font-black text-white leading-none tracking-tight">{cs.results[0].metric}</span>
-              <span className="text-[9px] text-white/70 uppercase tracking-wider font-bold">{cs.results[0].label}</span>
+              <span className="text-[26px] font-black text-white leading-none tracking-tight drop-shadow-sm">
+                {cs.results[0].metric}
+              </span>
+              <span className="text-[9px] text-white/70 uppercase tracking-wider font-bold">
+                {cs.results[0].label}
+              </span>
             </div>
             <span className="flex items-center justify-center w-9 h-9 bg-[#625eff] text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -249,7 +192,7 @@ function CaseCard({ cs, index }) {
           </div>
         </div>
 
-        {/* Content */}
+        {/* ── Text content ── */}
         <div className="pt-5">
           <div className="flex items-center gap-2 mb-2.5">
             <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#625eff]">{cs.category}</span>
@@ -261,7 +204,7 @@ function CaseCard({ cs, index }) {
             {cs.title}
           </h3>
 
-          {/* animated divider */}
+          {/* animated underline divider */}
           <div className="relative h-px w-full bg-slate-200 overflow-hidden">
             <span className="absolute inset-y-0 left-0 w-full bg-[#625eff] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
           </div>
@@ -295,14 +238,13 @@ export default function CaseStudiesPage() {
   return (
     <main className="bg-white font-sans min-h-screen">
 
-      {/* ── HERO (unchanged) ────────────────────────────────────────────── */}
+      {/* ── HERO ────────────────────────────────────────────────────────── */}
       <section className="bg-[#1a194d] pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#625eff]/40 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-           
             <h1 className="typo-h1 text-white mb-5">
               Real deployments.<br />
               <span style={{ background: "linear-gradient(135deg, #625eff, #a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -323,8 +265,6 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </section>
-
-    
 
       {/* ── GRID ────────────────────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
@@ -357,7 +297,7 @@ export default function CaseStudiesPage() {
         )}
       </section>
 
-      {/* ── CTA (unchanged) ─────────────────────────────────────────────── */}
+      {/* ── CTA ─────────────────────────────────────────────────────────── */}
       <section className="bg-[#1a194d] py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />

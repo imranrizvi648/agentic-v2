@@ -329,7 +329,7 @@ export default function ALJHCaseStudy() {
       {/* ── 06 · BUSINESS IMPACT ──────────────────────────────────────────── */}
       <Section muted>
         <SectionHead n="06" kicker="Why It Mattered" title="Business Impact" />
-        <div className="space-y-5 max-w-3xl">
+        <div className="space-y-5 max-w-7xl mx-auto">
           <p className="typo-body text-slate-600">
             By automating the most repetitive part of the monthly close, the finance team gets back days of work every
             single month time that now goes toward analysis and decision-making instead of line-by-line matching.
