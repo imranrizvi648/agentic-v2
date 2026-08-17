@@ -57,8 +57,8 @@ const partnerData = {
   },
   medics: {
     name: 'MEDICS LABORATORIES',
-    logo: '/medicswhitelogo.webp',
-    sizeClass: 'h-16 md:h-23 w-auto object-contain',
+    logo: '/codact-white.svg',
+    sizeClass: 'h-15 md:h-17 w-auto object-contain',
     isWhite: false,
     description: 'Transforming traditional botanical wisdom into modern certified wellness products through DRAP-approved and cGMP manufacturing standards.',
     clients: [
@@ -103,7 +103,7 @@ const CLIENT_LOGOS = [
   { id: 18, name: 'Cresta',         src: '/clientLogo/logo-18.png' },
   { id: 19, name: 'Vanguard',       src: '/clientLogo/logo-19.png' },
   { id: 20, name: 'Everest',        src: '/clientLogo/logo-20.png' },
-    { id: 20, name: 'Everest',        src: '/clientLogo/logo-21.png' },
+  { id: 21, name: 'Everest',        src: '/clientLogo/logo-21.png' },
  
 ];
 
