@@ -200,7 +200,8 @@ const CLIENT_LOGOS = [
   { id: 27, name: "Eclipse", src: "/clientLogo/logo-27.webp" },
   { id: 28, name: "Eclipse", src: "/clientLogo/logo-28.webp" },
   { id: 29, name: "Eclipse", src: "/clientLogo/logo-29.webp" },
-    { id: 30, name: "Eclipse", src: "/clientLogo/logo-30.webp" },
+  { id: 30, name: "Eclipse", src: "/clientLogo/logo-30.webp" },
+  { id: 31, name: "Eclipse", src: "/clientLogo/logo-31.webp" },
   
 ];
 
@@ -334,7 +335,7 @@ function LogoRow({ logos, reverse = false, duration = 46 }) {
 
 function LogoMarquee() {
   const rowA = CLIENT_LOGOS.slice(0, 15);
-  const rowB = CLIENT_LOGOS.slice(15, 30);
+  const rowB = CLIENT_LOGOS.slice(15, 31);
   return (
     <div className="cm-wrap">
       <LogoRow logos={rowA} duration={48} />
