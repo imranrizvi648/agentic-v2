@@ -5,8 +5,8 @@ const stats = [
 
     { value: "9+", label: "Enterprise Ai\nServices" },
     { value: "3", label: "Global\nOffice" },
-   { value: "100%", label: "PGrade\nDeployments" },
-   { value: "24/7", label: "Agent\nMonitoring" },
+    { value: "100%", label: "PGrade\nDeployments" },
+    { value: "24/7", label: "Agent\nMonitoring" },
 ];
 
 export default function CommitmentSection() {

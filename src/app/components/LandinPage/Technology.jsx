@@ -3,18 +3,17 @@
 import React, { useRef, useState, useEffect } from "react";
 
 const leftFeatures = [
-  { title: "NetSuite", image: "/Netsuite.webp", subtitle: "Enterprise Integration" },
-  { title: "Microsoft Fabric", image: "/microsoft-fusion.png", subtitle: "Enterprise Integration" },
-  { title: "Oracle Fusion", image: "/image-removebg-preview.png", subtitle: "Enterprise Integration" },
-  { title: "", redundantTitle: "Salesforce", image: "/salessforce.png", subtitle: "Enterprise Integration" },
+  { title: "NetSuite", image: "/homeImages/technology/Netsuite.webp", subtitle: "Enterprise Integration" },
+  { title: "Microsoft Fabric", image: "/homeImages/technology/microsoft-fusion.png", subtitle: "Enterprise Integration" },
+  { title: "Oracle Fusion", image: "/homeImages/technology/image-removebg-preview.png", subtitle: "Enterprise Integration" },
+  { title: "", redundantTitle: "Salesforce", image: "/homeImages/technology/salessforce.png", subtitle: "Enterprise Integration" },
 ];
 
 const rightFeatures = [
-  { title: "SAP BTP", image: "/sap-logo-svg.png", subtitle: "Enterprise Integration" },
-  
-  { title: "Zoho", image: "/zoho-logo-web.png", subtitle: "Enterprise Integration" },
-  { title: "Odoo", image: "/odoo_.png", subtitle: "Enterprise Integration" },
-  { title: "Custom ERP", image: "/customerp.webp", subtitle: "Enterprise Integration" },
+  { title: "SAP BTP", image: "/homeImages/technology/sap-logo-svg.png", subtitle: "Enterprise Integration" },
+  { title: "Zoho", image: "/homeImages/technology/zoho-logo-web.png", subtitle: "Enterprise Integration" },
+  { title: "Odoo", image: "/homeImages/technology/odoo_.png", subtitle: "Enterprise Integration" },
+  { title: "Custom ERP", image: "/homeImages/technology/customerp.webp", subtitle: "Enterprise Integration" },
 ];
 
 function AnimatedLine({ d, delay = 0, gradientId = "gradient", markerId }) {

@@ -1,129 +1,78 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import React from 'react';
+import { Lightbulb, ShieldCheck, Target, Award, Users } from 'lucide-react';
 
-const SERVICES_DATA = [
+const coreValues = [
   {
-    id: 1,
-    title: "Enterprise AI Integration for ERP and CRM Platforms",
-    description: "We integrate AI agents directly with your ERP, CRM, and core business systems to streamline operations, improve data accessibility, and enable intelligent automation across the organization.",
-    linkText: "Explore Integration Services",
-    graphicType: "star"
+    icon: Lightbulb,
+    title: "Innovation",
+    description: "We continuously explore emerging AI technologies to deliver forward-thinking, future-ready solutions."
   },
   {
-    id: 2,
-    title: "Intelligent Business Process Automation",
-    description: "Automate finance, procurement, HR, supply chain, and other critical business processes with AI-powered workflows designed to improve efficiency, accuracy, and scalability.",
-    linkText: "Explore Automation Solutions",
-    graphicType: "ring"
+    icon: ShieldCheck,
+    title: "Trust",
+    description: "We build long-term partnerships through transparency, reliability, and consistent delivery."
   },
   {
-    id: 3,
-    title: "Custom AI Agent Development",
-    description: "We design and build tailored AI agents for complex business requirements, enabling automation and decision support where standard software solutions fall short.",
-    linkText: "Explore Custom AI Solutions",
-    graphicType: "sphere"
+    icon: Target,
+    title: "Impact",
+    description: "We measure success by the real business outcomes we create — not just the technology we deploy."
   },
   {
-    id: 4,
-    title: "AI Governance, Security & Monitoring",
-    description: "Every solution includes governance frameworks, access controls, audit logging, monitoring, and operational safeguards to support security, compliance, and long-term reliability.",
-    linkText: "Explore Governance & Security",
-    graphicType: "star"
+    icon: Award,
+    title: "Excellence",
+    description: "We hold ourselves to the highest standard in every project, from strategy to execution."
+  },
+  {
+    icon: Users,
+    title: "Collaboration",
+    description: "We work as an extension of your team, aligning AI solutions with your goals every step of the way."
   }
 ];
 
-export default function TkxelSection() {
-  const [activeId, setActiveId] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      SERVICES_DATA.forEach((item) => {
-        const element = document.getElementById(`service-card-${item.id}`);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.3) setActiveId(item.id);
-        }
-      });
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const renderGraphic = (type) => {
-    const baseStyle = "w-30 h-30 bg-[#625eff] blur-[1px] shadow-xl shadow-blue-500/10";
-    switch (type) {
-      case "star": return <div className={`${baseStyle} [clip-path:polygon(50%_0%,_61%_35%,_98%_35%,_68%_57%,_79%_91%,_50%_70%,_21%_91%,_32%_57%,_2%_35%,_39%_35%)]`} />;
-      case "ring": return <div className={`${baseStyle} rounded-full border-[20px] border-blue-600 bg-transparent`} />;
-      case "sphere": return <div className={`${baseStyle} rounded-full bg-gradient-to-r from-cyan-400 to-blue-600`} />;
-      default: return null;
-    }
-  };
-
+export default function CoreValues() {
   return (
-    <div className="w-full bg-white text-gray-900 font-sans min-h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 lg:px-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 max-w-6xl mx-auto relative">
+    <section className="w-full bg-[#f8fafc] py-16 sm:py-20 md:py-24 px-4 sm:px-8 lg:px-22 font-sans">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header */}
+        <div className="text-center mb-12 sm:mb-16 space-y-3">
+  <h2 className="about-heading">
+    Our <span className="text-brand-primary">Core Values</span>
+  </h2>
 
-        {/* LEFT: Sticky */}
-        <div className="lg:sticky lg:top-24 lg:h-[calc(100vh-12rem)] flex flex-col justify-between py-4">
-          <div>
-            <h1 className="text-3xl lg:text-4xl font-bold tracking-[-0.025em] leading-[1.1] text-brand-primary mb-4">
-              Agentic AI, Finance Expertise <br className="hidden sm:block" /> and Enterprise Delivery
-            </h1>
-            <p className="text-base text-slate-600 max-w-sm mb-5 sm:mb-6 leading-[1.65] tracking-[-0.005em]">
-              Every engagement starts with your data, your ERP and measurable outcomes agreed in writing before a line of code.
-            </p>
-          <Link href="/services">
-  <button className="flex items-center gap-2 border border-slate-900 rounded-full px-5 py-2.5 text-sm font-medium transition hover:bg-slate-950 hover:text-white group">
-    Explore all services{" "}
-    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-  </button>
-</Link>
-          </div>
-          <div className="mt-8 lg:mt-0 pt-6 border-t border-slate-100">
-            <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block mb-3">Enabled by our partnerships</span>
-            <div className="flex flex-wrap gap-4 sm:gap-5 items-center opacity-60 text-sm">
-              <span className="font-bold">SAP</span>
-              <span className="font-bold">Oddoo</span>
-              <span className="font-bold">Oracle</span>
-              <span className="font-bold">Microsoft Dynamics 365</span>
-<span className="font-bold">NetSuite</span>
-<span className="font-bold">ERPNext</span>
-<span className="font-bold">Infor</span>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT: Scrolling Cards */}
-        <div className="space-y-8 sm:space-y-12 pb-[15vh]">
-          {SERVICES_DATA.map((item) => (
-            <div key={item.id} id={`service-card-${item.id}`}
-              className={`p-5 sm:p-6 rounded-md border transition-all duration-300 flex flex-col space-y-5 sm:space-y-6 bg-slate-50/50
-                ${activeId === item.id ? 'border-[#625eff] shadow-md shadow-blue-500/5 bg-white' : 'border-slate-200'}`}>
-              <div className="h-32 sm:h-40 flex items-center justify-start relative pl-2">
-                <AnimatePresence mode="wait">
-                  {activeId === item.id && (
-                    <motion.div key={item.id} initial={{ opacity: 0, scale: 0.7, rotate: -20 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} exit={{ opacity: 0, scale: 0.8, rotate: 20 }} transition={{ duration: 0.4, ease: "easeOut" }} className="origin-center">
-                      {renderGraphic(item.graphicType)}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              <div className="space-y-2 sm:space-y-3">
-                <h2 className="text-base sm:text-lg font-bold tracking-tight text-brand-primary leading-snug">{item.title}</h2>
-                <p className="text-slate-600 leading-[1.65] tracking-[-0.005em] text-base">{item.description}</p>
-                <div className="pt-1 sm:pt-2">
-                  <a href="#" className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 uppercase tracking-wider group">
-                    {item.linkText} <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </a>
+  <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+    We are guided by innovation, integrity, and a commitment to delivering
+    intelligent solutions that create lasting value for our clients.
+  </p>
+</div>
+        {/* 5 Cards Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 justify-center">
+          {coreValues.map((value, index) => {
+            const IconComponent = value.icon;
+            return (
+              <div 
+                key={index}
+                className={`p-6 sm:px-8 sm:py-4 rounded-sm border border-slate-300 bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 ${
+                  index === 3 ? "lg:col-start-1 lg:ml-auto lg:w-full" : ""
+                } ${index === 4 ? "lg:col-start-2 lg:w-full" : ""}`}
+              >
+                <div>
+                  <div className="w-11 h-11 rounded-xl bg-brand-primary text-white flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                    <IconComponent className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2.5 tracking-wide ">
+                    {value.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }

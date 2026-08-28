@@ -1,0 +1,790 @@
+/* ============================================================
+   AGENTICSENSE CINEMATIC HERO
+   Fully scoped under .film — no leakage to the rest of the site
+============================================================ */
+
+.film {
+  --navy: #030B1F;
+  --purple: #625EFF;
+  --white: #FFFFFF;
+  --scene-time: 4000ms;
+
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(98, 94, 255, 0.06),
+      transparent 28%
+    ),
+    #fff;
+
+  color: var(--navy);
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.film *,
+.film *::before,
+.film *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   CINEMATIC AMBIENCE
+============================================================ */
+
+.film .ambient {
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(98, 94, 255, 0.14) 0%,
+      rgba(98, 94, 255, 0.05) 36%,
+      transparent 68%
+    );
+  filter: blur(30px);
+  top: -24vw;
+  right: -10vw;
+  animation: ambientFloat 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -3;
+}
+
+.film .grid {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(3, 11, 31, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 11, 31, 0.025) 1px, transparent 1px);
+  background-size: 5vw 5vw;
+  transform: perspective(900px) rotateX(64deg) scale(1.3);
+  transform-origin: center bottom;
+  opacity: 0.42;
+  animation: gridTravel 18s linear infinite;
+  pointer-events: none;
+  z-index: -4;
+}
+
+.film .grain {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image:
+    repeating-radial-gradient(
+      circle,
+      rgba(3, 11, 31, 0.9) 0 1px,
+      transparent 1px 3px
+    );
+  background-size: 7px 7px;
+  animation: grainMove 0.25s steps(2) infinite;
+  z-index: 50;
+}
+
+.film .streak {
+  position: absolute;
+  width: 44vw;
+  height: 2px;
+  left: -50vw;
+  top: 50%;
+  background: linear-gradient(90deg, transparent, var(--purple), transparent);
+  opacity: 0;
+  filter: blur(0.4px);
+  z-index: 25;
+}
+
+.film .scene.active .streak {
+  animation: streak 850ms ease both;
+}
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.film .brand {
+  position: absolute;
+  top: 4.5vh;
+  left: 4vw;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  font-size: clamp(13px, 1vw, 18px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.film .brand-mark {
+  width: 9px;
+  height: 9px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 0 5px rgba(98, 94, 255, 0.08);
+}
+
+.film .brand-accent {
+  color: var(--purple);
+}
+
+/* ============================================================
+   SCENE SYSTEM
+============================================================ */
+
+.film .scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 0.28s linear, visibility 0.28s linear;
+}
+
+.film .scene.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.film .content {
+  position: absolute;
+  inset: 0;
+  padding: 13vh 7vw 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ============================================================
+   POSITION VARIATIONS
+============================================================ */
+
+.film .left .content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.film .center .content {
+  align-items: center;
+  text-align: center;
+}
+
+.film .right .content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+
+.film .overline {
+  overflow: hidden;
+  color: var(--purple);
+  font-size: clamp(10px, 0.85vw, 15px);
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  margin-bottom: 2.2vh;
+}
+
+.film .overline span {
+  display: block;
+}
+
+/* .film .hero-word {
+  position: relative;
+  display: block;
+  font-size: clamp(58px, 9.6vw, 180px);
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+  font-weight: 900;
+  text-transform: uppercase;
+} */
+
+.film .hero-word {
+  position: relative;
+  display: block;
+  width: max-content;
+  max-width: none;
+
+  font-size: clamp(58px, 9.6vw, 180px);
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  /* Prevent glyph edge clipping */
+  padding-right: 0.06em;
+}
+
+.film .hero-word.medium {
+  font-size: clamp(46px, 7.4vw, 140px);
+}
+
+.film .hero-word.small {
+  font-size: clamp(36px, 5.6vw, 105px);
+}
+
+.film .purple {
+  color: var(--purple);
+}
+
+.film .support {
+  max-width: 780px;
+  margin-top: 3.4vh;
+  color: rgba(3, 11, 31, 0.55);
+  font-size: clamp(14px, 1.15vw, 21px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+}
+
+/* ============================================================
+   MOTION — MASK REVEALS
+============================================================ */
+
+/* .film .mask {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+
+.film .mask > span {
+  display: block;
+} */
+
+.film .mask {
+  position: relative;
+  overflow: hidden;
+
+  /* Extra room so last/first glyph doesn't get clipped */
+  padding: 0.08em 0.14em 0.14em;
+
+  /* Keep the visual position exactly where it was */
+  margin: -0.08em -0.14em -0.14em;
+}
+
+.film .mask > span {
+  display: block;
+  width: max-content;
+  max-width: none;
+}
+
+.film .scene.active .overline span {
+  animation: revealSmall 0.65s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .line-1 span {
+  animation: cinematicReveal 0.75s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .line-2 span {
+  animation: cinematicReveal 0.82s 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .line-3 span {
+  animation: cinematicReveal 0.85s 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .support {
+  animation: fadeSupport 0.75s 0.57s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================
+   SPLIT / BLUR WORD
+============================================================ */
+
+.film .blur-word {
+  opacity: 0;
+}
+
+.film .scene.active .blur-word {
+  animation: blurPunch 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================
+   HUGE BACKGROUND TYPOGRAPHY
+============================================================ */
+
+.film .ghost {
+  position: absolute;
+  bottom: -5vh;
+  right: -2vw;
+  font-size: 25vw;
+  font-weight: 950;
+  letter-spacing: -0.1em;
+  color: rgba(98, 94, 255, 0.035);
+  line-height: 0.75;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.film .scene.active .ghost {
+  animation: ghostMove 4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================
+   TECH TAGS
+============================================================ */
+
+.film .tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(8px, 0.85vw, 16px);
+  margin-top: 4vh;
+}
+
+.film .center .tech-row {
+  justify-content: center;
+}
+
+.film .right .tech-row {
+  justify-content: flex-end;
+}
+
+.film .tech {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(8px, 0.7vw, 13px) clamp(11px, 1.1vw, 20px);
+  border: 1px solid rgba(3, 11, 31, 0.10);
+  border-radius: 100px;
+  color: rgba(3, 11, 31, 0.72);
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(10px);
+  font-size: clamp(10px, 0.8vw, 14px);
+  font-weight: 700;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.film .scene.active .tech {
+  animation: tagIn 0.58s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .tech:nth-child(1) { animation-delay: 0.65s; }
+.film .scene.active .tech:nth-child(2) { animation-delay: 0.73s; }
+.film .scene.active .tech:nth-child(3) { animation-delay: 0.81s; }
+.film .scene.active .tech:nth-child(4) { animation-delay: 0.89s; }
+.film .scene.active .tech:nth-child(5) { animation-delay: 0.97s; }
+
+/* ============================================================
+   REASON / ACT / COORDINATE SCENE
+============================================================ */
+
+.film .action-stack {
+  width: 100%;
+}
+
+.film .action {
+  overflow: hidden;
+  height: 1em;
+  display: flex;
+  align-items: center;
+  font-size: clamp(64px, 12vw, 220px);
+  font-weight: 950;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+}
+
+.film .action span {
+  display: block;
+}
+
+.film .action:nth-child(2) {
+  color: var(--purple);
+  justify-content: center;
+}
+
+.film .action:nth-child(3) {
+  justify-content: flex-end;
+}
+
+.film .scene.active .action:nth-child(1) span {
+  animation: actionLeft 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .action:nth-child(2) span {
+  animation: actionScale 0.8s 0.30s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film .scene.active .action:nth-child(3) span {
+  animation: actionRight 0.8s 0.50s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================
+   ENTERPRISE TICKER
+============================================================ */
+
+.film .ticker-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7vh;
+  overflow: hidden;
+  transform: rotate(-2deg);
+  border-top: 1px solid rgba(3, 11, 31, 0.06);
+  border-bottom: 1px solid rgba(3, 11, 31, 0.06);
+}
+
+.film .ticker {
+  display: flex;
+  width: max-content;
+  gap: 3.5vw;
+  padding: 1.3vh 0;
+  white-space: nowrap;
+  color: var(--navy);
+  font-size: clamp(17px, 2vw, 36px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  animation: ticker 11s linear infinite;
+}
+
+.film .ticker i {
+  font-style: normal;
+  color: var(--purple);
+}
+
+/* ============================================================
+   TRANSITION FLASH
+============================================================ */
+
+.film .flash {
+  position: absolute;
+  inset: 0;
+  background: var(--purple);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.film .flash.go {
+  animation: flashTransition 0.46s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+/* ============================================================
+   PROGRESS BAR
+============================================================ */
+
+.film .timeline {
+  position: absolute;
+  left: 4vw;
+  right: 4vw;
+  bottom: 3.6vh;
+  height: 2px;
+  background: rgba(3, 11, 31, 0.08);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.film .timeline-progress {
+  height: 100%;
+  width: 0;
+  background: var(--purple);
+  transform-origin: left;
+}
+
+/* ============================================================
+   FINAL SCENE
+============================================================ */
+
+.film .final-logo {
+  font-size: clamp(64px, 11vw, 210px);
+  line-height: 1.15;
+  font-weight: 950;
+  letter-spacing: -0.08em;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+}
+
+.film .mask.line-1 {
+  overflow: visible;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.film .final-tagline {
+  margin-top: 3vh;
+  font-size: clamp(18px, 2vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.film .final-contact {
+  display: flex;
+  align-items: center;
+  gap: 1.25vw;
+  margin-top: 5vh;
+  color: rgba(3, 11, 31, 0.58);
+  font-size: clamp(11px, 0.95vw, 16px);
+  font-weight: 650;
+}
+
+.film .dot {
+  width: 4px;
+  height: 4px;
+  background: var(--purple);
+  border-radius: 50%;
+}
+
+/* ============================================================
+   KEYFRAMES
+============================================================ */
+
+@keyframes cinematicReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(115%) skewY(5deg) scaleY(1.10);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0) scaleY(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealSmall {
+  from {
+    opacity: 0;
+    transform: translateY(130%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeSupport {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes blurPunch {
+  0% {
+    opacity: 0;
+    transform: scale(1.7) translateX(-4vw);
+    filter: blur(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes ghostMove {
+  from {
+    opacity: 0;
+    transform: translateX(8vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tagIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.95);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes actionLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-15vw);
+    filter: blur(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes actionRight {
+  from {
+    opacity: 0;
+    transform: translateX(15vw);
+    filter: blur(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes actionScale {
+  from {
+    opacity: 0;
+    transform: scale(2);
+    filter: blur(24px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes flashTransition {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  48% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  52% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes streak {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(155vw);
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ambientFloat {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-8vw, 10vh, 0);
+  }
+}
+
+@keyframes gridTravel {
+  from {
+    transform: perspective(900px) rotateX(64deg) translateY(0) scale(1.3);
+  }
+  to {
+    transform: perspective(900px) rotateX(64deg) translateY(5vw) scale(1.3);
+  }
+}
+
+@keyframes grainMove {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(2%, 1%); }
+  50%  { transform: translate(-1%, 2%); }
+  75%  { transform: translate(1%, -2%); }
+  100% { transform: translate(-2%, 1%); }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 800px) {
+  .film .content {
+    padding: 12vh 6vw 11vh;
+  }
+
+  .film .hero-word {
+    font-size: 14vw;
+    line-height: 0.88;
+  }
+
+  .film .hero-word.medium {
+    font-size: 11.8vw;
+  }
+
+  .film .hero-word.small {
+    font-size: 9vw;
+  }
+
+  .film .support {
+    max-width: 90vw;
+    font-size: 3.5vw;
+  }
+
+  .film .action {
+    font-size: 16vw;
+  }
+
+  .film .grid {
+    background-size: 14vw 14vw;
+  }
+
+  .film .final-contact {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .film .brand {
+    left: 6vw;
+  }
+
+  .film .timeline {
+    left: 6vw;
+    right: 6vw;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .film *,
+  .film *::before,
+  .film *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

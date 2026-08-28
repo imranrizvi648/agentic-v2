@@ -155,7 +155,7 @@ export default function FolioTabsSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 pt-2">
                   {currentData.points.map((point, i) => (
                     <div key={i} className="flex items-start gap-2.5">
-                      <Flag className="w-3.5 h-3.5 text-red-500 fill-red-500 mt-0.5 flex-shrink-0" />
+                    
                       <span className="text-xs font-bold text-slate-800 leading-tight">{point}</span>
                     </div>
                   ))}
@@ -164,7 +164,7 @@ export default function FolioTabsSection() {
                 <ul className="space-y-3 pt-2">
                   {currentData.points.map((point, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <Flag className="w-3.5 h-3.5 text-red-500 fill-red-500 mt-1 flex-shrink-0" />
+                     
                       <span className="text-xs font-bold text-slate-800 leading-relaxed">{point}</span>
                     </li>
                   ))}

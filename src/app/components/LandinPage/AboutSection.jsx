@@ -27,7 +27,7 @@ export default function AboutSection() {
 
       {/* MIDDLE: Image */}
       <div className="relative bg-black/50 lg:w-1/3 min-h-[260px] sm:min-h-[360px] lg:min-h-0">
-        <img src="/about.webp" alt="AgenticSense AI team building intelligent automation systems" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/homeImages/about.webp" alt="AgenticSense AI team building intelligent automation systems" className="absolute inset-0 w-full h-full object-cover" />
       </div>
 
       {/* RIGHT: How We Work */}

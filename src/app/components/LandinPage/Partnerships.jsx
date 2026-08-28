@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const partnerData = {
   xpace: {
     name: "XPACE Technologies",
-    logo: "/xpace white logo.png",
+    logo: "/homeImages/industryPartners/xpace white logo.png",
     sizeClass: "max-h-12 md:max-h-16",
     description:
       "Delivering cutting-edge enterprise solutions across global markets through our strategic alliance.",
@@ -47,7 +47,7 @@ const partnerData = {
   },
   fanuun: {
     name: "FANUUN BCG",
-    logo: "/logoFunun.png",
+    logo: "/homeImages/industryPartners/logoFunun.png",
     sizeClass: "max-h-24 md:max-h-32",
     description:
       "Transforming businesses with innovative consulting and operational excellence.",
@@ -61,7 +61,7 @@ const partnerData = {
   },
   aithentic: {
     name: "AITHENTIC",
-    logo: "/Gemini_Generated_Image_qa7eg1qa7eg1qa7e-removebg-preview.png",
+    logo: "/homeImages/industryPartners/Gemini_Generated_Image_qa7eg1qa7eg1qa7e-removebg-preview.png",
     sizeClass: "max-h-8 md:max-h-23",
     isWhite: true,
     description:
@@ -96,7 +96,7 @@ const partnerData = {
   },
   brb: {
     name: "BRB GROUP",
-    logo: "/BRB-LOGO.png",
+    logo: "/homeImages/industryPartners/BRB-LOGO.png",
     sizeClass: "max-h-12 md:max-h-17",
     isWhite: false,
     description:
@@ -126,7 +126,7 @@ const partnerData = {
   },
   medics: {
     name: "MEDICS LABORATORIES",
-    logo: "/codact-white.svg",
+    logo: "/homeImages/industryPartners/codact-white.svg",
     sizeClass: "h-15 md:h-17 w-auto object-contain",
     isWhite: false,
     description:
@@ -171,37 +171,37 @@ const INDUSTRY_PARTNERS = [
 //   src: '/client-logos/acme.png'  (white/transparent PNG or SVG best rehta hai)
 //   Jab tak src null hai, ek placeholder wordmark render hota hai (demo ke liye).
 const CLIENT_LOGOS = [
-  { id: 1, name: "Acme Corp", src: "/clientLogo/logo-1.webp" },
-  { id: 2, name: "Vertex", src: "/clientLogo/logo-2.webp" },
-  { id: 3, name: "NovaBank", src: "/clientLogo/logo-3.webp" },
-  { id: 4, name: "Helix Health", src: "/clientLogo/logo-4.webp" },
-  { id: 5, name: "Orbit Retail", src: "/clientLogo/logo-5.webp" },
-  { id: 6, name: "Quanta", src: "/clientLogo/logo-6.webp" },
-  { id: 7, name: "Meridian", src: "/clientLogo/logo-7.webp" },
-  { id: 8, name: "Stratus", src: "/clientLogo/logo-8.webp" },
-  { id: 9, name: "Ironclad", src: "/clientLogo/logo-9.webp" },
-  { id: 10, name: "Bluewave", src: "/clientLogo/logo-10.webp" },
-  { id: 11, name: "Pinnacle", src: "/clientLogo/logo-11.webp" },
-  { id: 12, name: "Fintra", src: "/clientLogo/logo-12.webp" },
-  { id: 13, name: "Cedar Group", src: "/clientLogo/logo-13.webp" },
-  { id: 14, name: "Northgate", src: "/clientLogo/logo-14.webp" },
-  { id: 15, name: "Lumen Labs", src: "/clientLogo/logo-15.webp" },
-  { id: 16, name: "Axiom", src: "/clientLogo/logo-16.webp" },
-  { id: 17, name: "Solaris", src: "/clientLogo/logo-17.webp" },
-  { id: 18, name: "Cresta", src: "/clientLogo/logo-18.webp" },
-  { id: 19, name: "Vanguard", src: "/clientLogo/logo-19.webp" },
-  { id: 20, name: "Eclipse", src: "/clientLogo/logo-20.webp" },
-  { id: 21, name: "Eclipse", src: "/clientLogo/logo-21.webp" },
-  { id: 22, name: "Eclipse", src: "/clientLogo/logo-22.webp" },
-  { id: 23, name: "Eclipse", src: "/clientLogo/logo-23.webp" },
-  { id: 24, name: "Eclipse", src: "/clientLogo/logo-24.webp" },
-  { id: 25, name: "Eclipse", src: "/clientLogo/logo-25.webp" },
-  { id: 26, name: "Eclipse", src: "/clientLogo/logo-26.webp" },
-  { id: 27, name: "Eclipse", src: "/clientLogo/logo-27.webp" },
-  { id: 28, name: "Eclipse", src: "/clientLogo/logo-28.webp" },
-  { id: 29, name: "Eclipse", src: "/clientLogo/logo-29.webp" },
-  { id: 30, name: "Eclipse", src: "/clientLogo/logo-30.webp" },
-  { id: 31, name: "Eclipse", src: "/clientLogo/logo-31.webp" },
+  { id: 1, name: "Acme Corp", src: "/homeImages/clientLogo/logo-1.webp" },
+  { id: 2, name: "Vertex", src: "/homeImages/clientLogo/logo-2.webp" },
+  { id: 3, name: "NovaBank", src: "/homeImages/clientLogo/logo-3.webp" },
+  { id: 4, name: "Helix Health", src: "/homeImages/clientLogo/logo-4.webp" },
+  { id: 5, name: "Orbit Retail", src: "/homeImages/clientLogo/logo-5.webp" },
+  { id: 6, name: "Quanta", src: "/homeImages/clientLogo/logo-6.webp" },
+  { id: 7, name: "Meridian", src: "/homeImages/clientLogo/logo-7.webp" },
+  { id: 8, name: "Stratus", src: "/homeImages/clientLogo/logo-8.webp" },
+  { id: 9, name: "Ironclad", src: "/homeImages/clientLogo/logo-9.webp" },
+  { id: 10, name: "Bluewave", src: "/homeImages/clientLogo/logo-10.webp" },
+  { id: 11, name: "Pinnacle", src: "/homeImages/clientLogo/logo-11.webp" },
+  { id: 12, name: "Fintra", src: "/homeImages/clientLogo/logo-12.webp" },
+  { id: 13, name: "Cedar Group", src: "/homeImages/clientLogo/logo-13.webp" },
+  { id: 14, name: "Northgate", src: "/homeImages/clientLogo/logo-14.webp" },
+  { id: 15, name: "Lumen Labs", src: "/homeImages/clientLogo/logo-15.webp" },
+  { id: 16, name: "Axiom", src: "/homeImages/clientLogo/logo-16.webp" },
+  { id: 17, name: "Solaris", src: "/homeImages/clientLogo/logo-17.webp" },
+  { id: 18, name: "Cresta", src: "/homeImages/clientLogo/logo-18.webp" },
+  { id: 19, name: "Vanguard", src: "/homeImages/clientLogo/logo-19.webp" },
+  { id: 20, name: "Eclipse", src: "/homeImages/clientLogo/logo-20.webp" },
+  { id: 21, name: "Eclipse", src: "/homeImages/clientLogo/logo-21.webp" },
+  { id: 22, name: "Eclipse", src: "/homeImages/clientLogo/logo-22.webp" },
+  { id: 23, name: "Eclipse", src: "/homeImages/clientLogo/logo-23.webp" },
+  { id: 24, name: "Eclipse", src: "/homeImages/clientLogo/logo-24.webp" },
+  { id: 25, name: "Eclipse", src: "/homeImages/clientLogo/logo-25.webp" },
+  { id: 26, name: "Eclipse", src: "/homeImages/clientLogo/logo-26.webp" },
+  { id: 27, name: "Eclipse", src: "/homeImages/clientLogo/logo-27.webp" },
+  { id: 28, name: "Eclipse", src: "/homeImages/clientLogo/logo-28.webp" },
+  { id: 29, name: "Eclipse", src: "/homeImages/clientLogo/logo-29.webp" },
+  { id: 30, name: "Eclipse", src: "/homeImages/clientLogo/logo-30.webp" },
+  { id: 31, name: "Eclipse", src: "/homeImages/clientLogo/logo-31.webp" },
   
 ];
 

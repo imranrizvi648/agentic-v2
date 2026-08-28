@@ -22,8 +22,9 @@ const page = () => {
       <HeroSlider/>
       <ServicesSection/>
       <AboutSection/>   
-      <CommitmentSection/>
+     
       <SuccessStories/>
+       <CommitmentSection/>
        <Technology/>
       <Partnerships/>
  

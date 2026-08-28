@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt,FaEnvelope, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
 
@@ -27,13 +27,26 @@ const AgenticSenseParticleText = dynamic(
 const QUICK_LINKS = [
   { name: "ABOUT",     href: "/about" }, { name: "WHO WE ARE", href: "/about" },
   { name: "SERVICES", href: "/services" }, { name: "PROJECTS",   href: "/industries" },
-  { name: "BLOG",     href: "/blog" }, { name: "PROPOSAL",    href: "/proposal" },
+  { name: "BLOG",     href: "/blog" }, { name: "PROPOSAL",   href: "/proposal" },
 ];
+
 const SOCIAL_LINKS = [
-  { name: "Facebook",    icon: <FaFacebookF size={12} />,  href: "https://www.facebook.com/agenticsense", hoverClass: "group-hover:bg-[#1877F2]" },
-  { name: "Instagram",   icon: <FaInstagram size={12} />,  href: "https://www.instagram.com/agenticsense", hoverClass: "group-hover:bg-[#E4405F]" },
-  { name: "Linkedin",    icon: <FaLinkedinIn size={12} />, href: "https://www.linkedin.com/company/agenticsense", hoverClass: "group-hover:bg-[#0A66C2]" },
-  { name: "YouTube",     icon: <FaYoutube size={12} />,    href: "https://www.youtube.com/@AgenticSense", hoverClass: "group-hover:bg-[#FF0000]" },
+  { name: "Facebook",   icon: <FaFacebookF size={12} />,  href: "https://www.facebook.com/agenticsense", hoverClass: "group-hover:bg-[#1877F2]" },
+  { name: "Instagram",  icon: <FaInstagram size={12} />,  href: "https://www.instagram.com/agenticsense", hoverClass: "group-hover:bg-[#E4405F]" },
+  { name: "Linkedin",   icon: <FaLinkedinIn size={12} />, href: "https://www.linkedin.com/company/agenticsense", hoverClass: "group-hover:bg-[#0A66C2]" },
+  { name: "YouTube",    icon: <FaYoutube size={12} />,    href: "https://www.youtube.com/@AgenticSense", hoverClass: "group-hover:bg-[#FF0000]" },
+  {
+    name: "X",
+    icon: <FaXTwitter size={12} />,
+    href: "https://x.com/AgenticSense",
+    hoverClass: "group-hover:bg-black",
+  },
+{
+  name: "Contact",
+  icon: <FaPhoneAlt size={12} />,
+  href: "https://wa.me/923213551490",
+  hoverClass: "group-hover:bg-blue-600",
+},
 ];
 
 const Footer = React.memo(function Footer() {
@@ -42,12 +55,11 @@ const Footer = React.memo(function Footer() {
       <div className="max-w-7xl mx-auto">
 
         {/* ── Top 3-col grid ─────────────────────────────────────────────── */}
-        {/* Mobile pe single column text-center rahega, tablet/desktop (sm onwards) pe normal grid */}
-        <div className="flex flex-col items-center text-center sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-14 mb-10 w-full">
+        <div className="flex flex-col items-center text-center sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-14 mb-10 w-full sm:items-start">
 
           {/* Quick Links */}
           <div className="space-y-5 sm:space-y-6 w-full max-w-sm sm:max-w-none sm:ml-12 md:ml-16">
-            <div className="flex justify-center sm:justify-start items-center gap-2">
+            <div className="flex justify-center sm:justify-start items-center">
               <h3 className="text-base font-bold text-gray-800 tracking-[-0.01em]">Quick Links</h3>
             </div>
             <div className="grid grid-cols-2 gap-2 sm:gap-3 w-full">
@@ -71,31 +83,31 @@ const Footer = React.memo(function Footer() {
           {/* Brand centre */}
           <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6 sm:ml-10 order-first sm:order-none">
             <h1 className="text-xl sm:text-2xl font-bold tracking-[-0.02em] text-black">AGENTICSENSE</h1>
-            <p className="text-sm text-gray-600 leading-[1.65] tracking-[-0.005em] max-w-xs">
-              Building intelligent AI agents that help businesses automate work, make smarter decisions and scale faster natively inside your ERP.
-            </p>
+            <p className="text-sm text-gray-600 leading-[1.65] tracking-[-0.005em] max-w-xl">
+              Your strategic partner in enterprise AI & autonomous agents. We automate operations, scale growth, and build Agentic AI that works while you sleep. From workflow automation to intelligent decision-making systems we design, deploy, and optimize AI that delivers real business impact.
+No hype. Just results</p>
           </div>
 
           {/* Contact */}
-          <div className="space-y-5 sm:space-y-7 flex flex-col items-center sm:items-start text-center sm:text-left sm:col-span-2 md:col-span-1 md:pl-12 md:ml-10 w-full">
-            <div className="flex justify-center sm:justify-start items-center gap-2 w-full">
-              <h3 className="text-xl font-bold text-gray-800 uppercase">Contact</h3>
+          <div className="space-y-5 sm:space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left sm:col-span-2 md:col-span-1 md:pl-12 md:ml-10 w-full">
+            <div className="flex justify-center sm:justify-start items-center w-full">
+              <h3 className="text-base font-bold text-gray-800 tracking-[-0.01em]">Contact</h3>
             </div>
-            <div className="space-y-2 text-gray-700 text-sm font-semibold w-full">
+            <div className="space-y-2 text-gray-700 text-sm font-semibold w-full -mt-3">
               <p className="hover:text-[#1e1b4b] cursor-pointer break-all">Email: info@agenticsense.co</p>
               <p>Phone: +92 (321) 3551490</p>
-              <p className="text-gray-500 font-medium text-[13px]">UAE, PAKISTAN, USA, UK, Saudia Arabia</p>
-            </div>
-            <Link href="/contact" className="inline-block">
-              <button className="flex items-center gap-3 sm:gap-4 bg-white px-4 sm:px-5 py-2.5 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-all group">
-                <span className="text-xs font-bold text-gray-800 uppercase tracking-widest">
-                  Contact Us
+
+              <div className="pt-2 space-y-1">
+                <span className="block text-sm font-bold text-gray-800">Office</span>
+                <span className="block text-xs font-bold text-gray-700">Primary engineering</span>
+                <p className="text-gray-500 font-medium text-[12px]">Karachi Pakistan</p>
+                <span className="block text-xs font-bold text-gray-700 pt-1">
+                  Regional delivery &amp; partnerships hub
                 </span>
-                <div className="bg-[#1e1b4b] p-2 rounded-full text-white">
-                  <FaPhoneAlt size={10} />
-                </div>
-              </button>
-            </Link>
+                <p className="text-gray-500 font-medium text-[12px]">USA, UK, Saudia Arabia, UAE</p>
+              </div>
+            </div>
+           
           </div>
         </div>
 
