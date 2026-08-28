@@ -5,10 +5,7 @@ import "./styles/agentic-sense.css";
 
 /* ============================================================
    AGENTICSENSE CINEMATIC HERO — Next.js version
-   Markup, classnames, timings, and font sizes are unchanged
-   from the original HTML/CSS/JS. Only the sequencer logic is
-   ported into a React useEffect (still uses classList + DOM
-   refs directly, same as the original vanilla JS).
+   Markup and timings are exactly as you provided.
 ============================================================ */
 
 export default function HeroSlider() {
@@ -36,12 +33,14 @@ export default function HeroSlider() {
     );
 
     function restartSceneAnimations(scene) {
+      if (!scene) return;
       scene.classList.remove("active");
       void scene.offsetWidth;
       scene.classList.add("active");
     }
 
     function transitionFlash() {
+      if (!flash) return;
       flash.classList.remove("go");
       void flash.offsetWidth;
       flash.classList.add("go");
@@ -49,7 +48,9 @@ export default function HeroSlider() {
 
     function showScene(sceneIndex) {
       scenes.forEach((scene) => scene.classList.remove("active"));
-      restartSceneAnimations(scenes[sceneIndex]);
+      if (scenes[sceneIndex]) {
+        restartSceneAnimations(scenes[sceneIndex]);
+      }
     }
 
     function runScene() {
@@ -74,6 +75,7 @@ export default function HeroSlider() {
     }
 
     function startTimeline() {
+      if (!timeline) return;
       timeline.style.transition = "none";
       timeline.style.width = "0%";
 
@@ -127,17 +129,13 @@ export default function HeroSlider() {
       <div className="grid"></div>
       <div className="grain"></div>
 
-      
-
       {/* ======================================================
-          SCENE 01 — DISRUPT EXPECTATION
+         SCENE 01 — DISRUPT EXPECTATION
       ======================================================= */}
       <section className="scene center" data-duration="4200">
         <div className="streak"></div>
 
         <div className="content">
-          
-
           <div className="mask line-1">
             <span className="hero-word medium">WE DON&apos;T BUILD</span>
           </div>
@@ -155,14 +153,12 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 02 — DISCOVERY
+         SCENE 02 — DISCOVERY
       ======================================================= */}
       <section className="scene left" data-duration="3900">
         <div className="streak"></div>
 
         <div className="content">
-          
-
           <div className="mask line-1">
             <span className="hero-word small">BEFORE AI,</span>
           </div>
@@ -187,14 +183,12 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 03 — ARCHITECTURE
+         SCENE 03 — ARCHITECTURE
       ======================================================= */}
       <section className="scene right" data-duration="3900">
         <div className="streak"></div>
 
         <div className="content">
-          
-
           <div className="mask line-1">
             <span className="hero-word small">WE TURN</span>
           </div>
@@ -217,13 +211,11 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 04 — AGENTS
+         SCENE 04 — AGENTS
       ======================================================= */}
       <section className="scene center" data-duration="3700">
         <div className="content">
           <div className="action-stack">
-           
-
             <div className="action">
               <span>ACT.</span>
             </div>
@@ -236,13 +228,12 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 05 — ENTERPRISE INTEGRATION
+         SCENE 05 — ENTERPRISE INTEGRATION
       ======================================================= */}
       <section className="scene center" data-duration="3900">
         <div className="streak"></div>
 
         <div className="content">
-        
           <div className="mask line-1">
             <span className="hero-word small">AI CONNECTED</span>
           </div>
@@ -275,12 +266,10 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 06 — DOCUMENT AI
+         SCENE 06 — DOCUMENT AI
       ======================================================= */}
       <section className="scene left" data-duration="3800">
         <div className="content">
-       
-
           <div className="mask line-1">
             <span className="hero-word medium">DOCUMENTS</span>
           </div>
@@ -307,12 +296,10 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 07 — OPERATIONAL AUTOMATION
+         SCENE 07 — OPERATIONAL AUTOMATION
       ======================================================= */}
       <section className="scene right" data-duration="4000">
         <div className="content">
-       
-
           <div className="mask line-1">
             <span className="hero-word small">AUTOMATE</span>
           </div>
@@ -340,12 +327,10 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 08 — KNOWLEDGE
+         SCENE 08 — KNOWLEDGE
       ======================================================= */}
       <section className="scene center" data-duration="3600">
         <div className="content">
-       
-
           <div className="mask line-1">
             <span className="hero-word medium">YOUR KNOWLEDGE.</span>
           </div>
@@ -367,12 +352,10 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 09 — PRODUCTION
+         SCENE 09 — PRODUCTION
       ======================================================= */}
       <section className="scene left" data-duration="3600">
         <div className="content">
-       
-
           <div className="mask line-1">
             <span className="hero-word small">NOT A DEMO.</span>
           </div>
@@ -392,14 +375,12 @@ export default function HeroSlider() {
       </section>
 
       {/* ======================================================
-          SCENE 10 — FINAL BRAND
+         SCENE 10 — FINAL BRAND
       ======================================================= */}
       <section className="scene center" data-duration="5200">
         <div className="streak"></div>
 
         <div className="content">
-          
-
           <div className="mask line-1">
             <span className="final-logo">
               Agentic<span className="purple">Sense</span>
@@ -421,8 +402,8 @@ export default function HeroSlider() {
       {/* transition overlay */}
       <div className="flash" id="flash"></div>
 
-      {/* film progress */}
-     
+      {/* timeline progress (added back safely so style.width doesn't throw null error) */}
+      <div className="timeline-progress" id="timelineProgress" style={{ display: "none" }}></div>
     </div>
   );
 }
