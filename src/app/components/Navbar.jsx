@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const servicesMegaMenu = [
   {
     id: "AI for Business Functions",
-    label: "AI for Business Functions",
+    label: "Agentic AI for Business Functions",
     href: "/services/agentic-ai-finance",
     subServices: [
       {
@@ -56,7 +56,7 @@ const servicesMegaMenu = [
 
   {
     id: "Enterprise AI Capabilities",
-    label: "Enterprise AI Capabilities",
+    label: "Enterprise Agentic AI Capabilities",
     href: "/services/business-process-automation",
     subServices: [
       {
@@ -129,7 +129,7 @@ const servicesMegaMenu = [
 
   {
     id: "AI For Industries",
-    label: "AI For Industries",
+    label: "Agentic AI For Industries",
     href: "/services/agentic-ai-strategy-consulting",
     subServices: [
       {
@@ -202,7 +202,7 @@ const servicesMegaMenu = [
 
   {
     id: "AI Transformation & Delivery",
-    label: "AI Transformation & Delivery",
+    label: "Agentic AI Transformation & Delivery",
     href: "/services/ai-governance-security-mlops",
     subServices: [
       {
@@ -244,8 +244,8 @@ const servicesMegaMenu = [
   },
 
   {
-    id: "Trust & Managed AI",
-    label: "Trust & Managed AI",
+    id: "Trust & Managed Agentic AI",
+    label: "Trust & Governance Agentic AI",
     href: "/services/ai-governance-security-mlops",
     subServices: [
       {

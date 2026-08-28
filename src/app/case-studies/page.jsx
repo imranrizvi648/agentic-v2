@@ -12,7 +12,7 @@ const caseStudies = [
     erp: "LeadSense",
     num: "01",
     title: "Multi-Agent Sales AI Cuts Manual Email Work by 60%",
-    image: "/leadsensee.webp",
+    image: "/caseStudies/leadsensee.webp",
     imgPos: "object-center",
     summary:
       "As inbound and outbound email volume grew, a B2B technology company deployed LeadSense Powered by AgenticSense to automate its entire sales communication workflow and free reps to focus on qualified prospects.",
@@ -38,7 +38,7 @@ const caseStudies = [
     erp: "Oracle",
     num: "02",
     title: "Month-End Bank Reconciliation Done in 55 Seconds",
-    image: "/Alj.webp",
+    image: "/caseStudies/Alj.webp",
     imgPos: "object-center",
     summary:
       "Abdul Latif Jameel Health spent days each month manually matching bank transactions against Oracle. The ALJH AI Agent now reads the statement, matches by rule, flags exceptions, and delivers a CFO-ready report in under a minute.",
@@ -64,7 +64,7 @@ const caseStudies = [
     erp: "SAP B1",
     num: "03",
     title: "Six AP & GL Workflows Fully Automated in SAP Business One",
-    image: "/brccasestudies.jpg",
+    image: "/caseStudies/brccasestudies.jpg",
     imgPos: "object-center",
     summary:
       "BRC deployed a single AI automation platform to handle six high-volume, document-heavy financial workflows — GRN invoicing, landed cost reconciliation, bulk GL entries, and monthly salary postings — all posting directly into SAP Business One with no manual approval gate.",
@@ -90,7 +90,7 @@ const caseStudies = [
     erp: "LinkSense",
     num: "04",
     title: "Always-On LinkedIn Outreach Delivering 3× More Profile Views",
-    image: "/linksense.webp",
+    image: "/caseStudies/linksense.webp",
     imgPos: "object-center",
     summary:
       "LinkSense turns LinkedIn prospecting into a structured, AI-assisted workflow — coordinating discovery, personalized messaging, follow-up, and pipeline engagement as one continuous process, so sellers spend their time on real conversations, not repetitive admin.",
