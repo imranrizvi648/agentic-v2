@@ -389,13 +389,7 @@ export default function HeroSlider() {
 
           <div className="final-tagline">Your Agentic AI Technology Arm.</div>
 
-          <div className="final-contact">
-            <span>agenticsense.co</span>
-            <span className="dot"></span>
-            <span>info@agenticsense.co</span>
-            <span className="dot"></span>
-            <span>+92 321 3551490</span>
-          </div>
+         
         </div>
       </section>
 
