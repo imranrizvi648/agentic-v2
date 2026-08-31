@@ -45,41 +45,47 @@ const TAB_DATA = [
     isSuccessLayout: false
   },
   {
-    id: "our-success",
-    label: "Our Success",
-    isSuccessLayout: true,
-    footerText: "We help enterprises transform how operations actually run, delivering measurable impact across the globe.",
-    successCards: [
-      {
-        id: 1,
-        title: "20",
-        plus: "+",
-        subtitle: "Years",
-        desc: "Our tech innovation ideology sets us apart. Two decades of hands-on business IT solutions and AI Development work back that up."
-      },
-      {
-        id: 2,
-        title: "20",
-        plus: "+",
-        subtitle: "Industries",
-        desc: "Each industry gets its own modules, built by an AI Development Company that treats every sector differently."
-      },
-      {
-        id: 3,
-        title: "4",
-        plus: "+",
-        subtitle: "Continents",
-        desc: "Our footprint spans four continents. We're an AI Development Company built for more than just the local market."
-      },
-      {
-        id: 4,
-        title: "150",
-        plus: "+",
-        subtitle: "Employees",
-        desc: "AI Development, Support Services, and everything in between. That's what our team delivers, aiming for full customer satisfaction."
-      }
-    ]
-  }
+  id: "our-success",
+  label: "Our Success",
+  isSuccessLayout: true,
+  footerText:
+    "We help enterprises turn complex operations into intelligent, connected systems that create measurable business impact.",
+
+  successCards: [
+    {
+      id: 1,
+      title: "12",
+      plus: "+",
+      subtitle: "Years",
+      desc:
+        "Years of experience turning emerging technologies into practical enterprise solutions that improve how businesses operate, decide, and grow."
+    },
+    {
+      id: 2,
+      title: "7",
+      plus: "+",
+      subtitle: "Industries",
+      desc:
+        "From finance and manufacturing to healthcare and professional services, we design AI solutions around the unique challenges of every industry."
+    },
+    {
+      id: 3,
+      title: "5",
+      plus: "+",
+      subtitle: "Continents",
+      desc:
+        "Our AI transformation expertise reaches organizations across global markets, helping enterprises build smarter and more connected operations."
+    },
+    {
+      id: 4,
+      title: "50",
+      plus: "+",
+      subtitle: "Agentic AI  Solutions",
+      desc:
+        "From intelligent automation and AI agents to enterprise data and workflow solutions, we build systems designed to deliver real operational value."
+    }
+  ]
+}
 ];
 
 export default function FolioTabsSection() {

@@ -2355,7 +2355,7 @@ padding-bottom: 0.06em;
                 </div>
             </div>
 
-            <div className="ghost">EXECUTE</div>
+        <div className="ghost">EXECUTE</div>
           
         </section>
 
@@ -2421,7 +2421,7 @@ padding-bottom: 0.06em;
                     Agentic AI can <strong>move a process forward.</strong>
                 </div>
             </div>
-
+<div className="ghost">LIMITS</div>
            
         </section>
 
@@ -2686,7 +2686,7 @@ padding-bottom: 0.06em;
                     ONE ORCHESTRATED OPERATING SYSTEM
                 </div>
             </div>
-
+<div className="ghost">ORCHESTRATE</div>
            
         </section>
 
@@ -2765,7 +2765,7 @@ padding-bottom: 0.06em;
                 </div>
             </div>
 
-            <div className="ghost">END-TO-END</div>
+          <div className="ghost">END-TO-END</div>
         
         </section>
 
@@ -2820,7 +2820,7 @@ padding-bottom: 0.06em;
                 </div>
             </div>
 
-            <div className="ghost">IMPACT</div>
+          <div className="ghost">IMPACT</div>
           
         </section>
 
@@ -2888,18 +2888,13 @@ padding-bottom: 0.06em;
                     </div>
 
                     <div className="final-micro">
-                        <span>STRATEGY</span>
-                        <i />
-                        <span>ENGINEERING</span>
-                        <i />
-                        <span>INTEGRATION</span>
-                        <i />
-                        <span>EXECUTION</span>
+                        <span>STRATEGY ENGINEERING INTEGRATION EXECUTION</span>
+                        
                     </div>
                 </div>
             </div>
 
-            
+            <div className="ghost">AGENTIC</div>
         </section>
 
         

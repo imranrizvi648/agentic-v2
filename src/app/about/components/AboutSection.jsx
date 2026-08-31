@@ -123,7 +123,7 @@ export default function AboutSection() {
         className="absolute inset-0 w-full h-full block"
       />
 
-      {/* Content */}
+ 
       {/* Content */}
 <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24">
   <div className="max-w-4xl">
