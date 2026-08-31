@@ -109,16 +109,16 @@ const servicesMegaMenu = [
         href: "/services/agentic-data-engineering",
         desc: "Automate data pipelines, quality checks and issue resolution."
       },
-      {
-        title: "Specialized AI & ML Development",
-        href: "/services/specialized-ai-ml-development",
-        desc: "Develop custom AI and ML solutions for specific needs."
-      },
-      {
-        title: "Private & On-Premise Agentic AI",
-        href: "/services/private-on-premise-agentic-ai",
-        desc: "Deploy secure AI in private or on-premise environments."
-      },
+      // {
+      //   title: "Specialized AI & ML Development",
+      //   href: "/services/specialized-ai-ml-development",
+      //   desc: "Develop custom AI and ML solutions for specific needs."
+      // },
+      // {
+      //   title: "Private & On-Premise Agentic AI",
+      //   href: "/services/private-on-premise-agentic-ai",
+      //   desc: "Deploy secure AI in private or on-premise environments."
+      // },
     ],
    spotlight: {
   title: "Building Intelligent AI Systems for Enterprise Workflows",
@@ -357,8 +357,8 @@ const productsMegaMenu = [
   {
     id: "Linksense", label: "Linksense", href: "/our-product/linksense",
     subServices: [
-      { title: "LinkedIn Outreach Agent", href: "/our-product/linkedinagent", desc: "Scrapes target profiles and sends personalized connection requests at scale, safely." },
-      { title: "Auto-Response & Follow-ups", href: "/our-product/linkedinagent", desc: "Warm conversational touchpoints inside LinkedIn chat with account-safety throttles." },
+      { title: "LinkedIn Outreach Agent", href: "/our-product/linksense", desc: "Scrapes target profiles and sends personalized connection requests at scale, safely." },
+      { title: "Auto-Response & Follow-ups", href: "/our-product/linksense", desc: "Warm conversational touchpoints inside LinkedIn chat with account-safety throttles." },
     ],
     spotlight: { title: "38% average connection accept rate across our pilot customers.", cta: "Explore Linkedinagent", img: "/megaMenue/linkdineadashboard.webp" },
   },

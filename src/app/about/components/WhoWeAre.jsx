@@ -14,7 +14,7 @@ const cardsData = [
   {
     icon: Activity,
     title: "Our Mission",
-    description: "To empower enterprises with intelligent, agentic AI solutions that simplify complexity, automate what matters, and unlock measurable business impact turning ambitious ideas into scalable, real-world systems."
+    description: "To make AI more useful, more connected, and more impactful  so your business can work smarter, move faster, and be ready for what’s next."
   },
   {
     icon: Gauge,

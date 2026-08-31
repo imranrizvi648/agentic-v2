@@ -84,8 +84,9 @@ const Footer = React.memo(function Footer() {
           <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6 sm:ml-10 order-first sm:order-none">
             <h1 className="text-xl sm:text-2xl font-bold tracking-[-0.02em] text-black">AGENTICSENSE</h1>
             <p className="text-sm text-gray-600 leading-[1.65] tracking-[-0.005em] max-w-xl">
-              Your strategic partner in enterprise AI & autonomous agents. We automate operations, scale growth, and build Agentic AI that works while you sleep. From workflow automation to intelligent decision-making systems we design, deploy, and optimize AI that delivers real business impact.
-No hype. Just results</p>
+              A Journey Towards Intelligent Transformation
+
+AgenticSense is an Agentic AI and Modern AI company, helping enterprises transform the way they work through intelligent, connected, and autonomous Agentic AI systems.</p>
           </div>
 
           {/* Contact */}
