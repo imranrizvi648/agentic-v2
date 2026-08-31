@@ -242,16 +242,16 @@ export default function AboutSection() {
         <div className="about-grid">
           {/* ── LEFT ── */}
           <div className="about-left">
-            <p className="about-eyebrow">Trusted Technology Partner</p>
+            <p className="about-eyebrow">Your Partner for Agentic AI Systems</p>
             <h2 className="about-heading">
-              Real AI. Real Enterprise. Tangible Business Outcomes.
+             Less hype. More intelligence. Real business impact.
             </h2>
            <p className="about-body">
-  AgenticSense helps organizations transform business operations through enterprise AI and intelligent automation. We design, build, and deploy AI agents that integrate seamlessly with ERP platforms and core business systems, delivering scalable solutions for complex workflows, operational excellence, and measurable results.
+  We help enterprises move beyond traditional AI and automation by building intelligent Agentic AI systems that understand, reason, and act.
   
   <br /><br />
   
-  By combining deep technical expertise with business domain knowledge, we enable organizations to adopt AI confidently, improve productivity, strengthen decision-making, and accelerate digital transformation initiatives.
+  From  AI-powered workflows to complete Agentic AI Systems, we design, build, integrate, and optimize solutions that work with your people, processes, and technology.
 </p>
           </div>
 

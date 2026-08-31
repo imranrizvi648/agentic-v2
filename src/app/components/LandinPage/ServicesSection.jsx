@@ -277,8 +277,7 @@ export default function ServicesSection() {
           </h1>
 
           <p className="mx-auto max-w-2xl text-sm sm:text-base leading-[1.6] text-gray-500">
-            Transform your enterprise with agentic AI systems that think,
-            adapt, and execute autonomously.
+          Transform your enterprise with agentic AI systems that think, adapt, and execute autonomously.
           </p>
 
         </div>
@@ -346,7 +345,7 @@ export default function ServicesSection() {
                 </div>
 
                 <div className="mt-1 text-xs sm:text-sm leading-[1.5] text-gray-500">
-                  AI Agents
+                  Projects
                 </div>
               </div>
 

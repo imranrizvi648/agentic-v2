@@ -15,11 +15,11 @@ export default function AboutSection() {
       <div className="bg-[#1a194d] p-8 sm:p-10 lg:w-1/3 flex flex-col justify-center text-white">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-[-0.025em] leading-[1.1] mb-4 sm:mb-6">ABOUT AGENTICSENSE</h2>
         <p className="text-base leading-[1.6] opacity-90 mb-6 sm:mb-8">
-          AgenticSense builds intelligent AI agents that help businesses automate work, make smarter decisions and scale faster. We specialize in ERP-native AI integration, finance automation and business process automation delivering production-grade systems, not pilots that never ship.
+         AgenticSense is a technology partner specializing in Agentic AI and Modern AI. 
+We help enterprises move beyond standalone AI tools and build intelligent systems that understand, reason, and act.
         </p>
       <p className="text-base leading-[1.6] opacity-70 mb-6 sm:mb-8">
-  Our distributed team of AI engineers and enterprise architects bridges the gap between complex business logic and cutting-edge technology, ensuring seamless, production-grade deployment for every client.
-</p>
+  With 12+ years of experience in AI and automation, we turn complex business processes into connected Agentic. AI Systems that bring together AI agents, data, workflows, and automation Our focus is simple: secure, scalable, integrated AI that solves real business problems and delivers real impact</p>
         <a href="/about" className="self-start px-6 py-2 bg-white text-[#1a194d] text-[10px] font-bold rounded-full hover:bg-gray-100 transition-colors ">
           → About AgenticSense
         </a>

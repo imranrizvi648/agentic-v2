@@ -132,7 +132,7 @@ export default function AboutSection() {
     </h2>
 
     <p className="text-base sm:text-lg lg:text-xl leading-[1.7] tracking-[-0.005em] text-white/60 max-w-3xl">
-      AgenticSense is a trusted technology partner helping enterprises harness the power of Artificial Intelligence and Agentic AI. With over 12 years of combined experience in AI and automation, we design and deliver intelligent systems that don't just support businesses  they actively drive them forward.
+   AgenticSense is a technology partner specializing in Agentic AI and Modern AI. With 12+ years of experience in AI and automation, we turn complex business processes into connected Agentic AI Systems that bring together AI agents, data, workflows, and automation.
     </p>
   </div>
 </div>

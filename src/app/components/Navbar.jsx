@@ -409,9 +409,8 @@ export default function Navbar() {
     pathname === "/our-product/linkedinagent" ||
     pathname === "/our-product/invoicesense";
 
-  const isHomeHero = pathname === "/" && !isScrolled;
   const useDarkTheme = isScrolled || isLightPage;
-  const useDarkText = useDarkTheme || isHomeHero;
+  const useDarkText = useDarkTheme;
 
   const getActiveTab = () => {
     if (pathname === "/") return "Home";
@@ -452,13 +451,11 @@ export default function Navbar() {
           ${
             useDarkTheme
               ? `max-w-[100%] px-6 md:px-10 py-1.5 rounded-none bg-white/70 backdrop-blur-2xl border-b border-black/[0.03] shadow-[0_4px_24px_rgba(26,25,77,0.07),inset_0_-1px_0_rgba(0,0,0,0.04)]`
-              : isHomeHero
-              ? `max-w-[1240px] px-5 md:px-8 py-1.5 rounded bg-white/85 backdrop-blur-2xl border border-black/[0.06] shadow-[0_8px_32px_rgba(26,25,77,0.10)]`
               : `max-w-[1240px] px-5 md:px-8 py-1 rounded-none bg-white/[0.02] backdrop-blur-xl border border-white/[0.14]`
           }
         `}
       >
-        {!useDarkTheme && !isHomeHero && (
+        {!useDarkTheme && (
           <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full pointer-events-none" />
         )}
 
@@ -518,7 +515,6 @@ export default function Navbar() {
                 </Link>
 
                 {/* Services Mega Menu */}
-                {/* Services Mega Menu */}
 {item.name === "Services" && item.dropdown && (
   <AnimatePresence>
     {hoveredTab === item.name && (
@@ -553,7 +549,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* MIDDLE – 3 columns (no scroll needed) */}
+        {/* MIDDLE – 3 columns */}
         <div className="w-[56%] p-5 grid grid-cols-3 gap-x-6 gap-y-4 items-start content-start overflow-y-auto">
           {currentServicesData.subServices.map((sub, idx) => (
             <Link
