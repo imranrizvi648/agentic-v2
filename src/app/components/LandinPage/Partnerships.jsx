@@ -976,7 +976,7 @@ const partnerData = {
   },
   partner6: {
     name: "Industry Partner 6",
-    logo: "/homeImages/clientLogo/logo-33.webp",
+    logo: "/homeImages/industryPartners/code.webp",
     sizeClass: "max-h-15 md:max-h-22",
     isWhite: false,
     clickable: false,
