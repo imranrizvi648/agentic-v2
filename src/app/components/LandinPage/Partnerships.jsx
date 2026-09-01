@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // ── Industry Partner Data ─────────────────────────────────────────────────
@@ -45,21 +45,37 @@ const partnerData = {
       },
     ],
   },
-  fanuun: {
-    name: "FANUUN BCG",
-    logo: "/homeImages/industryPartners/logoFunun.png",
-    sizeClass: "max-h-24 md:max-h-32",
+ brb: {
+    name: "BRB GROUP",
+    logo: "/homeImages/industryPartners/BRB-LOGO.png",
+    sizeClass: "max-h-12 md:max-h-17",
+    isWhite: false,
     description:
-      "Transforming businesses with innovative consulting and operational excellence.",
+      "Executing large-scale infrastructure and development projects with precision.",
     clients: [
       {
-        name: "Funuun Solutions",
-        industry: "AI & Data",
-        project: "AI-Based Document Digitization",
+        name: "Document Management",
+        industry: "Corporate",
+        project: "Enterprise Document Archiving & Management System",
+      },
+      {
+        name: "AI HR System",
+        industry: "Human Resources",
+        project: "Automated Talent Acquisition & HR System",
+      },
+      {
+        name: "AI IT Management System",
+        industry: "Information Technology",
+        project: "Intelligent Infrastructure & IT Management System",
+      },
+      {
+        name: "AI Marketing System",
+        industry: "Marketing",
+        project: "Smart Campaign Automation & AI Marketing Analytics",
       },
     ],
   },
-  aithentic: {
+ aithentic: {
     name: "AITHENTIC",
     logo: "/homeImages/industryPartners/Gemini_Generated_Image_qa7eg1qa7eg1qa7e-removebg-preview.png",
     sizeClass: "max-h-8 md:max-h-23",
@@ -94,36 +110,23 @@ const partnerData = {
       },
     ],
   },
-  brb: {
-    name: "BRB GROUP",
-    logo: "/homeImages/industryPartners/BRB-LOGO.png",
-    sizeClass: "max-h-12 md:max-h-17",
-    isWhite: false,
+
+  fanuun: {
+    name: "FANUUN BCG",
+    logo: "/homeImages/industryPartners/logoFunun.png",
+    sizeClass: "max-h-24 md:max-h-32",
     description:
-      "Executing large-scale infrastructure and development projects with precision.",
+      "Transforming businesses with innovative consulting and operational excellence.",
     clients: [
       {
-        name: "Document Management",
-        industry: "Corporate",
-        project: "Enterprise Document Archiving & Management System",
-      },
-      {
-        name: "AI HR System",
-        industry: "Human Resources",
-        project: "Automated Talent Acquisition & HR System",
-      },
-      {
-        name: "AI IT Management System",
-        industry: "Information Technology",
-        project: "Intelligent Infrastructure & IT Management System",
-      },
-      {
-        name: "AI Marketing System",
-        industry: "Marketing",
-        project: "Smart Campaign Automation & AI Marketing Analytics",
+        name: "Funuun Solutions",
+        industry: "AI & Data",
+        project: "AI-Based Document Digitization",
       },
     ],
   },
+ 
+ 
   medics: {
     name: "MEDICS LABORATORIES",
     logo: "/homeImages/industryPartners/codact-white.svg",
@@ -156,20 +159,39 @@ const partnerData = {
       },
     ],
   },
+  partner6: {
+    name: "Industry Partner 6",
+    logo: "/homeImages/clientLogo/logo-33.webp",
+    sizeClass: "max-h-15 md:max-h-22",
+    isWhite: false,
+    clickable: false,
+    description: "Strategic industry partnership delivering technology-led business solutions.",
+    clients: [],
+  },
+  partner7: {
+    name: "Industry Partner 7",
+    logo: "/homeImages/clientLogo/logo-34.webp",
+    sizeClass: "max-h-14 md:max-h-22",
+    isWhite: false,
+    clickable: false,
+    description: "Strategic industry partnership delivering technology-led business solutions.",
+    clients: [],
+  },
 };
 
 const INDUSTRY_PARTNERS = [
   { id: "xpace" },
+    { id: "brb" },
+     { id: "aithentic" },
+       { id: "partner6" },
+       { id: "partner7" },
   { id: "fanuun" },
-  { id: "aithentic" },
-  { id: "brb" },
   { id: "medics" },
+
+  
 ];
 
 // ── Client Logos (Client Partners tab) ────────────────────────────────────
-// 🔧 EDIT KARO: apne 20 real logos yahan daalo.
-//   src: '/client-logos/acme.png'  (white/transparent PNG or SVG best rehta hai)
-//   Jab tak src null hai, ek placeholder wordmark render hota hai (demo ke liye).
 const CLIENT_LOGOS = [
   { id: 1, name: "Acme Corp", src: "/homeImages/clientLogo/logo-1.webp" },
   { id: 2, name: "Vertex", src: "/homeImages/clientLogo/logo-2.webp" },
@@ -204,8 +226,7 @@ const CLIENT_LOGOS = [
   { id: 31, name: "Eclipse", src: "/homeImages/clientLogo/logo-31.webp" },
   { id: 32, name: "Eclipse", src: "/homeImages/clientLogo/logo-32.webp" },
   { id: 33, name: "Eclipse", src: "/homeImages/clientLogo/logo-33.webp" },
-    { id: 34, name: "Eclipse", src: "/homeImages/clientLogo/logo-34.webp" },
-  
+  { id: 34, name: "Eclipse", src: "/homeImages/clientLogo/logo-34.webp" },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────
@@ -217,8 +238,6 @@ function initials(name) {
     .join("");
 }
 
-// A few placeholder logo "marks" so the demo looks like a real logo wall.
-// (These disappear the moment you provide a real `src`.)
 function PlaceholderMark({ seed = 0 }) {
   const variant = seed % 6;
   const c = "currentColor";
@@ -338,7 +357,7 @@ function LogoRow({ logos, reverse = false, duration = 46 }) {
 
 function LogoMarquee() {
   const rowA = CLIENT_LOGOS.slice(0, 17);
-  const rowB = CLIENT_LOGOS.slice(17, 34)
+  const rowB = CLIENT_LOGOS.slice(17, 34);
   return (
     <div className="cm-wrap">
       <LogoRow logos={rowA} duration={48} />
@@ -372,13 +391,11 @@ function LogoMarquee() {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: 6px;
-      /* 'transform' transition yahan se hata di hai */
       transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
     }
     .cm-tile:hover {
       background: rgba(255,255,255,0.09);
       border-color: rgba(255,255,255,0.28);
-      /* translateY(-3px) hata diya hai taake card uper na jaye */
       box-shadow: 0 12px 34px rgba(98,94,255,0.16);
     }
     .cm-img {
@@ -437,15 +454,110 @@ export default function Partnerships() {
   const [activeTab, setActiveTab] = useState("industry");
   const [activePartner, setActivePartner] = useState(null);
   const [hoveredTab, setHoveredTab] = useState(null);
+  const [partnerStart, setPartnerStart] = useState(0);
+
+  // ── Drag state ──────────────────────────────────────────────────────────
+  const dragRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
     setActivePartner(null);
+    setPartnerStart(0);
   };
 
   const handlePartnerSelect = (id) => {
-    if (id === "medics") return;
+    const partner = partnerData[id];
+    if (!partner?.clickable && id === "medics") return;
+    if (partner?.clickable === false) return;
     setActivePartner(activePartner === id ? null : id);
+  };
+
+  const VISIBLE_PARTNERS = 5;
+  const maxPartnerStart = Math.max(0, INDUSTRY_PARTNERS.length - VISIBLE_PARTNERS);
+
+  const showPreviousPartners = () => {
+    setPartnerStart((current) => Math.max(0, current - 1));
+    setActivePartner(null);
+  };
+
+  const showNextPartners = () => {
+    setPartnerStart((current) => Math.min(maxPartnerStart, current + 1));
+    setActivePartner(null);
+  };
+
+  // ── Drag Handlers ───────────────────────────────────────────────────────
+  const onMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.pageX - (dragRef.current?.offsetLeft || 0);
+    scrollLeft.current = partnerStart;
+    if (dragRef.current) {
+      dragRef.current.style.cursor = "grabbing";
+    }
+  };
+
+  const onMouseLeave = () => {
+    isDragging.current = false;
+    if (dragRef.current) {
+      dragRef.current.style.cursor = "grab";
+    }
+  };
+
+  const onMouseUp = () => {
+    isDragging.current = false;
+    if (dragRef.current) {
+      dragRef.current.style.cursor = "grab";
+    }
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+
+    const x = e.pageX - (dragRef.current?.offsetLeft || 0);
+    const walk = (x - startX.current) * 0.8; // sensitivity
+
+    // Calculate how many items to move
+    const itemWidth = 160; // approximate width of one partner card + gap
+    const movedItems = Math.round(-walk / itemWidth);
+
+    let newStart = scrollLeft.current + movedItems;
+    newStart = Math.max(0, Math.min(maxPartnerStart, newStart));
+
+    if (newStart !== partnerStart) {
+      setPartnerStart(newStart);
+      setActivePartner(null);
+    }
+  };
+
+  // Touch support
+  const onTouchStart = (e) => {
+    isDragging.current = true;
+    startX.current = e.touches[0].pageX;
+    scrollLeft.current = partnerStart;
+  };
+
+  const onTouchMove = (e) => {
+    if (!isDragging.current) return;
+    const x = e.touches[0].pageX;
+    const walk = (x - startX.current) * 0.9;
+
+    const itemWidth = 160;
+    const movedItems = Math.round(-walk / itemWidth);
+
+    let newStart = scrollLeft.current + movedItems;
+    newStart = Math.max(0, Math.min(maxPartnerStart, newStart));
+
+    if (newStart !== partnerStart) {
+      setPartnerStart(newStart);
+      setActivePartner(null);
+    }
+  };
+
+  const onTouchEnd = () => {
+    isDragging.current = false;
   };
 
   return (
@@ -544,57 +656,111 @@ export default function Partnerships() {
         ════════════════════════════════════════════════════════════════ */}
         {activeTab === "industry" && (
           <div>
-            <div
-              className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10
-              ${activePartner ? "mb-6" : "mb-0"}`}
-            >
-              {INDUSTRY_PARTNERS.map(({ id }) => {
-                const partner = partnerData[id];
-                const active = activePartner === id;
-                const isMedics = id === "medics";
+            <div className={`relative z-10 ${activePartner ? "mb-6" : "mb-0"}`}>
+              <div className="flex items-center gap-3">
+                {/* Left Arrow */}
+                <button
+                  type="button"
+                  onClick={showPreviousPartners}
+                  disabled={partnerStart === 0}
+                  aria-label="Previous industry partners"
+                  className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                    partnerStart === 0
+                      ? "border-white/10 text-white/20 cursor-not-allowed"
+                      : "border-white/20 text-white/80 hover:border-white/50 hover:bg-white/10 cursor-pointer"
+                  }`}
+                >
+                  <span className="text-xl leading-none">‹</span>
+                </button>
 
-                return (
-                  <button
-                    key={id}
-                    onClick={() => handlePartnerSelect(id)}
-                    disabled={isMedics}
-                    className={`relative rounded p-2 h-32
-                      flex flex-col items-center justify-center
-                      transition-all duration-300
-                      ${
-                        isMedics
-                          ? "cursor-default opacity-100 bg-white/5 border border-white/10"
-                          : "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#152374]"
-                      }
-                      ${
-                        active
-                          ? "scale-[1.04] bg-white/15 shadow-[0_8px_32px_rgba(255,255,255,0.1)] border-[1.5px] border-white"
-                          : !isMedics &&
-                            "bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_4px_16px_rgba(255,255,255,0.05)]"
-                      }`}
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      loading="lazy"
-                      className={`object-contain transition-transform duration-300 ${partner.sizeClass} ${
-                        isMedics
-                          ? "max-w-[150px] md:max-w-[200px]"
-                          : "w-auto max-w-[110px] md:max-w-[140px]"
-                      } ${partner.isWhite ? "brightness-0 invert" : ""}`}
-                    />
-                    {active && (
-                      <span
-                        className="absolute -bottom-[15px] left-1/2 -translate-x-1/2
-                        w-0 h-0
-                        border-l-[9px] border-l-transparent
-                        border-t-[13px] border-t-white
-                        border-r-[9px] border-r-transparent"
-                      />
-                    )}
-                  </button>
-                );
-              })}
+                {/* Draggable area */}
+                <div
+                  ref={dragRef}
+                  className="flex-1 min-w-0 overflow-hidden cursor-grab select-none"
+                  onMouseDown={onMouseDown}
+                  onMouseLeave={onMouseLeave}
+                  onMouseUp={onMouseUp}
+                  onMouseMove={onMouseMove}
+                  onTouchStart={onTouchStart}
+                  onTouchMove={onTouchMove}
+                  onTouchEnd={onTouchEnd}
+                >
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    {INDUSTRY_PARTNERS.slice(
+                      partnerStart,
+                      partnerStart + VISIBLE_PARTNERS
+                    ).map(({ id }) => {
+                      const partner = partnerData[id];
+                      const active = activePartner === id;
+                      const isDisabled =
+                        partner.clickable === false || id === "medics";
+
+                      return (
+                        <button
+                          key={id}
+                          type="button"
+                          onClick={() => {
+                            // Prevent click after drag
+                            if (isDragging.current) return;
+                            handlePartnerSelect(id);
+                          }}
+                          disabled={isDisabled}
+                          className={`relative rounded p-2 h-32
+                            flex flex-col items-center justify-center
+                            transition-all duration-300
+                            ${
+                              isDisabled
+                                ? "cursor-default opacity-100 bg-white/5 border border-white/10"
+                                : "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#152374]"
+                            }
+                            ${
+                              active
+                                ? "scale-[1.04] bg-white/15 shadow-[0_8px_32px_rgba(255,255,255,0.1)] border-[1.5px] border-white"
+                                : !isDisabled &&
+                                  "bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_4px_16px_rgba(255,255,255,0.05)]"
+                            }`}
+                        >
+                          <img
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            loading="lazy"
+                            draggable={false}
+                            className={`object-contain transition-transform duration-300 ${partner.sizeClass} ${
+                              id === "medics"
+                                ? "max-w-[150px] md:max-w-[200px]"
+                                : "w-auto max-w-[110px] md:max-w-[140px]"
+                            } ${partner.isWhite ? "brightness-0 invert" : ""}`}
+                          />
+                          {active && (
+                            <span
+                              className="absolute -bottom-[15px] left-1/2 -translate-x-1/2
+                              w-0 h-0
+                              border-l-[9px] border-l-transparent
+                              border-t-[13px] border-t-white
+                              border-r-[9px] border-r-transparent"
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Right Arrow */}
+                <button
+                  type="button"
+                  onClick={showNextPartners}
+                  disabled={partnerStart === maxPartnerStart}
+                  aria-label="Next industry partners"
+                  className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                    partnerStart === maxPartnerStart
+                      ? "border-white/10 text-white/20 cursor-not-allowed"
+                      : "border-white/20 text-white/80 hover:border-white/50 hover:bg-white/10 cursor-pointer"
+                  }`}
+                >
+                  <span className="text-xl leading-none">›</span>
+                </button>
+              </div>
             </div>
 
             {activePartner && activePartner !== "medics" && (
@@ -638,7 +804,7 @@ export default function Partnerships() {
         )}
 
         {/* ════════════════════════════════════════════════════════════════
-            TAB 2 CLIENT PARTNERS  →  animated logo marquee (logos only)
+            TAB 2 CLIENT PARTNERS
         ════════════════════════════════════════════════════════════════ */}
         {activeTab === "clients" && (
           <div className="py-2">
