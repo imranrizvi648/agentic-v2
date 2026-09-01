@@ -2321,12 +2321,12 @@ padding-bottom: 0.06em;
 
 
 
-        {/* ============================================================= */}
+       {/* ============================================================= */}
         {/* 01: PATTERN INTERRUPT — AI IS EVERYWHERE */}
         {/* ============================================================= */}
         <section
             className="scene center message-scene pattern-scene"
-            data-duration="3300"
+            data-duration="4000"
             aria-label="AI is everywhere, execution is not"
         >
             <div className="streak" />
@@ -2364,7 +2364,7 @@ padding-bottom: 0.06em;
         {/* ============================================================= */}
         <section
             className="scene center message-scene conventional-scene"
-            data-duration="3900"
+            data-duration="4700"
             aria-label="Conventional AI helps but often stops before execution"
         >
             <div className="streak" />
@@ -2430,7 +2430,7 @@ padding-bottom: 0.06em;
         {/* ============================================================= */}
         <section
             className="scene center message-scene business-first-scene"
-            data-duration="4100"
+            data-duration="4900"
             aria-label="AgenticSense starts with the business, not the technology"
         >
             <div className="streak" />
@@ -2450,38 +2450,7 @@ padding-bottom: 0.06em;
                     </span>
                 </div>
 
-                {/* <div className="business-first-stage">
-                    <svg
-                        className="business-connector"
-                        viewBox="0 0 1100 360"
-                        preserveAspectRatio="none"
-                        aria-hidden="true"
-                    >
-                        <path d="M145 45 C340 85 390 130 550 180"  />
-                        <path d="M955 45 C760 85 710 130 550 180"  />
-                        <path d="M115 180 C310 180 385 180 550 180"  />
-                        <path d="M985 180 C790 180 715 180 550 180"  />
-                        <path d="M165 325 C345 280 410 235 550 180"  />
-                        <path d="M935 325 C755 280 690 235 550 180"  />
-                    </svg>
-
-                    <div className="business-first-core">
-                        <div>
-                            <span>START HERE</span>
-                            <strong>
-                                BUSINESS<br />
-                                OUTCOME
-                            </strong>
-                        </div>
-                    </div>
-
-                    <div className="business-node b1">PROCESS</div>
-                    <div className="business-node b2">DECISIONS</div>
-                    <div className="business-node b3">DATA</div>
-                    <div className="business-node b4">PEOPLE</div>
-                    <div className="business-node b5">SYSTEMS</div>
-                    <div className="business-node b6">CONSTRAINTS</div>
-                </div> */}
+                
 
                 <div className="brand-thesis">
                     We identify where intelligence can actually improve
@@ -2498,7 +2467,7 @@ padding-bottom: 0.06em;
         {/* ============================================================= */}
         <section
             className="scene center message-scene category-definition"
-            data-duration="4000"
+            data-duration="4800"
             aria-label="AgenticSense builds complete Agentic AI Systems, not just AI agents"
         >
             <div className="streak" />
@@ -2542,9 +2511,9 @@ padding-bottom: 0.06em;
         {/* ============================================================= */}
         {/* 05: WHAT COMPLETE MEANS — ENTERPRISE ORCHESTRATION */}
         {/* ============================================================= */}
-        <section
+         <section
             className="scene center orchestration-scene message-scene"
-            data-duration="4900"
+            data-duration="5800"
             aria-label="Complete Agentic AI System embedded across enterprise operations"
         >
             <div className="streak" />
@@ -2564,121 +2533,7 @@ padding-bottom: 0.06em;
                     </span>
                 </div>
 
-                {/* <div className="enterprise-network">
-                    <svg
-                        className="network-lines"
-                        viewBox="0 0 1200 560"
-                        preserveAspectRatio="none"
-                        aria-hidden="true"
-                    >
-                        <path
-                            className="network-path"
-                            d="M135 94 C330 120 410 210 600 280"
-                          />
-
-                        <path
-                            className="network-path"
-                            d="M1065 94 C870 120 790 210 600 280"
-                          />
-
-                        <path
-                            className="network-path"
-                            d="M150 468 C340 420 430 350 600 280"
-                          />
-
-                        <path
-                            className="network-path"
-                            d="M1050 468 C860 420 770 350 600 280"
-                          />
-
-                        <path
-                            className="network-path soft"
-                            d="M600 78 C600 150 600 210 600 280"
-                          />
-
-                        <path
-                            className="network-path soft"
-                            d="M600 486 C600 420 600 350 600 280"
-                          />
-                    </svg>
-
-                    <div className="orchestration-core">
-                        <span className="core-eyebrow">CORE</span>
-                        <strong>
-                            AGENTIC<br />
-                            ORCHESTRATION
-                        </strong>
-                        <span className="core-status">
-                            <i />
-                            GOVERNED
-                        </span>
-                    </div>
-
-                    <div className="e-node node-llm">
-                        <span className="node-title">
-                            <i />
-                            AI / MODELS
-                        </span>
-                        <span className="node-meta">
-                            Reasoning, planning & intelligence
-                        </span>
-                    </div>
-
-                    <div className="e-node node-rag">
-                        <span className="node-title">
-                            <i />
-                            ENTERPRISE KNOWLEDGE
-                        </span>
-                        <span className="node-meta">
-                            Policies, records, context & RAG
-                        </span>
-                    </div>
-
-                    <div className="e-node node-erp">
-                        <span className="node-title">
-                            <i />
-                            ERP / CRM / APIS
-                        </span>
-                        <span className="node-meta">
-                            Systems of record, tools & applications
-                        </span>
-                    </div>
-
-                    <div className="e-node node-people">
-                        <span className="node-title">
-                            <i />
-                            PEOPLE / APPROVALS
-                        </span>
-                        <span className="node-meta">
-                            Judgment, escalation & accountability
-                        </span>
-                    </div>
-
-                    <div className="e-node node-rules">
-                        <span className="node-title">
-                            <i />
-                            BUSINESS RULES
-                        </span>
-                        <span className="node-meta">
-                            Permissions, policy & guardrails
-                        </span>
-                    </div>
-
-                    <div className="e-node node-action">
-                        <span className="node-title">
-                            <i />
-                            ACTION / EXECUTION
-                        </span>
-                        <span className="node-meta">
-                            Governed action inside real workflows
-                        </span>
-                    </div>
-
-                    <span className="data-packet packet-1" />
-                    <span className="data-packet packet-2" />
-                    <span className="data-packet packet-3" />
-                    <span className="data-packet packet-4" />
-                </div> */}
+                 
 
                 <div className="system-message">
                     <strong>SIGNAL → DECISION → ACTION</strong>
@@ -2688,14 +2543,14 @@ padding-bottom: 0.06em;
             </div>
 <div className="ghost">ORCHESTRATE</div>
            
-        </section>
+        </section> 
 
         {/* ============================================================= */}
         {/* 06: WHY AGENTICSENSE IS NOT CONVENTIONAL */}
         {/* ============================================================= */}
         <section
             className="scene center message-scene delivery-scene"
-            data-duration="4300"
+            data-duration="5200"
             aria-label="AgenticSense is accountable end to end"
         >
             <div className="streak" />
@@ -2774,7 +2629,7 @@ padding-bottom: 0.06em;
         {/* ============================================================= */}
         <section
             className="scene center message-scene business-impact-scene"
-            data-duration="4100"
+            data-duration="4900"
             aria-label="The goal is a better business, not more AI"
         >
             <div className="streak" />
@@ -2829,7 +2684,7 @@ padding-bottom: 0.06em;
         {/* ============================================================= */}
         <section
             className="scene center message-scene final-scene"
-            data-duration="5400"
+            data-duration="6500"
             aria-label="AgenticSense complete Agentic AI Systems"
         >
             <div className="streak" />
@@ -2846,11 +2701,11 @@ padding-bottom: 0.06em;
                     </div>
 
                     <div className="final-tagline">
-                        We Build Complete
-                        <span className="purple">
-                            Agentic AI Systems.
-                        </span>
-                    </div>
+    We Build Complete&nbsp;
+    <span className="purple">
+        Agentic AI Systems.
+    </span>
+</div>
 
                     <div className="promise-line">
                         From business problem to production execution
@@ -2867,13 +2722,13 @@ padding-bottom: 0.06em;
                         <span className="promise-pill">END-TO-END</span>
                     </div>
 
-                    <div className="final-ctas">
+                    <div className="final-ctas mt-8">
                         <a
                             className="cta primary"
                             href="#agentic-ai-systems"
                             aria-label="Explore Agentic AI Systems"
                         >
-                            <span>EXPLORE AGENTIC AI SYSTEMS</span>
+                            <span className="mt-4">EXPLORE AGENTIC AI SYSTEMS</span>
                             <i>→</i>
                         </a>
 
@@ -2887,7 +2742,7 @@ padding-bottom: 0.06em;
                         </a>
                     </div>
 
-                    <div className="final-micro">
+                    <div className="final-micro mt-5">
                         <span>STRATEGY ENGINEERING INTEGRATION EXECUTION</span>
                         
                     </div>

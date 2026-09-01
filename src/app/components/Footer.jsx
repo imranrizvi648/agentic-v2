@@ -133,35 +133,42 @@ AgenticSense is an Agentic AI and Modern AI company, helping enterprises transfo
       </div> 
 
       {/* ── Particle brand text + legal (FULL SCREEN) ────────────────── */}
-      <div className="flex flex-col items-center mt-5 mb-2 w-full overflow-hidden">
-        <div className="relative w-full">
+     {/* ── Particle brand text + legal (FULL SCREEN) ────────────────── */}
+<div className="flex flex-col items-center mt-5 mb-1 w-full overflow-hidden">
+  <div className="relative w-full">
 
-          <AgenticSenseParticleText />
+    <AgenticSenseParticleText />
 
-          {/* ── DESKTOP ONLY: Absolute labels ── */}
-          <span className="hidden lg:inline absolute bottom-[16%] left-[24%] text-[9px] xl:text-[11px] font-bold text-gray-500 uppercase pointer-events-none z-10">
-            ©2026 AgenticSense
-          </span>
-          <span className="hidden lg:inline absolute bottom-[16%] left-[56%] -translate-x-1/2 text-[9px] xl:text-[11px] font-bold uppercase whitespace-nowrap z-10">
-            <a href="#" className="text-gray-500 hover:text-[#1e1b4b] transition-colors">Terms and Conditions</a>
-          </span>
-          <span className="hidden lg:inline absolute bottom-[16%] right-[9%] text-[9px] xl:text-[11px] font-bold uppercase whitespace-nowrap z-10">
-            <a href="#" className="text-gray-500 hover:text-[#1e1b4b] transition-colors">Privacy Policy</a>
-          </span>
+    {/* ── DESKTOP ONLY: Absolute labels ── */}
+   {/* ── DESKTOP ONLY: Absolute labels ── */}
+<span className="hidden lg:inline absolute bottom-4 left-[20%] xl:left-[22%] 2xl:left-[24%] text-[9px] xl:text-[10px] 2xl:text-[11px] font-bold text-gray-500 uppercase pointer-events-none z-10">
+  ©2026 AgenticSense
+</span>
 
-          {/* Decorative asterisk */}
-          <span aria-hidden="true" className="absolute top-0 right-[3%] text-[5vw] font-light leading-none text-gray-400 pointer-events-none select-none">*</span>
-        </div>
+<span className="hidden lg:inline absolute bottom-4 left-[50%] -translate-x-1/2 text-[9px] xl:text-[10px] 2xl:text-[11px] font-bold uppercase whitespace-nowrap z-10">
+  <a href="#" className="text-gray-500 hover:text-[#1e1b4b] transition-colors">
+    Terms and Conditions
+  </a>
+</span>
 
-        {/* ── TABLET + MOBILE (below lg) ── */}
-        <div className="lg:hidden w-full flex flex-wrap justify-center items-center gap-x-3 gap-y-1 mt-3 pb-1 px-4 text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-tight text-center">
-          <span>©2026 AgenticSense.</span>
-          <span className="text-gray-300" aria-hidden="true">·</span>
-          <a href="#" className="hover:text-[#1e1b4b] transition-colors">Terms &amp; Conditions</a>
-          <span className="text-gray-300" aria-hidden="true">·</span>
-          <a href="#" className="hover:text-[#1e1b4b] transition-colors">Privacy Policy</a>
-        </div>
-      </div>
+<span className="hidden lg:inline absolute bottom-4 right-[6%] xl:right-[7%] 2xl:right-[8%] text-[9px] xl:text-[10px] 2xl:text-[11px] font-bold uppercase whitespace-nowrap z-10">
+  <a href="#" className="text-gray-500 hover:text-[#1e1b4b] transition-colors">
+    Privacy Policy
+  </a>
+</span>
+    {/* Decorative asterisk */}
+   
+  </div>
+
+  {/* ── TABLET + MOBILE (below lg) ── */}
+  <div className="lg:hidden w-full flex flex-wrap justify-center items-center gap-x-3 gap-y-1 mt-1 pb-1 px-4 text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-tight text-center">
+    <span>©2026 AgenticSense</span>
+    <span className="text-gray-300" aria-hidden="true">·</span>
+    <a href="#" className="hover:text-[#1e1b4b] transition-colors">Terms &amp; Conditions</a>
+    <span className="text-gray-300" aria-hidden="true">·</span>
+    <a href="#" className="hover:text-[#1e1b4b] transition-colors">Privacy Policy</a>
+  </div>
+</div>
 
     </footer>
   );

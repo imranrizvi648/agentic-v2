@@ -15,7 +15,7 @@ const TAB_DATA = [
     points: [],
     footerText:
       "Our goal is simple: build intelligent systems that work, scale, and create real business impact.",
-    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800",
+    image: "/whyImage.webp",
     isGridPoints: false,
     isSuccessLayout: false
   },
@@ -49,7 +49,7 @@ const TAB_DATA = [
   label: "Our Success",
   isSuccessLayout: true,
   footerText:
-    "We help enterprises turn complex operations into intelligent, connected systems that create measurable business impact.",
+    "Powering Saudi Arabia’s Next Era of AI",
 
   successCards: [
     {
@@ -58,7 +58,7 @@ const TAB_DATA = [
       plus: "+",
       subtitle: "Years",
       desc:
-        "Years of experience turning emerging technologies into practical enterprise solutions that improve how businesses operate, decide, and grow."
+        "Building technology that transforms ambitious businesses into smarter, faster organizations."
     },
     {
       id: 2,
@@ -66,23 +66,23 @@ const TAB_DATA = [
       plus: "+",
       subtitle: "Industries",
       desc:
-        "From finance and manufacturing to healthcare and professional services, we design AI solutions around the unique challenges of every industry."
+        "Delivering AI across Finance, Government, Healthcare, Retail, Manufacturing & more."
     },
     {
       id: 3,
       title: "5",
       plus: "+",
-      subtitle: "Continents",
+      subtitle: "Markets Reached",
       desc:
-        "Our AI transformation expertise reaches organizations across global markets, helping enterprises build smarter and more connected operations."
+        "Driving AI transformation across Saudi Arabia, the GCC & global markets."
     },
     {
       id: 4,
       title: "50",
       plus: "+",
-      subtitle: "Agentic AI  Solutions",
+      subtitle: "Agentic AI Solutions",
       desc:
-        "From intelligent automation and AI agents to enterprise data and workflow solutions, we build systems designed to deliver real operational value."
+        "Engineering AI Agents, Automation & Intelligent Enterprise Systems built to create real business impact."
     }
   ]
 }
@@ -140,7 +140,7 @@ export default function FolioTabsSection() {
                       Success
                     </h2>
                     <p className="text-sm lg:text-base text-[#1a3556] font-bold mt-2 leading-snug">
-                      The performance that matters the most.
+                     Powering Saudi Arabia’s Next Era of AI
                     </p>
                   </div>
                   <SuccessCard data={currentData.successCards[0]} />
@@ -227,7 +227,7 @@ export default function FolioTabsSection() {
             {currentData.footerText}
           </p>
           <Link href="/contact" className="inline-block">
-            <button className="bg-[#1a3556] text-white rounded-xl px-6 py-2.5 text-xs font-bold transition hover:bg-[#dc1e25] shadow-sm cursor-pointer">
+            <button className="bg-[#1a3556] text-white rounded px-6 py-2.5 text-xs font-bold transition  shadow-sm cursor-pointer">
               Let's Connect
             </button>
           </Link>

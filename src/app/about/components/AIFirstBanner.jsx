@@ -45,11 +45,7 @@ export default function AIFirstBanner() {
 </div>
       </div>
 
-      <div className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-20">
-        <div className="p-2.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm cursor-pointer hover:bg-white/20 transition-all">
-          <SlidersHorizontal className="w-4 h-4 text-white" />
-        </div>
-      </div>
+     
     </section>
   );
 }
