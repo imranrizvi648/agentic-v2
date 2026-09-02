@@ -188,6 +188,17 @@ const partnerData = {
       "Strategic industry partnership delivering technology-led business solutions.",
     clients: [],
   },
+ partner8: {
+    name: "Industry Partner 8",
+    logo: "/homeImages/industryPartners/alphaaengage.jpg",
+    sizeClass: "max-h-14 md:max-h-30",
+    isWhite: false,
+    clickable: false,
+    description:
+      "Strategic industry partnership delivering technology-led business solutions.",
+    clients: [],
+  },
+
 };
 
 const INDUSTRY_PARTNERS = [
@@ -196,6 +207,7 @@ const INDUSTRY_PARTNERS = [
   { id: "aithentic" },
   { id: "partner6" },
   { id: "partner7" },
+   { id: "partner8" },
   { id: "fanuun" },
   { id: "medics" },
 ];
